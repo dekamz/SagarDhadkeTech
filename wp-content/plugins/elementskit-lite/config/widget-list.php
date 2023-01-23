@@ -498,7 +498,25 @@ class Widget_List extends \ElementsKit_Lite\Core\Config_List {
 				),
 				'team-slider' => array(
 					'slug'            => 'team-slider',
-					'title'           => 'team Carousel Slider',
+					'title'           => 'Team Slider',
+					'package'         => 'pro-disabled',
+					'widget-category' => 'general', // General
+				),
+				'audio-player' => array(
+					'slug'            => 'audio-player',
+					'title'           => 'Audio Player',
+					'package'         => 'pro-disabled',
+					'widget-category' => 'general', // General
+				),
+				'flip-box' => array(
+					'slug'    => 'flip-box',
+					'title'   => 'Flip Box',
+					'package' => 'pro-disabled',
+					'widget-category' => 'general', // General
+				),
+				'image-morphing' => array(
+					'slug'            => 'image-morphing',
+					'title'           => 'Image Morphing',
 					'package'         => 'pro-disabled',
 					'widget-category' => 'general', // General
 				),

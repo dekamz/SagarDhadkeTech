@@ -15,7 +15,7 @@ class Plugin {
 	 * Plugin version
 	 * @var string
 	 */
-	const VERSION = '2.2.2';
+	const VERSION = '2.2.4';
 
 	/**
 	 * The slug of the plugin; used in actions, filters, i18n, table names, etc.
@@ -118,6 +118,9 @@ class Plugin {
 			), 10, 2 );
 
 			add_filter( 'http_request_args', array( self::$instance, 'add_http_filters' ), 10, 2 );
+
+            // Disable WP lazy loading for more fail-safe crawling.
+			add_filter( 'wp_lazy_loading_enabled', '__return_false' );
 
 			self::$instance->options              = Options::instance();
 			self::$instance->view                 = new View();
@@ -441,16 +444,8 @@ class Plugin {
 		// Set destination url type / scheme / host
 		$destination_url_type = $this->fetch_post_value( 'destination_url_type' );
 
-		if ( $destination_url_type == 'offline' ) {
-			$destination_scheme = '';
-			$destination_host   = '.';
-		} else if ( $destination_url_type == 'relative' ) {
-			$destination_scheme = '';
-			$destination_host   = '';
-		} else {
-			$destination_scheme = $this->fetch_post_value( 'destination_scheme' );
-			$destination_host   = untrailingslashit( $this->fetch_post_value( 'destination_host' ) );
-		}
+        $destination_scheme = $this->fetch_post_value( 'destination_scheme' );
+        $destination_host   = untrailingslashit( $this->fetch_post_value( 'destination_host' ) );
 
 		// Set URLs to exclude
 		$urls_to_exclude = array();
@@ -529,6 +524,7 @@ class Plugin {
 		);
 
 		foreach ( $options as $key => $value ) {
+            $value = $this->sanitize_option( $key, $value );
 			$this->options->set( $key, $value );
 		}
 
@@ -537,6 +533,24 @@ class Plugin {
 		$message = __( 'Your changes have been saved.', 'simply-static' );
 		$this->view->add_flash( 'updated', $message );
 	}
+
+    /**
+     * Sanitize Option
+     *
+     * @param string $key Option key.
+     * @param mixed  $value Option value.
+     * @return mixed
+     */
+    public function sanitize_option( $key, $value ) {
+        switch ( $key ) {
+            case 'additional_urls':
+            case 'additional_files':
+                $value = str_replace( '"', '', $value );
+                $value = str_replace( "'", '', $value );
+                break;
+        }
+        return $value;
+    }
 
 	/**
 	 * Render the diagnostics page

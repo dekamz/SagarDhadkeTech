@@ -28,6 +28,10 @@ class ElementsKit_Widget_Image_Accordion extends Widget_Base {
         return Handler::get_categories();
     }
 
+    public function get_keywords() {
+        return Handler::get_keywords();
+    }
+
     public function get_help_url() {
         return 'https://wpmet.com/doc/image-accordion/';
     }
@@ -367,6 +371,7 @@ class ElementsKit_Widget_Image_Accordion extends Widget_Base {
           ],
         ]
       );
+      
 	   $this->add_control(
         'ekit_img_accordion_active_background_text',
         [
@@ -380,9 +385,7 @@ class ElementsKit_Widget_Image_Accordion extends Widget_Base {
         Group_Control_Background::get_type(),
             array(
                 'name'     => 'ekit_img_accordion_bg_active_color',
-                'default' => '',
                 'selector' => '{{WRAPPER}} .elementskit-single-image-accordion:before',
-
 			)
         );
       $this->add_responsive_control(
@@ -751,7 +754,6 @@ class ElementsKit_Widget_Image_Accordion extends Widget_Base {
             Group_Control_Background::get_type(),
             array(
                 'name'     => 'ekit_img_accordion_btn_bg_hover_color_group',
-                'default' => '',
                 'selector' => '{{WRAPPER}} .elementskit-accordion-content .elementskit-btn:hover',
             )
         );

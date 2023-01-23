@@ -27,6 +27,10 @@ class ElementsKit_Widget_Tab extends Widget_Base {
         return Handler::get_categories();
     }
 
+    public function get_keywords() {
+        return Handler::get_keywords();
+    }
+
     public function get_help_url() {
         return 'https://wpmet.com/doc/tab/';
     }
@@ -498,7 +502,6 @@ class ElementsKit_Widget_Tab extends Widget_Base {
             Group_Control_Background::get_type(),
             array(
                 'name'     => 'ekit_tab_wrapper_bg_group',
-                'default' => '',
                 'selector' => '{{WRAPPER}} .elementkit-tab-wraper',
             )
         );
@@ -2012,7 +2015,6 @@ class ElementsKit_Widget_Tab extends Widget_Base {
             Group_Control_Background::get_type(),
             array(
                 'name'     => 'ekit_tab_body_bg_group',
-                'default' => '',
                 'selector' => '{{WRAPPER}} .tab-content .tab-pane',
             )
         );
