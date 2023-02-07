@@ -1,4 +1,4 @@
-/*! elementor - v3.10.2 - 29-01-2023 */
+/*! elementor - v3.9.0 - 06-12-2022 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -400,7 +400,7 @@ var Container = /*#__PURE__*/function (_ArgsObject) {
         var repeaters = Object.values(this.controls).filter(function (control) {
           return 'repeater' === control.type;
         });
-        if (!this.model.get('supportRepeaterChildren') && 1 === repeaters.length) {
+        if (1 === repeaters.length) {
           Object.defineProperty(this, 'children', {
             get: function get() {
               elementorDevTools.deprecation.deprecated('children', '3.0.0', 'container.repeaters[ repeaterName ].children');
@@ -543,15 +543,6 @@ var Container = /*#__PURE__*/function (_ArgsObject) {
     key: "isDesignable",
     value: function isDesignable() {
       return elementor.userCan('design') && this.isEditable();
-    }
-
-    /**
-     * @return {boolean}
-     */
-  }, {
-    key: "isLocked",
-    value: function isLocked() {
-      return this.model.get('isLocked');
     }
   }, {
     key: "isRepeater",

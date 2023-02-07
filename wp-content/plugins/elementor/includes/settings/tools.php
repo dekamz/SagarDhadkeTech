@@ -98,8 +98,8 @@ class Tools extends Settings_Page {
 	public function ajax_elementor_replace_url() {
 		check_ajax_referer( 'elementor_replace_url', '_nonce' );
 
-		$from = Utils::get_super_global_value( $_POST, 'from' ) ?? '';
-		$to = Utils::get_super_global_value( $_POST, 'to' ) ?? '';
+		$from = ! empty( $_POST['from'] ) ? $_POST['from'] : '';
+		$to = ! empty( $_POST['to'] ) ? $_POST['to'] : '';
 
 		try {
 			$results = Utils::replace_urls( $from, $to );
@@ -127,9 +127,7 @@ class Tools extends Settings_Page {
 		}
 
 		$rollback_versions = $this->get_rollback_versions();
-		$version = Utils::get_super_global_value( $_GET, 'version' );
-
-		if ( empty( $version ) || ! in_array( $version, $rollback_versions, true ) ) {
+		if ( empty( $_GET['version'] ) || ! in_array( $_GET['version'], $rollback_versions ) ) {
 			wp_die( esc_html__( 'Error occurred, The version selected is invalid. Try selecting different version.', 'elementor' ) );
 		}
 
@@ -137,10 +135,10 @@ class Tools extends Settings_Page {
 
 		$rollback = new Rollback(
 			[
-				'version' => $version,
+				'version' => $_GET['version'],
 				'plugin_name' => ELEMENTOR_PLUGIN_BASE,
 				'plugin_slug' => $plugin_slug,
-				'package_url' => sprintf( 'https://downloads.wordpress.org/plugin/%s.%s.zip', $plugin_slug, $version ),
+				'package_url' => sprintf( 'https://downloads.wordpress.org/plugin/%s.%s.zip', $plugin_slug, $_GET['version'] ),
 			]
 		);
 

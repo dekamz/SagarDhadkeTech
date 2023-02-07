@@ -1,4 +1,4 @@
-/*! elementor - v3.10.2 - 29-01-2023 */
+/*! elementor - v3.9.0 - 06-12-2022 */
 (self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["frontend"],{
 
 /***/ "../assets/dev/js/frontend/documents-manager.js":
@@ -82,8 +82,6 @@ var _stretchedSection = _interopRequireDefault(__webpack_require__(/*! ./handler
 var _shapes = _interopRequireDefault(__webpack_require__(/*! ./handlers/section/shapes */ "../assets/dev/js/frontend/handlers/section/shapes.js"));
 // Section handlers.
 
-/* global elementorFrontendConfig */
-
 module.exports = function ($) {
   var _this = this;
   const handlersInstances = {};
@@ -99,9 +97,6 @@ module.exports = function ($) {
     'text-editor.default': () => __webpack_require__.e(/*! import() | text-editor */ "text-editor").then(__webpack_require__.bind(__webpack_require__, /*! ./handlers/text-editor */ "../assets/dev/js/frontend/handlers/text-editor.js")),
     'wp-widget-media_audio.default': () => __webpack_require__.e(/*! import() | wp-audio */ "wp-audio").then(__webpack_require__.bind(__webpack_require__, /*! ./handlers/wp-audio */ "../assets/dev/js/frontend/handlers/wp-audio.js"))
   };
-  if (elementorFrontendConfig.experimentalFeatures['nested-elements']) {
-    this.elementsHandlers['nested-tabs.default'] = () => __webpack_require__.e(/*! import() | nested-tabs */ "nested-tabs").then(__webpack_require__.bind(__webpack_require__, /*! elementor/modules/nested-tabs/assets/js/frontend/handlers/nested-tabs */ "../modules/nested-tabs/assets/js/frontend/handlers/nested-tabs.js"));
-  }
   const addGlobalHandlers = () => elementorFrontend.hooks.addAction('frontend/element_ready/global', _global.default);
   const addElementsHandlers = () => {
     this.elementsHandlers.section = [_stretchedSection.default,
@@ -2375,8 +2370,8 @@ var EventManager = function () {
    * Performs an action if it exists. You can pass as many arguments as you want to this function; the only rule is
    * that the first argument must always be the action.
    */
-  function doAction( /* Action, arg1, arg2, ... */
-  ) {
+  function /* Action, arg1, arg2, ... */
+  doAction() {
     var args = slice.call(arguments);
     var action = args.shift();
     if ('string' === typeof action) {
@@ -2418,8 +2413,8 @@ var EventManager = function () {
    * Performs a filter if it exists. You should only ever pass 1 argument to be filtered. The only rule is that
    * the first argument must always be the filter.
    */
-  function applyFilters( /* Filter, filtered arg, arg2, ... */
-  ) {
+  function /* Filter, filtered arg, arg2, ... */
+  applyFilters() {
     var args = slice.call(arguments);
     var filter = args.shift();
     if ('string' === typeof filter) {

@@ -5,7 +5,6 @@ use Elementor\Core\Common\Modules\Ajax\Module as Ajax;
 use Elementor\Core\Utils\Collection;
 use Elementor\Core\Utils\Exceptions;
 use Elementor\Core\Utils\Force_Locale;
-use Elementor\Modules\NestedTabs\Widgets\NestedTabs;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -80,7 +79,7 @@ class Widgets_Manager {
 		$this->_widget_types = [];
 
 		foreach ( $build_widgets_filename as $widget_filename ) {
-			include ELEMENTOR_PATH . 'includes/widgets/' . $widget_filename . '.php';
+			include( ELEMENTOR_PATH . 'includes/widgets/' . $widget_filename . '.php' );
 
 			$class_name = str_replace( '-', '_', $widget_filename );
 
@@ -88,8 +87,6 @@ class Widgets_Manager {
 
 			$this->register( new $class_name() );
 		}
-
-		$this->register_promoted_widgets();
 
 		$this->register_wp_widgets();
 
@@ -249,20 +246,6 @@ class Widgets_Manager {
 		$this->_widget_types[ $widget_instance->get_name() ] = $widget_instance;
 
 		return true;
-	}
-
-	/** register promoted widgets
-	 *
-	 * Since we cannot allow widgets to place themselves is a specific
-	 * location on our widgets panel we need to use an hard coded solution fort his
-	 *
-	 * @return void
-	 */
-	private function register_promoted_widgets() {
-		if ( Plugin::$instance->experiments->is_feature_active( 'nested-elements' ) ) {
-			$nested_tabs = new NestedTabs();
-			$this->_widget_types = [ $nested_tabs->get_name() => $nested_tabs ] + $this->_widget_types;
-		}
 	}
 
 	/**

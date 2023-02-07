@@ -320,7 +320,6 @@ class Widget_Icon_List extends Widget_Base {
 			[
 				'label' => esc_html__( 'Width', 'elementor' ),
 				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ '%', 'px', 'vw' ],
 				'default' => [
 					'unit' => '%',
 				],
@@ -339,7 +338,7 @@ class Widget_Icon_List extends Widget_Base {
 			[
 				'label' => esc_html__( 'Height', 'elementor' ),
 				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ '%', 'px', 'vh' ],
+				'size_units' => [ '%', 'px' ],
 				'default' => [
 					'unit' => '%',
 				],
@@ -349,10 +348,6 @@ class Widget_Icon_List extends Widget_Base {
 						'max' => 100,
 					],
 					'%' => [
-						'min' => 1,
-						'max' => 100,
-					],
-					'vh' => [
 						'min' => 1,
 						'max' => 100,
 					],
@@ -429,19 +424,11 @@ class Widget_Icon_List extends Widget_Base {
 			[
 				'label' => esc_html__( 'Size', 'elementor' ),
 				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', '%', 'vw' ],
 				'default' => [
-					'unit' => 'px',
 					'size' => 14,
 				],
 				'range' => [
 					'px' => [
-						'min' => 6,
-					],
-					'%' => [
-						'min' => 6,
-					],
-					'vw' => [
 						'min' => 6,
 					],
 				],

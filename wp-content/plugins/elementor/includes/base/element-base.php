@@ -536,19 +536,13 @@ abstract class Element_Base extends Controls_Stack {
 			$elements[] = $child->get_raw_data( $with_html_content );
 		}
 
-		$raw_data = [
+		return [
 			'id' => $this->get_id(),
 			'elType' => $data['elType'],
 			'settings' => $data['settings'],
 			'elements' => $elements,
 			'isInner' => $data['isInner'],
 		];
-
-		if ( ! empty( $data['isLocked'] ) ) {
-			$raw_data['isLocked'] = $data['isLocked'];
-		}
-
-		return $raw_data;
 	}
 
 	public function get_data_for_save() {

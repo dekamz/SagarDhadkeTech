@@ -36,6 +36,10 @@ class Not_Supported extends Library_Document {
 		$properties['show_in_library'] = false;
 		$properties['show_in_finder'] = false;
 
+		$properties['cpt'] = [
+			Source_Local::CPT,
+		];
+
 		return $properties;
 	}
 

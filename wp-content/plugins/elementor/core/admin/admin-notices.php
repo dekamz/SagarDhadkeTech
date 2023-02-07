@@ -99,7 +99,7 @@ class Admin_Notices extends Module {
 			return false;
 		}
 
-		// Check for upgrades.
+		// Check if have any upgrades.
 		$update_plugins = get_site_transient( 'update_plugins' );
 
 		$has_remote_update_package = ! ( empty( $update_plugins ) || empty( $update_plugins->response[ ELEMENTOR_PLUGIN_BASE ] ) || empty( $update_plugins->response[ ELEMENTOR_PLUGIN_BASE ]->package ) );
@@ -121,7 +121,7 @@ class Admin_Notices extends Module {
 			$new_version = $upgrade_notice['version'];
 		}
 
-		// Check if upgrade messages should be shown.
+		// Check if have upgrade notices to show.
 		if ( version_compare( ELEMENTOR_VERSION, $upgrade_notice['version'], '>=' ) ) {
 			return false;
 		}
@@ -142,7 +142,7 @@ class Admin_Notices extends Module {
 			) ),
 			$new_version,
 			esc_url( $upgrade_url ),
-			esc_attr( esc_html__( 'Update Now', 'elementor' ) )
+			esc_attr( esc_html__( 'Update Elementor Now', 'elementor' ) )
 		);
 
 		$options = [

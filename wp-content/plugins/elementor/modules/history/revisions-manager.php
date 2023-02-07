@@ -261,7 +261,7 @@ class Revisions_Manager {
 		}
 
 		if ( ! current_user_can( 'edit_post', $revision->get_id() ) ) {
-			throw new \Exception( 'Access denied.' );
+			throw new \Exception( esc_html__( 'Access denied.', 'elementor' ) );
 		}
 
 		$revision_data = [

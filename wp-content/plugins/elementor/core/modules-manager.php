@@ -94,9 +94,6 @@ class Modules_Manager {
 			'shapes',
 			'favorites',
 			'admin-top-bar',
-			'nested-elements',
-			// Depends on Nested Elements module
-			'nested-tabs',
 			'container-converter',
 			'web-cli',
 			'promotions',

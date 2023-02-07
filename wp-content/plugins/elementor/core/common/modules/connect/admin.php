@@ -4,7 +4,6 @@ namespace Elementor\Core\Common\Modules\Connect;
 use Elementor\Core\Admin\Menu\Admin_Menu_Manager;
 use Elementor\Plugin;
 use Elementor\Settings;
-use Elementor\Utils;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -31,27 +30,21 @@ class Admin {
 	public function on_load_page() {
 		if ( isset( $_GET['action'], $_GET['app'] ) ) {
 			$manager = Plugin::$instance->common->get_component( 'connect' );
-
-			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			$app_slug = Utils::get_super_global_value( $_GET, 'app' );
+			$app_slug = $_GET['app'];
 			$app = $manager->get_app( $app_slug );
-
-			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			$action = Utils::get_super_global_value( $_GET, 'action' );
-
-			$nonce_action = $app_slug . $action;
+			$nonce_action = $_GET['app'] . $_GET['action'];
 
 			if ( ! $app ) {
 				wp_die( 'Unknown app: ' . esc_attr( $app_slug ) );
 			}
 
-			if ( ! wp_verify_nonce( Utils::get_super_global_value( $_GET, 'nonce' ), $nonce_action ) ) {
+			if ( empty( $_GET['nonce'] ) || ! wp_verify_nonce( $_GET['nonce'], $nonce_action ) ) {
 				wp_die( 'Invalid Nonce', 'Invalid Nonce', [
 					'back_link' => true,
 				] );
 			}
 
-			$method = 'action_' . $action;
+			$method = 'action_' . $_GET['action'];
 
 			if ( method_exists( $app, $method ) ) {
 				call_user_func( [ $app, $method ] );
