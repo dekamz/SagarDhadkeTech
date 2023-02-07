@@ -10,6 +10,8 @@
 
             run: function () {
 
+                gsap.registerPlugin(ScrollTrigger);
+
                 var $scope = this.$element;
 
                 $scope.find(".elementor-invisible").removeClass("elementor-invisible");

@@ -86,11 +86,23 @@ class Time_Range extends Condition {
 	 */
 	public function compare_value( $settings, $operator, $to, $from, $tz ) {
 
-		$to   = strtotime( gmdate( 'H:i', strtotime( $to ) ) );
-		$from = strtotime( gmdate( 'H:i', strtotime( $from ) ) );
+		if ( ! empty( $to ) ) {
+			$to = strtotime( gmdate( 'H:i', strtotime( $to ) ) );
+		}
 
-		$now              = 'local' === $tz ? strtotime( Helper_Functions::get_local_time( 'H:i' ) ) : strtotime( Helper_Functions::get_site_server_time( 'H:i' ) );
-		$condition_result = ( ( $now >= $from ) && ( $now <= $to ) );
+		if ( ! empty( $from ) ) {
+			$from = strtotime( gmdate( 'H:i', strtotime( $from ) ) );
+		}
+
+		$now = 'local' === $tz ? strtotime( Helper_Functions::get_local_time( 'H:i' ) ) : strtotime( Helper_Functions::get_site_server_time( 'H:i' ) );
+
+		if ( ! empty( $from ) && ! empty( $to ) ) {
+			$condition_result = ( ( $now >= $from ) && ( $now <= $to ) );
+		} elseif ( empty( $from ) ) {
+			$condition_result = $now <= $to;
+		} else {
+			$condition_result = $now >= $from;
+		}
 
 		return Helper_Functions::get_final_result( $condition_result, $operator );
 	}

@@ -10,24 +10,19 @@
   overflow: hidden;
   margin: 0;
   text-align: center;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box; }
+  box-sizing: border-box; }
   .premium-banner-ib img {
     display: block;
     position: relative; }
 
 .premium-banner-img-wrap {
-  -js-display: flex;
-  display: -webkit-box;
   display: -webkit-flex;
-  display: -moz-box;
   display: -ms-flexbox;
   display: flex;
   height: 100%; }
   .premium-banner-img-wrap .premium-banner-ib-img {
-    -webkit-flex-shrink: 0;
-        -ms-flex-negative: 0;
+    -ms-flex-negative: 0;
+            -webkit-flex-shrink: 0;
             flex-shrink: 0; }
 
 .premium-banner-ib-desc .premium-banner-read-more {
@@ -38,9 +33,7 @@
 
 .premium-banner-ib *,
 .premium-banner-ib .premium-banner-ib-desc {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box; }
+  box-sizing: border-box; }
 
 .premium-banner-ib img {
   min-width: 100%;
@@ -52,9 +45,7 @@
   padding: 15px;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   position: absolute;
   top: 0;
   left: 0;

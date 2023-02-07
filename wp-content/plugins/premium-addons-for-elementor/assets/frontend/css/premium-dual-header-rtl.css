@@ -6,9 +6,9 @@
   padding: 0;
   margin: 0;
   display: inline-block;
-  -webkit-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
-  transform: translate(0, 0);
+      -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 .premium-dual-header-first-clip .premium-dual-header-first-span,
@@ -34,10 +34,9 @@
 
 .premium-dual-header-first-header.gradient .premium-dual-header-first-span,
 .premium-dual-header-second-header.gradient {
-  -webkit-background-size: 300% 300% !important;
   background-size: 300% 300% !important;
   -webkit-animation: Gradient 10s ease-in-out infinite;
-  animation: Gradient 10s ease-in-out infinite;
+          animation: Gradient 10s ease-in-out infinite;
 }
 
 @-webkit-keyframes Gradient {

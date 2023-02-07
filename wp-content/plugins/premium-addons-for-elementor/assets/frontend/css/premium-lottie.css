@@ -2,10 +2,7 @@
 /*********************************************/
 .elementor-widget-premium-lottie .premium-lottie-animation {
   position: relative;
-  -js-display: inline-flex;
-  display: -webkit-inline-box;
   display: -webkit-inline-flex;
-  display: -moz-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-transition: all 0.3s ease-in-out;

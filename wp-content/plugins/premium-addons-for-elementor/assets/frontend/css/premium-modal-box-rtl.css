@@ -12,12 +12,11 @@
   white-space: nowrap;
   vertical-align: middle;
   -ms-touch-action: manipulation;
-  touch-action: manipulation;
+      touch-action: manipulation;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none;
+       -webkit-user-select: none;
+          user-select: none;
   background-image: none;
   border: 1px solid transparent;
 }
@@ -68,16 +67,12 @@ button.premium-modal-box-modal-close {
   outline: 0;
   padding: 0 !important;
   background: rgba(0, 0, 0, 0.5);
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -moz-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -moz-box-pack: center;
+       -webkit-align-items: center;
+          align-items: center;
   -ms-flex-pack: center;
-  justify-content: center;
+       -webkit-justify-content: center;
+          justify-content: center;
 }
 
 .premium-modal-box-modal .premium-modal-box-modal-dialog {
@@ -85,22 +80,15 @@ button.premium-modal-box-modal-close {
   max-height: -webkit-calc(100vh - 150px);
   max-height: calc(100vh - 150px);
   -js-display: flex;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -moz-box-orient: vertical;
-  -moz-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column;
+       -webkit-flex-direction: column;
+          flex-direction: column;
   opacity: 0;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  -webkit-border-radius: 6px;
   border-radius: 6px;
 }
 
@@ -140,30 +128,22 @@ button.premium-modal-box-modal-close {
 
 .premium-in {
   -js-display: flex !important;
-  display: -webkit-box !important;
-  display: -webkit-flex !important;
-  display: -moz-box !important;
   display: -ms-flexbox !important;
+  display: -webkit-flex !important;
   display: flex !important;
 }
 
 .premium-modal-box-modal-header {
   -js-display: flex;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -moz-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -moz-box-align: center;
+       -webkit-justify-content: space-between;
+          justify-content: space-between;
   -ms-flex-align: center;
-  align-items: center;
+       -webkit-align-items: center;
+          align-items: center;
   padding: 5px 15px;
   border-bottom: 1px solid #e5e5e5;
 }
@@ -174,16 +154,12 @@ button.premium-modal-box-modal-close {
 
 .premium-modal-box-modal-header .premium-modal-box-modal-title {
   -js-display: flex;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -moz-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
+       -webkit-align-items: center;
+          align-items: center;
   margin: 0;
   padding: 0;
 }
@@ -224,27 +200,21 @@ button.premium-modal-box-modal-close {
 /*Open Modal Button Style*/
 .premium-modal-trigger-container .premium-modal-trigger-btn {
   -js-display: inline-flex;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -moz-inline-box;
   display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
   display: inline-flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -moz-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
+       -webkit-align-items: center;
+          align-items: center;
   border: none;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 .premium-modal-trigger-container .premium-modal-trigger-btn.premium-btn-block {
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -moz-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center;
+       -webkit-justify-content: center;
+          justify-content: center;
 }
 
 .premium-modal-trigger-container .premium-modal-trigger-img,

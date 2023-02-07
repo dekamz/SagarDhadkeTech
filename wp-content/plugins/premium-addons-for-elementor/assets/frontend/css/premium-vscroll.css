@@ -54,20 +54,13 @@
   height: 13px;
   margin: 7px;
   position: relative;
-  -js-display: flex;
-  display: -webkit-box;
   display: -webkit-flex;
-  display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
   -webkit-justify-content: center;
-     -moz-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
   -webkit-align-items: center;
-     -moz-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   overflow: visible; }
@@ -86,8 +79,7 @@
     width: 8px;
     height: 8px;
     border: 1px solid #000;
-    -webkit-border-radius: 50%;
-            border-radius: 50%;
+    border-radius: 50%;
     position: absolute;
     z-index: 1;
     -webkit-transition: all 0.3s ease-in-out;
@@ -117,8 +109,7 @@
   .premium-vscroll-inner .premium-vscroll-dots.lines .premium-vscroll-dot-item span {
     width: 100%;
     height: 100%;
-    -webkit-border-radius: 0;
-            border-radius: 0; }
+    border-radius: 0; }
   .premium-vscroll-inner .premium-vscroll-dots.lines .premium-vscroll-dot-item.active span {
     -webkit-transform: scale(1);
         -ms-transform: scale(1);

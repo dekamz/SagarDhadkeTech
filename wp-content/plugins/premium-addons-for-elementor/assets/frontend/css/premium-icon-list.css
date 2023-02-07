@@ -1,20 +1,13 @@
 /**************** Premium Bullet List ****************/
 /*****************************************************/
 .premium-bullet-list-box {
-  -js-display: flex;
-  display: -webkit-box;
   display: -webkit-flex;
-  display: -moz-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-     -moz-box-orient: vertical;
-     -moz-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 0; }
@@ -32,10 +25,7 @@
             transform-origin: center center; }
 
 .premium-bullet-list-content {
-  -js-display: flex;
-  display: -webkit-box;
   display: -webkit-flex;
-  display: -moz-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-transition: all 0.3s ease-in-out;
@@ -52,17 +42,14 @@
     transition: all 0.3s ease-in-out; }
   .premium-bullet-list-content .premium-bullet-list-text span {
     margin: 0 5px;
-    -webkit-box-flex: 1;
     -webkit-flex: 1;
-       -moz-box-flex: 1;
         -ms-flex: 1;
             flex: 1; }
   .premium-bullet-list-content .premium-bullet-list-icon-text p {
     font-size: 18px;
     background-color: #eee;
     padding: 1px 5px;
-    -webkit-border-radius: 2px;
-            border-radius: 2px; }
+    border-radius: 2px; }
   .premium-bullet-list-content .premium-bullet-list-text span,
   .premium-bullet-list-content .premium-bullet-list-icon-text p,
   .premium-bullet-list-content .premium-bullet-list-wrapper img,
@@ -97,15 +84,10 @@
   position: absolute;
   top: 0.5em;
   z-index: 100;
-  -js-display: flex;
-  display: -webkit-box;
   display: -webkit-flex;
-  display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
   -webkit-justify-content: center;
-     -moz-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center; }
   .premium-bullet-list-content:not(:last-of-type) .premium-bullet-list-connector .premium-icon-connector-content:after {
@@ -130,9 +112,7 @@ li.premium-bullet-list-content.premium-bullet-list-content-inline:first-child {
 
 .premium-bullet-list-divider:not(:last-child) {
   width: 100%;
-  -webkit-box-flex: 0;
   -webkit-flex: 0 0 100%;
-     -moz-box-flex: 0;
       -ms-flex: 0 0 100%;
           flex: 0 0 100%;
   overflow: hidden; }
@@ -199,10 +179,8 @@ li.premium-bullet-list-content {
   font-size: 11px;
   top: auto;
   min-width: -webkit-max-content;
-  min-width: -moz-max-content;
   min-width: max-content;
   height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content; }
 
 .premium-bullet-list-content .premium-bullet-list-icon-text p {

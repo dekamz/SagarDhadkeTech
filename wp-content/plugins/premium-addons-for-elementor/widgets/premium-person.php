@@ -1097,7 +1097,7 @@ class Premium_Person extends Widget_Base {
 			'doc_2',
 			array(
 				'type'            => Controls_Manager::RAW_HTML,
-				'raw'             => sprintf( '<a href="%s" target="_blank">%s</a>', $doc2_url, __( 'I\'m not able to see Font Awesome icons in the widget »', 'premium-addons-for-elementor' ) ),
+				'raw'             => sprintf( '<a href="%s" target="_blank">%s</a>', $doc2_url, __( 'I\'m not able to see the social icons in the widget »', 'premium-addons-for-elementor' ) ),
 				'content_classes' => 'editor-pa-doc',
 			)
 		);

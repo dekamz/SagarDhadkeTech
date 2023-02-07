@@ -11,9 +11,7 @@
     height: 25px;
     margin-bottom: 50px;
     background-color: #f5f5f5;
-    -webkit-border-radius: 4px;
     border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -21,13 +19,10 @@
     background-color: transparent;
     width: 100%;
     -js-display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     height: auto;
-    -webkit-box-shadow: none;
     box-shadow: none;
 }
 
@@ -35,7 +30,6 @@
     position: relative;
     width: 25px;
     height: 25px;
-    -webkit-border-radius: 50%;
     border-radius: 50%;
     overflow: hidden;
     background-color: #f5f5f5;
@@ -73,19 +67,10 @@
     line-height: 20px;
     background: #6ec1e4;
     text-align: center;
-    -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
 }
 
 .premium-progressbar-striped .premium-progressbar-bar {
-    background-image: -webkit-linear-gradient(-135deg,
-            rgba(255, 255, 255, 0.15) 25%,
-            transparent 25%,
-            transparent 50%,
-            rgba(255, 255, 255, 0.15) 50%,
-            rgba(255, 255, 255, 0.15) 75%,
-            transparent 75%,
-            transparent);
     background-image: -webkit-linear-gradient(45deg,
             rgba(255, 255, 255, 0.15) 25%,
             transparent 25%,
@@ -102,20 +87,18 @@
             rgba(255, 255, 255, 0.15) 75%,
             transparent 75%,
             transparent);
-    -webkit-background-size: 40px 40px;
     background-size: 40px 40px;
 }
 
 .premium-progressbar-active .premium-progressbar-bar {
     -webkit-animation: progress-bar-stripes 2s linear infinite;
-    animation: progress-bar-stripes 2s linear infinite;
+            animation: progress-bar-stripes 2s linear infinite;
 }
 
 .premium-progressbar-gradient .premium-progressbar-bar {
-    -webkit-background-size: 400% 400% !important;
     background-size: 400% 400% !important;
     -webkit-animation: progress-bar-gradient 10s ease-in-out infinite;
-    animation: progress-bar-gradient 10s ease-in-out infinite;
+            animation: progress-bar-gradient 10s ease-in-out infinite;
 }
 
 .premium-progressbar-bar {
@@ -147,9 +130,9 @@
     right: 50%;
     top: 0;
     left: 0;
-    -webkit-transform: translateX(12.5px);
     -ms-transform: translateX(12.5px);
-    transform: translateX(12.5px);
+        -webkit-transform: translateX(12.5px);
+            transform: translateX(12.5px);
     z-index: 1;
 }
 
@@ -172,9 +155,9 @@
     border-right: 7px solid transparent;
     border-left: 7px solid transparent;
     border-top: 11px solid;
-    -webkit-transform: translateX(50%);
     -ms-transform: translateX(50%);
-    transform: translateX(50%);
+        -webkit-transform: translateX(50%);
+            transform: translateX(50%);
 }
 
 .premium-progressbar-pin {
@@ -203,28 +186,18 @@
     width: 100%;
     height: 100%;
     -js-display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -moz-box-orient: vertical;
-    -moz-box-direction: normal;
     -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -moz-box-pack: center;
+         -webkit-flex-direction: column;
+            flex-direction: column;
     -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -moz-box-align: center;
+         -webkit-justify-content: center;
+            justify-content: center;
     -ms-flex-align: center;
-    align-items: center;
+         -webkit-align-items: center;
+            align-items: center;
     text-align: center;
 }
 
@@ -240,7 +213,7 @@
     width: 100%;
     height: 100%;
     -webkit-clip-path: inset(0 0 0 50%);
-    clip-path: inset(0 0 0 50%);
+            clip-path: inset(0 0 0 50%);
 }
 
 .premium-progressbar-circle-wrap .premium-progressbar-circle div {
@@ -252,22 +225,21 @@
     border-width: 6px;
     border-style: solid;
     border-color: #54595f;
-    -webkit-border-radius: 50%;
     border-radius: 50%;
     -webkit-clip-path: inset(0 50% 0 0);
-    clip-path: inset(0 50% 0 0);
+            clip-path: inset(0 50% 0 0);
 }
 
 .premium-progressbar-circle-wrap .premium-progressbar-circle .premium-progressbar-circle-left {
-    -webkit-transform: rotate(0);
     -ms-transform: rotate(0);
-    transform: rotate(0);
+        -webkit-transform: rotate(0);
+            transform: rotate(0);
 }
 
 .premium-progressbar-circle-wrap .premium-progressbar-circle .premium-progressbar-circle-right {
-    -webkit-transform: rotate(-180deg);
     -ms-transform: rotate(-180deg);
-    transform: rotate(-180deg);
+        -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
     visibility: hidden;
 }
 
@@ -275,7 +247,6 @@
     width: 100%;
     height: 100%;
     border: 6px solid #eee;
-    -webkit-border-radius: 50%;
     border-radius: 50%;
 }
 
@@ -297,11 +268,9 @@
 }
 
 .premium-progressbar-hf-circle-wrap .premium-progressbar-left-label {
-    -webkit-box-ordinal-group: 2;
-    -webkit-order: 1;
-    -moz-box-ordinal-group: 2;
     -ms-flex-order: 1;
-    order: 1;
+         -webkit-order: 1;
+            order: 1;
 }
 
 .premium-progressbar-hf-circle {
@@ -311,7 +280,7 @@
     width: 100%;
     height: 100%;
     -webkit-clip-path: inset(0 0 50% 0);
-    clip-path: inset(0 0 50% 0);
+            clip-path: inset(0 0 50% 0);
 }
 
 .premium-progressbar-hf-circle-progress {
@@ -321,13 +290,12 @@
     height: 100%;
     width: 100%;
     border: 12px solid #000;
-    -webkit-border-radius: 50%;
     border-radius: 50%;
     -webkit-clip-path: inset(50% 0 0 0);
-    clip-path: inset(50% 0 0 0);
-    -webkit-transform: rotate(0deg);
+            clip-path: inset(50% 0 0 0);
     -ms-transform: rotate(0deg);
-    transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
     -webkit-transition: -webkit-transform 1500ms linear;
     transition: -webkit-transform 1500ms linear;
     transition: transform 1500ms linear;
@@ -338,7 +306,6 @@
     height: 100%;
     width: 100%;
     border: 12px solid #eee;
-    -webkit-border-radius: 50%;
     border-radius: 50%;
 }
 
@@ -348,18 +315,13 @@
     font-size: 12px;
     font-weight: 400;
     -js-display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -moz-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
+         -webkit-justify-content: space-between;
+            justify-content: space-between;
 }
-
 
 @-webkit-keyframes progress-bar-stripes {
     from {
@@ -411,11 +373,11 @@
 
 @media (max-width: 768px) {
     .premium-progressbar-center-label {
-        -webkit-transform: rotate(-90deg) !important;
         -ms-transform: rotate(-90deg) !important;
-        transform: rotate(-90deg) !important;
-        -webkit-transform-origin: 0;
+            -webkit-transform: rotate(-90deg) !important;
+                transform: rotate(-90deg) !important;
         -ms-transform-origin: 0;
-        transform-origin: 0;
+            -webkit-transform-origin: 0;
+                transform-origin: 0;
     }
 }

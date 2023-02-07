@@ -6,17 +6,10 @@
           transform: none !important; }
 
 .premium-video-box-container {
-  -js-display: flex;
-  display: -webkit-box;
   display: -webkit-flex;
-  display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-     -moz-box-orient: vertical;
-     -moz-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column; }
 
@@ -50,8 +43,7 @@
   right: 0;
   width: 100%;
   height: 100%;
-  -webkit-background-size: cover;
-          background-size: cover;
+  background-size: cover;
   background-position: 50%;
   cursor: pointer;
   margin: auto;
@@ -123,14 +115,10 @@
   line-height: 1;
   border: none;
   background-color: #000;
-  -o-object-fit: contain;
-     object-fit: contain; }
+  object-fit: contain; }
 
 .premium-video-box-container .premium-video-box-vimeo-wrap {
-  -js-display: flex;
-  display: -webkit-box;
   display: -webkit-flex;
-  display: -moz-box;
   display: -ms-flexbox;
   display: flex;
   position: absolute;
@@ -148,9 +136,7 @@
   height: 60px;
   background: rgba(23, 35, 34, 0.75);
   margin-right: 1px;
-  -webkit-box-flex: 1;
   -webkit-flex: 1 0 auto;
-     -moz-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
   padding: 0; }
@@ -161,8 +147,7 @@
   margin: 5px;
   padding: 0;
   border: 0;
-  -webkit-border-radius: 50%;
-          border-radius: 50%; }
+  border-radius: 50%; }
 
 .premium-video-box-vimeo-wrap .premium-video-box-vimeo-headers {
   font-size: 10px; }
@@ -191,10 +176,7 @@
   letter-spacing: normal; }
 
 .premium-video-box-playlist-container {
-  -js-display: flex;
-  display: -webkit-box;
   display: -webkit-flex;
-  display: -moz-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-wrap: wrap;
@@ -280,8 +262,7 @@
   .premium-video-box-container.premium-video-box-sticky-apply .premium-video-box-container:before {
     visibility: hidden; }
   .premium-video-box-container.premium-video-box-sticky-apply .premium-video-box-sticky-infobar-wrap.premium-video-box-sticky-apply .premium-video-box-inner-wrap {
-    -webkit-box-shadow: unset;
-            box-shadow: unset; }
+    box-shadow: unset; }
 
 .premium-video-box-sticky-close,
 .premium-video-box-sticky-infobar {
@@ -294,33 +275,20 @@
   z-index: 99999;
   height: 14px;
   width: 14px;
-  -webkit-box-sizing: content-box;
-     -moz-box-sizing: content-box;
-          box-sizing: content-box;
-  -webkit-border-radius: 100%;
-          border-radius: 100%;
-  -js-display: flex;
-  display: -webkit-box;
+  box-sizing: content-box;
+  border-radius: 100%;
   display: -webkit-flex;
-  display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
   -webkit-justify-content: center;
-     -moz-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
   -webkit-align-items: center;
-     -moz-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
 
 .premium-video-box-sticky-apply .premium-video-box-play-icon-container {
-  -js-display: flex;
-  display: -webkit-box;
   display: -webkit-flex;
-  display: -moz-box;
   display: -ms-flexbox;
   display: flex; }
 

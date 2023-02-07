@@ -70,7 +70,7 @@ class Url_Fetcher {
 	 *
 	 * @return boolean                        Was the fetch successful?
 	 */
-	public function fetch( Page $static_page ) {
+	public function fetch( Page $static_page, $prepare_url = true ) {
 		$url = $static_page->url;
 
 		// Windows support.
@@ -92,7 +92,11 @@ class Url_Fetcher {
 		$temp_filename = wp_tempnam();
 
 		Util::debug_log( "Fetching URL and saving it to: " . $temp_filename );
-		$url      = $static_page->get_handler()->prepare_url( $url );
+
+        if ( $prepare_url ) {
+            $url = $static_page->get_handler()->prepare_url( $url );
+        }
+
 		$response = self::remote_get( $url, $temp_filename );
 
 		$filesize = file_exists( $temp_filename ) ? filesize( $temp_filename ) : 0;
@@ -126,6 +130,7 @@ class Url_Fetcher {
 			}
 
 			if ( $relative_filename !== null ) {
+                $relative_filename      = apply_filters( 'simply_static_relative_filename', $relative_filename, $static_page );
 				$static_page->file_path = $relative_filename;
 				$file_path              = $this->archive_dir . $relative_filename;
 
@@ -191,6 +196,11 @@ class Url_Fetcher {
 			}
 		}
 
+        $page_handler = $static_page->get_handler();
+
+        $path_info = apply_filters( 'simply_static_page_path_info', $page_handler->get_path_info( $path_info ), $static_page );
+        $relative_file_dir = apply_filters( 'simple_static_page_relative_file_dir', $page_handler->get_relative_dir( $relative_file_dir ), $static_page );
+
 		$create_dir = wp_mkdir_p( $this->archive_dir . urldecode( $relative_file_dir ) );
 		if ( $create_dir === false ) {
 			Util::debug_log( "Unable to create temporary directory: " . $this->archive_dir . urldecode( $relative_file_dir ) );
@@ -214,7 +224,7 @@ class Url_Fetcher {
 
 	public static function remote_get( $url, $filename = null ) {
 		$basic_auth_digest = Options::instance()->get( 'http_basic_auth_digest' );
-
+        Util::debug_log( "Fetching URL: " . $url );
 		$args = apply_filters(
 			'ss_remote_get_args',
 			array(

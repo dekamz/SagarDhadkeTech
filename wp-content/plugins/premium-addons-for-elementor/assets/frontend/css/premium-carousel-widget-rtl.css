@@ -3,21 +3,15 @@
 .premium-carousel-wrapper a.carousel-arrow,
 .premium-carousel-wrapper a.ver-carousel-arrow {
     -js-display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -moz-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -moz-box-pack: center;
+         -webkit-align-items: center;
+            align-items: center;
     -ms-flex-pack: center;
-    justify-content: center;
+         -webkit-justify-content: center;
+            justify-content: center;
     width: 2em;
     height: 2em;
     line-height: 0;
@@ -29,7 +23,6 @@
     transition: all 0.3s ease-in-out;
     -webkit-appearance: inherit;
     border: none;
-    -webkit-box-shadow: none;
     box-shadow: none;
 }
 
@@ -40,7 +33,6 @@
 }
 
 .premium-carousel-wrapper a.slick-arrow:hover {
-    -webkit-box-shadow: none !important;
     box-shadow: none !important;
 }
 
@@ -54,32 +46,26 @@
 
 .premium-carousel-wrapper a.ver-carousel-arrow {
     right: 50%;
-    -webkit-transform: translateX(50%);
     -ms-transform: translateX(50%);
-    transform: translateX(50%);
+        -webkit-transform: translateX(50%);
+            transform: translateX(50%);
 }
 
 .premium-carousel-dots-above ul.slick-dots {
     position: absolute;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
     -js-display: flex;
-    display: -webkit-box;
-    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     top: 50%;
-    -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    -webkit-flex-direction: column;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -moz-box-orient: vertical;
-    -moz-box-direction: normal;
+        -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
     -ms-flex-direction: column;
-    flex-direction: column;
+         -webkit-flex-direction: column;
+            flex-direction: column;
 }
 
 /*
@@ -98,16 +84,17 @@
 }
 
 /* Ripple Out */
+
 @-webkit-keyframes hvr-ripple-out {
     0% {
         -webkit-transform: scale(1);
-        transform: scale(1);
+                transform: scale(1);
         opacity: 1;
     }
 
     100% {
         -webkit-transform: scale(1.5);
-        transform: scale(1.5);
+                transform: scale(1.5);
         opacity: 0;
     }
 }
@@ -115,13 +102,13 @@
 @keyframes hvr-ripple-out {
     0% {
         -webkit-transform: scale(1);
-        transform: scale(1);
+                transform: scale(1);
         opacity: 1;
     }
 
     100% {
         -webkit-transform: scale(1.5);
-        transform: scale(1.5);
+                transform: scale(1.5);
         opacity: 0;
     }
 }
@@ -142,14 +129,13 @@
 .premium-carousel-ripple-yes ul.slick-dots li:hover:before {
     content: "";
     position: absolute;
-    -webkit-transform: scale(1);
     -ms-transform: scale(1);
-    transform: scale(1);
+        -webkit-transform: scale(1);
+            transform: scale(1);
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    -webkit-border-radius: 50%;
     border-radius: 50%;
     pointer-events: none;
     background-color: rgba(0, 0, 0, 0.15);
@@ -161,21 +147,21 @@
 
 .premium-carousel-ripple-yes ul.slick-dots li:hover:before {
     -webkit-animation: hvr-ripple-out 1.3s infinite;
-    animation: hvr-ripple-out 1.3s infinite;
+            animation: hvr-ripple-out 1.3s infinite;
 }
 
 .premium-carousel-wrapper.premium-carousel-scale .slick-slide {
-    -webkit-transform: scale(1.25, 1.25);
     -ms-transform: scale(1.25, 1.25);
-    transform: scale(1.25, 1.25);
+        -webkit-transform: scale(1.25, 1.25);
+            transform: scale(1.25, 1.25);
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
 
 .premium-carousel-wrapper.premium-carousel-scale div.slick-active {
-    -webkit-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
-    transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
 }
 
 [dir="rtl"] .premium-carousel-inner .slick-slide {

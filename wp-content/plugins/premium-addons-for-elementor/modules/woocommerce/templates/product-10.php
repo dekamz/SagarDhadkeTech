@@ -92,8 +92,12 @@ $out_of_stock = 'outofstock' === get_post_meta( $product_id, '_stock_status', tr
 			woocommerce_template_loop_product_link_open();
 
 		if ( 'yes' === $this->get_option_value( 'product_image' ) ) {
+
+			$thumb_id = get_post_thumbnail_id( $product_id );
+			$alt      = get_post_meta( $thumb_id, '_wp_attachment_image_alt', true );
+
 			$product_thumb = has_post_thumbnail( $product_id ) ? get_the_post_thumbnail_url( $product_id, $image_size ) : wc_placeholder_img_src( $image_size );
-			echo '<img src="' . esc_url( $product_thumb ) . '">';
+			echo '<img src="' . esc_url( $product_thumb ) . '" alt="' . esc_attr( $alt ) . '">';
 
 			if ( 'swap' === $settings['hover_style'] ) {
 				Premium_Template_Tags::get_current_product_swap_image( $image_size );

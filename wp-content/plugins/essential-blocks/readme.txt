@@ -3,7 +3,7 @@ Contributors: wpdevteam, re_enter_rupok, asif2bd, rahat89, priyomukul, hztyfoon,
 Tags: gutenberg, blocks, editor, gutenberg blocks, block, visual editor, page builder
 Requires at least: 5.6
 Tested up to: 6.1
-Stable tag: 3.8.6
+Stable tag: 3.8.7
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -166,6 +166,11 @@ Yes. You will need the Gutenberg block editor installed and activated in your Wo
 If you found the recent version of Essential Blocks isn't working or conflicting with other plugins then you can use earlier versions of the plugin.
 
 == Changelog ==
+
+= 3.8.7 - 31/01/2023 =
+- Fixed: Style not loading in FSE templates if no posts in query loop
+- Added: Update message for Plugin new version
+- Fixed: Security update & bugfix
 
 = 3.8.6 - 09/01/2023 =
 - Added: Justify Alignment control in **Advanced Heading Block**
@@ -600,4 +605,5 @@ Initial stable release
 
 == Upgrade Notice ==
 
-[Major Update] New block, bugfix and stability
+= 3.8.7 =
+- Hot Fix: Style not loading in FSE templates if no posts in query loop

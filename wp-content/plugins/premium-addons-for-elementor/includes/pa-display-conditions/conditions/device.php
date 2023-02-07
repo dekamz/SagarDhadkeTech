@@ -65,7 +65,7 @@ class Device extends Condition {
 
 		require_once PREMIUM_ADDONS_PATH . 'includes/pa-display-conditions/mobile-detector.php';
 
-		$detect = new \Mobile_Detect();
+		$detect = new \PA_Mobile_Detect();
 
 		$device = 'desktop';
 		if ( $detect->isTablet() ) {

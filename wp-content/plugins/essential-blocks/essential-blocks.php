@@ -5,7 +5,7 @@
  * Description: The Ultimate Blocks Library for WordPress Gutenberg editor.
  * Author: WPDeveloper
  * Author URI: https://wpdeveloper.com
- * Version: 3.8.6
+ * Version: 3.8.7
  * License: GPL3+
  * License URI: http://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain: essential-blocks
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define things
-define('ESSENTIAL_BLOCKS_VERSION', '3.8.6');
+define('ESSENTIAL_BLOCKS_VERSION', '3.8.7');
 define('ESSENTIAL_BLOCKS_NAME', 'essensial-blocks');
 define('ESSENTIAL_BLOCKS_DIR_PATH', plugin_dir_path(__FILE__));
 define('ESSENTIAL_BLOCKS_ADMIN_URL', plugin_dir_url(__FILE__));

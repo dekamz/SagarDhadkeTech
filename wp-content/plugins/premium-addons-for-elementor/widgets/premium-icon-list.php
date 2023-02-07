@@ -1572,6 +1572,8 @@ class Premium_Icon_List extends Widget_Base {
 			)
 		);
 
+		$selector = $draw_icon ? '{{WRAPPER}} .premium-drawable-icon *, ' : '';
+
 		$this->add_control(
 			'icon_color',
 			array(
@@ -1582,7 +1584,7 @@ class Premium_Icon_List extends Widget_Base {
 				),
 				'selectors' => array(
 					'{{WRAPPER}} .premium-bullet-list-wrapper i, {{WRAPPER}} .premium-bullet-list-icon-text p' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .premium-drawable-icon *, {{WRAPPER}} svg:not([class*="premium-"])' => 'fill: {{VALUE}};',
+					$selector . '{{WRAPPER}} svg:not([class*="premium-"])' => 'fill: {{VALUE}};',
 					'{{WRAPPER}} .premium-bullet-list-blur:hover .premium-bullet-list-wrapper i, {{WRAPPER}} .premium-bullet-list-blur:hover .premium-bullet-list-wrapper svg, {{WRAPPER}} .premium-bullet-list-blur:hover .premium-bullet-list-wrapper .premium-bullet-list-icon-text p' => 'text-shadow: 0 0 3px {{VALUE}};',
 				),
 			)
@@ -2401,15 +2403,15 @@ class Premium_Icon_List extends Widget_Base {
 
 					if ( 'icon' === $item['icon_type'] ) {
 						if ( 'yes' !== $item['draw_svg'] ) {
-
-							Icons_Manager::render_icon(
-								$item['premium_icon_list_font_updated'],
-								array(
-									'class'       => array( 'premium-svg-nodraw' ),
-									'aria-hidden' => 'true',
-								)
-							);
-
+							echo '<div class="premium-drawable-icon">';
+								Icons_Manager::render_icon(
+									$item['premium_icon_list_font_updated'],
+									array(
+										'class'       => array( 'premium-svg-nodraw' ),
+										'aria-hidden' => 'true',
+									)
+								);
+							echo '</div>';
 						} else {
 							?>
 							<div <?php echo wp_kses_post( $this->get_render_attribute_string( $animation_key ) ); ?>>
@@ -2686,9 +2688,9 @@ class Premium_Icon_List extends Widget_Base {
 								'aria-hidden': true
 								}, 'i' , 'object' );
 							#>
-
-								{{{ iconHTML.value }}}
-
+								<div class="premium-drawable-icon">
+									{{{ iconHTML.value }}}
+								</div>
 							<# } else { #>
 								<div {{{ view.getRenderAttributeString( animationKey ) }}}>
 									<i class="{{ item.premium_icon_list_font_updated.value }}"></i>

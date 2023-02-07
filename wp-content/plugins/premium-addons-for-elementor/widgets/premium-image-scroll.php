@@ -267,18 +267,6 @@ class Premium_Image_Scroll extends Widget_Base {
 		);
 
 		$this->add_control(
-			'link_text',
-			array(
-				'label'       => __( 'Link Title', 'premium-addons-for-elementor' ),
-				'type'        => Controls_Manager::TEXT,
-				'condition'   => array(
-					'link_switcher' => 'yes',
-				),
-				'label_block' => true,
-			)
-		);
-
-		$this->add_control(
 			'mask_image_scroll_switcher',
 			array(
 				'label'     => esc_html__( 'Mask Image Shape', 'premium-addons-for-elementor' ),
@@ -896,24 +884,15 @@ class Premium_Image_Scroll extends Widget_Base {
 
 		$link_type = $settings['link_type'];
 
-		$link_url = ( 'url' === $link_type ) ? $settings['link']['url'] : get_permalink( $settings['existing_page'] );
-
 		if ( 'yes' === $settings['link_switcher'] ) {
+
+			$link_url = 'url' === $link_type ? $settings['link'] : get_permalink( $settings['existing_page'] );
+
 			$this->add_render_attribute( 'link', 'class', 'premium-image-scroll-link' );
 
-			if ( ! empty( $settings['link']['is_external'] ) ) {
-				$this->add_render_attribute( 'link', 'target', '_blank' );
-			}
-
-			if ( ! empty( $settings['link']['nofollow'] ) ) {
-				$this->add_render_attribute( 'link', 'rel', 'nofollow' );
-			}
-
-			if ( ! empty( $settings['link_text'] ) ) {
-				$this->add_render_attribute( 'link', 'title', $settings['link_text'] );
-			}
-
-			if ( ! empty( $settings['link']['url'] ) || ! empty( $settings['existing_page'] ) ) {
+			if ( 'url' === $link_type ) {
+				$this->add_link_attributes( 'link', $link_url );
+			} else {
 				$this->add_render_attribute( 'link', 'href', $link_url );
 			}
 		}
@@ -974,7 +953,7 @@ class Premium_Image_Scroll extends Widget_Base {
 							<div class="premium-image-scroll-overlay">
 							<?php
 						endif;
-						if ( 'yes' === $settings['link_switcher'] && ! empty( $link_url ) ) :
+						if ( 'yes' === $settings['link_switcher'] ) :
 							?>
 								<a <?php echo wp_kses_post( $this->get_render_attribute_string( 'link' ) ); ?>></a>
 							<?php
@@ -1028,9 +1007,6 @@ class Premium_Image_Scroll extends Widget_Base {
 
 				view.addRenderAttribute( 'link', 'href',  url );
 
-				if ( 'yes' == settings.link_switcher ) {
-					view.addRenderAttribute( 'link', 'title', settings.link_text );
-				}
 			}
 
 			view.addRenderAttribute( 'container', 'class', 'premium-image-scroll-container' );

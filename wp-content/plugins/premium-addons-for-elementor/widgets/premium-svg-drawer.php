@@ -109,6 +109,7 @@ class Premium_SVG_Drawer extends Widget_Base {
 	public function get_script_depends() {
 		return array(
 			'pa-fontawesome-all',
+			'pa-scrolltrigger',
 			'pa-tweenmax',
 			'pa-gsap',
 			'pa-motionpath',

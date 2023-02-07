@@ -369,8 +369,8 @@
 }
 
 .editor-pa-img {
-    max-width: 50px;
-    max-height: 50px;
+    max-width: 30px !important;
+    max-height: 30px;
     vertical-align: middle;
 }
 

@@ -5,7 +5,7 @@ Donate Link: https://premiumaddons.com/?utm_source=wp-repo&utm_medium=link&utm_c
 Requires at least: 5.0
 Tested Up To: 6.1.1
 Requires PHP: 7.0
-Stable Tag: 4.9.46
+Stable Tag: 4.9.48
 License: GPL v3.0
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -219,6 +219,26 @@ Premium Addonsis 100% Ads Free, Ads can only be detected from Youtube videos, th
 14. Premium Progress Bar Widget
 
 == Changelog ==
+
+= 4.9.48 =
+
+- Tweak: Added Close Menu After Click option in Mega Menu widget.
+- Tweak: Added load Google Maps on Scroll option for better performance.
+- Tweak: Google Maps widget options rearranged for better UX.
+- Tweak: Added responsive controls for Center Padding option in Carousel widget.
+- Fixed: Background Image option in Video Box widget not working on RTL sites.
+- Fixed: Custom link attributes not working for some widgets.
+- Fixed: Switchers not showing in Mega Menu window.
+- Fixed: WPML compatibility issues.
+
+= 4.9.47 =
+
+- New: Added Advanced Marker option in Google Maps widget - [here](https://premiumaddons.com/google-maps-widget-for-elementor-page-builder/).
+- Tweak: Added styling options for marker info container in Google Maps widget.
+- Tweak: Use Time Range display condition to show/hide content before/after specific time.
+- Tweak: Render images` Alt attribute in Woocommerce Products Listing widget.
+- Tweak: CSS files size minimized for better performance.
+- Fixed: Fatal error when WPML is active on a multisite network level, but deactivated on a site level.
 
 = 4.9.46 =
 

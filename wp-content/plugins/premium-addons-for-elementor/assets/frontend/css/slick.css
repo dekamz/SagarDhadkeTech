@@ -1,12 +1,9 @@
 .slick-slider {
   position: relative;
   display: block;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-     -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   -ms-touch-action: pan-y;
@@ -77,20 +74,13 @@
 .premium-instafeed-container a.carousel-arrow,
 .premium-persons-container a.carousel-arrow,
 .premium-woocommerce a.carousel-arrow {
-  -js-display: flex;
-  display: -webkit-box;
   display: -webkit-flex;
-  display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
   -webkit-align-items: center;
-     -moz-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
   -webkit-justify-content: center;
-     -moz-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   width: 2em;
@@ -104,8 +94,7 @@
   transition: all 0.3s ease-in-out;
   -webkit-appearance: inherit;
   border: none;
-  -webkit-box-shadow: none;
-          box-shadow: none; }
+  box-shadow: none; }
 
 div[class^="premium-"] .slick-arrow i {
   display: block; }
@@ -139,12 +128,10 @@ a.ver-carousel-arrow.carousel-prev {
   top: -45px; }
 
 a.circle-bg {
-  -webkit-border-radius: 100%;
-          border-radius: 100%; }
+  border-radius: 100%; }
 
 a.circle-border {
-  -webkit-border-radius: 100%;
-          border-radius: 100%;
+  border-radius: 100%;
   border: solid black; }
 
 a.square-border {
@@ -163,20 +150,13 @@ a.square-border {
 
 ul.slick-dots li {
   font-size: 10px;
-  -js-display: inline-flex;
-  display: -webkit-inline-box;
   display: -webkit-inline-flex;
-  display: -moz-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-pack: center;
   -webkit-justify-content: center;
-     -moz-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
   -webkit-align-items: center;
-     -moz-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   margin: 5px;

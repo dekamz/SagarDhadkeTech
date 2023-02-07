@@ -368,7 +368,7 @@ class Helper_Functions {
 
 		include_once ABSPATH . 'wp-admin/includes/plugin.php';
 
-		$is_active = is_plugin_active( $slug );
+		$is_active = in_array( $slug, (array) get_option( 'active_plugins', array() ), true );
 
 		return $is_active;
 

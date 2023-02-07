@@ -11,16 +11,12 @@
 
 .premium-pricing-icon-container {
     -js-display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -moz-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center;
+         -webkit-justify-content: center;
+            justify-content: center;
     line-height: 0;
 }
 
@@ -35,7 +31,6 @@
 .premium-pricing-icon-container .premium-pricing-image img {
     width: 25px;
     height: 25px;
-    -o-object-fit: cover;
     object-fit: cover;
 }
 
@@ -75,17 +70,17 @@
     top: 35px;
     width: 100px;
     text-align: center;
-    -webkit-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
     display: block;
     text-transform: uppercase;
 }
 
 .premium-badge-triangle.premium-badge-right span {
-    -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
     right: 0;
 }
 
@@ -94,7 +89,6 @@
     min-height: 4em;
     line-height: 4em;
     text-align: center;
-    -webkit-border-radius: 100%;
     border-radius: 100%;
     position: absolute;
     z-index: 1;
@@ -102,27 +96,27 @@
 
 .premium-badge-stripe {
     position: absolute;
-    -webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
     width: 15em;
     overflow: hidden;
     height: 15em;
 }
 
 .premium-badge-stripe.premium-badge-left {
-    -webkit-transform: rotate(0);
     -ms-transform: rotate(0);
-    transform: rotate(0);
+        -webkit-transform: rotate(0);
+            transform: rotate(0);
 }
 
 .premium-badge-stripe .corner {
     text-align: center;
     left: 0;
     width: 150%;
-    -webkit-transform: translateY(-50%) translateX(-50%) translateX(35px) rotate(-45deg);
     -ms-transform: translateY(-50%) translateX(-50%) translateX(35px) rotate(-45deg);
-    transform: translateY(-50%) translateX(-50%) translateX(35px) rotate(-45deg);
+        -webkit-transform: translateY(-50%) translateX(-50%) translateX(35px) rotate(-45deg);
+            transform: translateY(-50%) translateX(-50%) translateX(35px) rotate(-45deg);
     margin-top: 35px;
     font-size: 13px;
     line-height: 2;
@@ -132,7 +126,6 @@
 
 .premium-badge-flag .corner {
     text-align: center;
-    -webkit-border-radius: 4px 4px 0 4px;
     border-radius: 4px 4px 0 4px;
     padding: 3px 15px;
     position: absolute;
@@ -170,18 +163,12 @@
 
 .premium-pricing-list {
     -js-display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -moz-box-orient: vertical;
-    -moz-box-direction: normal;
     -ms-flex-direction: column;
-    flex-direction: column;
+         -webkit-flex-direction: column;
+            flex-direction: column;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -189,16 +176,12 @@
 
 .premium-pricing-list .premium-pricing-list-item {
     -js-display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -moz-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
+         -webkit-align-items: center;
+            align-items: center;
 }
 
 .premium-pricing-list .premium-pricing-list-item svg {
@@ -209,7 +192,6 @@
 .premium-pricing-list .premium-pricing-list-item img {
     width: 30px;
     height: 30px;
-    -o-object-fit: cover;
     object-fit: cover;
 }
 
@@ -228,7 +210,6 @@
     right: 0;
     visibility: hidden;
     padding: 15px 20px;
-    -webkit-border-radius: 5px;
     border-radius: 5px;
     min-width: 200px;
     overflow: hidden;

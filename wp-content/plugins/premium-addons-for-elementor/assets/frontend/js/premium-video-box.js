@@ -76,7 +76,7 @@
                     elementorFrontend.waypoint($videoBoxElement, function () {
                         playVideo();
                     }, {
-                        offset: 0,
+                        offset: 'top-in-view',
                         triggerOnce: false
                     });
 
@@ -103,7 +103,7 @@
                         elementorFrontend.waypoint($videoBoxElement, function () {
                             playVideo();
                         }, {
-                            offset: 0
+                            offset: 'top-in-view'
                         });
                     } else {
                         playVideo();

@@ -6,6 +6,7 @@
 namespace PremiumAddons\Widgets;
 
 // Elementor Classes.
+use Elementor\Icons_Manager;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Repeater;
@@ -106,7 +107,8 @@ class Premium_Maps extends Widget_Base {
 	 */
 	public function get_script_depends() {
 		return array(
-			'google-maps-cluster',
+			'elementor-waypoints',
+			'pa-maps-cluster',
 			'pa-maps-api',
 			'pa-maps',
 		);
@@ -205,7 +207,7 @@ class Premium_Maps extends Widget_Base {
 				'type'        => Controls_Manager::TEXT,
 				'dynamic'     => array( 'active' => true ),
 				'description' => __( 'Center latitude and longitude are required to identify your location', 'premium-addons-for-elementor' ),
-				'default'     => '18.591212',
+				'default'     => '59.3347981',
 				'label_block' => true,
 				'condition'   => array(
 					'premium_map_ip_location!' => 'true',
@@ -220,7 +222,7 @@ class Premium_Maps extends Widget_Base {
 				'type'        => Controls_Manager::TEXT,
 				'dynamic'     => array( 'active' => true ),
 				'description' => __( 'Center latitude and longitude are required to identify your location', 'premium-addons-for-elementor' ),
-				'default'     => '73.741261',
+				'default'     => '18.0601028',
 				'label_block' => true,
 				'condition'   => array(
 					'premium_map_ip_location!' => 'true',
@@ -248,38 +250,19 @@ class Premium_Maps extends Widget_Base {
 
 		$repeater = new REPEATER();
 
-		$repeater->add_control(
-			'pin_icon',
-			array(
-				'label'   => __( 'Custom Icon', 'premium-addons-for-elementor' ),
-				'type'    => Controls_Manager::MEDIA,
-				'dynamic' => array( 'active' => true ),
-			)
-		);
+		$repeater->start_controls_tabs( 'marker_tabs' );
 
-		$repeater->add_control(
-			'pin_icon_size',
+		$repeater->start_controls_tab(
+			'marker_content_tab',
 			array(
-				'label'      => __( 'Size', 'premium-addons-for-elementor' ),
-				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px', 'em' ),
-				'range'      => array(
-					'px' => array(
-						'min' => 1,
-						'max' => 200,
-					),
-					'em' => array(
-						'min' => 1,
-						'max' => 20,
-					),
-				),
+				'label' => esc_html__( 'Content', 'elementor-pro' ),
 			)
 		);
 
 		$repeater->add_control(
 			'premium_map_pin_location_finder',
 			array(
-				'label' => __( 'Latitude & Longitude Finder', 'premium-addons-for-elementor' ),
+				'label' => __( 'Location Finder', 'premium-addons-for-elementor' ),
 				'type'  => Controls_Manager::SWITCHER,
 			)
 		);
@@ -287,7 +270,7 @@ class Premium_Maps extends Widget_Base {
 		$repeater->add_control(
 			'premium_map_pin_notice',
 			array(
-				'label'       => __( 'Find Latitude & Longitude', 'elementor' ),
+				'label'       => __( 'Find Location', 'elementor' ),
 				'type'        => Controls_Manager::RAW_HTML,
 				'raw'         => '<form onsubmit="getPinAddress(this);" action="javascript:void(0);"><input type="text" id="premium-map-get-address" class="premium-map-get-address" style="margin-top:10px; margin-bottom:10px;"><input type="submit" value="Search" class="elementor-button elementor-button-default" onclick="getPinAddress(this)"></form>',
 				'label_block' => true,
@@ -323,7 +306,7 @@ class Premium_Maps extends Widget_Base {
 		$repeater->add_control(
 			'pin_title',
 			array(
-				'label'       => __( 'Title', 'premium-addons-for-elementor' ),
+				'label'       => __( 'Location Title', 'premium-addons-for-elementor' ),
 				'type'        => Controls_Manager::TEXT,
 				'dynamic'     => array( 'active' => true ),
 				'label_block' => true,
@@ -341,16 +324,107 @@ class Premium_Maps extends Widget_Base {
 		);
 
 		$repeater->add_control(
+			'advanced_view',
+			array(
+				'label' => __( 'Advanced Info', 'premium-addons-for-elementor' ),
+				'type'  => Controls_Manager::SWITCHER,
+			)
+		);
+
+		$get_pro = Helper_Functions::get_campaign_link( 'https://premiumaddons.com/pro', 'editor-page', 'wp-editor', 'get-pro' );
+
+		$papro_activated = apply_filters( 'papro_activated', false );
+
+		if ( ! $papro_activated ) {
+			$repeater->add_control(
+				'marker_notice',
+				array(
+					'type'            => Controls_Manager::RAW_HTML,
+					'raw'             => __( 'Advanced Marker option is available in Premium Addons Pro.', 'premium-addons-for-elementor' ) . '<a href="' . esc_url( $get_pro ) . '" target="_blank">' . __( 'Upgrade now!', 'premium-addons-for-elementor' ) . '</a>',
+					'content_classes' => 'papro-upgrade-notice',
+					'condition'       => array(
+						'advanced_view' => 'yes',
+					),
+				)
+			);
+		}
+
+		do_action( 'pa_maps_marker_controls', $repeater );
+
+		$repeater->add_control(
+			'open_by_default',
+			array(
+				'label'      => __( 'Opened By Default', 'premium-addons-for-elementor' ),
+				'type'       => Controls_Manager::SWITCHER,
+				'separator'  => 'before',
+				'conditions' => array(
+					'relation' => 'or',
+					'terms'    => array(
+						array(
+							'name'     => 'pin_title',
+							'operator' => '!==',
+							'value'    => '',
+						),
+						array(
+							'name'     => 'pin_desc',
+							'operator' => '!==',
+							'value'    => '',
+						),
+					),
+				),
+			)
+		);
+
+		$repeater->add_control(
 			'custom_id',
 			array(
 				'label'       => __( 'Custom ID', 'premium-addons-for-elementor' ),
 				'type'        => Controls_Manager::TEXT,
 				'description' => __( 'Use this with Premium Carousel widget ', 'premium-addons-for-elementor' ) . '<a href="https://premiumaddons.com/docs/how-to-use-elementor-widgets-to-navigate-through-carousel-widget-slides/" target="_blank">Custom Navigation option</a>',
 				'dynamic'     => array( 'active' => true ),
-				'separator'   => 'before',
 				'label_block' => true,
 			)
 		);
+
+		$repeater->end_controls_tab();
+
+		$repeater->start_controls_tab(
+			'marker_style_tab',
+			array(
+				'label' => esc_html__( 'Style', 'elementor-pro' ),
+			)
+		);
+
+		$repeater->add_control(
+			'pin_icon',
+			array(
+				'label' => __( 'Custom Icon', 'premium-addons-for-elementor' ),
+				'type'  => Controls_Manager::MEDIA,
+			)
+		);
+
+		$repeater->add_control(
+			'pin_icon_size',
+			array(
+				'label'      => __( 'Size', 'premium-addons-for-elementor' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', 'em' ),
+				'range'      => array(
+					'px' => array(
+						'min' => 1,
+						'max' => 200,
+					),
+					'em' => array(
+						'min' => 1,
+						'max' => 20,
+					),
+				),
+			)
+		);
+
+		$repeater->end_controls_tab();
+
+		$repeater->end_controls_tabs();
 
 		$this->add_control(
 			'premium_maps_map_pins',
@@ -358,10 +432,14 @@ class Premium_Maps extends Widget_Base {
 				'label'       => __( 'Map Pins', 'premium-addons-for-elementor' ),
 				'type'        => Controls_Manager::REPEATER,
 				'default'     => array(
-					'map_latitude'  => '18.591212',
-					'map_longitude' => '73.741261',
-					'pin_title'     => __( 'Premium Google Maps', 'premium-addons-for-elementor' ),
+					'map_latitude'  => '59.3347981',
+					'map_longitude' => '18.0601028',
+					'pin_title'     => __( 'Barbeque Steakhouse & Bar', 'premium-addons-for-elementor' ),
 					'pin_desc'      => __( 'Add an optional description to your map pin', 'premium-addons-for-elementor' ),
+					'pin_address'   => 'Kungsgatan 54, 111 35 Stockholm, Sweden',
+					'pin_website'   => 'https://bbqsteakhouse.se/',
+					'pin_phone'     => '+468100026',
+					'pin_hours'     => '10AM-11PM',
 				),
 				'fields'      => $repeater->get_controls(),
 				'title_field' => '{{{ pin_title }}}',
@@ -490,7 +568,7 @@ class Premium_Maps extends Widget_Base {
 		$this->add_control(
 			'premium_maps_marker_hover_open',
 			array(
-				'label' => __( 'Info Container Opened when Hovered', 'premium-addons-for-elementor' ),
+				'label' => __( 'Open Info Container on Hover', 'premium-addons-for-elementor' ),
 				'type'  => Controls_Manager::SWITCHER,
 			)
 		);
@@ -498,7 +576,7 @@ class Premium_Maps extends Widget_Base {
 		$this->add_control(
 			'premium_maps_marker_mouse_out',
 			array(
-				'label'     => __( 'Info Container Closed when Mouse Out', 'premium-addons-for-elementor' ),
+				'label'     => __( 'Close Info Container on Mouse Out', 'premium-addons-for-elementor' ),
 				'type'      => Controls_Manager::SWITCHER,
 				'condition' => array(
 					'premium_maps_marker_hover_open' => 'yes',
@@ -514,7 +592,29 @@ class Premium_Maps extends Widget_Base {
 					'type'  => Controls_Manager::SWITCHER,
 				)
 			);
+
+			$this->add_control(
+				'cluster_icon',
+				array(
+					'label'     => __( 'Cluster Icon', 'premium-addons-for-elementor' ),
+					'type'      => Controls_Manager::MEDIA,
+					'condition' => array(
+						'premium_maps_map_option_cluster' => 'yes',
+					),
+				)
+			);
+
 		}
+
+		$this->add_control(
+			'load_on_visible',
+			array(
+				'label'        => __( 'Load Map On Scroll', 'premium-addons-for-elementor' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'description'  => __( 'This option will load the map while scrolling to improve page loading speed', 'premium-addons-for-elementor' ),
+				'return_value' => 'true',
+			)
+		);
 
 		$this->end_controls_section();
 
@@ -563,180 +663,6 @@ class Premium_Maps extends Widget_Base {
 				'type'            => Controls_Manager::RAW_HTML,
 				'raw'             => sprintf( '<a href="%s" target="_blank">%s</a>', $doc2_url, __( 'Getting your API key »', 'premium-addons-for-elementor' ) ),
 				'content_classes' => 'editor-pa-doc',
-			)
-		);
-
-		$this->end_controls_section();
-
-		$this->start_controls_section(
-			'premium_maps_pin_title_style',
-			array(
-				'label' => __( 'Title', 'premium-addons-for-elementor' ),
-				'tab'   => Controls_Manager::TAB_STYLE,
-			)
-		);
-
-		$this->add_control(
-			'premium_maps_pin_title_color',
-			array(
-				'label'     => __( 'Color', 'premium-addons-for-elementor' ),
-				'type'      => Controls_Manager::COLOR,
-				'global'    => array(
-					'default' => Global_Colors::COLOR_PRIMARY,
-				),
-				'selectors' => array(
-					'{{WRAPPER}} .premium-maps-info-title' => 'color: {{VALUE}};',
-				),
-			)
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			array(
-				'name'     => 'pin_title_typography',
-				'global'   => array(
-					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
-				),
-				'selector' => '{{WRAPPER}} .premium-maps-info-title',
-			)
-		);
-
-		$this->add_responsive_control(
-			'premium_maps_pin_title_margin',
-			array(
-				'label'      => __( 'Margin', 'premium-addons-for-elementor' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', 'em', '%' ),
-				'selectors'  => array(
-					'{{WRAPPER}} .premium-maps-info-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				),
-			)
-		);
-
-		/*Pin Title Padding*/
-		$this->add_responsive_control(
-			'premium_maps_pin_title_padding',
-			array(
-				'label'      => __( 'Padding', 'premium-addons-for-elementor' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', 'em', '%' ),
-				'selectors'  => array(
-					'{{WRAPPER}} .premium-maps-info-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				),
-			)
-		);
-
-		/*Pin Title ALign*/
-		$this->add_responsive_control(
-			'premium_maps_pin_title_align',
-			array(
-				'label'     => __( 'Alignment', 'premium-addons-for-elementor' ),
-				'type'      => Controls_Manager::CHOOSE,
-				'options'   => array(
-					'left'   => array(
-						'title' => __( 'Left', 'premium-addons-for-elementor' ),
-						'icon'  => 'eicon-text-align-left',
-					),
-					'center' => array(
-						'title' => __( 'Center', 'premium-addons-for-elementor' ),
-						'icon'  => 'eicon-text-align-center',
-					),
-					'right'  => array(
-						'title' => __( 'Right', 'premium-addons-for-elementor' ),
-						'icon'  => 'eicon-text-align-right',
-					),
-				),
-				'default'   => 'center',
-				'selectors' => array(
-					'{{WRAPPER}} .premium-maps-info-title' => 'text-align: {{VALUE}};',
-				),
-			)
-		);
-
-		/*End Title Style Section*/
-		$this->end_controls_section();
-
-		/*Start Pin Style Section*/
-		$this->start_controls_section(
-			'premium_maps_pin_text_style',
-			array(
-				'label' => __( 'Description', 'premium-addons-for-elementor' ),
-				'tab'   => Controls_Manager::TAB_STYLE,
-			)
-		);
-
-		$this->add_control(
-			'premium_maps_pin_text_color',
-			array(
-				'label'     => __( 'Color', 'premium-addons-for-elementor' ),
-				'type'      => Controls_Manager::COLOR,
-				'global'    => array(
-					'default' => Global_Colors::COLOR_SECONDARY,
-				),
-				'selectors' => array(
-					'{{WRAPPER}} .premium-maps-info-desc' => 'color: {{VALUE}};',
-				),
-			)
-		);
-
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			array(
-				'name'     => 'pin_text_typo',
-				'global'   => array(
-					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
-				),
-				'selector' => '{{WRAPPER}} .premium-maps-info-desc',
-			)
-		);
-
-		$this->add_responsive_control(
-			'premium_maps_pin_text_margin',
-			array(
-				'label'      => __( 'Margin', 'premium-addons-for-elementor' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', 'em', '%' ),
-				'selectors'  => array(
-					'{{WRAPPER}} .premium-maps-info-desc' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				),
-			)
-		);
-
-		$this->add_responsive_control(
-			'premium_maps_pin_text_padding',
-			array(
-				'label'      => __( 'Padding', 'premium-addons-for-elementor' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', 'em', '%' ),
-				'selectors'  => array(
-					'{{WRAPPER}} .premium-maps-info-desc' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				),
-			)
-		);
-
-		$this->add_responsive_control(
-			'premium_maps_pin_description_align',
-			array(
-				'label'     => __( 'Alignment', 'premium-addons-for-elementor' ),
-				'type'      => Controls_Manager::CHOOSE,
-				'options'   => array(
-					'left'   => array(
-						'title' => __( 'Left', 'premium-addons-for-elementor' ),
-						'icon'  => 'eicon-text-align-left',
-					),
-					'center' => array(
-						'title' => __( 'Center', 'premium-addons-for-elementor' ),
-						'icon'  => 'eicon-text-align-center',
-					),
-					'right'  => array(
-						'title' => __( 'Right', 'premium-addons-for-elementor' ),
-						'icon'  => 'eicon-text-align-right',
-					),
-				),
-				'default'   => 'center',
-				'selectors' => array(
-					'{{WRAPPER}} .premium-maps-info-desc' => 'text-align: {{VALUE}};',
-				),
 			)
 		);
 
@@ -805,6 +731,358 @@ class Premium_Maps extends Widget_Base {
 
 		$this->end_controls_section();
 
+		$this->start_controls_section(
+			'marker_window',
+			array(
+				'label' => __( 'Marker Info', 'premium-addons-for-elementor' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			)
+		);
+
+		$this->add_responsive_control(
+			'marker_window_width',
+			array(
+				'label'      => __( 'Minimum Width', 'premium-addons-for-elementor' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', 'em', '%' ),
+				'range'      => array(
+					'px' => array(
+						'min' => 300,
+						'max' => 1000,
+					),
+					'em' => array(
+						'min' => 20,
+						'max' => 50,
+					),
+				),
+				'selectors'  => array(
+					'{{WRAPPER}} .premium-maps-info-container' => 'min-width: {{SIZE}}{{UNIT}} !important',
+				),
+			)
+		);
+
+		$this->add_control(
+			'marker_window_background',
+			array(
+				'label'     => __( 'Background Color', 'premium-addons-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '#fff',
+				'selectors' => array(
+					'{{WRAPPER}} .gm-style-iw, {{WRAPPER}} .premium-maps-location-info, {{WRAPPER}} .gm-style .gm-style-iw-tc::after' => 'background-color: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			array(
+				'name'     => 'marker_window_border',
+				'selector' => '{{WRAPPER}} .gm-style-iw',
+			)
+		);
+
+		$this->add_control(
+			'marker_window_border_rad',
+			array(
+				'label'      => __( 'Border Radius', 'premium-addons-for-elementor' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', '%', 'em' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .gm-style-iw' => 'border-radius: {{SIZE}}{{UNIT}}',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			array(
+				'name'     => 'marker_window_shadow',
+				'selector' => '{{WRAPPER}} .gm-style-iw',
+			)
+		);
+
+		$this->add_responsive_control(
+			'marker_window_padding',
+			array(
+				'label'      => __( 'Padding', 'premium-addons-for-elementor' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', 'em', '%' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .premium-maps-info-container' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->add_control(
+			'title_heading',
+			array(
+				'label'     => __( 'Location Title', 'premium-addons-for-elementor' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			)
+		);
+
+		$this->add_control(
+			'premium_maps_pin_title_color',
+			array(
+				'label'     => __( 'Text Color', 'premium-addons-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'global'    => array(
+					'default' => Global_Colors::COLOR_PRIMARY,
+				),
+				'selectors' => array(
+					'{{WRAPPER}} .premium-maps-info-title' => 'color: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->add_control(
+			'title_background',
+			array(
+				'label'     => __( 'Background Color', 'premium-addons-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .premium-maps-title-wrap' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .maps-skin1 .premium-maps-location-direction' => 'color: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'name'     => 'pin_title_typography',
+				'selector' => '{{WRAPPER}} .premium-maps-info-title',
+			)
+		);
+
+		$this->add_responsive_control(
+			'premium_maps_pin_title_margin',
+			array(
+				'label'      => __( 'Margin', 'premium-addons-for-elementor' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', 'em', '%' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .premium-maps-title-wrap' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->add_responsive_control(
+			'premium_maps_pin_title_padding',
+			array(
+				'label'      => __( 'Padding', 'premium-addons-for-elementor' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', 'em', '%' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .premium-maps-title-wrap' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->add_responsive_control(
+			'premium_maps_pin_title_align',
+			array(
+				'label'     => __( 'Alignment', 'premium-addons-for-elementor' ),
+				'type'      => Controls_Manager::CHOOSE,
+				'options'   => array(
+					'left'   => array(
+						'title' => __( 'Left', 'premium-addons-for-elementor' ),
+						'icon'  => 'eicon-text-align-left',
+					),
+					'center' => array(
+						'title' => __( 'Center', 'premium-addons-for-elementor' ),
+						'icon'  => 'eicon-text-align-center',
+					),
+					'right'  => array(
+						'title' => __( 'Right', 'premium-addons-for-elementor' ),
+						'icon'  => 'eicon-text-align-right',
+					),
+				),
+				'default'   => 'center',
+				'toggle'    => false,
+				'selectors' => array(
+					'{{WRAPPER}} .premium-maps-title-wrap' => 'text-align: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->add_control(
+			'description_heading',
+			array(
+				'label'     => __( 'Description', 'premium-addons-for-elementor' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			)
+		);
+
+		$this->add_control(
+			'premium_maps_pin_text_color',
+			array(
+				'label'     => __( 'Text Color', 'premium-addons-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'global'    => array(
+					'default' => Global_Colors::COLOR_SECONDARY,
+				),
+				'selectors' => array(
+					'{{WRAPPER}} .premium-maps-info-desc' => 'color: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'name'     => 'pin_text_typo',
+				'selector' => '{{WRAPPER}} .premium-maps-info-desc',
+			)
+		);
+
+		$this->add_responsive_control(
+			'premium_maps_pin_text_margin',
+			array(
+				'label'      => __( 'Margin', 'premium-addons-for-elementor' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', 'em', '%' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .premium-maps-info-desc' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->add_responsive_control(
+			'premium_maps_pin_text_padding',
+			array(
+				'label'      => __( 'Padding', 'premium-addons-for-elementor' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', 'em', '%' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .premium-maps-info-desc' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->add_responsive_control(
+			'premium_maps_pin_description_align',
+			array(
+				'label'     => __( 'Alignment', 'premium-addons-for-elementor' ),
+				'type'      => Controls_Manager::CHOOSE,
+				'options'   => array(
+					'left'   => array(
+						'title' => __( 'Left', 'premium-addons-for-elementor' ),
+						'icon'  => 'eicon-text-align-left',
+					),
+					'center' => array(
+						'title' => __( 'Center', 'premium-addons-for-elementor' ),
+						'icon'  => 'eicon-text-align-center',
+					),
+					'right'  => array(
+						'title' => __( 'Right', 'premium-addons-for-elementor' ),
+						'icon'  => 'eicon-text-align-right',
+					),
+				),
+				'default'   => 'center',
+				'toggle'    => false,
+				'selectors' => array(
+					'{{WRAPPER}} .premium-maps-info-desc' => 'text-align: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->end_controls_section();
+
+		if ( $papro_activated ) {
+
+			$this->start_controls_section(
+				'advanced_pins_style',
+				array(
+					'label' => __( 'Advanced Info', 'premium-addons-for-elementor' ),
+					'tab'   => Controls_Manager::TAB_STYLE,
+				)
+			);
+
+			$this->add_control(
+				'info_icons_color',
+				array(
+					'label'     => __( 'Icons Color', 'premium-addons-for-elementor' ),
+					'type'      => Controls_Manager::COLOR,
+					'selectors' => array(
+						'{{WRAPPER}} .maps-info-item i' => 'color: {{VALUE}};',
+					),
+				)
+			);
+
+			$this->add_control(
+				'info_text_color',
+				array(
+					'label'     => __( 'Text Color', 'premium-addons-for-elementor' ),
+					'type'      => Controls_Manager::COLOR,
+					'selectors' => array(
+						'{{WRAPPER}} .maps-info-item p, {{WRAPPER}} .maps-info-item a' => 'color: {{VALUE}};',
+					),
+				)
+			);
+
+			$this->add_group_control(
+				Group_Control_Typography::get_type(),
+				array(
+					'name'     => 'info_text_typography',
+					'selector' => '{{WRAPPER}} .maps-info-item p',
+				)
+			);
+
+			$this->add_control(
+				'skin1_heading',
+				array(
+					'label'     => __( 'Get Directions Icon (Skin 1 only)', 'premium-addons-for-elementor' ),
+					'type'      => Controls_Manager::HEADING,
+					'separator' => 'before',
+				)
+			);
+
+			$this->add_control(
+				'directions_icon_color',
+				array(
+					'label'     => __( 'Icon Color', 'premium-addons-for-elementor' ),
+					'type'      => Controls_Manager::COLOR,
+					'selectors' => array(
+						'{{WRAPPER}} .maps-skin1 .eicon-share-arrow' => 'color: {{VALUE}};',
+					),
+				)
+			);
+
+			$this->add_control(
+				'skin2_heading',
+				array(
+					'label'     => __( 'Get Directions Link (Skin 2, 3 only)', 'premium-addons-for-elementor' ),
+					'type'      => Controls_Manager::HEADING,
+					'separator' => 'before',
+				)
+			);
+
+			$this->add_control(
+				'directions_link_color',
+				array(
+					'label'     => __( 'Text Color', 'premium-addons-for-elementor' ),
+					'type'      => Controls_Manager::COLOR,
+					'selectors' => array(
+						'{{WRAPPER}} .advanced-pin:not(.maps-skin1) .premium-maps-location-direction' => 'color: {{VALUE}};',
+					),
+				)
+			);
+
+			$this->add_group_control(
+				Group_Control_Typography::get_type(),
+				array(
+					'name'     => 'directions_link_typography',
+					'selector' => '{{WRAPPER}} .advanced-pin:not(.maps-skin1) .premium-maps-location-direction',
+				)
+			);
+
+			$this->end_controls_section();
+
+		}
+
 	}
 
 	/**
@@ -817,32 +1095,39 @@ class Premium_Maps extends Widget_Base {
 	 */
 	protected function render() {
 
+		$papro_activated = apply_filters( 'papro_activated', false );
+
 		$settings = $this->get_settings_for_display();
 
 		$map_pins = $settings['premium_maps_map_pins'];
 
-		$street_view = 'yes' === $settings['premium_maps_map_option_streeview'] ? 'true' : 'false';
+		$street_view = 'yes' === $settings['premium_maps_map_option_streeview'];
 
-		$scroll_wheel = 'yes' === $settings['premium_maps_map_option_mapscroll'] ? 'true' : 'false';
+		$scroll_wheel = 'yes' === $settings['premium_maps_map_option_mapscroll'];
 
-		$full_screen = 'yes' === $settings['premium_maps_map_option_fullscreen_control'] ? 'true' : 'false';
+		$full_screen = 'yes' === $settings['premium_maps_map_option_fullscreen_control'];
 
-		$zoom_control = 'yes' === $settings['premium_maps_map_option_zoom_controls'] ? 'true' : 'false';
+		$zoom_control = 'yes' === $settings['premium_maps_map_option_zoom_controls'];
 
-		$type_control = 'yes' === $settings['premium_maps_map_option_map_type_control'] ? 'true' : 'false';
+		$type_control = 'yes' === $settings['premium_maps_map_option_map_type_control'];
 
-		$automatic_open = 'yes' === $settings['premium_maps_marker_open'] ? 'true' : 'false';
+		$automatic_open = 'yes' === $settings['premium_maps_marker_open'];
 
-		$hover_open = 'yes' === $settings['premium_maps_marker_hover_open'] ? 'true' : 'false';
+		$hover_open = 'yes' === $settings['premium_maps_marker_hover_open'];
 
-		$hover_close = 'yes' === $settings['premium_maps_marker_mouse_out'] ? 'true' : 'false';
+		$hover_close = 'yes' === $settings['premium_maps_marker_mouse_out'];
 
 		$marker_cluster = false;
+		$cluster_icon   = '';
 
 		$cluster_enabled = Admin_Helper::get_integrations_settings()['premium-map-cluster'];
 
 		if ( $cluster_enabled ) {
-			$marker_cluster = 'yes' === $settings['premium_maps_map_option_cluster'] ? 'true' : 'false';
+			$marker_cluster = 'yes' === $settings['premium_maps_map_option_cluster'];
+
+			if ( $marker_cluster ) {
+				$cluster_icon = $settings['cluster_icon']['url'];
+			}
 		}
 
 		$centerlat = ! empty( $settings['premium_maps_center_lat'] ) ? $settings['premium_maps_center_lat'] : 18.591212;
@@ -892,7 +1177,9 @@ class Premium_Maps extends Widget_Base {
 			'hoverOpen'         => $hover_open,
 			'hoverClose'        => $hover_close,
 			'cluster'           => $marker_cluster,
+			'cluster_icon'      => $cluster_icon,
 			'drag'              => $settings['disable_drag'],
+			'loadScroll'        => $settings['load_on_visible'],
 		);
 
 		$this->add_render_attribute(
@@ -907,43 +1194,221 @@ class Premium_Maps extends Widget_Base {
 		?>
 
 	<div class="premium-maps-container" id="premium-maps-container">
+
 		<?php if ( count( $map_pins ) ) { ?>
+
 			<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'style_wrapper' ) ); ?>>
-			<?php
-			foreach ( $map_pins as $index => $pin ) {
-
-				$key = 'map_marker_' . $index;
-
-				$this->add_render_attribute(
-					$key,
-					array(
-						'class'          => 'premium-pin',
-						'data-lng'       => $pin['map_longitude'],
-						'data-lat'       => $pin['map_latitude'],
-						'data-icon'      => $pin['pin_icon']['url'],
-						'data-icon-size' => $pin['pin_icon_size']['size'],
-						'data-max-width' => $marker_width,
-					)
-				);
-
-				if ( ! empty( $pin['custom_id'] ) ) {
-					$this->add_render_attribute( $key, 'data-id', esc_attr( $pin['custom_id'] ) );
-				}
-
-				?>
-				<div <?php echo wp_kses_post( $this->get_render_attribute_string( $key ) ); ?>>
-					<?php if ( ! empty( $pin['pin_title'] ) || ! empty( $pin['pin_desc'] ) ) : ?>
-						<div class='premium-maps-info-container'><p class='premium-maps-info-title'><?php echo wp_kses_post( $pin['pin_title'] ); ?></p><div class='premium-maps-info-desc'><?php echo $this->parse_text_editor( $pin['pin_desc'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div></div>
-					<?php endif; ?>
-				</div>
 				<?php
-			}
-			?>
+				foreach ( $map_pins as $index => $pin ) {
+
+					$key = 'map_marker_' . $index;
+
+					$pin_longitude = $pin['map_longitude'];
+					$pin_latitude  = $pin['map_latitude'];
+
+					$this->add_render_attribute(
+						$key,
+						array(
+							'class'          => array( 'premium-pin', 'elementor-invisible' ),
+							'data-lng'       => $pin_longitude,
+							'data-lat'       => $pin_latitude,
+							'data-icon'      => $pin['pin_icon']['url'],
+							'data-icon-size' => $pin['pin_icon_size']['size'],
+							'data-max-width' => $marker_width,
+							'data-activated' => 'yes' === $pin['open_by_default'],
+						)
+					);
+
+					if ( ! empty( $pin['custom_id'] ) ) {
+						$this->add_render_attribute( $key, 'data-id', esc_attr( $pin['custom_id'] ) );
+					}
+
+					$info_key = 'marker_info_' . $index;
+
+					$this->add_render_attribute( $info_key, 'class', 'premium-maps-info-container' );
+
+					if ( $papro_activated && 'yes' === $pin['advanced_view'] ) {
+						$this->add_render_attribute(
+							$info_key,
+							'class',
+							array(
+								'advanced-pin',
+								'maps-' . $pin['marker_skin'],
+							)
+						);
+
+						$this->render_advanced_pin_view( $pin, $key, $info_key );
+
+					} else {
+
+						$this->render_classic_pin_view( $pin, $key );
+					}
+
+					?>
+
+					<?php
+				}
+				?>
+
 			</div>
-			<?php
-		}
-		?>
+
+		<?php } ?>
+
 	</div>
+
 		<?php
+	}
+
+	/**
+	 * Render Classic Pin View
+	 *
+	 * Renders the HTML markup of the classic view.
+	 *
+	 * @since 4.9.47
+	 * @access protected
+	 *
+	 * @param object $pin pin object.
+	 * @param string $key pin key.
+	 */
+	protected function render_classic_pin_view( $pin, $key ) {
+
+		?>
+
+			<div <?php echo wp_kses_post( $this->get_render_attribute_string( $key ) ); ?>>
+				<?php if ( ! empty( $pin['pin_title'] ) || ! empty( $pin['pin_desc'] ) ) : ?>
+					<div class='premium-maps-info-container'>
+
+						<div class='premium-maps-title-wrap'>
+							<p class='premium-maps-info-title'><?php echo wp_kses_post( $pin['pin_title'] ); ?></p>
+						</div>
+
+						<div class='premium-maps-info-desc'>
+							<?php echo $this->parse_text_editor( $pin['pin_desc'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						</div>
+
+					</div>
+				<?php endif; ?>
+			</div>
+
+		<?php
+
+	}
+
+	/**
+	 * Render Advanced Pin View
+	 *
+	 * Renders the HTML markup of the advanced view.
+	 *
+	 * @since 4.9.47
+	 * @access protected
+	 *
+	 * @param object $pin pin object.
+	 * @param string $key pin key.
+	 * @param string $info_key pin info key.
+	 */
+	protected function render_advanced_pin_view( $pin, $key, $info_key ) {
+
+		$pin_longitude = $pin['map_longitude'];
+		$pin_latitude  = $pin['map_latitude'];
+
+		$direction_link = sprintf( 'https://www.google.com/maps/dir/?api=1&destination=%s,%s', $pin_latitude, $pin_longitude );
+
+		?>
+
+			<div <?php echo wp_kses_post( $this->get_render_attribute_string( $key ) ); ?>>
+				<?php if ( ! empty( $pin['pin_title'] ) || ! empty( $pin['pin_desc'] ) ) : ?>
+					<div <?php echo wp_kses_post( $this->get_render_attribute_string( $info_key ) ); ?>>
+
+						<div class='premium-maps-info-close'>
+							<i class='eicon-close' aria-hidden='true'></i>
+						</div>
+
+						<?php if ( 'skin3' === $pin['marker_skin'] ) : ?>
+						<div class='premium-maps-skin3-wrap'>
+						<?php endif; ?>
+
+						<div class='premium-maps-info-img'>
+							<img src='<?php echo esc_attr( $pin['pin_img']['url'] ); ?>'>
+						</div>
+
+
+						<div class='premium-maps-title-wrap'>
+							<p class='premium-maps-info-title'><?php echo wp_kses_post( $pin['pin_title'] ); ?></p>
+
+							<?php if ( in_array( $pin['marker_skin'], array( 'skin1', 'skin3' ) ) ) : ?>
+								<?php if ( 'skin1' === $pin['marker_skin'] ) : ?>
+								<div class='premium-maps-location-directions'>
+								<?php endif; ?>
+									<a class='premium-maps-location-direction' title='<?php echo esc_attr( __( 'Directions', 'premium-addons-for-elementor' ) ); ?>' ref='nofollow' target='_blank' href='<?php echo esc_url( $direction_link ); ?>'>
+										<i class='eicon-share-arrow' aria-hidden='true'></i>
+										<span><?php echo wp_kses_post( __( 'Get Directions', 'premium-addons-for-elementor' ) ); ?></span>
+									</a>
+								<?php if ( 'skin1' === $pin['marker_skin'] ) : ?>
+								</div>
+								<?php endif; ?>
+							<?php endif; ?>
+
+						</div>
+
+						<?php if ( 'skin3' === $pin['marker_skin'] ) : ?>
+						</div>
+						<?php endif; ?>
+
+						<div class='premium-maps-location-info'>
+
+							<?php if ( ! empty( $pin['pin_address'] ) ) : ?>
+								<div class='premium-maps-info-location maps-info-item'>
+									<i class='eicon-map-pin' aria-hidden='true'></i>
+									<p><?php echo wp_kses_post( $pin['pin_address'] ); ?></p>
+								</div>
+							<?php endif; ?>
+
+							<?php if ( ! empty( $pin['pin_website'] ) ) : ?>
+								<div class='premium-maps-info-website maps-info-item'>
+									<i class='eicon-globe' aria-hidden='true'></i>
+									<p>
+										<a href='<?php echo esc_attr( $pin['pin_website'] ); ?>' target='_blank' rel='nofollow'>
+											<?php echo wp_kses_post( $pin['pin_website'] ); ?>
+										</a>
+									</p>
+								</div>
+							<?php endif; ?>
+
+							<?php if ( ! empty( $pin['pin_phone'] ) ) : ?>
+								<div class='premium-maps-info-number maps-info-item'>
+									<i class='eicon-headphones' aria-hidden='true'></i>
+									<p>
+										<a href='tel:<?php echo esc_attr( $pin['pin_phone'] ); ?>' target='_blank' rel='nofollow'>
+											<?php echo wp_kses_post( $pin['pin_phone'] ); ?>
+										</a>
+									</p>
+								</div>
+							<?php endif; ?>
+
+							<?php if ( ! empty( $pin['pin_hours'] ) ) : ?>
+								<div class='premium-maps-info-hours maps-info-item'>
+									<i class='eicon-clock-o' aria-hidden='true'></i>
+									<p><?php echo wp_kses_post( $pin['pin_hours'] ); ?></p>
+								</div>
+							<?php endif; ?>
+
+							<div class='premium-maps-info-desc'>
+								<?php echo $this->parse_text_editor( $pin['pin_desc'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+							</div>
+
+							<?php if ( 'skin2' === $pin['marker_skin'] ) : ?>
+								<a class='premium-maps-location-direction' title='<?php echo esc_attr( __( 'Directions', 'premium-addons-for-elementor' ) ); ?>' ref='nofollow' target='_blank' href='<?php echo esc_url( $direction_link ); ?>'>
+									<?php echo wp_kses_post( __( 'Get Directions', 'premium-addons-for-elementor' ) ); ?>
+								</a>
+							<?php endif; ?>
+
+						</div>
+
+					</div>
+				<?php endif; ?>
+			</div>
+
+		<?php
+
 	}
 }

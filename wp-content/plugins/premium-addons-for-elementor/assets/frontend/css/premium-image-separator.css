@@ -23,8 +23,7 @@
     height: 100%;
     text-decoration: none; }
     .premium-image-separator-container .premium-image-separator-link:hover, .premium-image-separator-container .premium-image-separator-link:visited, .premium-image-separator-container .premium-image-separator-link:focus, .premium-image-separator-container .premium-image-separator-link:active {
-      -webkit-box-shadow: none !important;
-              box-shadow: none !important;
+      box-shadow: none !important;
       outline: none !important;
       border: none !important;
       text-decoration: none !important; }

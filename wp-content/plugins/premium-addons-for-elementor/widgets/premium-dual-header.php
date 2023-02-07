@@ -1159,17 +1159,14 @@ class Premium_Dual_Header extends Widget_Base {
 
 		$full_title .= '</' . $first_title_tag . '> ';
 
-		$link = '';
 		if ( 'yes' === $settings['premium_dual_header_link_switcher'] ) {
 
-			if ( 'link' === $settings['premium_dual_heading_link_selection'] ) {
+			if ( 'url' === $settings['premium_dual_heading_link_selection'] ) {
 
-				$link = get_permalink( $settings['premium_dual_heading_existing_link'] );
-
+				$this->add_link_attributes( 'link', $settings['premium_dual_heading_link'] );
 			} else {
 
-				$link = $settings['premium_dual_heading_link']['url'];
-
+				$this->add_render_attribute( 'link', 'href', get_permalink( $settings['premium_dual_heading_existing_link'] ) );
 			}
 		}
 
@@ -1187,18 +1184,13 @@ class Premium_Dual_Header extends Widget_Base {
 
 		?>
 
-		<?php if ( ! empty( $link ) ) : ?>
-		<a href="<?php echo esc_attr( $link ); ?>"
-			<?php if ( ! empty( $settings['premium_dual_heading_link']['is_external'] ) ) : ?>
-		target="_blank"
-	<?php endif; ?>
-			<?php if ( ! empty( $settings['premium_dual_heading_link']['nofollow'] ) ) : ?>
-		rel="nofollow" <?php endif; ?>>
-	<?php endif; ?>
-		<?php echo wp_kses_post( $full_title ); ?>
-		<?php if ( ! empty( $link ) ) : ?>
+		<?php if ( 'yes' === $settings['premium_dual_header_link_switcher'] ) : ?>
+		<a <?php echo wp_kses_post( $this->get_render_attribute_string( 'link' ) ); ?>>
+		<?php endif; ?>
+			<?php echo wp_kses_post( $full_title ); ?>
+		<?php if ( 'yes' === $settings['premium_dual_header_link_switcher'] ) : ?>
 		</a>
-	<?php endif; ?>
+		<?php endif; ?>
 
 		<?php
 	}

@@ -632,7 +632,6 @@ class Addons_Integration {
 			PREMIUM_ADDONS_URL . 'assets/frontend/' . $dir . '/headroom' . $suffix . '.js',
 			array( 'jquery' ),
 			PREMIUM_ADDONS_VERSION
-			// true
 		);
 
 		wp_register_script(
@@ -645,10 +644,10 @@ class Addons_Integration {
 
 		if ( $maps_settings['premium-map-cluster'] ) {
 			wp_register_script(
-				'google-maps-cluster',
-				'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js',
+				'pa-maps-cluster',
+				PREMIUM_ADDONS_URL . 'assets/frontend/' . $dir . '/markerclusterer' . $suffix . '.js',
 				array(),
-				PREMIUM_ADDONS_VERSION,
+				'1.0.1',
 				false
 			);
 		}
@@ -735,6 +734,14 @@ class Addons_Integration {
 		wp_register_script(
 			'pa-fontawesome-all',
 			PREMIUM_ADDONS_URL . 'assets/frontend/' . $dir . '/fontawesome-all' . $suffix . '.js',
+			array( 'jquery' ),
+			PREMIUM_ADDONS_VERSION,
+			true
+		);
+
+		wp_register_script(
+			'pa-scrolltrigger',
+			PREMIUM_ADDONS_URL . 'assets/frontend/js/scrollTrigger.js',
 			array( 'jquery' ),
 			PREMIUM_ADDONS_VERSION,
 			true

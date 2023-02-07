@@ -323,7 +323,9 @@ class PA_Controls_Handler {
 			$time_zone = in_array( $list['pa_condition_key'], array( 'date_range', 'time_range', 'date', 'day' ), true ) ? $list['pa_condition_timezone'] : false;
 
 			if ( 'ip_location' !== $list['pa_condition_key'] ) {
-				$check = ( 'acf_text' === $list['pa_condition_key'] || '' !== $value ) ? $class->compare_value( $settings, $operator, $value, $compare_val, $time_zone ) : true;
+
+				// If ACF Text or Time Range, comparison must triggered.
+				$check = ( in_array( $list['pa_condition_key'], array( 'time_range', 'acf_text' ) ) || '' !== $value ) ? $class->compare_value( $settings, $operator, $value, $compare_val, $time_zone ) : true;
 			} else {
 
 				$detect_method = $list['pa_condition_loc_method'];

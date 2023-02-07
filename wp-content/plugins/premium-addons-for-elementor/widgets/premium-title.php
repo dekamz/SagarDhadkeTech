@@ -648,12 +648,13 @@ class Premium_Title extends Widget_Base {
 			)
 		);
 
-		$this->add_responsive_control(
+		$this->add_control(
 			'premium_title_align_flex',
 			array(
-				'label'     => __( 'Alignment', 'premium-addons-for-elementor' ),
-				'type'      => Controls_Manager::CHOOSE,
-				'options'   => array(
+				'label'        => __( 'Alignment', 'premium-addons-for-elementor' ),
+				'type'         => Controls_Manager::CHOOSE,
+				'prefix_class' => 'premium-title-',
+				'options'      => array(
 					'flex-start' => array(
 						'title' => __( 'Left', 'premium-addons-for-elementor' ),
 						'icon'  => 'eicon-text-align-left',
@@ -667,13 +668,13 @@ class Premium_Title extends Widget_Base {
 						'icon'  => 'eicon-text-align-right',
 					),
 				),
-				'default'   => 'flex-start',
-				'toggle'    => false,
-				'selectors' => array(
+				'default'      => 'flex-start',
+				'selectors'    => array(
 					'{{WRAPPER}}:not(.premium-title-icon-column) .premium-title-header' => 'justify-content: {{VALUE}}',
 					'{{WRAPPER}}.premium-title-icon-column .premium-title-header' => 'align-items: {{VALUE}}',
 				),
-				'condition' => array(
+				'toggle'       => false,
+				'condition'    => array(
 					'premium_title_style' => array( 'style3', 'style4' ),
 				),
 			)
@@ -1991,26 +1992,14 @@ class Premium_Title extends Widget_Base {
 
 		if ( 'yes' === $settings['link_switcher'] ) {
 
-			$link = '';
-
 			if ( 'link' === $settings['link_selection'] ) {
 
-				$link = get_permalink( $settings['existing_link'] );
+				$this->add_render_attribute( 'link', 'href', get_permalink( $settings['existing_link'] ) );
 
 			} else {
 
-				$link = $settings['custom_link']['url'];
+				$this->add_link_attributes( 'link', $settings['custom_link'] );
 
-			}
-
-			$this->add_render_attribute( 'link', 'href', $link );
-
-			if ( ! empty( $settings['custom_link']['is_external'] ) ) {
-				$this->add_render_attribute( 'link', 'target', '_blank' );
-			}
-
-			if ( ! empty( $settings['custom_link']['nofollow'] ) ) {
-				$this->add_render_attribute( 'link', 'rel', 'nofollow' );
 			}
 		}
 
@@ -2097,7 +2086,7 @@ class Premium_Title extends Widget_Base {
 			<?php if ( 'style7' === $selected_style ) : ?>
 				</div>
 			<?php endif; ?>
-			<?php if ( 'yes' === $settings['link_switcher'] && ! empty( $link ) ) : ?>
+			<?php if ( 'yes' === $settings['link_switcher'] ) : ?>
 				<a <?php echo wp_kses_post( $this->get_render_attribute_string( 'link' ) ); ?>></a>
 			<?php endif; ?>
 		</<?php echo wp_kses_post( $title_tag ); ?>>

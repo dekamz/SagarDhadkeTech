@@ -3,41 +3,27 @@
 .premium-counter-area {
   padding: 10px 0;
   -js-display: flex;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -moz-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -moz-box-align: center;
+       -webkit-justify-content: center;
+          justify-content: center;
   -ms-flex-align: center;
-  align-items: center;
+       -webkit-align-items: center;
+          align-items: center;
 }
 
 .premium-counter-area.top {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -moz-box-orient: vertical;
-  -moz-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column;
+       -webkit-flex-direction: column;
+          flex-direction: column;
 }
 
 .premium-counter-area.right {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-  -webkit-flex-direction: row-reverse;
-  -moz-box-orient: horizontal;
-  -moz-box-direction: reverse;
   -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
+       -webkit-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 
 .premium-counter-area.right .premium-counter-icon {
@@ -59,7 +45,6 @@
 }
 
 .premium-counter-area .premium-counter-icon .circle {
-  -webkit-border-radius: 100%;
   border-radius: 100%;
 }
 
@@ -79,33 +64,25 @@
 
 .premium-counter-area .premium-counter-value-wrap {
   -js-display: flex;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -moz-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
+       -webkit-align-items: center;
+          align-items: center;
 }
 
 .premium-init-wrapper {
   -js-display: flex;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
   display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
 }
 
 .premium-init-wrapper.row {
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -moz-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
+       -webkit-align-items: center;
+          align-items: center;
 }
 
 .premium-init-wrapper.right {

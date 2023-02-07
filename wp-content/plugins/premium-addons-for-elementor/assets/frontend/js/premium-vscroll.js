@@ -369,11 +369,11 @@
 
             $(".premium-vscroll-tooltip").hide();
 
-            if (beforeCheck()) {
+            if (self.beforeCheck()) {
                 sectionId = self.getFirstSection(sections);
             }
 
-            if (afterCheck()) {
+            if (self.afterCheck()) {
                 sectionId = self.getLastSection(sections);
             }
 
@@ -720,11 +720,11 @@
             }
         };
 
-        function getFirstSection(object) {
+        self.getFirstSection = function (object) {
             return Object.keys(object)[0];
         }
 
-        function getLastSection(object) {
+        self.getLastSection = function (object) {
             return Object.keys(object)[Object.keys(object).length - 1];
         }
 
@@ -817,12 +817,12 @@
                 }
             }
 
-            if (beforeCheck()) {
-                sectionId = getFirstSection(sections);
+            if (self.beforeCheck()) {
+                sectionId = self.getFirstSection(sections);
             }
 
-            if (afterCheck()) {
-                sectionId = getLastSection(sections);
+            if (self.afterCheck()) {
+                sectionId = self.getLastSection(sections);
             }
 
             if (sectionId && sections.hasOwnProperty(sectionId)) {
@@ -896,9 +896,9 @@
             }
         };
 
-        function beforeCheck() {
+        self.beforeCheck = function () {
             var windowScrollTop = $window.scrollTop(),
-                firstSectionId = getFirstSection(sections),
+                firstSectionId = self.getFirstSection(sections),
                 offset = sections[firstSectionId].offset,
                 topBorder = windowScrollTop + $window.outerHeight(),
                 visible = self.visible($instance, true, false);
@@ -911,9 +911,9 @@
             return false;
         }
 
-        function afterCheck() {
+        self.afterCheck = function () {
             var windowScrollTop = $window.scrollTop(),
-                lastSectionId = getLastSection(sections),
+                lastSectionId = self.getLastSection(sections),
                 bottomBorder =
                     sections[lastSectionId].offset +
                     sections[lastSectionId].height,

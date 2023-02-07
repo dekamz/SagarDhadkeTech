@@ -1,20 +1,13 @@
 /**************** Premium Carousel ****************/
 /**************************************************/
 .premium-carousel-wrapper a.carousel-arrow, .premium-carousel-wrapper a.ver-carousel-arrow {
-  -js-display: flex;
-  display: -webkit-box;
   display: -webkit-flex;
-  display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
   -webkit-align-items: center;
-     -moz-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
   -webkit-justify-content: center;
-     -moz-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   width: 2em;
@@ -28,8 +21,7 @@
   transition: all 0.3s ease-in-out;
   -webkit-appearance: inherit;
   border: none;
-  -webkit-box-shadow: none;
-          box-shadow: none; }
+  box-shadow: none; }
   .premium-carousel-wrapper a.carousel-arrow svg, .premium-carousel-wrapper a.ver-carousel-arrow svg {
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out; }
@@ -38,8 +30,7 @@
   margin-bottom: -3px; }
 
 .premium-carousel-wrapper a.slick-arrow:hover {
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important; }
+  box-shadow: none !important; }
 
 .premium-carousel-wrapper .premium-carousel-content-hidden {
   visibility: hidden; }
@@ -55,10 +46,7 @@
 
 .premium-carousel-dots-above ul.slick-dots {
   position: absolute;
-  -js-display: flex;
-  display: -webkit-box;
   display: -webkit-flex;
-  display: -moz-box;
   display: -ms-flexbox;
   display: flex;
   width: auto;
@@ -67,11 +55,7 @@
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-     -moz-box-orient: vertical;
-     -moz-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column; }
 
@@ -126,8 +110,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    -webkit-border-radius: 50%;
-            border-radius: 50%;
+    border-radius: 50%;
     pointer-events: none;
     background-color: rgba(0, 0, 0, 0.15); }
   .premium-carousel-ripple-yes ul.slick-dots li.slick-active:hover:before {

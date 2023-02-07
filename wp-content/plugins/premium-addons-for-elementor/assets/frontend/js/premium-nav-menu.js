@@ -60,6 +60,25 @@
             });
         }
 
+        // close mobile menu after clicking.
+        if (settings.closeAfterClick) {
+            $menuContainer.find('.premium-menu-link').on('click.paAfterClick', function () {
+                // check if it has children
+                var hasChildern = itemHasChildren(this);
+
+                if (!hasChildern) {
+                    // close mobile menu
+                    if ($scope.hasClass('premium-nav-slide')) {
+                        console.log('aaaaaa')
+                        $hamMenuCloser.click();
+                    } else {
+                        $menuToggler.click();
+                    }
+                }
+
+            });
+        }
+
         var isMobileMenu = null,
             isDesktopMenu = null;
 
@@ -70,13 +89,6 @@
         }
 
         checkStickyEffect();
-
-        // Set menu items to full width.
-        function checkMegaContentWidth() {
-            $fullWidthItems.each(function (index, item) {
-                fullWidthContent($(item));
-            });
-        }
 
         if (['hor', 'ver'].includes(settings.mainLayout)) {
 
@@ -237,6 +249,15 @@
         if ($scope.hasClass('premium-ver-toggle-yes') && $scope.hasClass('premium-ver-click')) {
             $scope.find('.premium-ver-toggler').on('click', function () {
                 $scope.find('.premium-nav-widget-container').toggleClass('premium-ver-collapsed', 500);
+            });
+        }
+
+        //************Helper Funcitons */
+
+        // Set menu items to full width.
+        function checkMegaContentWidth() {
+            $fullWidthItems.each(function (index, item) {
+                fullWidthContent($(item));
             });
         }
 
@@ -483,7 +504,7 @@
         function addBadge(badge, targetsIndex) {
 
             var badgeHtml = getBadgeHtml(badge),
-                targets = $scope.find('.premium-nav-menu-container ' + badge.selector + ':not(.has-pa-badge)')
+                targets = $scope.find('.premium-nav-menu-container ' + badge.selector + ':not(.has-pa-badge)'),
                 mobileTargets = $scope.find('.premium-mobile-menu-container ' + badge.selector + ':not(.has-pa-badge)'),
                 hoverEffectClass = '' !== settings.hoverEffect ? 'premium-badge-' + settings.hoverEffect : '';
 
@@ -507,6 +528,14 @@
 
         function getBadgeHtml(badge) {
             return '<span class="premium-rn-badge elementor-repeater-item-' + badge.id + '">' + badge.text + '</span>';
+        }
+
+        /**
+         * @param {link} $item .premium-menu-link
+         * @returns boolean
+         */
+        function itemHasChildren($item) {
+            return $($item).parent('.premium-nav-menu-item').hasClass('menu-item-has-children');
         }
     };
 

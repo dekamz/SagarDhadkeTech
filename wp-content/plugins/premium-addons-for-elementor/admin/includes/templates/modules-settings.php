@@ -37,7 +37,7 @@ $row_meta = Helper_Functions::is_hide_row_meta();
 						<div class="pa-section-info-cta">
 							<label class="switch">
 							<input type="checkbox" id="premium-assets-generator" name="premium-assets-generator" <?php echo checked( 1, $enabled_elements['premium-assets-generator'], false ); ?>>
-								<span class="slider round"></span>
+								<span class="slider round pa-control"></span>
 							</label>
 							<?php if ( $enabled_elements['premium-assets-generator'] ) : ?>
 								<button type="button" class="pa-btn-regenerate" title="<?php esc_html_e( 'Clear Generated Assets', 'premium-addons-for-elementor' ); ?>">
@@ -104,7 +104,7 @@ $row_meta = Helper_Functions::is_hide_row_meta();
 							foreach ( $cat['elements'] as $index => $elem ) :
 								$status         = ( isset( $elem['is_pro'] ) && ! Helper_Functions::check_papro_version() ) ? 'disabled' : checked( 1, $enabled_elements[ $elem['key'] ], false );
 								$class          = ( isset( $elem['is_pro'] ) && ! Helper_Functions::check_papro_version() ) ? 'pro-' : '';
-								$switcher_class = $class . 'slider round';
+								$switcher_class = $class . 'slider round pa-control';
 								?>
 								<div class="pa-switcher
 								<?php

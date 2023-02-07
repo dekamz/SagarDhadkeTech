@@ -16,76 +16,75 @@
 
 .premium-person-zoomout-effect .premium-person-image-container img,
 .premium-person-scale-effect .premium-person-image-container img {
-    -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
-    transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+            transform: scale(1.2);
 }
 
 .premium-person-sepia-effect .premium-person-image-container img {
     -webkit-filter: sepia(30%);
-    filter: sepia(30%);
+            filter: sepia(30%);
 }
 
 .premium-person-bright-effect .premium-person-image-container img {
     -webkit-filter: brightness(1);
-    filter: brightness(1);
+            filter: brightness(1);
 }
 
 .premium-person-trans-effect .premium-person-image-container img {
-    -webkit-transform: translateX(15px) scale(1.1);
     -ms-transform: translateX(15px) scale(1.1);
-    transform: translateX(15px) scale(1.1);
+        -webkit-transform: translateX(15px) scale(1.1);
+            transform: translateX(15px) scale(1.1);
 }
 
 .premium-person-zoomin-effect:hover .premium-person-image-container img {
-    -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
-    transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+            transform: scale(1.2);
 }
 
 .premium-person-zoomout-effect:hover .premium-person-image-container img {
-    -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
-    transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+            transform: scale(1.1);
 }
 
 .premium-person-scale-effect:hover .premium-person-image-container img {
-    -webkit-transform: scale(1.3) rotate(-5deg);
     -ms-transform: scale(1.3) rotate(-5deg);
-    transform: scale(1.3) rotate(-5deg);
+        -webkit-transform: scale(1.3) rotate(-5deg);
+            transform: scale(1.3) rotate(-5deg);
 }
 
 .premium-person-grayscale-effect:hover .premium-person-image-container img {
     -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
+            filter: grayscale(100%);
 }
 
 .premium-person-blur-effect:hover .premium-person-image-container img {
     -webkit-filter: blur(3px);
-    filter: blur(3px);
+            filter: blur(3px);
 }
 
 .premium-person-sepia-effect:hover .premium-person-image-container img {
     -webkit-filter: sepia(0%);
-    filter: sepia(0%);
+            filter: sepia(0%);
 }
 
 .premium-person-bright-effect:hover .premium-person-image-container img {
     -webkit-filter: brightness(1.2);
-    filter: brightness(1.2);
+            filter: brightness(1.2);
 }
 
 .premium-person-trans-effect:hover .premium-person-image-container img {
-    -webkit-transform: translateX(0px) scale(1.1);
     -ms-transform: translateX(0px) scale(1.1);
-    transform: translateX(0px) scale(1.1);
+        -webkit-transform: translateX(0px) scale(1.1);
+            transform: translateX(0px) scale(1.1);
 }
 
 .premium-person-container .premium-person-image-container img {
     width: 100%;
     height: 100%;
     display: block;
-    -o-object-fit: cover;
     object-fit: cover;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
@@ -99,22 +98,15 @@
     height: 100%;
     z-index: 2;
     -js-display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -moz-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -moz-box-align: center;
+         -webkit-justify-content: center;
+            justify-content: center;
     -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-shadow: inset 0 0 120px 0 rgba(0, 0, 0, 0.5);
+         -webkit-align-items: center;
+            align-items: center;
     box-shadow: inset 0 0 120px 0 rgba(0, 0, 0, 0.5);
     -webkit-transition: all 0.5s linear 0s;
     transition: all 0.5s linear 0s;
@@ -131,18 +123,18 @@
 
 .premium-person-style2 .premium-person-list-item a {
     opacity: 0;
-    -webkit-transform: scale(0);
     -ms-transform: scale(0);
-    transform: scale(0);
+        -webkit-transform: scale(0);
+            transform: scale(0);
     -webkit-transition: all 0.5s ease-in-out 0s;
     transition: all 0.5s ease-in-out 0s;
 }
 
 .premium-person-style2 .premium-person-image-container:hover .premium-person-list-item a {
     opacity: 1;
-    -webkit-transform: scale(1);
     -ms-transform: scale(1);
-    transform: scale(1);
+        -webkit-transform: scale(1);
+            transform: scale(1);
 }
 
 .premium-person-info-container {
@@ -245,12 +237,10 @@ ul.premium-person-social-list {
 }
 
 .premium-person-social-list li:hover a {
-    -webkit-box-shadow: none;
     box-shadow: none;
 }
 
 .premium-person-social-list li a:focus {
-    -webkit-box-shadow: none;
     box-shadow: none;
     outline: none;
 }
@@ -261,28 +251,22 @@ ul.premium-person-social-list {
 
 .elementor-widget-premium-addon-person .elementor-widget-container {
     -js-display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -moz-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center;
+         -webkit-justify-content: center;
+            justify-content: center;
 }
 
 .premium-persons-container.multiple-persons {
     -js-display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
     width: 100%;
 }
 
@@ -298,12 +282,12 @@ ul.premium-person-social-list {
     -webkit-transition: all 500ms ease 0s;
     transition: all 500ms ease 0s;
     -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
 }
 
 .premium-person-style1 .premium-person-container:hover .premium-person-info {
     -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
     bottom: -1px !important;
 }
 
@@ -312,19 +296,15 @@ ul.premium-person-social-list {
 }
 
 .premium-person-style1.multiple-persons:not([data-persons-equal="yes"]) {
-    -webkit-box-align: start;
-    -webkit-align-items: flex-start;
-    -moz-box-align: start;
     -ms-flex-align: start;
-    align-items: flex-start;
+         -webkit-align-items: flex-start;
+            align-items: flex-start;
 }
 
 .premium-person-style1 .slick-track {
     -js-display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
 }
 
@@ -344,68 +324,44 @@ ul.premium-person-social-list {
     width: 100%;
     height: 100%;
     -js-display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -moz-box-orient: vertical;
-    -moz-box-direction: normal;
     -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -moz-box-pack: justify;
+         -webkit-flex-direction: column;
+            flex-direction: column;
     -ms-flex-pack: justify;
-    justify-content: space-between;
+         -webkit-justify-content: space-between;
+            justify-content: space-between;
 }
 
 .premium-person-style3 .premium-person-title-desc-wrap {
     -js-display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-    -webkit-flex-direction: row-reverse;
-    -moz-box-orient: horizontal;
-    -moz-box-direction: reverse;
     -ms-flex-direction: row-reverse;
-    flex-direction: row-reverse;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -moz-box-pack: justify;
+         -webkit-flex-direction: row-reverse;
+            flex-direction: row-reverse;
     -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: start;
-    -webkit-align-items: flex-start;
-    -moz-box-align: start;
+         -webkit-justify-content: space-between;
+            justify-content: space-between;
     -ms-flex-align: start;
-    align-items: flex-start;
+         -webkit-align-items: flex-start;
+            align-items: flex-start;
 }
 
 .premium-person-style3 .premium-person-name-icons-wrap {
     -js-display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -moz-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: end;
-    -webkit-align-items: flex-end;
-    -moz-box-align: end;
+         -webkit-justify-content: space-between;
+            justify-content: space-between;
     -ms-flex-align: end;
-    align-items: flex-end;
+         -webkit-align-items: flex-end;
+            align-items: flex-end;
 }
 
 .premium-person-style3 .premium-person-title {
@@ -425,21 +381,15 @@ ul.premium-person-social-list {
 
 .premium-person-style3 .premium-person-social-list {
     -js-display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -moz-box-orient: vertical;
-    -moz-box-direction: normal;
     -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-transform: translateY(20px);
+         -webkit-flex-direction: column;
+            flex-direction: column;
     -ms-transform: translateY(20px);
-    transform: translateY(20px);
+        -webkit-transform: translateY(20px);
+            transform: translateY(20px);
     opacity: 0;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
@@ -460,39 +410,39 @@ ul.premium-person-social-list {
 
 .premium-person-style3 .premium-person-container:hover .premium-person-social-list {
     opacity: 1;
-    -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
-    transform: translateY(0);
+        -webkit-transform: translateY(0);
+            transform: translateY(0);
 }
 
 .premium-persons-title-cw .premium-person-title {
-    -webkit-transform: translateX(-15px) rotate(-90deg);
     -ms-transform: translateX(-15px) rotate(-90deg);
-    transform: translateX(-15px) rotate(-90deg);
-    -webkit-transform-origin: top;
+        -webkit-transform: translateX(-15px) rotate(-90deg);
+            transform: translateX(-15px) rotate(-90deg);
     -ms-transform-origin: top;
-    transform-origin: top;
+        -webkit-transform-origin: top;
+            transform-origin: top;
 }
 
 .premium-persons-title-cw .premium-person-container:hover .premium-person-title {
-    -webkit-transform: translateX(0) rotate(-90deg);
     -ms-transform: translateX(0) rotate(-90deg);
-    transform: translateX(0) rotate(-90deg);
+        -webkit-transform: translateX(0) rotate(-90deg);
+            transform: translateX(0) rotate(-90deg);
 }
 
 .premium-persons-title-ccw .premium-person-title {
     width: auto;
     margin-left: 20px;
-    -webkit-transform: translateX(-15px) rotate(90deg);
     -ms-transform: translateX(-15px) rotate(90deg);
-    transform: translateX(-15px) rotate(90deg);
-    -webkit-transform-origin: center left;
+        -webkit-transform: translateX(-15px) rotate(90deg);
+            transform: translateX(-15px) rotate(90deg);
     -ms-transform-origin: center left;
-    transform-origin: center left;
+        -webkit-transform-origin: center left;
+            transform-origin: center left;
 }
 
 .premium-persons-title-ccw .premium-person-container:hover .premium-person-title {
-    -webkit-transform: translateX(0) rotate(90deg);
     -ms-transform: translateX(0) rotate(90deg);
-    transform: translateX(0) rotate(90deg);
+        -webkit-transform: translateX(0) rotate(90deg);
+            transform: translateX(0) rotate(90deg);
 }

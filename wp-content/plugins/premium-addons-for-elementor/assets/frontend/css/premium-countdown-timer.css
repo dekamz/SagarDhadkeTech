@@ -1,10 +1,7 @@
 /**************** Premium CountDown *************/
 /************************************************/
 .premium-countdown {
-  -js-display: flex;
-  display: -webkit-box;
   display: -webkit-flex;
-  display: -moz-box;
   display: -ms-flexbox;
   display: flex;
   text-align: center; }
@@ -17,15 +14,10 @@
   display: inline-block;
   max-width: 100%;
   margin-bottom: 15px;
-  -js-display: inline-flex;
-  display: -webkit-inline-box;
   display: -webkit-inline-flex;
-  display: -moz-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
   -webkit-align-items: center;
-     -moz-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
   .countdown .countdown-section:last-child {
@@ -74,15 +66,10 @@
  */
 .premium-countdown-flip .premium-countdown-block {
   text-align: center;
-  -js-display: inline-flex;
-  display: -webkit-inline-box;
   display: -webkit-inline-flex;
-  display: -moz-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
   -webkit-align-items: center;
-     -moz-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
   .premium-countdown-flip .premium-countdown-block:last-child {
@@ -99,10 +86,8 @@
   width: 100px;
   line-height: 107px;
   background-color: #fff;
-  -webkit-border-radius: 10px;
-          border-radius: 10px;
-  -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
-          box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08); }
+  border-radius: 10px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08); }
   .premium-countdown-flip .premium-countdown-figure:last-child {
     margin-right: 0; }
   .premium-countdown-flip .premium-countdown-figure > span {
@@ -162,15 +147,11 @@
     height: 50%;
     overflow: hidden;
     background-color: #f7f7f7;
-    -webkit-border-top-left-radius: 10px;
-            border-top-left-radius: 10px;
-    -webkit-border-top-right-radius: 10px;
-            border-top-right-radius: 10px; }
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; }
   .premium-countdown-flip .premium-countdown-figure .top-back {
-    -webkit-border-bottom-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-    -webkit-border-bottom-right-radius: 10px;
-            border-bottom-right-radius: 10px; }
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; }
   .premium-countdown-flip .premium-countdown-figure .top::after,
   .premium-countdown-flip .premium-countdown-figure .bottom-back::after {
     content: "";

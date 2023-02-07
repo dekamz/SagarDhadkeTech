@@ -71,9 +71,9 @@
     right: 50%;
     text-align: center;
     z-index: 5;
-    -webkit-transform: translate(50%, -50%);
     -ms-transform: translate(50%, -50%);
-    transform: translate(50%, -50%);
+        -webkit-transform: translate(50%, -50%);
+            transform: translate(50%, -50%);
 }
 
 .premium-container-scroll-instant .premium-image-scroll-image {
@@ -116,13 +116,13 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-animation-duration: 0.5s;
-    animation-duration: 0.5s;
+            animation-duration: 0.5s;
     -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
     -webkit-animation-direction: alternate;
-    animation-direction: alternate;
+            animation-direction: alternate;
     -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
 }
 
 .pa-horizontal-mouse-scroll:before {
@@ -135,58 +135,58 @@
 
 .pa-horizontal-mouse-scroll {
     -webkit-animation-name: pa-scroll-horizontal;
-    animation-name: pa-scroll-horizontal;
+            animation-name: pa-scroll-horizontal;
 }
 
 .pa-vertical-mouse-scroll {
     -webkit-animation-name: pa-scroll-vertical;
-    animation-name: pa-scroll-vertical;
+            animation-name: pa-scroll-vertical;
 }
 
 @-webkit-keyframes pa-scroll-vertical {
     0% {
         -webkit-transform: translateY(0px);
-        transform: translateY(0px);
+                transform: translateY(0px);
     }
 
     100% {
         -webkit-transform: translateY(5px);
-        transform: translateY(5px);
+                transform: translateY(5px);
     }
 }
 
 @keyframes pa-scroll-vertical {
     0% {
         -webkit-transform: translateY(0px);
-        transform: translateY(0px);
+                transform: translateY(0px);
     }
 
     100% {
         -webkit-transform: translateY(5px);
-        transform: translateY(5px);
+                transform: translateY(5px);
     }
 }
 
 @-webkit-keyframes pa-scroll-horizontal {
     0% {
         -webkit-transform: translateX(0px);
-        transform: translateX(0px);
+                transform: translateX(0px);
     }
 
     100% {
         -webkit-transform: translateX(-5px);
-        transform: translateX(-5px);
+                transform: translateX(-5px);
     }
 }
 
 @keyframes pa-scroll-horizontal {
     0% {
         -webkit-transform: translateX(0px);
-        transform: translateX(0px);
+                transform: translateX(0px);
     }
 
     100% {
         -webkit-transform: translateX(-5px);
-        transform: translateX(-5px);
+                transform: translateX(-5px);
     }
 }

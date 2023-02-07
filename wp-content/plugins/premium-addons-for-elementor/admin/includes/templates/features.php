@@ -34,7 +34,7 @@ $features = $elements['cat-11']['elements'];
 
 							$status         = ( isset( $features[9]['is_pro'] ) && ! Helper_Functions::check_papro_version() ) ? 'disabled' : checked( 1, $enabled_elements['premium-mscroll'], false );
 							$class          = ( isset( $features[9]['is_pro'] ) && ! Helper_Functions::check_papro_version() ) ? 'pro-' : '';
-							$switcher_class = $class . 'slider round';
+							$switcher_class = $class . 'slider round pa-control';
 
 						?>
 
@@ -59,7 +59,7 @@ $features = $elements['cat-11']['elements'];
 						<div class="pa-section-info-cta">
 							<label class="switch">
 								<input type="checkbox" id="premium-templates" name="premium-templates" <?php echo checked( 1, $enabled_elements['premium-templates'], false ); ?>>
-									<span class="slider round"></span>
+									<span class="slider round pa-control"></span>
 								</label>
 							</p>
 						</div>
@@ -77,7 +77,7 @@ $features = $elements['cat-11']['elements'];
 						<div class="pa-section-info-cta">
 							<label class="switch">
 								<input type="checkbox" id="premium-equal-height" name="premium-equal-height" <?php echo checked( 1, $enabled_elements['premium-equal-height'], false ); ?>>
-									<span class="slider round"></span>
+									<span class="slider round pa-control"></span>
 								</label>
 							</p>
 						</div>
@@ -95,7 +95,7 @@ $features = $elements['cat-11']['elements'];
 
 						$status         = ( isset( $features[3]['is_pro'] ) && ! Helper_Functions::check_papro_version() ) ? 'disabled' : checked( 1, $enabled_elements['premium-global-cursor'], false );
 						$class          = ( isset( $features[3]['is_pro'] ) && ! Helper_Functions::check_papro_version() ) ? 'pro-' : '';
-						$switcher_class = $class . 'slider round';
+						$switcher_class = $class . 'slider round pa-control';
 
 						?>
 						<div class="pa-section-info-cta">
@@ -119,7 +119,7 @@ $features = $elements['cat-11']['elements'];
 
 						$status         = ( isset( $features[4]['is_pro'] ) && ! Helper_Functions::check_papro_version() ) ? 'disabled' : checked( 1, $enabled_elements['premium-global-badge'], false );
 						$class          = ( isset( $features[4]['is_pro'] ) && ! Helper_Functions::check_papro_version() ) ? 'pro-' : '';
-						$switcher_class = $class . 'slider round';
+						$switcher_class = $class . 'slider round pa-control';
 
 						?>
 						<div class="pa-section-info-cta">
@@ -143,7 +143,7 @@ $features = $elements['cat-11']['elements'];
 						<div class="pa-section-info-cta">
 							<label class="switch">
 								<input type="checkbox" id="pa-display-conditions" name="pa-display-conditions" <?php echo checked( 1, $enabled_elements['pa-display-conditions'], false ); ?>>
-									<span class="slider round"></span>
+									<span class="slider round pa-control"></span>
 								</label>
 							</p>
 						</div>
@@ -161,7 +161,7 @@ $features = $elements['cat-11']['elements'];
 						<div class="pa-section-info-cta">
 							<label class="switch">
 								<input type="checkbox" id="premium-floating-effects" name="premium-floating-effects" <?php echo checked( 1, $enabled_elements['premium-floating-effects'], false ); ?>>
-									<span class="slider round"></span>
+									<span class="slider round pa-control"></span>
 								</label>
 							</p>
 						</div>
@@ -179,7 +179,7 @@ $features = $elements['cat-11']['elements'];
 						<div class="pa-section-info-cta">
 							<label class="switch">
 								<input type="checkbox" id="premium-cross-domain" name="premium-cross-domain" <?php echo checked( 1, $enabled_elements['premium-cross-domain'], false ); ?>>
-									<span class="slider round"></span>
+									<span class="slider round pa-control"></span>
 								</label>
 							</p>
 						</div>
@@ -197,7 +197,7 @@ $features = $elements['cat-11']['elements'];
 						<div class="pa-section-info-cta">
 							<label class="switch">
 								<input type="checkbox" id="premium-duplicator" name="premium-duplicator" <?php echo checked( 1, $enabled_elements['premium-duplicator'], false ); ?>>
-									<span class="slider round"></span>
+									<span class="slider round pa-control"></span>
 								</label>
 							</p>
 						</div>
