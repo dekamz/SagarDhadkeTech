@@ -1,101 +1,94 @@
 <?php
 
-/**
- * Functions to register client-side assets (scripts and stylesheets) for the
- * Gutenberg block.
- *
- * @package essential-blocks
- */
+namespace EssentialBlocks\blocks;
 
-/**
- * Registers all block assets so that they can be enqueued through Gutenberg in
- * the corresponding context.
- *
- * @see https://wordpress.org/gutenberg/handbook/designers-developers/developers/tutorials/block-tutorial/applying-styles-with-stylesheets/
- */
-function eb_wpforms_block_init()
-{
-    // Skip block registration if Gutenberg is not enabled/merged.
-    if (!function_exists('register_block_type')) {
-        return;
+use EssentialBlocks\Core\Block;
+use EssentialBlocks\Utils\Helper;
+
+class WPForms extends Block {
+    protected $attributes = [
+        'blockId' => [
+            'type' => "string"
+        ],
+        'formId'  => [
+            'type' => "string"
+        ]
+    ];
+    protected $frontend_styles = [
+        'essential-blocks-frontend-style'
+    ];
+
+    /**
+     * Unique name of the block.
+     * @return string
+     */
+    public function get_name() {
+        return 'wpforms';
     }
 
-    register_block_type(
-        EssentialBlocks::get_block_register_path("wpforms"),
-        array(
-            'editor_script' => 'essential-blocks-editor-script',
-            'render_callback' => 'essential_blocks_wpforms_render_callback',
-            'attributes' => array(
-                'blockId' => array(
-                    'type' => "string",
-                ),
-                'formId' => array(
-                    'type' => 'string',
-                ),
-            ),
-        )
-    );
-}
-add_action('init', 'eb_wpforms_block_init');
-
-// render callback function 
-function essential_blocks_wpforms_render_callback($attributes)
-{
-
-
-    if (!class_exists('\WPForms\WPForms')) {
-        return;
+    public function can_enable() {
+        return count( array_intersect( ['wpforms-lite/wpforms.php', 'wpforms/wpforms.php'], apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) );
     }
 
-    if (!is_admin()) {
+    /**
+     * Get WPForms List
+     *
+     * @return array
+     */
+    public static function form_list() {
+        $options = [];
 
-        wp_enqueue_style('essential-blocks-frontend-style');
+        if ( class_exists( '\WPForms\WPForms' ) ) {
+            $args = [
+                'post_type'      => 'wpforms',
+                'posts_per_page' => -1
+            ];
 
-        $formId = isset($attributes['formId']) ? absint($attributes['formId']) : '';
-        $blockId = isset($attributes['blockId']) ? $attributes['blockId'] : '';
-        $classHook = isset($attributes['classHook']) ? $attributes['classHook'] : '';
-        $customCheckboxStyle = isset($attributes['customCheckboxStyle']) ? $attributes['customCheckboxStyle'] : false;
-        $formAlignment = isset($attributes['formAlignment']) ? $attributes['formAlignment'] : 'none';
-        $showLabels = isset($attributes['showLabels']) ? $attributes['showLabels'] : true;
-        $showPlaceholder = isset($attributes['showPlaceholder']) ? $attributes['showPlaceholder'] : true;
-        $showErrorMessage = isset($attributes['showErrorMessage']) ? $attributes['showErrorMessage'] : true;
-        $wrapperClasses = array('eb-wpforms-wrapper');
+            $contact_forms = get_posts( $args );
 
-        $alignment = array('left' => 'eb-wpforms-alignment-left', 'center' => 'eb-wpforms-alignment-center', 'right' => 'eb-wpforms-alignment-right');
-
-        if (array_key_exists($formAlignment, $alignment)) {
-            array_push($wrapperClasses, $alignment[$formAlignment]);
+            if ( ! empty( $contact_forms ) && ! is_wp_error( $contact_forms ) ) {
+                $options[0]['value'] = '';
+                $options[0]['label'] = esc_html__( 'Select a WPForm', 'essential-blocks' );
+                foreach ( $contact_forms as $key => $post ) {
+                    $options[$key + 1]['value'] = $post->ID;
+                    $options[$key + 1]['label'] = $post->post_title;
+                }
+            }
+        } else {
+            $options[0] = esc_html__( 'Create a Form First', 'essential-blocks' );
         }
 
-        if ($customCheckboxStyle) {
-            array_push($wrapperClasses, 'eb-wpforms-custom-radio-checkbox');
-        }
+        return $options;
+    }
 
-        if (!$showLabels) {
-            array_push($wrapperClasses, 'eb-wpforms-hide-labels');
+    /**
+     * Block render callback.
+     *
+     * @param mixed $attributes
+     * @param mixed $content
+     * @return mixed
+     */
+    public function render_callback( $attributes, $content ) {
+        if ( ! class_exists( '\WPForms\WPForms' ) || is_admin() ) {
+            return;
         }
-
-        if (!$showPlaceholder) {
-            array_push($wrapperClasses, 'eb-wpforms-hide-placeholder');
-        }
-
-        if (!$showErrorMessage) {
-            array_push($wrapperClasses, 'eb-wpforms-hide-errormessage');
-        }
-
 
         ob_start();
-        echo sprintf(
-            '<div class="eb-parent-wrapper eb-parent-%1$s %2$s">',
-            $blockId,
-            $classHook
-        );
-
-        echo '<div class="' . $blockId . " " . implode(" ", $wrapperClasses) . '">';
-        wpforms_display($formId);
-        echo '</div>';
-        echo '</div>';
-
+        Helper::views( 'forms/wpforms', wp_parse_args(
+            $attributes, [
+                'classHook'           => '',
+                'formId'              => '',
+                'customCheckboxStyle' => false,
+                'showLabels'          => true,
+                'showPlaceholder'     => true,
+                'showErrorMessage'    => true,
+                'formAlignment'       => 'none',
+                'wrapperClasses'      => ['eb-wpforms-wrapper'],
+                'alignment'           => ['left' => 'eb-wpforms-alignment-left', 'center' => 'eb-wpforms-alignment-center', 'right' => 'eb-wpforms-alignment-right'],
+                'wrapper_attributes'  => get_block_wrapper_attributes(),
+                'block_object'        => $this
+            ]
+        ) );
         return ob_get_clean();
     }
 }

@@ -52,20 +52,25 @@ if ( ! class_exists( 'EbStyleHandler' ) ) {
                 if ( is_array( $parsed_content ) && ! empty( $parsed_content ) ) {
                     foreach ( $parsed_content as $content ) {
                         if (  ( 'core/template-part' == $content['blockName'] ) || ( 'core/template' == $content['blockName'] ) ) {
-                            $post_id = self::eb_get_post_content_by_post_name( $content['attrs']['slug'] );
-                            if ( ! empty( $post_id ) ) {
-                                $post_id        = (int) $post_id[0]['ID'];
-                                $post           = get_post( $post_id );
-                                $parsed_content = parse_blocks( $post->post_content );
-                                $this->eb_write_css_from_content( $post, $post_id, $parsed_content );
+                            $post_ids = self::eb_get_post_content_by_post_name( $content['attrs']['slug'] );
+
+                            if ( ! empty( $post_ids ) ) {
+                                foreach ( $post_ids as $id ) {
+                                    $post_id        = (int) $id['ID'];
+                                    $post           = get_post( $post_id );
+                                    $parsed_content = parse_blocks( $post->post_content );
+                                    $this->eb_write_css_from_content( $post, $post_id, $parsed_content );
+                                }
                             }
                         } else {
-                            $post_id = self::eb_get_post_content_by_post_name( $block_template->slug );
-                            if ( ! empty( $post_id ) ) {
-                                $post_id        = (int) $post_id[0]['ID'];
-                                $post           = get_post( $post_id );
-                                $parsed_content = parse_blocks( $post->post_content );
-                                $this->eb_write_css_from_content( $post, $post_id, $parsed_content );
+                            $post_ids = self::eb_get_post_content_by_post_name( $block_template->slug );
+                            if ( ! empty( $post_ids ) ) {
+                                foreach ( $post_ids as $id ) {
+                                    $post_id        = (int) $id['ID'];
+                                    $post           = get_post( $post_id );
+                                    $parsed_content = parse_blocks( $post->post_content );
+                                    $this->eb_write_css_from_content( $post, $post_id, $parsed_content );
+                                }
                             }
                         }
                     }
@@ -88,7 +93,9 @@ if ( ! class_exists( 'EbStyleHandler' ) ) {
             unset( $recursive_response["reusableBlocks"] );
             $style       = EbStyleHandlerParseCss::blocks_to_style_array( $recursive_response );
             $reusableIds = $reusable_Blocks && is_array( $reusable_Blocks ) ? array_keys( $reusable_Blocks ) : [];
-            update_option( '_eb_reusable_block_ids', $reusableIds );
+            if ( ! empty( $reusableIds ) ) {
+                update_option( '_eb_reusable_block_ids', $reusableIds );
+            }
             update_post_meta( $post_id, '_eb_reusable_block_ids', $reusableIds );
             $this->write_block_css( $style, $post ); //Write CSS file for this page
 
@@ -260,7 +267,9 @@ if ( ! class_exists( 'EbStyleHandler' ) ) {
 
                         $style       = EbStyleHandlerParseCss::blocks_to_style_array( $recursive_response );
                         $reusableIds = $reusable_Blocks && is_array( $reusable_Blocks ) ? array_keys( $reusable_Blocks ) : [];
-                        update_option( '_eb_reusable_block_ids', $reusableIds );
+                        if ( ! empty( $reusableIds ) ) {
+                            update_option( '_eb_reusable_block_ids', $reusableIds );
+                        }
                         update_post_meta( $post_id, '_eb_reusable_block_ids', $reusableIds );
                         $this->write_block_css( $style, $post ); //Write CSS file for this page
 
@@ -282,7 +291,7 @@ if ( ! class_exists( 'EbStyleHandler' ) ) {
          */
         private function write_block_css( $block_styles, $post ) {
             //Write CSS for FSE
-            if ( isset( $post->post_type ) && ( $post->post_type === "wp_template_part" || $post->post_type === "wp_template" ) ) {
+            if ( isset( $post->post_type ) && ( $post->post_type === "wp_template_part" || $post->post_type === "wp_template" && ! empty( $block_styles ) ) ) {
                 $upload_dir = wp_upload_dir()['basedir'] . '/eb-style/';
                 $this->single_file_css_generator( $block_styles, $upload_dir, 'eb-style-edit-site.min.css' );
             }

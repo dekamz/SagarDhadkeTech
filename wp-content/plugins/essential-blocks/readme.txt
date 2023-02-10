@@ -1,9 +1,10 @@
 === Essential Blocks for Gutenberg ===
 Contributors: wpdevteam, re_enter_rupok, asif2bd, rahat89, priyomukul, hztyfoon, fencermonir, jamilbd07, sumaiyasiddika
 Tags: gutenberg, blocks, editor, gutenberg blocks, block, visual editor, page builder
-Requires at least: 5.6
+Requires at least: 5.8
 Tested up to: 6.1
-Stable tag: 3.8.7
+Requires PHP: 5.6
+Stable tag: 4.0
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -23,6 +24,10 @@ https://youtu.be/PnZx4ZOMyzI
 
 Each block comes with a bunch of options to control every possible aspect of your website design. You can design your page with endless customization options using this amazing Gutenberg blocks plugin.
 
+###🌐 BLOCKS GLOBAL CONTROL
+
+Now, any block can be saved with customized styling so that it can be reused in other posts or pages.This boosts efficiency so you do not have to recreate the same block styling repeatedly on all pages or posts.
+
 ###⚡ LIGHT WEIGHT & INSTANT LOADING
 
 No extra resources or messy codes to slow down your website. Optimized for super fast loading and instant live editing.
@@ -30,8 +35,17 @@ No extra resources or messy codes to slow down your website. Optimized for super
 ###⚙️ BLOCKS CONTROL OPTION
 Enable and disable individual blocks to make your page loading faster and smoother. You can deactivate unnecessary blocks to keep the site lightweight.
 
+###🚀 ASSET REGENERATION
+Keep your website's loading speed fast and secure against heavy scripts and CSS files with the Asset Regeneration feature.
+
+###🖊️ COMPATIBILITY WITH GOOGLE FONTS
+Choose any Google Font you prefer from a collection of 1,000+ font families availavle using Essential Blocks. Now, you can give your websites a customized look with stunning typographies.
+
 ###💻 RESPONSIVE ON ALL DEVICES
 Directly from your Gutenberg block editor, you can control each block’s responsiveness individually. With flexible responsive customization options, make your website user friendly for all devices.
+
+###🎯 STUNNING GUTENBERG TEMPLATES
+Explore and get access to 1,000+ ready, Gutenberg templates that were created using Essential Blocks for your block editor. You can customize the templates just the way you want, upload the designs to cloud solution, and collaborate with your team with ease.
 
 ###💫 ADVANCED ANIMATION FEATURE
 With our latest exclusive feature, the animation you can design every block with a stunning animated appearance. Grab users’ attention instantly with eye-catching animations, transitions, and many more.
@@ -83,6 +97,7 @@ Design without limits in WordPress block editor, using 40+ of the most useful Es
 - **[NFT Gallery](https://essential-blocks.com/demo/nft-gallery)** -  Display your NFT items & collections in a stunning gallery view without any coding
 - **[Social Share](https://essential-blocks.com/demo/social-share)** -  Share your posts & pages instantly in popular social platforms in one click from your website
 - **[Openverse](https://essential-blocks.com/demo/openverse)** -  Easily search & use royalty free images, stock photos, etc CC-licensed images from Openverse for your website
+- **[Google Maps](https://essential-blocks.com/demo/google-maps)** -  Present a fully responsive map on your website and with your preferred configurations, styles, etc.
 
 More blocks and demos coming soon (weekly update)
 
@@ -114,6 +129,21 @@ If you like Essential Blocks, then consider checking out our other WordPress Plu
 📌 **[EmbedPress](https://wordpress.org/plugins/embedpress/)** – Easiest WordPress solution for embedding videos, images, posts, audio, maps and PDF, DOC, PPT & all other types of content into your website using Gutenberg.
 
 🔗 **[BetterLinks](https://wordpress.org/plugins/betterlinks/)** – Advanced WordPress link management plugin for link shortening, tracking & analyzing with Instant Redirect for Gutenberg.
+
+== Installation ==
+
+**Note:** Since Essential Blocks is a Gutenberg library, you must activate Gutenberg editor to use it.
+
+1. Go to your WordPress Dashboard and navigate to wp-admin -> Plugins -> Add New. Search for **Essential Blocks for Gutenberg**. Then simply click on the **Install Now** button.
+2. Now click on **Activate** button to activate the plugin.
+3. That’s it. You can access all blocks easily from Gutenberg editor.
+
+Or,
+
+1. You can download the plugin by clicking the **Download** button from **[Essential Blocks for Gutenberg](https://wordpress.org/plugins/essential-blocks/)**
+2. Then go to wp-admin -> Plugins -> Add New and click on the **Upload Plugin**.
+3. The plugin will be instantly installed & activated on your website.
+For more detailed instructions, visit [Essential Blocks Installation Guideline](https://essential-blocks.com/docs/how-to-install-essential-blocks/). Also, check out a quick video tutorial from [Essential Blocks YouTube](https://www.youtube.com/playlist?list=PLWHp1xKHCfxAk6IzUeT_jvBDjiPghKJbe).
 
 == Frequently Asked Questions ==
 
@@ -166,6 +196,17 @@ Yes. You will need the Gutenberg block editor installed and activated in your Wo
 If you found the recent version of Essential Blocks isn't working or conflicting with other plugins then you can use earlier versions of the plugin.
 
 == Changelog ==
+
+= 4.0.0 - 09/02/2023 =
+- Added: New Block **Google Maps**
+- Added: **Block Defaults** control added
+- Added: New **Admin Dashboard**
+- Added: **Asset Regeneration** control
+- Added: **Optimization** control
+- Added: Templately Integration
+- Fixed: CSS loading issue with **Generate press**
+- Fixed: **Post Grid** & **Post Carousel** block editor error
+- Improved: Optimization and Load time
 
 = 3.8.7 - 31/01/2023 =
 - Fixed: Style not loading in FSE templates if no posts in query loop
@@ -605,5 +646,5 @@ Initial stable release
 
 == Upgrade Notice ==
 
-= 3.8.7 =
-- Hot Fix: Style not loading in FSE templates if no posts in query loop
+= 4.0.0 =
+- Essential Blocks 4.0 comes with a new Block "Google Maps". "Global Block Controls" feature is added to set Block Defaults. A new Dashboard page is designed with all settings in one place. Optimization options, Asset generation and lot more features has been added.

@@ -1,37 +1,25 @@
 <?php
+namespace EssentialBlocks\blocks;
 
-/**
- * Functions to register client-side assets (scripts and stylesheets) for the
- * Gutenberg block.
- *
- * @package essential-blocks
- */
+use EssentialBlocks\Core\Block;
 
-/**
- * Registers all block assets so that they can be enqueued through Gutenberg in
- * the corresponding context.
- *
- * @see https://wordpress.org/gutenberg/handbook/designers-developers/developers/tutorials/block-tutorial/applying-styles-with-stylesheets/
- */
-function row_block_init()
-{
-	// Skip block registration if Gutenberg is not enabled/merged.
-	if (!function_exists('register_block_type')) {
-		return;
-	}
+class Row extends Block {
+    protected $frontend_styles = ['essential-blocks-frontend-style'];
+	/**
+     * Unique name of the block.
+	 * @return string
+	 */
+    public function get_name(){
+        return 'row';
+    }
 
-	register_block_type(
-		EssentialBlocks::get_block_register_path("row"),
-		array(
-			'editor_script' => 'essential-blocks-editor-script',
-			'editor_style'    	=> ESSENTIAL_BLOCKS_NAME . '-editor-css',
-			'render_callback' => function ($attributes, $content) {
-				if (!is_admin()) {
-					wp_enqueue_style('essential-blocks-frontend-style');
-				}
-				return $content;
-			}
-		)
-	);
+    /**
+     * Initialize the InnerBlocks for Accordion
+     * @return array<Block>
+     */
+    public function inner_blocks(){
+        return [
+            Column::get_instance(),
+        ];
+    }
 }
-add_action('init', 'row_block_init');

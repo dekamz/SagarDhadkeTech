@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 /**
  * Template Name: Essential Blocks Blank Template
- * Description: Blank template for Essential Blocks template
+ * Description: Blank Template for Essential Blocks template
  *
  * @link       https://essential-blocks.com
  * @since      3.3.3

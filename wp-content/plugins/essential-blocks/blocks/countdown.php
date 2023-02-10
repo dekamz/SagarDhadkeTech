@@ -1,47 +1,28 @@
 <?php
+namespace EssentialBlocks\blocks;
 
-/**
- * Functions to register client-side assets (scripts and stylesheets) for the
- * Gutenberg block.
- *
- * @package essential-blocks
- */
+use EssentialBlocks\Core\Block;
 
-/**
- * Registers all block assets so that they can be enqueued through Gutenberg in
- * the corresponding context.
- *
- * @see https://wordpress.org/gutenberg/handbook/designers-developers/developers/tutorials/block-tutorial/applying-styles-with-stylesheets/
- */
-function countdown_block_init()
-{
-	// Skip block registration if Gutenberg is not enabled/merged.
-	if (!function_exists('register_block_type')) {
-		return;
-	}
+class CountDown extends Block {
+    protected $frontend_scripts = ['essential-blocks-countdown-block-frontend'];
+    protected $frontend_styles  = ['essential-blocks-frontend-style'];
 
-	/* Frontend Script */
-	wp_register_script(
-		'essential-blocks-countdown-block-frontend',
-		ESSENTIAL_BLOCKS_ADMIN_URL . 'blocks/countdown/frontend/index.js',
-		array(),
-		EssentialAdmin::get_version(ESSENTIAL_BLOCKS_DIR_PATH . 'blocks/countdown/frontend/index.js'),
-		true
-	);
+	/**
+     * Unique name of the block.
+	 * @return string
+	 */
+    public function get_name(){
+        return 'countdown';
+    }
 
-	register_block_type(
-		EssentialBlocks::get_block_register_path("countdown"),
-		array(
-			'editor_script' => 'essential-blocks-editor-script',
-			'editor_style'    	=> ESSENTIAL_BLOCKS_NAME . '-editor-css',
-			'render_callback' => function ($attributes, $content) {
-				if (!is_admin()) {
-					wp_enqueue_style('essential-blocks-frontend-style');
-					wp_enqueue_script('essential-blocks-countdown-block-frontend');
-				}
-				return $content;
-			}
-		)
-	);
+    /**
+     * Register all other scripts
+     * @return void
+     */
+    public function register_scripts(){
+        $this->assets_manager->register(
+            'countdown-block-frontend',
+            $this->path() . '/frontend/index.js'
+        );
+    }
 }
-add_action('init', 'countdown_block_init');

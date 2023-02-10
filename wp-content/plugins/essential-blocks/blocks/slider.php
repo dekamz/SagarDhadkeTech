@@ -1,64 +1,33 @@
 <?php
 
-/**
- * Functions to register client-side assets (scripts and stylesheets) for the
- * Gutenberg block.
- *
- * @package essential-blocks
- */
+namespace EssentialBlocks\blocks;
 
-/**
- * Registers all block assets so that they can be enqueued through Gutenberg in
- * the corresponding context.
- *
- * @see https://wordpress.org/gutenberg/handbook/designers-developers/developers/tutorials/block-tutorial/applying-styles-with-stylesheets/
- */
-function slider_block_init()
-{
-	// Skip block registration if Gutenberg is not enabled/merged.
-	if (!function_exists('register_block_type')) {
-		return;
-	}
+use EssentialBlocks\Core\Block;
 
-	$frontend_dependencies = include_once ESSENTIAL_BLOCKS_DIR_PATH . 'blocks/slider/frontend/index.asset.php';
-	$frontend_dependencies['dependencies'][] = 'essential-blocks-vendor-bundle';
+class Slider extends Block {
+    protected $frontend_scripts = [
+        'essential-blocks-slider-frontend',
+        'essential-blocks-slickjs',
+        'essential-blocks-vendor-bundle'
+    ];
+    protected $frontend_styles = ['essential-blocks-slick-style'];
 
-	/* Frontend Script */
-	wp_register_script(
-		'essential-blocks-slider-frontend',
-		ESSENTIAL_BLOCKS_ADMIN_URL . 'blocks/slider/frontend/index.js',
-		$frontend_dependencies['dependencies'],
-		EssentialAdmin::get_version(ESSENTIAL_BLOCKS_DIR_PATH . 'blocks/slider/frontend/index.js'),
-		true
-	);
+    /**
+     * Unique name of the block.
+     * @return string
+     */
+    public function get_name() {
+        return 'slider';
+    }
 
-	register_block_type(
-		EssentialBlocks::get_block_register_path("slider"),
-		array(
-			'editor_script' => 'essential-blocks-editor-script',
-			'editor_style'    	=> ESSENTIAL_BLOCKS_NAME . '-editor-css',
-			'render_callback' => function ($attributes, $content) {
-				if (!is_admin()) {
-					wp_enqueue_script('essential-blocks-slider-frontend');
-					wp_enqueue_style('essential-blocks-frontend-style');
-					wp_enqueue_style(
-						'slick-style',
-						plugins_url('assets/css/slick.css', dirname(__FILE__)),
-						array(),
-						ESSENTIAL_BLOCKS_VERSION
-					);
-
-					wp_enqueue_script(
-						'essential-blocks-slickjs',
-						plugins_url("assets/js/slick.min.js", dirname(__FILE__)),
-						array("jquery"),
-						ESSENTIAL_BLOCKS_VERSION,
-						true
-					);
-				}
-				return $content;
-			}
-		)
-	);
+    /**
+     * Register all other scripts
+     * @return void
+     */
+    public function register_scripts() {
+        $this->assets_manager->register(
+            'slider-frontend',
+            $this->path() . '/frontend/index.js'
+        );
+    }
 }
-add_action('init', 'slider_block_init');

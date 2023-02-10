@@ -1,56 +1,43 @@
 <?php
+namespace EssentialBlocks\blocks;
 
-/**
- * Functions to register client-side assets (scripts and stylesheets) for the
- * Gutenberg block.
- *
- * @package essential-blocks
- */
+use EssentialBlocks\Core\Block;
+use EssentialBlocks\Core\FaqSchema;
 
-/**
- * Registers all block assets so that they can be enqueued through Gutenberg in
- * the corresponding context.
- *
- * @see https://wordpress.org/gutenberg/handbook/designers-developers/developers/tutorials/block-tutorial/applying-styles-with-stylesheets/
- */
-function accordion_block_init()
-{
-	// Skip block registration if Gutenberg is not enabled/merged.
-	if (!function_exists('register_block_type')) {
-		return;
-	}
+class Accordion extends Block {
+    protected $frontend_scripts = ['essential-blocks-accordion-frontend'];
+    protected $frontend_styles  = ['essential-blocks-fontawesome'];
 
-	$dir = dirname(__FILE__);
+	/**
+     * Unique name of the block.
+	 * @return string
+	 */
+    public function get_name(){
+        return 'accordion';
+    }
 
-	$frontend_dependencies = include_once ESSENTIAL_BLOCKS_DIR_PATH . 'blocks/accordion/frontend/index.asset.php';
+    public function load_dependencies(){
+        FaqSchema::get_instance();
+    }
 
-	//  Frontend Script
-	$frontEnd_js = 'accordion/frontend/index.js';
-	wp_register_script(
-		'essential-blocks-accordion-frontend',
-		ESSENTIAL_BLOCKS_ADMIN_URL . 'blocks/accordion/frontend/index.js',
-		$frontend_dependencies['dependencies'],
-		EssentialAdmin::get_version($dir . "/" . $frontEnd_js),
-		true
-	);
+    /**
+     * Initialize the InnerBlocks for Accordion
+     * @return array<Block>
+     */
+    public function inner_blocks(){
+        return [
+            AccordionItem::get_instance(),
+        ];
+    }
 
-	register_block_type(
-		EssentialBlocks::get_block_register_path("accordion"),
-		array(
-			'editor_script' 	=> 'essential-blocks-editor-script',
-			'editor_style'    	=> ESSENTIAL_BLOCKS_NAME . '-editor-css',
-			'render_callback' => function ($attributes, $content) {
-				if (!is_admin()) {
-					wp_enqueue_script('essential-blocks-accordion-frontend');
-					wp_enqueue_style(
-						'eb-fontawesome-frontend',
-						plugins_url('assets/css/font-awesome5.css', dirname(__FILE__)),
-						array()
-					);
-				}
-				return $content;
-			}
-		)
-	);
+    /**
+     * Register all other scripts
+     * @return void
+     */
+    public function register_scripts(){
+        $this->assets_manager->register(
+            'accordion-frontend',
+            $this->path() . '/frontend/index.js'
+        );
+    }
 }
-add_action('init', 'accordion_block_init');

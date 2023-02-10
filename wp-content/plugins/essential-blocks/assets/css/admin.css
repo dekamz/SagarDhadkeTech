@@ -664,20 +664,3 @@ textarea.eb-form-control {
 .eb-admin-checkbox input:disabled {
 	opacity: 0;
 }
-.eb-more-patterns-btn{
-	margin: 10px 20px;
-	padding: 12px 15px;
-	display: inline-block;
-	cursor: pointer;
-	background: #5d4fff;
-	cursor: pointer;
-	border: 0;
-	border-radius: 4px;
-	font-size: 14px;
-	color: #fff !important;
-	text-align: center;
-	text-decoration: none !important;
-}
-.eb-more-patterns-btn:hover{
-	background: #493bed;
-}

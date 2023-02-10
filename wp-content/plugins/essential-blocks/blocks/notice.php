@@ -1,46 +1,27 @@
 <?php
+namespace EssentialBlocks\blocks;
 
-/**
- * Functions to register client-side assets (scripts and stylesheets) for the
- * Gutenberg block.
- *
- * @package essential-blocks
- */
+use EssentialBlocks\Core\Block;
 
-/**
- * Registers all block assets so that they can be enqueued through Gutenberg in
- * the corresponding context.
- *
- * @see https://wordpress.org/gutenberg/handbook/designers-developers/developers/tutorials/block-tutorial/applying-styles-with-stylesheets/
- */
-function notice_block_init()
-{
-	// Skip block registration if Gutenberg is not enabled/merged.
-	if (!function_exists('register_block_type')) {
-		return;
-	}
+class Notice extends Block {
+    protected $frontend_scripts = ['essential-blocks-notice-frontend'];
+    protected $frontend_styles  = [];
+    /**
+     * Unique name of the block.
+     * @return string
+     */
+    public function get_name() {
+        return 'notice';
+    }
 
-	/* Frontend Script */
-	wp_register_script(
-		'essential-blocks-notice-frontend',
-		ESSENTIAL_BLOCKS_ADMIN_URL . 'blocks/notice/frontend/index.js',
-		array(),
-		EssentialAdmin::get_version(ESSENTIAL_BLOCKS_DIR_PATH . 'blocks/notice/frontend/index.js'),
-		true
-	);
-
-	register_block_type(
-		EssentialBlocks::get_block_register_path("notice"),
-		array(
-			'editor_script' => 'essential-blocks-editor-script',
-			'editor_style'    	=> ESSENTIAL_BLOCKS_NAME . '-editor-css',
-			'render_callback' => function ($attributes, $content) {
-				if (!is_admin()) {
-					wp_enqueue_script('essential-blocks-notice-frontend');
-				}
-				return $content;
-			}
-		)
-	);
+    /**
+     * Register all other scripts
+     * @return void
+     */
+    public function register_scripts() {
+        $this->assets_manager->register(
+            'notice-frontend',
+            $this->path() . '/frontend/index.js'
+        );
+    }
 }
-add_action('init', 'notice_block_init');

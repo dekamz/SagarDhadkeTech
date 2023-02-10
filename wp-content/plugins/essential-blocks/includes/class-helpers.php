@@ -4,6 +4,8 @@
         exit;
     }
 
+    use EssentialBlocks\Utils\Helper;
+
     class EBHelpers {
         /**
          * Filter Blocks
@@ -52,37 +54,6 @@
         }
 
         /**
-         * Get WPForms List
-         *
-         * @return array
-         */
-        public static function get_wpforms_list() {
-            $options = [];
-
-            if ( class_exists( '\WPForms\WPForms' ) ) {
-                $args = [
-                    'post_type'      => 'wpforms',
-                    'posts_per_page' => -1
-                ];
-
-                $contact_forms = get_posts( $args );
-
-                if ( ! empty( $contact_forms ) && ! is_wp_error( $contact_forms ) ) {
-                    $options[0]['value'] = '';
-                    $options[0]['label'] = esc_html__( 'Select a WPForm', 'essential-blocks' );
-                    foreach ( $contact_forms as $key => $post ) {
-                        $options[$key + 1]['value'] = $post->ID;
-                        $options[$key + 1]['label'] = $post->post_title;
-                    }
-                }
-            } else {
-                $options[0] = esc_html__( 'Create a Form First', 'essential-blocks' );
-            }
-
-            return $options;
-        }
-
-        /**
          * API Query Builder
          */
         public static function woo_products_query_builder( $attr ) {
@@ -98,22 +69,22 @@
 
             if ( isset( $attr['orderby'] ) ) {
                 switch ( $attr['orderby'] ) {
-                    case 'price':
-                        $query_args['meta_key'] = '_price';
-                        $query_args['orderby']  = 'meta_value_num';
-                        break;
-                    case 'popular':
-                        $query_args['meta_key'] = 'total_sales';
-                        $query_args['orderby']  = 'meta_value_num';
-                        $query_args['order']    = 'desc';
-                        break;
-                    case 'rating';
-                        $query_args['meta_key'] = '_wc_average_rating';
-                        $query_args['orderby']  = 'meta_value_num';
-                        break;
-                    default:
-                        $query_args['orderby'] = $attr['orderby'];
-                        break;
+                case 'price':
+                    $query_args['meta_key'] = '_price';
+                    $query_args['orderby']  = 'meta_value_num';
+                    break;
+                case 'popular':
+                    $query_args['meta_key'] = 'total_sales';
+                    $query_args['orderby']  = 'meta_value_num';
+                    $query_args['order']    = 'desc';
+                    break;
+                case 'rating';
+                    $query_args['meta_key'] = '_wc_average_rating';
+                    $query_args['orderby']  = 'meta_value_num';
+                    break;
+                default:
+                    $query_args['orderby'] = $attr['orderby'];
+                    break;
                 }
             }
 
@@ -196,14 +167,14 @@
         public static function eb_template_header() {
         if ( function_exists( 'wp_is_block_theme' ) && wp_is_block_theme() ) {?>
             <!doctype html>
-            <html                  <?php language_attributes();?>>
+            <html                                                                                                                                                          <?php language_attributes();?>>
 
             <head>
                 <meta charset="<?php bloginfo( 'charset' );?>">
                 <?php wp_head();?>
             </head>
 
-            <body                  <?php body_class();?>>
+            <body                                                                                                                                                          <?php body_class();?>>
     <?php
         wp_body_open();
 
@@ -280,82 +251,38 @@
                     return esc_url( 'https://vk.com/share.php?url=' . $post_link );
                 }
             }
-
             /**
-             * Version Update warning
-             * @param mixed $current_version
-             * @param mixed $new_version
-             * @return void
+             * API Query Builder
              */
-            public static function version_update_warning( $current_version, $new_version, $upgrade_notice ) {
-                $current_version_minor_part = explode( '.', $current_version )[1];
-                $new_version_minor_part     = explode( '.', $new_version )[1];
+            public static function get_plugins() {
+                $all_plugins = Helper::get_plugins();
 
-                $notice = "";
+                $active_plugins = get_option( 'active_plugins' );
 
-                if ( $current_version_minor_part === $new_version_minor_part ) {
-                    if ( ! $upgrade_notice ) {
-                        return;
+                if ( is_array( $all_plugins ) ) {
+                    foreach ( $all_plugins as $key => $plugin ) {
+                        $data               = [];
+                        $data['TextDomain'] = $plugin['TextDomain'];
+                        if ( is_array( $active_plugins ) && in_array( $key, $active_plugins ) ) {
+                            $data["active"] = true;
+                        } else {
+                            $data["active"] = false;
+                        }
+
+                        //Assign
+                        $all_plugins[$key] = $data;
                     }
                 }
 
-                if ( $current_version_minor_part !== $new_version_minor_part ) {
-                    $notice .= "We highly recommend you to backup your site before upgrade to new version.";
+                return $all_plugins;
+            }
+
+            public static function get_gfont_family( $attributes ) {
+                $keys             = preg_grep( '/^(\w+)FontFamily/i', array_keys( $attributes ), 0 );
+                $googleFontFamily = [];
+                foreach ( $keys as $key ) {
+                    $googleFontFamily[] = $attributes[$key];
                 }
-
-            ?>
-    <style>
-        hr.eb-update-warning__separator {
-            margin: 15px -13px;
-            border-color: #dba618;
-        }
-        .eb-update-warning .dashicons {
-            display: inline-block;
-            color: #F49B07;
-        }
-        .eb-update-warning .eb-update-warning__title {
-            display: inline-block;
-            font-size: 1.05em;
-            color: #444;
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-        .eb-update-warning__message {
-            margin-bottom: 15px;
-        }
-        .update-message.notice-warning p:empty {
-            display: none;
-        }
-    </style>
-    <hr class="eb-update-warning__separator" />
-    <div class="eb-update-warning">
-        <div>
-            <span class="dashicons dashicons-info"></span>
-            <div class="eb-update-warning__title">
-                <?php echo esc_html__( 'Heads up!', 'essential-blocks' ); ?>
-            </div>
-            <div class="eb-update-warning__message">
-                <?php
-                    printf( esc_html__( '%1$s', 'essential-blocks' ), $notice );
-                        ?>
-            </div>
-
-            <?php
-                if ( $upgrade_notice !== false ) {
-                        ?>
-                <hr class="eb-update-warning__separator" />
-                <div class="eb-update-warning__message">
-                    <span class="dashicons dashicons-info"></span>
-                    <div class="eb-update-warning__title">
-                        <?php echo esc_html__( 'Notice: ', 'essential-blocks' ); ?>
-                    </div>
-                    <div class="eb-update-warning__message">
-                        <?php printf( esc_html( '%1$s' ), wp_strip_all_tags( $upgrade_notice ) );?>
-                    </div>
-                </div>
-            <?php }?>
-        </div>
-    </div>
-    <?php
-        }
+                return $googleFontFamily;
+            }
     }
