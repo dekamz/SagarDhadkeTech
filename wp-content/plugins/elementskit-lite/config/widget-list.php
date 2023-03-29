@@ -520,6 +520,18 @@ class Widget_List extends \ElementsKit_Lite\Core\Config_List {
 					'package'         => 'pro-disabled',
 					'widget-category' => 'general', // General
 				),
+				'content-ticker' => array(
+					'slug'            => 'content-ticker',
+					'title'           => 'Content Ticker',
+					'package'         => 'pro-disabled',
+					'widget-category' => 'general', // General
+				),
+				'coupon-code' => array(
+					'slug'            => 'coupon-code',
+					'title'           => 'Coupon Code',
+					'package'         => 'pro-disabled',
+					'widget-category' => 'general', // General
+				),
 			)
 		);
 	}

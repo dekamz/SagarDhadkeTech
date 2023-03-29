@@ -970,19 +970,28 @@ class Premium_Videobox extends Widget_Base {
 		$this->add_control(
 			'aspect_ratio',
 			array(
-				'label'              => __( 'Aspect Ratio', 'premium-addons-for-elementor' ),
-				'type'               => Controls_Manager::SELECT,
-				'options'            => array(
-					'11'  => '1:1',
+				'label'                => __( 'Aspect Ratio', 'premium-addons-for-elementor' ),
+				'type'                 => Controls_Manager::SELECT,
+				'options'              => array(
 					'169' => '16:9',
+					'219' => '21:9',
 					'43'  => '4:3',
 					'32'  => '3:2',
-					'219' => '21:9',
+					'11'  => '1:1',
 					'916' => '9:16',
 				),
-				'default'            => '169',
-				'prefix_class'       => 'pa-aspect-ratio-',
-				'frontend_available' => true,
+				'selectors_dictionary' => array(
+					'169' => '16 / 9',
+					'219' => '21 / 9',
+					'43'  => '4 / 3',
+					'32'  => '3 / 2',
+					'11'  => '1 / 1',
+					'916' => '9 / 16',
+				),
+				'default'              => '169',
+				'selectors'            => array(
+					'{{WRAPPER}} .premium-video-box-container > div' => 'aspect-ratio: {{VALUE}}',
+				),
 			)
 		);
 

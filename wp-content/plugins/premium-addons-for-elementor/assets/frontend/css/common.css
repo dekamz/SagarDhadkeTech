@@ -33,99 +33,99 @@
     height: 100%;
     background-color: currentColor;
     -webkit-backface-visibility: visible;
-            backface-visibility: visible; }
+    backface-visibility: visible; }
 
 .premium-mask-active.premium-mask-tr .premium-mask-span::after {
   -webkit-animation: pa-mask-tr 1.7s cubic-bezier(1, 0, 0.18, 1) forwards;
-          animation: pa-mask-tr 1.7s cubic-bezier(1, 0, 0.18, 1) forwards;
+  animation: pa-mask-tr 1.7s cubic-bezier(1, 0, 0.18, 1) forwards;
   -webkit-transform: translateX(-103%);
-      -ms-transform: translateX(-103%);
-          transform: translateX(-103%); }
+  -ms-transform: translateX(-103%);
+  transform: translateX(-103%); }
 
 .premium-mask-active.premium-mask-tl .premium-mask-span::after {
   -webkit-animation: pa-mask-tl 1.7s cubic-bezier(1, 0, 0.18, 1) forwards;
-          animation: pa-mask-tl 1.7s cubic-bezier(1, 0, 0.18, 1) forwards;
+  animation: pa-mask-tl 1.7s cubic-bezier(1, 0, 0.18, 1) forwards;
   -webkit-transform: translateX(103%);
-      -ms-transform: translateX(103%);
-          transform: translateX(103%); }
+  -ms-transform: translateX(103%);
+  transform: translateX(103%); }
 
 .premium-mask-active.premium-mask-tb .premium-mask-span::after {
   -webkit-animation: pa-mask-tb 1.7s cubic-bezier(1, 0, 0.18, 1) forwards;
-          animation: pa-mask-tb 1.7s cubic-bezier(1, 0, 0.18, 1) forwards;
+  animation: pa-mask-tb 1.7s cubic-bezier(1, 0, 0.18, 1) forwards;
   -webkit-transform: translateY(-103%);
-      -ms-transform: translateY(-103%);
-          transform: translateY(-103%); }
+  -ms-transform: translateY(-103%);
+  transform: translateY(-103%); }
 
 .premium-mask-active.premium-mask-tt .premium-mask-span::after {
   -webkit-animation: pa-mask-tt 1.7s cubic-bezier(1, 0, 0.18, 1) forwards;
-          animation: pa-mask-tt 1.7s cubic-bezier(1, 0, 0.18, 1) forwards;
+  animation: pa-mask-tt 1.7s cubic-bezier(1, 0, 0.18, 1) forwards;
   -webkit-transform: translateY(103%);
-      -ms-transform: translateY(103%);
-          transform: translateY(103%); }
+  -ms-transform: translateY(103%);
+  transform: translateY(103%); }
 
 @-webkit-keyframes pa-mask-tr {
   0% {
     -webkit-transform: translateX(0%);
-            transform: translateX(0%); }
+    transform: translateX(0%); }
   100% {
     -webkit-transform: translateX(103%);
-            transform: translateX(103%); } }
+    transform: translateX(103%); } }
 
 @keyframes pa-mask-tr {
   0% {
     -webkit-transform: translateX(0%);
-            transform: translateX(0%); }
+    transform: translateX(0%); }
   100% {
     -webkit-transform: translateX(103%);
-            transform: translateX(103%); } }
+    transform: translateX(103%); } }
 
 @-webkit-keyframes pa-mask-tl {
   0% {
     -webkit-transform: translateX(0%);
-            transform: translateX(0%); }
+    transform: translateX(0%); }
   100% {
     -webkit-transform: translateX(-103%);
-            transform: translateX(-103%); } }
+    transform: translateX(-103%); } }
 
 @keyframes pa-mask-tl {
   0% {
     -webkit-transform: translateX(0%);
-            transform: translateX(0%); }
+    transform: translateX(0%); }
   100% {
     -webkit-transform: translateX(-103%);
-            transform: translateX(-103%); } }
+    transform: translateX(-103%); } }
 
 @-webkit-keyframes pa-mask-tb {
   0% {
     -webkit-transform: translateY(0%);
-            transform: translateY(0%); }
+    transform: translateY(0%); }
   100% {
     -webkit-transform: translateY(103%);
-            transform: translateY(103%); } }
+    transform: translateY(103%); } }
 
 @keyframes pa-mask-tb {
   0% {
     -webkit-transform: translateY(0%);
-            transform: translateY(0%); }
+    transform: translateY(0%); }
   100% {
     -webkit-transform: translateY(103%);
-            transform: translateY(103%); } }
+    transform: translateY(103%); } }
 
 @-webkit-keyframes pa-mask-tt {
   0% {
     -webkit-transform: translateY(0%);
-            transform: translateY(0%); }
+    transform: translateY(0%); }
   100% {
     -webkit-transform: translateY(-103%);
-            transform: translateY(-103%); } }
+    transform: translateY(-103%); } }
 
 @keyframes pa-mask-tt {
   0% {
     -webkit-transform: translateY(0%);
-            transform: translateY(0%); }
+    transform: translateY(0%); }
   100% {
     -webkit-transform: translateY(-103%);
-            transform: translateY(-103%); } }
+    transform: translateY(-103%); } }
 
 /*
 * Common Buttons Style.
@@ -195,8 +195,8 @@ div[class*="elementor-widget-premium"] .premium-btn-block {
   border-radius: 50%;
   display: block;
   -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   -webkit-transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
   transition: width 0.4s ease-in-out, height 0.4s ease-in-out; }
 
@@ -220,7 +220,7 @@ div[class*="elementor-widget-premium"] .premium-btn-block {
   width: 30px;
   height: 30px;
   -webkit-animation: spin 2s linear infinite;
-          animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
   margin: 0 auto; }
 
 /*
@@ -244,17 +244,17 @@ because it's rendered as div with custom SVG code.
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
+    transform: rotate(0deg); }
   100% {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); } }
+    transform: rotate(360deg); } }
 @keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
+    transform: rotate(0deg); }
   100% {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); } }
+    transform: rotate(360deg); } }
 
 /**Notice*/
 .premium-error-notice {

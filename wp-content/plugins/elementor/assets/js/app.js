@@ -1,4 +1,4 @@
-/*! elementor - v3.10.2 - 29-01-2023 */
+/*! elementor - v3.12.0 - 29-03-2023 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -2536,7 +2536,7 @@ Object.defineProperty(exports, "__esModule", ({
 exports.appsEventTrackingDispatch = void 0;
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 var appsEventTrackingDispatch = function appsEventTrackingDispatch(command, eventParams) {
   // Add existing eventParams key value pair to the data/details object.
   var objectCreator = function objectCreator(array, obj) {
@@ -2660,41 +2660,39 @@ function useAjax() {
   var runRequest = /*#__PURE__*/function () {
     var _ref = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(config) {
       return _regenerator.default.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              return _context.abrupt("return", new Promise(function (resolve, reject) {
-                var formData = new FormData();
-                if (config.data) {
-                  for (var key in config.data) {
-                    formData.append(key, config.data[key]);
-                  }
-                  if (!config.data.nonce) {
-                    formData.append('_nonce', elementorCommon.config.ajax.nonce);
-                  }
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            return _context.abrupt("return", new Promise(function (resolve, reject) {
+              var formData = new FormData();
+              if (config.data) {
+                for (var key in config.data) {
+                  formData.append(key, config.data[key]);
                 }
-                var options = _objectSpread(_objectSpread({
-                  type: 'post',
-                  url: elementorCommon.config.ajax.url,
-                  headers: {},
-                  cache: false,
-                  contentType: false,
-                  processData: false
-                }, config), {}, {
-                  data: formData,
-                  success: function success(response) {
-                    resolve(response);
-                  },
-                  error: function error(_error) {
-                    reject(_error);
-                  }
-                });
-                jQuery.ajax(options);
-              }));
-            case 1:
-            case "end":
-              return _context.stop();
-          }
+                if (!config.data.nonce) {
+                  formData.append('_nonce', elementorCommon.config.ajax.nonce);
+                }
+              }
+              var options = _objectSpread(_objectSpread({
+                type: 'post',
+                url: elementorCommon.config.ajax.url,
+                headers: {},
+                cache: false,
+                contentType: false,
+                processData: false
+              }, config), {}, {
+                data: formData,
+                success: function success(response) {
+                  resolve(response);
+                },
+                error: function error(_error) {
+                  reject(_error);
+                }
+              });
+              jQuery.ajax(options);
+            }));
+          case 1:
+          case "end":
+            return _context.stop();
         }
       }, _callee);
     }));
@@ -6693,6 +6691,7 @@ var ImportContext = _react.default.createContext();
 exports.ImportContext = ImportContext;
 function ImportContextProvider(props) {
   var initialState = {
+      id: null,
       file: null,
       uploadedData: null,
       importedData: null,
@@ -6744,6 +6743,10 @@ var reducer = function reducer(state, _ref) {
   var type = _ref.type,
     payload = _ref.payload;
   switch (type) {
+    case 'SET_ID':
+      return _objectSpread(_objectSpread({}, state), {}, {
+        id: payload
+      });
     case 'SET_FILE':
       return _objectSpread(_objectSpread({}, state), {}, {
         file: payload
@@ -7010,7 +7013,7 @@ var _react = __webpack_require__(/*! react */ "react");
 var _useAjax2 = _interopRequireDefault(__webpack_require__(/*! elementor-app/hooks/use-ajax */ "../app/assets/js/hooks/use-ajax.js"));
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var KIT_STATUS_MAP = Object.freeze({
@@ -7052,37 +7055,36 @@ function useKit() {
     },
     initImportProcess = /*#__PURE__*/function () {
       var _ref3 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(_ref2) {
-        var session, include, overrideConditions, referrer, selectedCustomPostTypes, ajaxConfig;
+        var id, session, include, overrideConditions, referrer, selectedCustomPostTypes, ajaxConfig;
         return _regenerator.default.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                session = _ref2.session, include = _ref2.include, overrideConditions = _ref2.overrideConditions, referrer = _ref2.referrer, selectedCustomPostTypes = _ref2.selectedCustomPostTypes;
-                ajaxConfig = {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              id = _ref2.id, session = _ref2.session, include = _ref2.include, overrideConditions = _ref2.overrideConditions, referrer = _ref2.referrer, selectedCustomPostTypes = _ref2.selectedCustomPostTypes;
+              ajaxConfig = {
+                data: {
+                  action: IMPORT_KIT_KEY,
                   data: {
-                    action: IMPORT_KIT_KEY,
-                    data: {
-                      session: session,
-                      include: include,
-                      overrideConditions: overrideConditions
-                    }
+                    id: id,
+                    session: session,
+                    include: include,
+                    overrideConditions: overrideConditions
                   }
-                };
-                if (referrer) {
-                  ajaxConfig.data.data.referrer = referrer;
                 }
-                if (selectedCustomPostTypes) {
-                  ajaxConfig.data.data.selectedCustomPostTypes = selectedCustomPostTypes;
-                }
-                ajaxConfig.data.data = JSON.stringify(ajaxConfig.data.data);
-                _context.next = 7;
-                return runRequest(ajaxConfig);
-              case 7:
-                return _context.abrupt("return", _context.sent);
-              case 8:
-              case "end":
-                return _context.stop();
-            }
+              };
+              if (referrer) {
+                ajaxConfig.data.data.referrer = referrer;
+              }
+              if (selectedCustomPostTypes) {
+                ajaxConfig.data.data.selectedCustomPostTypes = selectedCustomPostTypes;
+              }
+              ajaxConfig.data.data = JSON.stringify(ajaxConfig.data.data);
+              _context.next = 7;
+              return runRequest(ajaxConfig);
+            case 7:
+              return _context.abrupt("return", _context.sent);
+            case 8:
+            case "end":
+              return _context.stop();
           }
         }, _callee);
       }));
@@ -7094,75 +7096,73 @@ function useKit() {
       var _ref4 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2(session, runners) {
         var stopIterations, _iterator, _step, _step$value, iteration, runner, ajaxConfig, isLastIteration;
         return _regenerator.default.wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                stopIterations = false;
-                _iterator = _createForOfIteratorHelper(runners.entries());
-                _context2.prev = 2;
-                _iterator.s();
-              case 4:
-                if ((_step = _iterator.n()).done) {
-                  _context2.next = 19;
-                  break;
-                }
-                _step$value = (0, _slicedToArray2.default)(_step.value, 2), iteration = _step$value[0], runner = _step$value[1];
-                if (!stopIterations) {
-                  _context2.next = 8;
-                  break;
-                }
-                return _context2.abrupt("break", 19);
-              case 8:
-                ajaxConfig = {
+          while (1) switch (_context2.prev = _context2.next) {
+            case 0:
+              stopIterations = false;
+              _iterator = _createForOfIteratorHelper(runners.entries());
+              _context2.prev = 2;
+              _iterator.s();
+            case 4:
+              if ((_step = _iterator.n()).done) {
+                _context2.next = 19;
+                break;
+              }
+              _step$value = (0, _slicedToArray2.default)(_step.value, 2), iteration = _step$value[0], runner = _step$value[1];
+              if (!stopIterations) {
+                _context2.next = 8;
+                break;
+              }
+              return _context2.abrupt("break", 19);
+            case 8:
+              ajaxConfig = {
+                data: {
+                  action: RUN_RUNNER_KEY,
                   data: {
-                    action: RUN_RUNNER_KEY,
-                    data: {
-                      session: session,
-                      runner: runner
-                    }
+                    session: session,
+                    runner: runner
                   }
-                };
-                ajaxConfig.data.data = JSON.stringify(ajaxConfig.data.data);
-
-                // The last runner should run using the setAjax method, so it will trigger the useEffect and update the kitState.
-                isLastIteration = iteration === runners.length - 1;
-                if (isLastIteration) {
-                  _context2.next = 16;
-                  break;
                 }
-                _context2.next = 14;
-                return runRequest(ajaxConfig).catch(function (error) {
-                  stopIterations = true;
-                  setKitState(function (prevState) {
-                    return _objectSpread(_objectSpread({}, prevState), {
-                      status: KIT_STATUS_MAP.ERROR,
-                      data: error
-                    });
+              };
+              ajaxConfig.data.data = JSON.stringify(ajaxConfig.data.data);
+
+              // The last runner should run using the setAjax method, so it will trigger the useEffect and update the kitState.
+              isLastIteration = iteration === runners.length - 1;
+              if (isLastIteration) {
+                _context2.next = 16;
+                break;
+              }
+              _context2.next = 14;
+              return runRequest(ajaxConfig).catch(function (error) {
+                stopIterations = true;
+                setKitState(function (prevState) {
+                  return _objectSpread(_objectSpread({}, prevState), {
+                    status: KIT_STATUS_MAP.ERROR,
+                    data: error
                   });
                 });
-              case 14:
-                _context2.next = 17;
-                break;
-              case 16:
-                setAjax(ajaxConfig);
-              case 17:
-                _context2.next = 4;
-                break;
-              case 19:
-                _context2.next = 24;
-                break;
-              case 21:
-                _context2.prev = 21;
-                _context2.t0 = _context2["catch"](2);
-                _iterator.e(_context2.t0);
-              case 24:
-                _context2.prev = 24;
-                _iterator.f();
-                return _context2.finish(24);
-              case 27:
-              case "end":
-                return _context2.stop();
-            }
+              });
+            case 14:
+              _context2.next = 17;
+              break;
+            case 16:
+              setAjax(ajaxConfig);
+            case 17:
+              _context2.next = 4;
+              break;
+            case 19:
+              _context2.next = 24;
+              break;
+            case 21:
+              _context2.prev = 21;
+              _context2.t0 = _context2["catch"](2);
+              _iterator.e(_context2.t0);
+            case 24:
+              _context2.prev = 24;
+              _iterator.f();
+              return _context2.finish(24);
+            case 27:
+            case "end":
+              return _context2.stop();
           }
         }, _callee2, null, [[2, 21, 24, 27]]);
       }));
@@ -7172,43 +7172,42 @@ function useKit() {
     }(),
     importKit = /*#__PURE__*/function () {
       var _ref6 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee3(_ref5) {
-        var session, include, overrideConditions, referrer, selectedCustomPostTypes, importSession, newState;
+        var id, session, include, overrideConditions, referrer, selectedCustomPostTypes, importSession, newState;
         return _regenerator.default.wrap(function _callee3$(_context3) {
-          while (1) {
-            switch (_context3.prev = _context3.next) {
-              case 0:
-                session = _ref5.session, include = _ref5.include, overrideConditions = _ref5.overrideConditions, referrer = _ref5.referrer, selectedCustomPostTypes = _ref5.selectedCustomPostTypes;
-                ajaxActions.reset();
-                _context3.next = 4;
-                return initImportProcess({
-                  session: session,
-                  include: include,
-                  overrideConditions: overrideConditions,
-                  referrer: referrer,
-                  selectedCustomPostTypes: selectedCustomPostTypes
-                });
-              case 4:
-                importSession = _context3.sent;
-                if (importSession.success) {
-                  _context3.next = 10;
-                  break;
-                }
-                newState = {
-                  status: KIT_STATUS_MAP.ERROR,
-                  data: ajaxState.response || {}
-                };
-                setKitState(function (prevState) {
-                  return _objectSpread(_objectSpread({}, prevState), newState);
-                });
-                _context3.next = 12;
+          while (1) switch (_context3.prev = _context3.next) {
+            case 0:
+              id = _ref5.id, session = _ref5.session, include = _ref5.include, overrideConditions = _ref5.overrideConditions, referrer = _ref5.referrer, selectedCustomPostTypes = _ref5.selectedCustomPostTypes;
+              ajaxActions.reset();
+              _context3.next = 4;
+              return initImportProcess({
+                id: id,
+                session: session,
+                include: include,
+                overrideConditions: overrideConditions,
+                referrer: referrer,
+                selectedCustomPostTypes: selectedCustomPostTypes
+              });
+            case 4:
+              importSession = _context3.sent;
+              if (importSession.success) {
+                _context3.next = 10;
                 break;
-              case 10:
-                _context3.next = 12;
-                return runImportRunners(importSession.data.session, importSession.data.runners);
-              case 12:
-              case "end":
-                return _context3.stop();
-            }
+              }
+              newState = {
+                status: KIT_STATUS_MAP.ERROR,
+                data: ajaxState.response || {}
+              };
+              setKitState(function (prevState) {
+                return _objectSpread(_objectSpread({}, prevState), newState);
+              });
+              _context3.next = 12;
+              break;
+            case 10:
+              _context3.next = 12;
+              return runImportRunners(importSession.data.session, importSession.data.runners);
+            case 12:
+            case "end":
+              return _context3.stop();
           }
         }, _callee3);
       }));
@@ -7546,7 +7545,7 @@ var _import = _interopRequireDefault(__webpack_require__(/*! ./import */ "../app
 var _export = _interopRequireDefault(__webpack_require__(/*! ./export */ "../app/modules/import-export/assets/js/export.js"));
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 var ImportExport = /*#__PURE__*/(0, _createClass2.default)(function ImportExport() {
   (0, _classCallCheck2.default)(this, ImportExport);
   (0, _defineProperty2.default)(this, "routes", [{
@@ -9974,6 +9973,7 @@ function ImportProcess() {
     kitActions = _useKit.kitActions,
     KIT_STATUS_MAP = _useKit.KIT_STATUS_MAP,
     _useQueryParams$getAl = (0, _useQueryParams.default)().getAll(),
+    id = _useQueryParams$getAl.id,
     referrer = _useQueryParams$getAl.referrer,
     fileURL = _useQueryParams$getAl.file_url,
     actionType = _useQueryParams$getAl.action_type,
@@ -9997,6 +9997,10 @@ function ImportProcess() {
     navigateToMainScreen = _useImportActions.navigateToMainScreen,
     uploadKit = function uploadKit() {
       var decodedFileURL = decodeURIComponent(fileURL);
+      importContext.dispatch({
+        type: 'SET_ID',
+        payload: id
+      });
       importContext.dispatch({
         type: 'SET_FILE',
         payload: decodedFileURL
@@ -10086,6 +10090,7 @@ function ImportProcess() {
   (0, _react.useEffect)(function () {
     if (startImport) {
       kitActions.import({
+        id: importContext.data.id,
         session: uploadedData.session,
         include: includes,
         overrideConditions: overrideConditions,
@@ -15170,9 +15175,7 @@ module.exports = wp.i18n;
 
 function _arrayLikeToArray(arr, len) {
   if (len == null || len > arr.length) len = arr.length;
-  for (var i = 0, arr2 = new Array(len); i < len; i++) {
-    arr2[i] = arr[i];
-  }
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
   return arr2;
 }
 module.exports = _arrayLikeToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
@@ -15281,15 +15284,16 @@ module.exports = _classCallCheck, module.exports.__esModule = true, module.expor
 /*!*************************************************************!*\
   !*** ../node_modules/@babel/runtime/helpers/createClass.js ***!
   \*************************************************************/
-/***/ ((module) => {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+var toPropertyKey = __webpack_require__(/*! ./toPropertyKey.js */ "../node_modules/@babel/runtime/helpers/toPropertyKey.js");
 function _defineProperties(target, props) {
   for (var i = 0; i < props.length; i++) {
     var descriptor = props[i];
     descriptor.enumerable = descriptor.enumerable || false;
     descriptor.configurable = true;
     if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
+    Object.defineProperty(target, toPropertyKey(descriptor.key), descriptor);
   }
 }
 function _createClass(Constructor, protoProps, staticProps) {
@@ -15308,9 +15312,11 @@ module.exports = _createClass, module.exports.__esModule = true, module.exports[
 /*!****************************************************************!*\
   !*** ../node_modules/@babel/runtime/helpers/defineProperty.js ***!
   \****************************************************************/
-/***/ ((module) => {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+var toPropertyKey = __webpack_require__(/*! ./toPropertyKey.js */ "../node_modules/@babel/runtime/helpers/toPropertyKey.js");
 function _defineProperty(obj, key, value) {
+  key = toPropertyKey(key);
   if (key in obj) {
     Object.defineProperty(obj, key, {
       value: value,
@@ -15456,28 +15462,31 @@ module.exports = _iterableToArray, module.exports.__esModule = true, module.expo
 /***/ ((module) => {
 
 function _iterableToArrayLimit(arr, i) {
-  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
-  if (_i == null) return;
-  var _arr = [];
-  var _n = true;
-  var _d = false;
-  var _s, _e;
-  try {
-    for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
-      _arr.push(_s.value);
-      if (i && _arr.length === i) break;
-    }
-  } catch (err) {
-    _d = true;
-    _e = err;
-  } finally {
+  var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"];
+  if (null != _i) {
+    var _s,
+      _e,
+      _x,
+      _r,
+      _arr = [],
+      _n = !0,
+      _d = !1;
     try {
-      if (!_n && _i["return"] != null) _i["return"]();
+      if (_x = (_i = _i.call(arr)).next, 0 === i) {
+        if (Object(_i) !== _i) return;
+        _n = !1;
+      } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0);
+    } catch (err) {
+      _d = !0, _e = err;
     } finally {
-      if (_d) throw _e;
+      try {
+        if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return;
+      } finally {
+        if (_d) throw _e;
+      }
     }
+    return _arr;
   }
-  return _arr;
 }
 module.exports = _iterableToArrayLimit, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
@@ -15672,14 +15681,9 @@ function _regeneratorRuntime() {
     };
   }
   function maybeInvokeDelegate(delegate, context) {
-    var method = delegate.iterator[context.method];
-    if (undefined === method) {
-      if (context.delegate = null, "throw" === context.method) {
-        if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel;
-        context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method");
-      }
-      return ContinueSentinel;
-    }
+    var methodName = context.method,
+      method = delegate.iterator[methodName];
+    if (undefined === method) return context.delegate = null, "throw" === methodName && delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method) || "return" !== methodName && (context.method = "throw", context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method")), ContinueSentinel;
     var record = tryCatch(method, delegate.iterator, context.arg);
     if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel;
     var info = record.arg;
@@ -15708,9 +15712,7 @@ function _regeneratorRuntime() {
       if (!isNaN(iterable.length)) {
         var i = -1,
           next = function next() {
-            for (; ++i < iterable.length;) {
-              if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next;
-            }
+            for (; ++i < iterable.length;) if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next;
             return next.value = undefined, next.done = !0, next;
           };
         return next.next = next;
@@ -15756,9 +15758,7 @@ function _regeneratorRuntime() {
   }), exports.keys = function (val) {
     var object = Object(val),
       keys = [];
-    for (var key in object) {
-      keys.push(key);
-    }
+    for (var key in object) keys.push(key);
     return keys.reverse(), function next() {
       for (; keys.length;) {
         var key = keys.pop();
@@ -15769,9 +15769,7 @@ function _regeneratorRuntime() {
   }, exports.values = values, Context.prototype = {
     constructor: Context,
     reset: function reset(skipTempReset) {
-      if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) {
-        "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined);
-      }
+      if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined);
     },
     stop: function stop() {
       this.done = !0;
@@ -15922,6 +15920,43 @@ module.exports = _toConsumableArray, module.exports.__esModule = true, module.ex
 
 /***/ }),
 
+/***/ "../node_modules/@babel/runtime/helpers/toPrimitive.js":
+/*!*************************************************************!*\
+  !*** ../node_modules/@babel/runtime/helpers/toPrimitive.js ***!
+  \*************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var _typeof = (__webpack_require__(/*! ./typeof.js */ "../node_modules/@babel/runtime/helpers/typeof.js")["default"]);
+function _toPrimitive(input, hint) {
+  if (_typeof(input) !== "object" || input === null) return input;
+  var prim = input[Symbol.toPrimitive];
+  if (prim !== undefined) {
+    var res = prim.call(input, hint || "default");
+    if (_typeof(res) !== "object") return res;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return (hint === "string" ? String : Number)(input);
+}
+module.exports = _toPrimitive, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
+/***/ "../node_modules/@babel/runtime/helpers/toPropertyKey.js":
+/*!***************************************************************!*\
+  !*** ../node_modules/@babel/runtime/helpers/toPropertyKey.js ***!
+  \***************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var _typeof = (__webpack_require__(/*! ./typeof.js */ "../node_modules/@babel/runtime/helpers/typeof.js")["default"]);
+var toPrimitive = __webpack_require__(/*! ./toPrimitive.js */ "../node_modules/@babel/runtime/helpers/toPrimitive.js");
+function _toPropertyKey(arg) {
+  var key = toPrimitive(arg, "string");
+  return _typeof(key) === "symbol" ? key : String(key);
+}
+module.exports = _toPropertyKey, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+/***/ }),
+
 /***/ "../node_modules/@babel/runtime/helpers/typeof.js":
 /*!********************************************************!*\
   !*** ../node_modules/@babel/runtime/helpers/typeof.js ***!
@@ -16058,8 +16093,8 @@ try {
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
 /******/ 			if (chunkId === "vendors-node_modules_react-query_devtools_index_js") return "62aed6374b1561fb5fd8.bundle.js";
-/******/ 			if (chunkId === "kit-library") return "" + chunkId + ".8a5a7f84827b7031a821.bundle.js";
-/******/ 			if (chunkId === "onboarding") return "" + chunkId + ".276dc41e63f17732408f.bundle.js";
+/******/ 			if (chunkId === "kit-library") return "" + chunkId + ".1101176ec8af9d357159.bundle.js";
+/******/ 			if (chunkId === "onboarding") return "" + chunkId + ".9ee547c8074641c253ee.bundle.js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

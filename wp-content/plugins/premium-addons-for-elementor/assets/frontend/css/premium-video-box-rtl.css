@@ -21,30 +21,6 @@
     overflow: hidden;
 }
 
-.pa-aspect-ratio-11 .premium-video-box-container>div {
-    padding-bottom: 100%;
-}
-
-.pa-aspect-ratio-169 .premium-video-box-container>div {
-    padding-bottom: 56.25%;
-}
-
-.pa-aspect-ratio-43 .premium-video-box-container>div {
-    padding-bottom: 75%;
-}
-
-.pa-aspect-ratio-32 .premium-video-box-container>div {
-    padding-bottom: 66.6666%;
-}
-
-.pa-aspect-ratio-219 .premium-video-box-container>div {
-    padding-bottom: 42.8571%;
-}
-
-.pa-aspect-ratio-916 .premium-video-box-container>div {
-    padding-bottom: 177.8%;
-}
-
 .premium-video-box-image-container {
     position: absolute;
     top: 0;

@@ -190,7 +190,7 @@ class Premium_Image_Scroll extends Widget_Base {
 			array(
 				'label'      => __( 'Image Height', 'premium-addons-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px', 'em', 'vh' ),
+				'size_units' => array( 'px', 'em', 'vh', 'custom' ),
 				'default'    => array(
 					'unit' => 'px',
 					'size' => 300,

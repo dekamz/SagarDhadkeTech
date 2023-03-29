@@ -5,7 +5,7 @@ Donate Link: https://premiumaddons.com/?utm_source=wp-repo&utm_medium=link&utm_c
 Requires at least: 5.0
 Tested Up To: 6.1.1
 Requires PHP: 7.0
-Stable Tag: 4.9.48
+Stable Tag: 4.9.52
 License: GPL v3.0
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -20,7 +20,10 @@ Supercharge your [Elementor Page Builder](https://wordpress.org/plugins/elemento
 ### Useful Links
 [Support](https://my.leap13.com/contact-support/) | [Docs](https://premiumaddons.com/docs/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) | [Video Tutorials](https://www.youtube.com/channel/UCXcJ9BeO2sKKHor7Q9VglTQ) | [Facebook Group](https://facebook.com/groups/premiumAddons) | [Upgrade to Pro](https://premiumaddons.com/pro/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme)
 
-### New: SVG Draw Widget
+### New: Premium Templates Portal
+Now, you can browse a wide range of Elementor page and section templates LIVE on PremiumTemplates.io [Check it out now!](https://premiumtemplates.io/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
+
+### SVG Draw Widget
 You can now draw any Font Awesome icon or SVG path using Premium SVG Draw widget. Not just that, we have added Draw Icon option in all premium widgets that has icon option in them. [Check it out now!](https://premiumaddons.com/elementor-svg-draw-widget/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
 
 ### Three transition effects added to Vertical Scroll one page navigation widget
@@ -44,8 +47,8 @@ Show off your products in an elegant way using Premium Woo Products Widget that 
 ### Equal Height Feature
 Now, you can make your columns, widgets or any selector you want the same height with just ONE click using [Equal Height feature](https://premiumaddons.com/docs/elementor-column-equal-height/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) in section settings -> Advanced tab.
 
-### Pre-made Templates
-NEW: Ever-growing [Section Templates Library](https://premiumaddons.com/premium-templates-for-elementor/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) Available on both Premium Addons Free and PRO versions. Browse, preview, and insert the template you like in your page/post with just ONE click. You can also select to insert the templates without media files (images, videos, etc.) to prevent overloading your WordPress Media Library with large files.
+### Pre-made Section and Page Templates
+NEW: Ever-growing [Section/Page Templates Library](https://premiumaddons.com/premium-templates-for-elementor/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) Available on both Premium Addons Free and PRO versions. Browse, preview, and insert the template you like in your page/post with just ONE click. You can also select to insert the templates without media files (images, videos, etc.) to prevent overloading your WordPress Media Library with large files.
 
 ### Lottie Animations Integration
 You can now use [Lottie Animations in ALL our widgets](https://premiumaddons.com/elementor-lottie-animations-section-addon/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme). Whatever widget that have an image or icon option now have also the option to add a Lottie animation. Lottie animations are open source, lightweight and available for free, Use them now to make your Elementor pages more eye-catching.
@@ -219,6 +222,32 @@ Premium Addonsis 100% Ads Free, Ads can only be detected from Youtube videos, th
 14. Premium Progress Bar Widget
 
 == Changelog ==
+
+= 4.9.52 =
+
+- Tweak: Added Search Field in Premium Templates popup.
+- Tweak: Improved compatibility between Vertical Scroll and Google Maps widget.
+- Fixed: Mega Menu not showing when WP Rocket is installed.
+
+= 4.9.51 =
+
+- Tweak: Added custom size unit for range controls in some widgets.
+- Fixed: Submenu Minimum Width option improved in Mega Menu widget.
+
+= 4.9.50 =
+
+- Fixed: Full Section Scroll option not working with Elementor Flexbox Containers.
+- Fixed: Console error in Google Maps widget.
+
+= 4.9.49 =
+
+- New: Added full pages templates in Premium Templates for Elementor - [here](https://premiumaddons.com/premium-templates-for-elementor/).
+- Tweak: Added Content Alignment option in Testimonials.
+- Tweak: Apply Aspect Ratio using CSS in Video Box widget.
+- Tweak: Apply Submenu Item Icon option in Mega Menu widget.
+- Fixed: Dual Heading strings not appearing in WPML.
+- Fixed: Filter tabs not working on RTL sites in Blog widget.
+- Fixed: PHP warning showing in General tab in plugin settings page.
 
 = 4.9.48 =
 

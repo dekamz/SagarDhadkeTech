@@ -571,7 +571,7 @@ class Addons_Integration {
 		wp_register_script(
 			'pa-maps',
 			PREMIUM_ADDONS_URL . 'assets/frontend/' . $dir . '/premium-maps' . $suffix . '.js',
-			array( 'jquery', 'pa-maps-api' ),
+			array( 'jquery' ),
 			PREMIUM_ADDONS_VERSION,
 			true
 		);
@@ -653,13 +653,13 @@ class Addons_Integration {
 		}
 
 		if ( $maps_settings['premium-map-disable-api'] && '1' !== $maps_settings['premium-map-api'] ) {
-			$api = sprintf( 'https://maps.googleapis.com/maps/api/js?key=%1$s&language=%2$s', $maps_settings['premium-map-api'], $locale );
+			$api = sprintf( 'https://maps.googleapis.com/maps/api/js?key=%1$s&callback=initMap&language=%2$s', $maps_settings['premium-map-api'], $locale );
 			wp_register_script(
 				'pa-maps-api',
 				$api,
 				array(),
 				PREMIUM_ADDONS_VERSION,
-				false
+				true
 			);
 		}
 
@@ -741,7 +741,7 @@ class Addons_Integration {
 
 		wp_register_script(
 			'pa-scrolltrigger',
-			PREMIUM_ADDONS_URL . 'assets/frontend/js/scrollTrigger.js',
+			PREMIUM_ADDONS_URL . 'assets/frontend/' . $dir . '/scrollTrigger' . $suffix . '.js',
 			array( 'jquery' ),
 			PREMIUM_ADDONS_VERSION,
 			true

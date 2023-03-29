@@ -6,17 +6,17 @@ use EssentialBlocks\Admin\Admin;
 use EssentialBlocks\Core\Blocks;
 use EssentialBlocks\Core\Scripts;
 use EssentialBlocks\Core\PostMeta;
-use EssentialBlocks\Traits\HasSingletone;
 use EssentialBlocks\Utils\Enqueue;
 use EssentialBlocks\Utils\Settings;
 use EssentialBlocks\Core\FontLoader;
 use EssentialBlocks\Core\Maintenance;
 use EssentialBlocks\Integrations\NFT;
-use EssentialBlocks\Integrations\OpenVerse;
 use EssentialBlocks\Core\PageTemplates;
 use EssentialBlocks\Core\BlocksPatterns;
+use EssentialBlocks\Traits\HasSingletone;
 use EssentialBlocks\Integrations\GoogleMap;
 use EssentialBlocks\Integrations\Instagram;
+use EssentialBlocks\Integrations\OpenVerse;
 use EssentialBlocks\Integrations\GlobalStyles;
 use EssentialBlocks\Integrations\AssetGeneration;
 use EssentialBlocks\Integrations\PluginInstaller;
@@ -24,7 +24,7 @@ use EssentialBlocks\Integrations\PluginInstaller;
 final class Plugin {
     use HasSingletone;
 
-    public $version = '4.0.0';
+    public $version = '4.0.4';
 
     public $admin;
     /**
@@ -61,7 +61,6 @@ final class Plugin {
 
         self::$settings = Settings::get_instance();
 
-
         $this->admin = Admin::get_instance();
 
         Scripts::get_instance();
@@ -81,7 +80,7 @@ final class Plugin {
             self::$blocks->register_blocks( $this->assets );
         } );
 
-        FontLoader::get_instance();
+        FontLoader::get_instance('essential-blocks');
 
         // Templates
         PageTemplates::get_instance();
@@ -157,7 +156,7 @@ final class Plugin {
      */
     public function define_constants() {
         $this->define( 'ESSENTIAL_BLOCKS_WP_VERSION', (float) get_bloginfo( 'version' ) );
-        $this->define( 'ESSENTIAL_BLOCKS_WHATSNEW_REDIRECT', 'redirect' );
+        $this->define( 'ESSENTIAL_BLOCKS_WHATSNEW_REDIRECT', 'none' );
         $this->define( 'ESSENTIAL_BLOCKS_NAME', 'essential-blocks' );
         $this->define( 'ESSENTIAL_BLOCKS_DIR_PATH', plugin_dir_path( ESSENTIAL_BLOCKS_FILE ) );
         $this->define( 'ESSENTIAL_BLOCKS_BLOCK_DIR', ESSENTIAL_BLOCKS_DIR_PATH . '/blocks/' );

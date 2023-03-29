@@ -4,7 +4,7 @@
     var PremiumNavMenuHandler = function ($scope, $) {
 
         // we don't need to wait for content dom load since the script is loaded in the footer.
-        $scope.find('.premium-nav-widget-container').removeClass('elementor-invisible');
+        $scope.find('.premium-nav-widget-container').removeClass('premium-addons-invisible');
 
         var settings = $scope.find('.premium-nav-widget-container').data('settings');
 
@@ -22,6 +22,7 @@
             stickyIndex = 'stickyPos' + $scope.data('id'),
             stickyWidthIndex = 'stickyWidth' + $scope.data('id'),
             disablePageScroll = $scope.hasClass('premium-disable-scroll-yes') ? true : false,
+            delay = getComputedStyle($scope[0]).getPropertyValue('--pa-mega-menu-delay') || 300,
             hoverTimeout;
 
         /**
@@ -68,14 +69,13 @@
 
                 if (!hasChildern) {
                     // close mobile menu
-                    if ($scope.hasClass('premium-nav-slide')) {
-                        console.log('aaaaaa')
+                    if ('slide' === settings.mainLayout || 'slide' === settings.mobileLayout) {
+                        // if ($scope.hasClass('premium-nav-slide')) {
                         $hamMenuCloser.click();
                     } else {
                         $menuToggler.click();
                     }
                 }
-
             });
         }
 
@@ -113,7 +113,7 @@
 
                     hoverTimeout = setTimeout(function () {
                         $scope.find('.premium-item-hovered').removeClass('premium-item-hovered');
-                    }, 300);
+                    }, delay);
                 });
 
                 // we need to make sure that premium-item-hover is not removed when hovering over a sub/mega menu.
@@ -369,8 +369,7 @@
 
             } else {
                 $(window).off('scroll.PaStickyNav');
-
-                $('<div class="' + stickyProps.spacerClass + '"></div>').remove(); // remove spacer
+                $( '.' + stickyProps.spacerClass ).remove(); // remove spacer
                 $('#' + stickyProps.targetId).removeClass('premium-sticky-parent premium-sticky-active premium-sticky-parent-' + $scope.data('id')).css({ // unset style
                     top: 'unset',
                     width: 'inherit',

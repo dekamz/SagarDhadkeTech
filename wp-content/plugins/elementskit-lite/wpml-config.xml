@@ -800,5 +800,18 @@
 				<field type="Team Carousel Slider: " editor_type="LINK">link_4>url</field>
 			</fields-in-item>
 		</widget>
+		<widget name="elementskit-content-ticker">
+			<conditions>
+				<condition key="widgetType">elementskit-content-ticker</condition>
+			</conditions>
+			<fields>
+				<field type="Content Ticker: Title Text" editor_type="LINE">ekit_content_ticker_title</field>
+			</fields>
+			<fields-in-item items_of="ekit_content_ticker_text_list">
+				<field type="Content Ticker: Content Title" editor_type="LINE">ekit_content_ticker_text</field>
+				<field type="Content Ticker: Content Description" editor_type="AREA">ekit_content_ticker_description</field>
+				<field type="Content Ticker: Link" editor_type="LINK">ekit_content_ticker_text_url>url</field>
+			</fields-in-item>
+		</widget>
 	</elementor-widgets>
 </wpml-config>

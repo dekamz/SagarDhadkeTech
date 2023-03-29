@@ -6,6 +6,7 @@ use EssentialBlocks\Core\Block;
 
 class Testimonial extends Block {
     protected $frontend_scripts = [];
+    protected $frontend_styles = ['essential-blocks-frontend-style'];
 
 	/**
      * Unique name of the block.

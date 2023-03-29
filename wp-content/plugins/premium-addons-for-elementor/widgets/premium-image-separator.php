@@ -252,7 +252,7 @@ class Premium_Image_Separator extends Widget_Base {
 			array(
 				'label'      => __( 'Width/Size', 'premium-addons-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px', 'em', '%' ),
+				'size_units' => array( 'px', 'em', '%', 'custom' ),
 				'default'    => array(
 					'unit' => 'px',
 					'size' => 200,
@@ -280,7 +280,7 @@ class Premium_Image_Separator extends Widget_Base {
 			array(
 				'label'      => __( 'Height', 'premium-addons-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px', 'em' ),
+				'size_units' => array( 'px', 'em', 'custom' ),
 				'range'      => array(
 					'px' => array(
 						'min' => 1,

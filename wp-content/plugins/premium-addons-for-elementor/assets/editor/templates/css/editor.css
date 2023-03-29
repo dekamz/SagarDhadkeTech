@@ -75,22 +75,9 @@
 }
 
 #premium-template-modal-header {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
+    justify-content: space-between;
     align-items: center;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-
     height: 50px;
 }
 
@@ -198,26 +185,6 @@
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.2);
 }
 
-#premium-modal-tabs-items {
-    display: none;
-}
-
-#premium-template-modal-header-tabs {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    flex: 2;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
-
 #premium-template-modal-header-logo-area {
     text-align: left;
     padding-left: 15px;
@@ -265,9 +232,9 @@
     overflow: auto;
 }
 
-#premium-template-library-content .premium-templates-wrap {
+/* #premium-template-library-content .premium-templates-wrap {
     width: 85%;
-}
+} */
 
 #premium-template-library-content .premium-templates-list {
     height: 100%;
@@ -285,6 +252,11 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+#elementor-template-library-filter>div {
+    display: flex;
+    align-items: center;
 }
 
 #elementor-template-library-filter p {
@@ -368,6 +340,7 @@
 
 #premium-template-library-content .premium-templates-wrap {
     width: 100%;
+    position: relative;
 }
 
 #premium-template-library-content .premium-template-insert,
@@ -582,4 +555,23 @@ div.premium-template-has-url:hover .premium-clone-template {
     position: relative;
     text-align: left;
     margin-bottom: 8px;
+}
+
+.header-actions-hidden {
+    display: none;
+}
+
+.library-tab-premium_page .premium-filters-list {
+    display: none;
+}
+
+.insert-temp-preview {
+    display: flex;
+    flex: 2;
+}
+
+.premium-templates-search {
+    position: absolute;
+    top: 10px;
+    right: 0;
 }

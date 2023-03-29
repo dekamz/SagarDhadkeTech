@@ -426,7 +426,7 @@ class Premium_Dual_Header extends Widget_Base {
 			array(
 				'label'      => __( 'Horizontal Offset', 'premium-addons-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px', 'em', '%' ),
+				'size_units' => array( 'px', 'em', '%', 'custom' ),
 				'range'      => array(
 					'px' => array(
 						'min' => -500,
@@ -455,7 +455,7 @@ class Premium_Dual_Header extends Widget_Base {
 			array(
 				'label'      => __( 'Vertical Offset', 'premium-addons-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px', 'em', '%' ),
+				'size_units' => array( 'px', 'em', '%', 'custom' ),
 				'range'      => array(
 					'px' => array(
 						'min' => -500,

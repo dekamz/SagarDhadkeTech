@@ -4,7 +4,7 @@ Tags: gutenberg, blocks, editor, gutenberg blocks, block, visual editor, page bu
 Requires at least: 5.8
 Tested up to: 6.1
 Requires PHP: 5.6
-Stable tag: 4.0
+Stable tag: 4.0.4
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -196,6 +196,29 @@ Yes. You will need the Gutenberg block editor installed and activated in your Wo
 If you found the recent version of Essential Blocks isn't working or conflicting with other plugins then you can use earlier versions of the plugin.
 
 == Changelog ==
+
+= 4.0.4 - 20/03/2023 =
+- Added: Custom Filters in **Post Grid** and **Post Carrousel** block
+- Fixed: **Post Grid** include and exclude query issue
+- Fixed: **Advanced Navigation** link not working in mobile
+- Fixed: **Team Member** block Image Alt tag and Social links label missing issue
+
+= 4.0.3 - 13/03/2023 =
+- Added: **Table of Content** link copy button
+- Fixed: **Post Grid** thumbnail border overlay issue
+- Fixed: **Post Grid** editor error on custom post type issue
+- Fixed: **Slider Block** css not loading in frontend
+
+= 4.0.2 - 01/03/2023 =
+- Fixed: Font Loader issue fix
+- Fixed: Conflict with Essential Addons
+- Improved: Page load time improved
+
+= 4.0.1 - 27/02/2023 =
+- Added: Avatar link option in **Team Member Block**
+- Added: Alt text in **Slider Block**
+- Fixed: FSE css loading issue
+- Fixed: **Woo Product Grid** does not show rating on frontend
 
 = 4.0.0 - 09/02/2023 =
 - Added: New Block **Google Maps**

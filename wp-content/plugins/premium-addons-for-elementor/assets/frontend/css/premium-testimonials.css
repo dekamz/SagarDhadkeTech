@@ -9,12 +9,9 @@
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center; }
+    -ms-flex-align: center;
+    align-items: center; }
   .premium-testimonial-box .premium-testimonial-person-name,
   .premium-testimonial-box .premium-testimonial-company-name {
     font-weight: 600;
@@ -24,8 +21,6 @@
   position: relative; }
 
 .premium-testimonial-img-wrapper {
-  margin-left: auto;
-  margin-right: auto;
   overflow: hidden;
   border-style: solid !important; }
   .premium-testimonial-img-wrapper.circle {
@@ -43,12 +38,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   z-index: 2;
   width: 100%;
-  padding: 20px;
-  text-align: center; }
+  padding: 20px; }
 
 .premium-testimonial-clear-float {
   clear: both; }

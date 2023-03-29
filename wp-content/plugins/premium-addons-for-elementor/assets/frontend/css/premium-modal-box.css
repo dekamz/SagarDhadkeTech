@@ -12,11 +12,11 @@
   white-space: nowrap;
   vertical-align: middle;
   -ms-touch-action: manipulation;
-      touch-action: manipulation;
+  touch-action: manipulation;
   cursor: pointer;
   -webkit-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   background-image: none;
   border: 1px solid transparent; }
 
@@ -60,11 +60,11 @@ button.premium-modal-box-modal-close {
   padding: 0 !important;
   background: rgba(0, 0, 0, 0.5);
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
+  -ms-flex-pack: center;
+  justify-content: center; }
   .premium-modal-box-modal .premium-modal-box-modal-dialog {
     position: absolute;
     max-height: -webkit-calc(100vh - 150px);
@@ -73,8 +73,8 @@ button.premium-modal-box-modal-close {
     display: -ms-flexbox;
     display: flex;
     -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     opacity: 0;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -111,11 +111,11 @@ button.premium-modal-box-modal-close {
   display: -ms-flexbox;
   display: flex;
   -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 5px 15px;
   border-bottom: 1px solid #e5e5e5; }
   .premium-modal-box-modal-header .premium-modal-box-modal-close {
@@ -125,8 +125,8 @@ button.premium-modal-box-modal-close {
     display: -ms-flexbox;
     display: flex;
     -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     margin: 0;
     padding: 0; }
     .premium-modal-box-modal-header .premium-modal-box-modal-title svg {
@@ -162,15 +162,15 @@ button.premium-modal-box-modal-close {
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   border: none;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out; }
   .premium-modal-trigger-container .premium-modal-trigger-btn.premium-btn-block {
     -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center; }
+    -ms-flex-pack: center;
+    justify-content: center; }
 
 .premium-modal-trigger-container .premium-modal-trigger-img,
 .premium-modal-trigger-container .premium-modal-trigger-text,

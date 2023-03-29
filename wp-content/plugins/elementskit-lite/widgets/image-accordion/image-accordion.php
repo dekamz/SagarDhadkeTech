@@ -986,7 +986,7 @@ class ElementsKit_Widget_Image_Accordion extends Widget_Base {
                         ?>
                         <span class="elementskit-icon-wraper ekit-image-accordion-actions">
                         <?php if($item['ekit_img_accordion_enable_pupup'] == 'yes') { ?>
-                                <a href="<?php echo esc_url($item['ekit_img_accordion_bg']['url']); ?>" class="icon-outline circle" data-elementor-open-lightbox="yes">
+                                <a href="<?php echo esc_url($item['ekit_img_accordion_bg']['url']); ?>" class="icon-outline circle" data-elementor-open-lightbox="yes" aria-label="pupup-button">
                                 <?php
 
                                     $migrated = isset( $item['__fa4_migrated']['ekit_img_accordion_pup_up_icons'] );
@@ -1007,6 +1007,7 @@ class ElementsKit_Widget_Image_Accordion extends Widget_Base {
                         <?php if($item['ekit_img_accordion_enable_project_link'] == 'yes') {
                                 if ( ! empty( $item['ekit_img_accordion_project_link']['url'] ) ) {
                                     $this->add_link_attributes( 'button-2' . $key, $item['ekit_img_accordion_project_link'] );
+									$this->add_render_attribute( 'button-2' . $key, ['role' => "link", 'aria-label' => "button-link"] );
                                 }
                             ?>
                                 <a <?php echo $this->get_render_attribute_string( 'button-2' . esc_attr($key) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already escaped by elementor ?> class="icon-outline circle">

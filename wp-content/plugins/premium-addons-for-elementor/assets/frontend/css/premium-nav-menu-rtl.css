@@ -1509,3 +1509,7 @@ body.premium-scroll-disabled {
     visibility: hidden !important;
     opacity: 0 !important;
 }
+
+.premium-addons-invisible {
+    visibility: hidden;
+}

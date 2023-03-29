@@ -1,3 +1,7 @@
+function initMap() {
+    console.log('Google API Loaded');
+}
+
 jQuery(window).on("elementor/frontend/init", function () {
 
     var PremiumMapsHandler = function ($scope, $) {

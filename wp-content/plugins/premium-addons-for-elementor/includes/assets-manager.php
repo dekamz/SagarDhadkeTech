@@ -511,6 +511,8 @@ class Assets_Manager {
 			$indep_elements = array(
 				'social-common',
 				'premium-hscroll',
+				'premium-facebook-feed',
+				'premium-behance-feed',
 				'premium-lottie',
 				'premium-vscroll',
 				'premium-nav-menu',

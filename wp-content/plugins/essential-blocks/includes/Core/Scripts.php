@@ -79,8 +79,9 @@ class Scripts {
      * @return void
      */
     public function frontend_backend_assets() {
-        wpdev_essential_blocks()->assets->enqueue( 'eb-animation', 'js/eb-animation-load.js' );
-        wpdev_essential_blocks()->assets->enqueue( 'animation', 'css/animate.min.css' );
+        wpdev_essential_blocks()->assets->register( 'eb-animation', 'js/eb-animation-load.js' );
+        wpdev_essential_blocks()->assets->register( 'eb-clipboard', 'js/clipboard.min.js' );
+        wpdev_essential_blocks()->assets->register( 'animation', 'css/animate.min.css' );
 
         wpdev_essential_blocks()->assets->register( 'vendor-bundle', '../vendor-bundle/index.js' );
         wpdev_essential_blocks()->assets->register( 'frontend-style', '../dist/style.css' );
@@ -94,6 +95,7 @@ class Scripts {
         wpdev_essential_blocks()->assets->register( 'slick-style', 'css/slick.css' );
         wpdev_essential_blocks()->assets->register( 'typedjs', 'js/typed.min.js' );
     }
+
     /**
      * enqueue localize scripts
      * @return void

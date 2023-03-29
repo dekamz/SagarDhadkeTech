@@ -13,57 +13,57 @@
 .premium-person-zoomout-effect .premium-person-image-container img,
 .premium-person-scale-effect .premium-person-image-container img {
   -webkit-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-          transform: scale(1.2); }
+  -ms-transform: scale(1.2);
+  transform: scale(1.2); }
 
 .premium-person-sepia-effect .premium-person-image-container img {
   -webkit-filter: sepia(30%);
-          filter: sepia(30%); }
+  filter: sepia(30%); }
 
 .premium-person-bright-effect .premium-person-image-container img {
   -webkit-filter: brightness(1);
-          filter: brightness(1); }
+  filter: brightness(1); }
 
 .premium-person-trans-effect .premium-person-image-container img {
   -webkit-transform: translateX(-15px) scale(1.1);
-      -ms-transform: translateX(-15px) scale(1.1);
-          transform: translateX(-15px) scale(1.1); }
+  -ms-transform: translateX(-15px) scale(1.1);
+  transform: translateX(-15px) scale(1.1); }
 
 .premium-person-zoomin-effect:hover .premium-person-image-container img {
   -webkit-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-          transform: scale(1.2); }
+  -ms-transform: scale(1.2);
+  transform: scale(1.2); }
 
 .premium-person-zoomout-effect:hover .premium-person-image-container img {
   -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-          transform: scale(1.1); }
+  -ms-transform: scale(1.1);
+  transform: scale(1.1); }
 
 .premium-person-scale-effect:hover .premium-person-image-container img {
   -webkit-transform: scale(1.3) rotate(5deg);
-      -ms-transform: scale(1.3) rotate(5deg);
-          transform: scale(1.3) rotate(5deg); }
+  -ms-transform: scale(1.3) rotate(5deg);
+  transform: scale(1.3) rotate(5deg); }
 
 .premium-person-grayscale-effect:hover .premium-person-image-container img {
   -webkit-filter: grayscale(100%);
-          filter: grayscale(100%); }
+  filter: grayscale(100%); }
 
 .premium-person-blur-effect:hover .premium-person-image-container img {
   -webkit-filter: blur(3px);
-          filter: blur(3px); }
+  filter: blur(3px); }
 
 .premium-person-sepia-effect:hover .premium-person-image-container img {
   -webkit-filter: sepia(0%);
-          filter: sepia(0%); }
+  filter: sepia(0%); }
 
 .premium-person-bright-effect:hover .premium-person-image-container img {
   -webkit-filter: brightness(1.2);
-          filter: brightness(1.2); }
+  filter: brightness(1.2); }
 
 .premium-person-trans-effect:hover .premium-person-image-container img {
   -webkit-transform: translateX(0px) scale(1.1);
-      -ms-transform: translateX(0px) scale(1.1);
-          transform: translateX(0px) scale(1.1); }
+  -ms-transform: translateX(0px) scale(1.1);
+  transform: translateX(0px) scale(1.1); }
 
 .premium-person-container .premium-person-image-container img {
   width: 100%;
@@ -84,11 +84,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   box-shadow: inset 0 0 120px 0 rgba(0, 0, 0, 0.5);
   -webkit-transition: all 0.5s linear 0s;
   transition: all 0.5s linear 0s;
@@ -103,16 +103,16 @@
 .premium-person-style2 .premium-person-list-item a {
   opacity: 0;
   -webkit-transform: scale(0);
-      -ms-transform: scale(0);
-          transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
   -webkit-transition: all 0.5s ease-in-out 0s;
   transition: all 0.5s ease-in-out 0s; }
 
 .premium-person-style2 .premium-person-image-container:hover .premium-person-list-item a {
   opacity: 1;
   -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1); }
+  -ms-transform: scale(1);
+  transform: scale(1); }
 
 .premium-person-info-container {
   padding: 30px 15px; }
@@ -205,16 +205,16 @@ ul.premium-person-social-list {
   display: -ms-flexbox;
   display: flex;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
+  -ms-flex-pack: center;
+  justify-content: center; }
 
 .premium-persons-container.multiple-persons {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   width: 100%; }
 
 .premium-person-style1 .premium-person-container {
@@ -227,10 +227,10 @@ ul.premium-person-social-list {
     -webkit-transition: all 500ms ease 0s;
     transition: all 500ms ease 0s;
     -webkit-transform: translate3d(0, 100%, 0);
-            transform: translate3d(0, 100%, 0); }
+    transform: translate3d(0, 100%, 0); }
   .premium-person-style1 .premium-person-container:hover .premium-person-info {
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
     bottom: -1px !important; }
 
 .premium-person-style1 .premium-person-social-list li:hover {
@@ -238,8 +238,8 @@ ul.premium-person-social-list {
 
 .premium-person-style1.multiple-persons:not([data-persons-equal="yes"]) {
   -webkit-align-items: flex-start;
-      -ms-flex-align: start;
-          align-items: flex-start; }
+  -ms-flex-align: start;
+  align-items: flex-start; }
 
 .premium-person-style1 .slick-track {
   display: -webkit-flex;
@@ -259,36 +259,36 @@ ul.premium-person-social-list {
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
 
 .premium-person-style3 .premium-person-title-desc-wrap {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-direction: row-reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
   -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-align-items: flex-start;
-      -ms-flex-align: start;
-          align-items: flex-start; }
+  -ms-flex-align: start;
+  align-items: flex-start; }
 
 .premium-person-style3 .premium-person-name-icons-wrap {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-align-items: flex-end;
-      -ms-flex-align: end;
-          align-items: flex-end; }
+  -ms-flex-align: end;
+  align-items: flex-end; }
 
 .premium-person-style3 .premium-person-title {
   opacity: 0;
@@ -306,11 +306,11 @@ ul.premium-person-social-list {
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-transform: translateY(20px);
-      -ms-transform: translateY(20px);
-          transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  transform: translateY(20px);
   opacity: 0;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease; }
@@ -327,33 +327,33 @@ ul.premium-person-social-list {
 .premium-person-style3 .premium-person-container:hover .premium-person-social-list {
   opacity: 1;
   -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-          transform: translateY(0); }
+  -ms-transform: translateY(0);
+  transform: translateY(0); }
 
 .premium-persons-title-cw .premium-person-title {
   -webkit-transform: translateX(15px) rotate(90deg);
-      -ms-transform: translateX(15px) rotate(90deg);
-          transform: translateX(15px) rotate(90deg);
+  -ms-transform: translateX(15px) rotate(90deg);
+  transform: translateX(15px) rotate(90deg);
   -webkit-transform-origin: top;
-      -ms-transform-origin: top;
-          transform-origin: top; }
+  -ms-transform-origin: top;
+  transform-origin: top; }
 
 .premium-persons-title-cw .premium-person-container:hover .premium-person-title {
   -webkit-transform: translateX(0) rotate(90deg);
-      -ms-transform: translateX(0) rotate(90deg);
-          transform: translateX(0) rotate(90deg); }
+  -ms-transform: translateX(0) rotate(90deg);
+  transform: translateX(0) rotate(90deg); }
 
 .premium-persons-title-ccw .premium-person-title {
   width: auto;
   margin-right: 20px;
   -webkit-transform: translateX(15px) rotate(-90deg);
-      -ms-transform: translateX(15px) rotate(-90deg);
-          transform: translateX(15px) rotate(-90deg);
+  -ms-transform: translateX(15px) rotate(-90deg);
+  transform: translateX(15px) rotate(-90deg);
   -webkit-transform-origin: center right;
-      -ms-transform-origin: center right;
-          transform-origin: center right; }
+  -ms-transform-origin: center right;
+  transform-origin: center right; }
 
 .premium-persons-title-ccw .premium-person-container:hover .premium-person-title {
   -webkit-transform: translateX(0) rotate(-90deg);
-      -ms-transform: translateX(0) rotate(-90deg);
-          transform: translateX(0) rotate(-90deg); }
+  -ms-transform: translateX(0) rotate(-90deg);
+  transform: translateX(0) rotate(-90deg); }

@@ -57,7 +57,7 @@
             </fields>
         </widget>
 
-        <widget name="remium-addon-dual-header">
+        <widget name="premium-addon-dual-header">
             <fields>
                 <field name="Dual Heading: First Heading" editor_type="LINE">premium_dual_header_first_header_text</field>
                 <field name="Dual Heading: Second Heading" editor_type="LINE">premium_dual_header_second_header_text</field>
@@ -243,6 +243,7 @@
                 <field name="Woo Products: Next Page String" editor_type="LINE">next_string</field>
                 <field name="Woo Products: Featured String" editor_type="LINE">featured_string</field>
                 <field name="Woo Products: Out Of Stock String" editor_type="LINE">sold_out_string</field>
+                <field name="Woo Products: Sale String" editor_type="LINE">sale_string</field>
             </fields>
         </widget>
 

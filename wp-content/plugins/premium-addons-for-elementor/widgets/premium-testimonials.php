@@ -670,6 +670,37 @@ class Premium_Testimonials extends Widget_Base {
 			)
 		);
 
+		$this->add_responsive_control(
+			'content_align',
+			array(
+				'label'                => __( 'Alignment', 'premium-addons-for-elementor' ),
+				'type'                 => Controls_Manager::CHOOSE,
+				'options'              => array(
+					'left'   => array(
+						'title' => __( 'Left', 'premium-addons-pro' ),
+						'icon'  => 'eicon-text-align-left',
+					),
+					'center' => array(
+						'title' => __( 'Center', 'premium-addons-pro' ),
+						'icon'  => 'eicon-text-align-center',
+					),
+					'right'  => array(
+						'title' => __( 'Right', 'premium-addons-pro' ),
+						'icon'  => 'eicon-text-align-right',
+					),
+				),
+				'selectors_dictionary' => array(
+					'left'   => 'align-items: flex-start; justify-content: flex-start; text-align: left',
+					'center' => 'align-items: center; justify-content: flex-start; text-align: center',
+					'right'  => 'align-items: flex-end; justify-content: flex-start; text-align: right',
+				),
+				'default'              => 'center',
+				'selectors'            => array(
+					'{{WRAPPER}} .premium-testimonial-content-wrapper, {{WRAPPER}} .premium-testimonial-author-info' => '{{VALUE}}',
+				),
+			)
+		);
+
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			array(

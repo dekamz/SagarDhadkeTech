@@ -77,7 +77,7 @@
             }
 
             if ( $current_version_minor_part !== $new_version_minor_part ) {
-                $notice .= "We highly recommend you to backup your site before upgrade to new version.";
+                $notice .= "We highly recommend you to backup your site before upgrading to the new version.";
             }
 
         ?>
@@ -124,7 +124,7 @@
                     <div class="eb-update-warning__message">
                         <span class="dashicons dashicons-info"></span>
                         <div class="eb-update-warning__title">
-                            <?php echo esc_html__( 'Notice: ', 'essential-blocks' ); ?>
+                            <?php echo esc_html__( 'What\'s new?', 'essential-blocks' ); ?>
                         </div>
                         <div class="eb-update-warning__message">
                             <?php printf( esc_html( '%1$s' ), wp_strip_all_tags( $upgrade_notice ) );?>

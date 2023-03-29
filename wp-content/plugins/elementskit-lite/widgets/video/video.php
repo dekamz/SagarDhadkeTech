@@ -736,12 +736,34 @@ class ElementsKit_Widget_Video extends Widget_Base {
 					'{{WRAPPER}} .ekit-video-popup-btn.glow-btn > i:after' => 'color: {{VALUE}}',
 				],
 				'default' => '#255cff',
+				'separator' => 'before',
 				'condition' => [
 					'ekit_video_popup_video_glow' => 'yes'
 				]
 			]
 		);
 
+		$this->add_responsive_control(
+			'ekit_video_popup_btn_glow_size',
+			[
+				'label' => esc_html__( 'Glow Size (px)', 'elementskit-lite' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px'],
+				'range' => [
+					'px' => [
+						'min' => 30,
+						'max' => 200,
+						'step' => 1,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .ekit-video-popup-btn' => '--glow-size: {{SIZE}}{{UNIT}};',
+				],
+				'condition' => [
+					'ekit_video_popup_video_glow' => 'yes'
+				]
+			]
+		);
 
 		$this->start_controls_tabs( 'ekit_video_popup_button_style_tabs' );
 

@@ -67,7 +67,6 @@ class FaqSchema {
                         }
                         // check for accordion-item blocks
                         if ( 'essential-blocks/accordion-item' === $block['blockName'] ) {
-                            die( 'innerblocks' );
                             if ( isset( $block['attrs'] ) && is_array( $block['attrs'] ) ) {
                                 if ( isset( $block['attrs']['faqSchema'] ) && $block['attrs']['faqSchema'] ) {
                                     $this->render_accordion_item_scheme_head( $block );

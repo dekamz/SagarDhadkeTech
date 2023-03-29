@@ -1,5 +1,6 @@
 <?php
 namespace EssentialBlocks\Core;
+
 use EssentialBlocks\Traits\HasSingletone;
 
 /**
@@ -20,35 +21,74 @@ class FontLoader {
      * @access public
      * @var array
      */
-    public static $gfonts = [];
+    public static $gfonts      = [];
+    private static $block_name = [];
 
     /**
      * The Constructor.
      */
-    public function __construct() {
-        add_action( 'wp_enqueue_scripts', [$this, 'fonts_loader'] );
+    public function __construct( $block_name ) {
+        self::$block_name = $block_name;
+        //Get font from each block loaded in page
+        add_filter( 'render_block', [$this, 'get_fonts_on_render_block'], 10, 2 );
+        // add_filter( 'wp_enqueue_scripts', [$this, 'eb_enqueue_fonts'], 15 );
+        add_action( 'wp_footer', [$this, 'eb_enqueue_fonts'], 15 );
     }
 
+    /**
+     * Run font loader after all block render
+     * @since 4.0.2
+     * @access public
+     */
+    public function eb_enqueue_fonts() {
+        $this->fonts_loader();
+    }
+
+    /**
+     * Get Attributes on block render
+     * @since 4.0.2
+     * @access public
+     */
+    public function get_fonts_on_render_block( $block_content, $block ) {
+        if ( isset( $block['attrs'] ) ) {
+            if ( 'essential-blocks' === self::$block_name || $block['blockName'] === self::$block_name ) {
+                $fonts        = self::get_fonts_family( $block['attrs'] );
+                self::$gfonts = array_unique( array_merge( self::$gfonts, $fonts ) );
+            }
+        }
+
+        return $block_content;
+    }
+
+    /**
+     * Generate Font family from Attributes
+     * @since 4.0.0
+     * @access public
+     */
     public static function get_fonts_family( $attributes ) {
         $keys             = preg_grep( '/^(\w+)FontFamily/i', array_keys( $attributes ), 0 );
         $googleFontFamily = [];
         foreach ( $keys as $key ) {
-            $googleFontFamily[] = $attributes[$key];
+            $googleFontFamily[$attributes[$key]] = $attributes[$key];
         }
         return $googleFontFamily;
     }
 
     /**
      * Load fonts.
-     *
+     * @since 4.0.0
      * @access public
      */
-    public function fonts_loader() {
-        $eb_settings = get_option( 'eb_settings', [] );
-        $googleFont  = ! empty( $eb_settings['googleFont'] ) ? $eb_settings['googleFont'] : 'true';
+    public function fonts_loader( $handle_name = 'eb-block-fonts' ) {
+        $googleFont = true;
+        if ( 'essential-blocks' === self::$block_name ) {
+            $eb_settings = get_option( 'eb_settings', [] );
+            $googleFont  = ! empty( $eb_settings['googleFont'] ) ? $eb_settings['googleFont'] : 'true';
+        }
 
         if ( 'false' !== $googleFont ) {
             $fonts = self::$gfonts;
+
             if (  ( $key = array_search( 'Default', $fonts ) ) !== false ) {
                 unset( $fonts[$key] );
             }
@@ -63,27 +103,15 @@ class FontLoader {
                         'family' => $gfonts
                     ];
                     wp_register_style(
-                        'eb-block-fonts',
+                        $handle_name,
                         add_query_arg( $query_args, '//fonts.googleapis.com/css' ),
                         []
                     );
-                    wp_enqueue_style( 'eb-block-fonts' );
+                    wp_enqueue_style( $handle_name );
                 }
                 // Reset.
                 $gfonts = '';
             }
         }
-    }
-    /**
-     * save google font family for blocks
-     * @since 4.0.0
-     * @param array $fonts get fonts family array
-     *
-     * @return void
-     */
-    public static function load_gfonts( $attributes ) {
-        $fonts = self::get_fonts_family( $attributes );
-
-        self::$gfonts = array_unique( array_merge( self::$gfonts, $fonts ) );
     }
 }

@@ -207,7 +207,7 @@ class Premium_Template_Tags {
 	 * @return array
 	 */
 	public static function get_authors() {
-		$users = get_users( array( 'role__in' => array( 'administrator', 'editor', 'author' ) ) );
+		$users = get_users( array( 'role__in' => array( 'administrator', 'editor', 'author', 'contributor' ) ) );
 
 		$options = array();
 
@@ -1330,11 +1330,13 @@ class Premium_Template_Tags {
 			<span class="premium-woo-product-category">
 				<?php
 					global $product;
-					$product_categories = function_exists( 'wc_get_product_category_list' ) ? wc_get_product_category_list( get_the_ID(), ',', '', '' ) : $product->get_categories( ',', '', '' );
+					$product_categories = function_exists( 'wc_get_product_category_list' ) ? wc_get_product_category_list( get_the_ID(), '&', '', '' ) : $product->get_categories( '&', '', '' );
 
 					$product_categories = wp_strip_all_tags( $product_categories );
+
 				if ( $product_categories ) {
-					list( $parent_cat ) = explode( ',', $product_categories );
+					list( $parent_cat ) = explode( '&', $product_categories );
+
 					echo esc_html( $parent_cat );
 				}
 				?>

@@ -7,8 +7,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'EbStyleHandler' ) ) {
     final class EbStyleHandler {
         private static $instance;
-
-        // private $is_gutenberg_editor;
+        /**
+         * Holds block styles array
+         *
+         * @var array
+         */
+        public static $_block_styles = [];
 
         public static function init() {
             if ( null === self::$instance ) {
@@ -52,7 +56,7 @@ if ( ! class_exists( 'EbStyleHandler' ) ) {
                 if ( is_array( $parsed_content ) && ! empty( $parsed_content ) ) {
                     foreach ( $parsed_content as $content ) {
                         if (  ( 'core/template-part' == $content['blockName'] ) || ( 'core/template' == $content['blockName'] ) ) {
-                            $post_ids = self::eb_get_post_content_by_post_name( $content['attrs']['slug'] );
+                            $post_ids = isset( $content['attrs']['slug'] ) ? self::eb_get_post_content_by_post_name( $content['attrs']['slug'] ) : [];
 
                             if ( ! empty( $post_ids ) ) {
                                 foreach ( $post_ids as $id ) {
@@ -349,13 +353,12 @@ if ( ! class_exists( 'EbStyleHandler' ) ) {
 
                 $seperateStyles = [];
                 foreach ( $seperatedIds as $key => $ids ) {
-                    $data                 = EbStyleHandlerParseCss::get_between_data( $existingCss, $ids['start'], $ids['end'] );
-                    $seperateStyles[$key] = $data;
+                    $seperateStyles[][$key] = isset( $block_styles[$key] ) ? $block_styles[$key] : [];
                 }
 
-                $finalCSSArray = array_merge( $seperateStyles, $block_styles );
+                self::$_block_styles = array_merge( self::$_block_styles, $block_styles );
 
-                if ( ! empty( $css = EbStyleHandlerParseCss::build_css( $finalCSSArray ) ) ) {
+                if ( ! empty( $css = EbStyleHandlerParseCss::build_css( self::$_block_styles ) ) ) {
                     if ( ! file_exists( $upload_dir ) ) {
                         mkdir( $upload_dir );
                     }

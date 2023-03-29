@@ -10,7 +10,7 @@ class Slider extends Block {
         'essential-blocks-slickjs',
         'essential-blocks-vendor-bundle'
     ];
-    protected $frontend_styles = ['essential-blocks-slick-style'];
+    protected $frontend_styles = ['essential-blocks-frontend-style', 'essential-blocks-slick-style'];
 
     /**
      * Unique name of the block.

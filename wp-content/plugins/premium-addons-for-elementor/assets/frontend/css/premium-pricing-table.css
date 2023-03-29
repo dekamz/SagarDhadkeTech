@@ -13,8 +13,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   line-height: 0; }
   .premium-pricing-icon-container .premium-pricing-icon {
     display: inline-block; }
@@ -57,15 +57,15 @@
   width: 100px;
   text-align: center;
   -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
   display: block;
   text-transform: uppercase; }
 
 .premium-badge-triangle.premium-badge-right span {
   -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
   right: 0; }
 
 .premium-badge-circle {
@@ -80,22 +80,22 @@
 .premium-badge-stripe {
   position: absolute;
   -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-          transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
   width: 15em;
   overflow: hidden;
   height: 15em; }
   .premium-badge-stripe.premium-badge-left {
     -webkit-transform: rotate(0);
-        -ms-transform: rotate(0);
-            transform: rotate(0); }
+    -ms-transform: rotate(0);
+    transform: rotate(0); }
   .premium-badge-stripe .corner {
     text-align: center;
     left: 0;
     width: 150%;
     -webkit-transform: translateY(-50%) translateX(-50%) translateX(35px) rotate(-45deg);
-        -ms-transform: translateY(-50%) translateX(-50%) translateX(35px) rotate(-45deg);
-            transform: translateY(-50%) translateX(-50%) translateX(35px) rotate(-45deg);
+    -ms-transform: translateY(-50%) translateX(-50%) translateX(35px) rotate(-45deg);
+    transform: translateY(-50%) translateX(-50%) translateX(35px) rotate(-45deg);
     margin-top: 35px;
     font-size: 13px;
     line-height: 2;
@@ -148,8 +148,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   list-style-type: none;
   margin: 0;
   padding: 0; }
@@ -158,8 +158,8 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center; }
+    -ms-flex-align: center;
+    align-items: center; }
     .premium-pricing-list .premium-pricing-list-item svg {
       width: 50px;
       height: 50px; }

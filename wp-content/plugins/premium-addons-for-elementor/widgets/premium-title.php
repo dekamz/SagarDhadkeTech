@@ -926,7 +926,7 @@ class Premium_Title extends Widget_Base {
 			array(
 				'label'      => __( 'Horizontal Offset', 'premium-addons-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px', 'em', '%' ),
+				'size_units' => array( 'px', 'em', '%', 'custom' ),
 				'range'      => array(
 					'px' => array(
 						'min' => -500,
@@ -955,7 +955,7 @@ class Premium_Title extends Widget_Base {
 			array(
 				'label'      => __( 'Vertical Offset', 'premium-addons-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px', 'em', '%' ),
+				'size_units' => array( 'px', 'em', '%', 'custom' ),
 				'range'      => array(
 					'px' => array(
 						'min' => -500,
@@ -1577,7 +1577,7 @@ class Premium_Title extends Widget_Base {
 			array(
 				'label'      => __( 'Width', 'premium-addons-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px', 'em', '%' ),
+				'size_units' => array( 'px', 'em', '%', 'custom' ),
 				'range'      => array(
 					'px' => array(
 						'min' => 1,
@@ -1606,7 +1606,7 @@ class Premium_Title extends Widget_Base {
 			array(
 				'label'      => __( 'Height', 'premium-addons-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px', 'em' ),
+				'size_units' => array( 'px', 'em', 'custom' ),
 				'range'      => array(
 					'px' => array(
 						'min' => 1,

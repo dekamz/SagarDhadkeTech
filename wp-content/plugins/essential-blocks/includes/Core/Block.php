@@ -29,9 +29,15 @@ abstract class Block {
     // protected $editor_styles = ['essential-blocks-editor-css'];
     protected $editor_scripts = 'essential-blocks-editor-script';
     protected $editor_styles = 'essential-blocks-editor-css';
+    protected $animation_script = 'essential-blocks-eb-animation';
+    protected $animation_style = 'essential-blocks-animation';
 
     protected $frontend_styles  = ['essential-blocks-frontend-style'];
     protected $frontend_scripts = [];
+
+    // public function __construct() {
+    //     Scripts::get_instance();
+    // }
 
     /**
      * unique name of block
@@ -74,6 +80,9 @@ abstract class Block {
     }
 
     public function load_frontend_styles() {
+        //Enqueue Animation
+        wp_enqueue_style($this->animation_style);
+
         if ( empty( $this->frontend_styles ) ) {
             return;
         }
@@ -84,6 +93,8 @@ abstract class Block {
     }
 
     public function load_frontend_scripts() {
+        wp_enqueue_script($this->animation_script);
+
         if ( empty( $this->frontend_scripts ) ) {
             return;
         }
@@ -108,7 +119,6 @@ abstract class Block {
         }
 
         $_args['render_callback'] = function ( $attributes, $content ) {
-            FontLoader::load_gfonts( $attributes );
             return $content;
         };
 
@@ -117,7 +127,6 @@ abstract class Block {
                 if ( ! is_admin() ) {
                     $this->load_scripts();
                 }
-                FontLoader::load_gfonts( $attributes );
                 return $this->render_callback( $attributes, $content );
             };
         }
@@ -127,13 +136,12 @@ abstract class Block {
                 if ( ! is_admin() ) {
                     $this->load_scripts();
                 }
-                FontLoader::load_gfonts( $attributes );
                 return $content;
             };
         }
 
-        $_args['editor_script'] = $this->editor_scripts;
-        $_args['editor_style']  = $this->editor_styles;
+        $_args['editor_script'] = array_merge([$this->editor_scripts], [$this->animation_script]);
+        $_args['editor_style']  = array_merge([$this->editor_styles], [$this->animation_style]);
 
         if ( property_exists( $this, 'attributes' ) ) {
             $_args['attributes'] = $this->attributes;

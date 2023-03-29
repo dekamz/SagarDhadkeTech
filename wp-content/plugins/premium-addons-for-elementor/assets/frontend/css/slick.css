@@ -4,10 +4,10 @@
   box-sizing: border-box;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   -ms-touch-action: pan-y;
-      touch-action: pan-y;
+  touch-action: pan-y;
   -webkit-tap-highlight-color: transparent; }
 
 .slick-list {
@@ -24,7 +24,7 @@
 .slick-slider .slick-track,
 .slick-slider .slick-list {
   -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0); }
+  transform: translate3d(0, 0, 0); }
 
 .slick-track {
   position: relative;
@@ -78,11 +78,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 2em;
   height: 2em;
   line-height: 0;
@@ -110,8 +110,8 @@ div[class^="premium-"] .slick-arrow i {
 .premium-woocommerce a.carousel-arrow {
   top: 50%;
   -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%); }
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
 
 a.carousel-arrow.carousel-next {
   left: auto;
@@ -154,11 +154,11 @@ ul.slick-dots li {
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin: 5px;
   width: 20px;
   height: 20px;

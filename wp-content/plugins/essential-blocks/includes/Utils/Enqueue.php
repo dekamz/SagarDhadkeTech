@@ -27,10 +27,6 @@ class Enqueue {
         $handle = $this->handle( $handle );
         $config = $this->asset_config( $filename, $dependencies, $args );
 
-        // if( isset( $args['is_js'] ) ) {
-        //     die(print_r($config));
-        // }
-
         $this->call_wp_func( 'wp_enqueue', $handle, $config );
     }
 

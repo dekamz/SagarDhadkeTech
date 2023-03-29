@@ -683,7 +683,7 @@ class ElementsKit_Widget_Header_Offcanvas extends Widget_Base
 
         ?>
         <div class="ekit-offcanvas-toggle-wraper">
-            <a href="#" class="ekit_navSidebar-button ekit_offcanvas-sidebar">
+            <a href="#" class="ekit_navSidebar-button ekit_offcanvas-sidebar" aria-label="offcanvas-menu">
                 <?php
                     if($settings['ekit_offcanvas_menu_type'] == 'icon') {
                         // new icon
@@ -738,7 +738,7 @@ class ElementsKit_Widget_Header_Offcanvas extends Widget_Base
             <div class="ekit-sidebar-widget">
                 <div class="ekit_sidebar-widget-container">
                     <div class="ekit_widget-heading">
-                        <a href="#" class="ekit_close-side-widget">
+                        <a href="#" class="ekit_close-side-widget" aria-label="close-icon">
 
                             <?php
                                 // new icon

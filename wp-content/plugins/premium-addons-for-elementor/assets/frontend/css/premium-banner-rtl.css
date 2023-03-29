@@ -24,8 +24,8 @@
 
 .premium-banner-img-wrap .premium-banner-ib-img {
     -ms-flex-negative: 0;
-            -webkit-flex-shrink: 0;
-            flex-shrink: 0;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
 }
 
 .premium-banner-ib {
@@ -64,7 +64,7 @@
 .premium-banner-ib .premium-banner-ib-desc {
     padding: 15px;
     -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
+    backface-visibility: hidden;
     box-sizing: border-box;
     position: absolute;
     top: 0;
@@ -101,7 +101,7 @@
     transition: opacity 0.35s, filter 0.35s, transform 0.35s;
     transition: opacity 0.35s, filter 0.35s, transform 0.35s, -webkit-filter 0.35s, -webkit-transform 0.35s;
     -webkit-transform: translate3d(40px, 0, 0);
-            transform: translate3d(40px, 0, 0);
+    transform: translate3d(40px, 0, 0);
 }
 
 .premium-banner-animation2 .premium-banner-ib-title {
@@ -121,11 +121,11 @@
 .premium-banner-animation1 .premium-banner-ib-title,
 .premium-banner-animation1 .premium-banner-read-more {
     -webkit-transform: translate3d(0, 40px, 0);
-            transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 40px, 0);
     -webkit-transition-delay: 0.05s;
-            transition-delay: 0.05s;
+    transition-delay: 0.05s;
     -webkit-transition-duration: 0.35s;
-            transition-duration: 0.35s;
+    transition-duration: 0.35s;
 }
 
 .premium-banner-animation1 .premium-banner-ib-title {
@@ -151,9 +151,9 @@
 .premium-banner-animation1.active .premium-banner-read-more {
     opacity: 1;
     -webkit-transition-delay: 0.05s;
-            transition-delay: 0.05s;
+    transition-delay: 0.05s;
     -webkit-transition-duration: 0.35s;
-            transition-duration: 0.35s;
+    transition-duration: 0.35s;
 }
 
 .premium-banner-animation1:hover .premium-banner-ib-content,
@@ -165,37 +165,37 @@
 .premium-banner-animation1:hover img,
 .premium-banner-animation1.active img {
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
     -webkit-transition-delay: 0.05s;
-            transition-delay: 0.05s;
+    transition-delay: 0.05s;
     -webkit-transition-duration: 0.35s;
-            transition-duration: 0.35s;
+    transition-duration: 0.35s;
 }
 
 .premium-banner-animation1.zoomout img,
 .premium-banner-animation1.scale img {
     -webkit-transform: translate3d(40px, 0, 0) scale(1.1);
-            transform: translate3d(40px, 0, 0) scale(1.1);
+    transform: translate3d(40px, 0, 0) scale(1.1);
 }
 
 .premium-banner-ib.sepia img {
     -webkit-filter: sepia(30%);
-            filter: sepia(30%);
+    filter: sepia(30%);
 }
 
 .premium-banner-ib.bright img {
     -webkit-filter: brightness(1);
-            filter: brightness(1);
+    filter: brightness(1);
 }
 
 .premium-banner-ib.sepia:hover img {
     -webkit-filter: sepia(0%);
-            filter: sepia(0%);
+    filter: sepia(0%);
 }
 
 .premium-banner-ib.bright:hover img {
     -webkit-filter: brightness(1.2);
-            filter: brightness(1.2);
+    filter: brightness(1.2);
 }
 
 .premium-banner-animation1.premium-banner-min-height img,
@@ -220,7 +220,7 @@
     height: 100%;
     opacity: 0;
     -webkit-transform: translate3d(0, 50%, 0);
-            transform: translate3d(0, 50%, 0);
+    transform: translate3d(0, 50%, 0);
 }
 
 .premium-banner-animation2 .premium-banner-ib-title {
@@ -233,7 +233,7 @@
     transition: transform 0.35s, color 0.35s;
     transition: transform 0.35s, color 0.35s, -webkit-transform 0.35s;
     -webkit-transform: translate3d(0, -50%, 0);
-            transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
 }
 
 .premium-banner-animation2 .premium-banner-ib-content,
@@ -255,13 +255,13 @@
     max-height: 50%;
     opacity: 0;
     -webkit-transform: translate3d(0, 10px, 0);
-            transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
 }
 
 .premium-banner-animation2:hover .premium-banner-ib-title,
 .premium-banner-animation2.active .premium-banner-ib-title {
     -webkit-transform: translate3d(0, -40px, 0);
-            transform: translate3d(0, -40px, 0);
+    transform: translate3d(0, -40px, 0);
 }
 
 .premium-banner-animation2:hover .premium-banner-read-more,
@@ -270,14 +270,14 @@
 .premium-banner-animation2.active .premium-banner-ib-desc::before {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .premium-banner-animation2:hover .premium-banner-ib-content,
 .premium-banner-animation2.active .premium-banner-ib-content {
     opacity: 1;
     -webkit-transform: translate3d(0, -30px, 0);
-            transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0);
 }
 
 .premium-banner-animation3 .premium-banner-ib-title {
@@ -288,7 +288,7 @@
     width: 100%;
     text-align: right;
     -webkit-transform: translate3d(0, -30px, 0);
-            transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0);
 }
 
 .premium-banner-animation3 .premium-banner-ib-desc::before,
@@ -305,7 +305,7 @@
 .premium-banner-animation3.active .premium-banner-ib-title {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .premium-banner-animation3 .premium-banner-ib-content {
@@ -342,11 +342,11 @@
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
     -ms-transform: scale(0, 1);
-        -webkit-transform: scale(0, 1);
-            transform: scale(0, 1);
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
     -ms-transform-origin: 100% 0;
-        -webkit-transform-origin: 100% 0;
-            transform-origin: 100% 0;
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
 }
 
 .premium-banner-animation4 .premium-banner-ib-desc::after {
@@ -357,11 +357,11 @@
     border-left: 1px solid #fff;
     border-right: 1px solid #fff;
     -ms-transform: scale(1, 0);
-        -webkit-transform: scale(1, 0);
-            transform: scale(1, 0);
+    -webkit-transform: scale(1, 0);
+    transform: scale(1, 0);
     -ms-transform-origin: 0% 0;
-        -webkit-transform-origin: 0% 0;
-            transform-origin: 0% 0;
+    -webkit-transform-origin: 0% 0;
+    transform-origin: 0% 0;
 }
 
 .premium-banner-animation4 .premium-banner-ib-title {
@@ -378,19 +378,19 @@
     opacity: 0;
     overflow: hidden;
     -webkit-transform: translate3d(0, -10px, 0);
-            transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
 }
 
 .premium-banner-animation4 .premium-banner-ib-title,
 .premium-banner-animation4 img {
     -webkit-transform: translate3d(30px, 0, 0);
-            transform: translate3d(30px, 0, 0);
+    transform: translate3d(30px, 0, 0);
 }
 
 .premium-banner-animation4.zoomout img,
 .premium-banner-animation4.scale img {
     -webkit-transform: translate3d(30px, 0, 0) scale(1.1);
-            transform: translate3d(30px, 0, 0) scale(1.1);
+    transform: translate3d(30px, 0, 0) scale(1.1);
 }
 
 .premium-banner-animation4 .premium-banner-ib-content,
@@ -422,8 +422,8 @@
 .premium-banner-animation4.active .premium-banner-ib-desc::before {
     opacity: 1;
     -ms-transform: scale(1);
-        -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
 }
 
 .premium-banner-animation4:hover .premium-banner-ib-content,
@@ -434,7 +434,7 @@
 .premium-banner-animation4.active .premium-banner-ib-title {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .premium-banner-animation4:hover .premium-banner-ib-content,
@@ -442,7 +442,7 @@
 .premium-banner-animation4:hover .premium-banner-ib-title,
 .premium-banner-animation4:hover img {
     -webkit-transition-delay: 0.15s;
-            transition-delay: 0.15s;
+    transition-delay: 0.15s;
 }
 
 .premium-banner-animation5 .premium-banner-ib-desc {
@@ -457,7 +457,7 @@
     transition: transform 0.35s;
     transition: transform 0.35s, -webkit-transform 0.35s;
     -webkit-transform: translate3d(0, 100%, 0);
-            transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
 }
 
 .premium-banner-animation5 .premium-banner-ib-content {
@@ -479,7 +479,7 @@
     transition: transform 0.35s;
     transition: transform 0.35s, -webkit-transform 0.35s;
     -webkit-transform: translate3d(0, 200%, 0);
-            transform: translate3d(0, 200%, 0);
+    transform: translate3d(0, 200%, 0);
     text-align: center;
 }
 
@@ -494,7 +494,7 @@
     opacity: 1 !important;
     z-index: 99 !important;
     -webkit-backface-visibility: hidden !important;
-            backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
 }
 
 .premium-banner-animation5:hover .premium-banner-ib-desc,
@@ -504,13 +504,13 @@
 .premium-banner-animation5:hover .premium-banner-read-more,
 .premium-banner-animation5.active .premium-banner-read-more {
     -ms-transform: translateY(0);
-        -webkit-transform: translateY(0);
-            transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
 }
 
 .premium-banner-animation5:hover .premium-banner-ib-title {
     -webkit-transition-delay: 0.05s;
-            transition-delay: 0.05s;
+    transition-delay: 0.05s;
 }
 
 .premium-banner-animation5 img {
@@ -532,64 +532,64 @@
 .premium-banner-animation5.zoomout img,
 .premium-banner-animation5.scale img {
     -ms-transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .premium-banner-animation2.zoomout img,
 .premium-banner-animation2.scale img {
     -ms-transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .premium-banner-animation6.zoomout img,
 .premium-banner-animation6.scale img {
     -ms-transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .premium-banner-animation5.zoomin:hover img,
 .premium-banner-animation2.zoomin:hover img,
 .premium-banner-animation6.zoomin:hover img {
     -ms-transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .premium-banner-animation5.zoomout:hover img,
 .premium-banner-animation2.zoomout:hover img,
 .premium-banner-animation6.zoomout:hover img {
     -ms-transform: scale(1);
-        -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
 }
 
 .premium-banner-animation5.scale:hover img,
 .premium-banner-animation2.scale:hover img,
 .premium-banner-animation6.scale:hover img {
     -ms-transform: scale(1.2) rotate(-5deg);
-        -webkit-transform: scale(1.2) rotate(-5deg);
-            transform: scale(1.2) rotate(-5deg);
+    -webkit-transform: scale(1.2) rotate(-5deg);
+    transform: scale(1.2) rotate(-5deg);
 }
 
 .premium-banner-animation5.grayscale:hover img,
 .premium-banner-animation2.grayscale:hover img,
 .premium-banner-animation6.grayscale:hover img {
     -webkit-filter: grayscale(100%);
-            filter: grayscale(100%);
+    filter: grayscale(100%);
 }
 
 .premium-banner-animation5.blur:hover img,
 .premium-banner-animation2.blur:hover img {
     -webkit-filter: blur(3px);
-            filter: blur(3px);
+    filter: blur(3px);
 }
 
 .premium-banner-animation6.blur:hover img {
     -webkit-filter: blur(3px);
-            filter: blur(3px);
+    filter: blur(3px);
 }
 
 .premium-banner-animation6 .premium-banner-ib-desc {
@@ -613,7 +613,7 @@
     transition: transform 0.35s;
     transition: transform 0.35s, -webkit-transform 0.35s;
     -webkit-transform: translate3d(0, 100%, 0);
-            transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
 }
 
 .premium-banner-animation6 .premium-banner-ib-content,
@@ -625,8 +625,8 @@
     transition: opacity 0.35s, transform 0.35s;
     transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
     -ms-transform: scale(0);
-        -webkit-transform: scale(0);
-            transform: scale(0);
+    -webkit-transform: scale(0);
+    transform: scale(0);
 }
 
 .premium-banner-animation6 .premium-banner-read-more {
@@ -636,7 +636,7 @@
 .premium-banner-animation6:hover .premium-banner-ib-title,
 .premium-banner-animation6.active .premium-banner-ib-title {
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .premium-banner-animation6:hover .premium-banner-ib-content,
@@ -647,8 +647,8 @@
 .premium-banner-animation6.active .premium-banner-ib-desc::before {
     opacity: 1;
     -ms-transform: scale(1);
-        -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
 }
 
 .premium-banner-animation12 .premium-banner-ib-desc::after {
@@ -665,13 +665,13 @@
     transition: transform 0.35s;
     transition: transform 0.35s, -webkit-transform 0.35s;
     -webkit-transform: translate3d(0, -100%, 0);
-            transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
 }
 
 .premium-banner-animation12:hover .premium-banner-ib-desc::after,
 .premium-banner-animation12.active .premium-banner-ib-desc::after {
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .premium-banner-animation12 .premium-banner-ib-desc {
@@ -690,14 +690,14 @@
     transition: opacity 0.35s, transform 0.35s;
     transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
     -webkit-transform: translate3d(0, -100px, 0);
-            transform: translate3d(0, -100px, 0);
+    transform: translate3d(0, -100px, 0);
 }
 
 .premium-banner-animation12:hover .premium-banner-ib-content,
 .premium-banner-animation12.active .premium-banner-ib-content {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .premium-banner-animation13 img {
@@ -710,26 +710,26 @@
     transition: opacity 0.35s, filter 0.35s, transform 0.35s;
     transition: opacity 0.35s, filter 0.35s, transform 0.35s, -webkit-filter 0.35s, -webkit-transform 0.35s;
     -webkit-transform: translate3d(10px, 0, 0);
-            transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
     -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .premium-banner-animation13.zoomout img,
 .premium-banner-animation13.scale img {
     -webkit-transform: translate3d(10px, 0, 0) scale(1.1);
-            transform: translate3d(10px, 0, 0) scale(1.1);
+    transform: translate3d(10px, 0, 0) scale(1.1);
 }
 
 .premium-banner-animation13.none:hover img {
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .premium-banner-animation1.none:hover img,
 .premium-banner-animation4.none:hover img {
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .premium-banner-animation13.zoomin:hover img,
@@ -741,7 +741,7 @@
 .premium-banner-animation10.zoomin:hover img,
 .premium-banner-animation11.zoomin:hover img {
     -webkit-transform: translate3d(0, 0, 0) scale(1.1);
-            transform: translate3d(0, 0, 0) scale(1.1);
+    transform: translate3d(0, 0, 0) scale(1.1);
 }
 
 .premium-banner-animation13.zoomout:hover img,
@@ -753,7 +753,7 @@
 .premium-banner-animation10.zoomout:hover img,
 .premium-banner-animation11.zoomout:hover img {
     -webkit-transform: translate3d(0, 0, 0) scale(1);
-            transform: translate3d(0, 0, 0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
 }
 
 .premium-banner-animation13.scale:hover img,
@@ -765,7 +765,7 @@
 .premium-banner-animation10.scale:hover img,
 .premium-banner-animation11.scale:hover img {
     -webkit-transform: translate3d(0, 0, 0) scale(1.2) rotate(-5deg);
-            transform: translate3d(0, 0, 0) scale(1.2) rotate(-5deg);
+    transform: translate3d(0, 0, 0) scale(1.2) rotate(-5deg);
 }
 
 .premium-banner-animation13.grayscale:hover img,
@@ -777,9 +777,9 @@
 .premium-banner-animation10.grayscale:hover img,
 .premium-banner-animation11.grayscale:hover img {
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
     -webkit-filter: grayscale(100%);
-            filter: grayscale(100%);
+    filter: grayscale(100%);
 }
 
 .premium-banner-animation13.blur:hover img,
@@ -791,9 +791,9 @@
 .premium-banner-animation10.blur:hover img,
 .premium-banner-animation11.blur:hover img {
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
     -webkit-filter: blur(3px);
-            filter: blur(3px);
+    filter: blur(3px);
 }
 
 .premium-banner-animation13 .premium-banner-ib-desc {
@@ -819,13 +819,13 @@
     transition: transform 0.35s;
     transition: transform 0.35s, -webkit-transform 0.35s;
     -webkit-transform: translate3d(101%, 0, 0);
-            transform: translate3d(101%, 0, 0);
+    transform: translate3d(101%, 0, 0);
 }
 
 .premium-banner-animation13:hover .premium-banner-ib-title::after,
 .premium-banner-animation13.active .premium-banner-ib-title::after {
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .premium-banner-animation13 .premium-banner-ib-content,
@@ -837,7 +837,7 @@
     transition: opacity 0.35s, transform 0.35s;
     transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
     -webkit-transform: translate3d(-100%, 0, 0);
-            transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
 }
 
 .premium-banner-animation13:hover .premium-banner-ib-content,
@@ -846,7 +846,7 @@
 .premium-banner-animation13.active .premium-banner-read-more {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .premium-banner-ib.premium-banner-animation5 .premium-banner-toggle-size {
@@ -855,8 +855,8 @@
     height: 100%;
     max-width: none;
     -ms-transform: translateX(50%);
-        -webkit-transform: translateX(50%);
-            transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
 }
 
 .premium-banner-ib img {
@@ -887,7 +887,7 @@
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     -webkit-transition-delay: 0.2s;
-            transition-delay: 0.2s;
+    transition-delay: 0.2s;
 }
 
 .premium-banner-animation7 .premium-banner-bleft {
@@ -935,13 +935,13 @@
 .premium-banner-animation7 .premium-banner-ib-title,
 .premium-banner-animation7 img {
     -webkit-transform: translate3d(30px, 0, 0);
-            transform: translate3d(30px, 0, 0);
+    transform: translate3d(30px, 0, 0);
 }
 
 .premium-banner-animation7.zoomout img,
 .premium-banner-animation7.scale img {
     -webkit-transform: translate3d(30px, 0, 0) scale(1.1);
-            transform: translate3d(30px, 0, 0) scale(1.1);
+    transform: translate3d(30px, 0, 0) scale(1.1);
 }
 
 .premium-banner-animation7 .premium-banner-ib-content,
@@ -982,7 +982,7 @@
 .premium-banner-animation7.active .premium-banner-ib-title {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .premium-banner-animation7:hover .premium-banner-bleft,
@@ -1014,7 +1014,7 @@
 .premium-banner-animation7:hover .premium-banner-ib-title,
 .premium-banner-animation7:hover img {
     -webkit-transition-delay: 0.15s;
-            transition-delay: 0.15s;
+    transition-delay: 0.15s;
 }
 
 .premium-banner-animation8 img {
@@ -1039,15 +1039,15 @@
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     -webkit-transition-delay: 0.2s;
-            transition-delay: 0.2s;
+    transition-delay: 0.2s;
 }
 
 .premium-banner-animation8 .premium-banner-bleft {
     right: 30px;
     top: 50%;
     -ms-transform: translateY(-50%);
-        -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
     height: 0;
 }
 
@@ -1055,16 +1055,16 @@
     left: 30px;
     top: 50%;
     -ms-transform: translateY(-50%);
-        -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
     height: 0;
 }
 
 .premium-banner-animation8 .premium-banner-bottom {
     right: 50%;
     -ms-transform: translateX(50%);
-        -webkit-transform: translateX(50%);
-            transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
     bottom: 30px;
     width: 0;
 }
@@ -1072,8 +1072,8 @@
 .premium-banner-animation8 .premium-banner-btop {
     right: 50%;
     -ms-transform: translateX(50%);
-        -webkit-transform: translateX(50%);
-            transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
     top: 30px;
     width: 0;
 }
@@ -1095,13 +1095,13 @@
 .premium-banner-animation8 .premium-banner-ib-title,
 .premium-banner-animation8 img {
     -webkit-transform: translate3d(30px, 0, 0);
-            transform: translate3d(30px, 0, 0);
+    transform: translate3d(30px, 0, 0);
 }
 
 .premium-banner-animation8.zoomout img,
 .premium-banner-animation8.scale img {
     -webkit-transform: translate3d(30px, 0, 0) scale(1.1);
-            transform: translate3d(30px, 0, 0) scale(1.1);
+    transform: translate3d(30px, 0, 0) scale(1.1);
 }
 
 .premium-banner-animation8 .premium-banner-ib-content,
@@ -1142,7 +1142,7 @@
 .premium-banner-animation8.active .premium-banner-ib-title {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .premium-banner-animation8:hover .premium-banner-bleft,
@@ -1174,7 +1174,7 @@
 .premium-banner-animation8:hover .premium-banner-read-more,
 .premium-banner-animation8:hover img {
     -webkit-transition-delay: 0.15s;
-            transition-delay: 0.15s;
+    transition-delay: 0.15s;
 }
 
 .premium-banner-animation9 img {
@@ -1187,8 +1187,8 @@
     transition: opacity 0.35s, transform 0.35s;
     transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
     -ms-transform: scale(1.2);
-        -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 .premium-banner-animation9 .premium-banner-ib-desc {
@@ -1209,7 +1209,7 @@
     transition: opacity 0.35s, transform 0.35s;
     transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
     -webkit-transform: translate3d(50%, -50%, 0);
-            transform: translate3d(50%, -50%, 0);
+    transform: translate3d(50%, -50%, 0);
 }
 
 .premium-banner-animation9 .premium-banner-ib-desc::after {
@@ -1225,7 +1225,7 @@
     transition: opacity 0.35s, transform 0.35s;
     transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
     -webkit-transform: translate3d(50%, -50%, 0);
-            transform: translate3d(50%, -50%, 0);
+    transform: translate3d(50%, -50%, 0);
 }
 
 .premium-banner-animation9 .premium-banner-ib-title {
@@ -1238,7 +1238,7 @@
     transition: transform 0.35s;
     transition: transform 0.35s, -webkit-transform 0.35s;
     -webkit-transform: translate3d(0, -70px, 0);
-            transform: translate3d(0, -70px, 0);
+    transform: translate3d(0, -70px, 0);
     margin-top: 0;
     padding: 0 10%;
 }
@@ -1246,7 +1246,7 @@
 .premium-banner-animation9:hover .premium-banner-ib-title,
 .premium-banner-animation9.active .premium-banner-ib-title {
     -webkit-transform: translate3d(0, -80px, 0);
-            transform: translate3d(0, -80px, 0);
+    transform: translate3d(0, -80px, 0);
 }
 
 .premium-banner-animation9 .premium-banner-ib-content,
@@ -1261,7 +1261,7 @@
     transition: transform 0.35s, -webkit-transform 0.35s;
     padding: 0 10%;
     -webkit-transform: translate3d(0, 35px, 0);
-            transform: translate3d(0, 35px, 0);
+    transform: translate3d(0, 35px, 0);
 }
 
 .premium-banner-animation9 .premium-banner-read-more {
@@ -1273,27 +1273,27 @@
 .premium-banner-animation9:hover .premium-banner-read-more,
 .premium-banner-animation9.active .premium-banner-read-more {
     -webkit-transform: translate3d(0, 45px, 0);
-            transform: translate3d(0, 45px, 0);
+    transform: translate3d(0, 45px, 0);
 }
 
 .premium-banner-animation9:hover .premium-banner-ib-desc::before,
 .premium-banner-animation9.active .premium-banner-ib-desc::before {
     opacity: 0.5;
     -webkit-transform: translate3d(50%, -50%, 0) rotate(-45deg);
-            transform: translate3d(50%, -50%, 0) rotate(-45deg);
+    transform: translate3d(50%, -50%, 0) rotate(-45deg);
 }
 
 .premium-banner-animation9:hover .premium-banner-ib-desc::after,
 .premium-banner-animation9.active .premium-banner-ib-desc::after {
     opacity: 0.5;
     -webkit-transform: translate3d(50%, -50%, 0) rotate(45deg);
-            transform: translate3d(50%, -50%, 0) rotate(45deg);
+    transform: translate3d(50%, -50%, 0) rotate(45deg);
 }
 
 .premium-banner-animation9:hover img {
     -ms-transform: scale(1);
-        -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
 }
 
 .premium-banner-animation10 img {
@@ -1312,7 +1312,7 @@
     transition: transform 0.35s;
     transition: transform 0.35s, -webkit-transform 0.35s;
     -webkit-transform: translate3d(0, 20px, 0);
-            transform: translate3d(0, 20px, 0);
+    transform: translate3d(0, 20px, 0);
     margin-bottom: 0;
 }
 
@@ -1326,7 +1326,7 @@
     background: #fff;
     opacity: 0;
     -webkit-transform: translate3d(0, 100%, 0);
-            transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
     transition: opacity 0.35s, -webkit-transform 0.35s;
     transition: opacity 0.35s, transform 0.35s;
@@ -1336,14 +1336,14 @@
 .premium-banner-animation10:hover .premium-banner-ib-title,
 .premium-banner-animation10.active .premium-banner-ib-title {
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .premium-banner-animation10:hover .premium-banner-ib-title::after,
 .premium-banner-animation10.active .premium-banner-ib-title::after {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .premium-banner-animation10 .premium-banner-ib-content,
@@ -1355,7 +1355,7 @@
     transition: opacity 0.35s, transform 0.35s;
     transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
     -webkit-transform: translate3d(0, 100%, 0);
-            transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
 }
 
 .premium-banner-animation10 .premium-banner-read-more {
@@ -1368,7 +1368,7 @@
 .premium-banner-animation10.active .premium-banner-read-more {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .premium-banner-animation11 {
@@ -1377,14 +1377,14 @@
     transition: transform 1s ease-out;
     transition: transform 1s ease-out, -webkit-transform 1s ease-out;
     -webkit-transition-delay: 0.125s;
-            transition-delay: 0.125s;
+    transition-delay: 0.125s;
 }
 
 .premium-banner-animation11 .premium-banner-ib-desc {
     position: absolute;
     z-index: 5;
     -webkit-transform: translate3d(30px, 0, 0);
-            transform: translate3d(30px, 0, 0);
+    transform: translate3d(30px, 0, 0);
     opacity: 0;
     top: auto;
     bottom: 0;
@@ -1426,7 +1426,7 @@
     right: 0;
     bottom: 0;
     -webkit-transform: translate3d(100%, 0, 0);
-            transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
     background-image: -webkit-linear-gradient(130deg, rgba(84, 89, 95, 0.5) 27.89%, #6ec1e4 72.11%);
     background-image: linear-gradient(-40deg, rgba(84, 89, 95, 0.5) 27.89%, #6ec1e4 72.11%);
     z-index: 2;
@@ -1444,7 +1444,7 @@
 .premium-banner-animation11.active .premium-banner-ib-desc {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .premium-banner-animation11:hover .premium-banner-gradient:after,
@@ -1452,11 +1452,21 @@
 .premium-banner-animation11.active .premium-banner-gradient:after,
 .premium-banner-animation11.active .premium-banner-gradient:before {
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .premium-banner-animation11.zoomout img,
 .premium-banner-animation11.scale img {
     -webkit-transform: translate3d(-10px, 0, 0) scale(1.1);
-            transform: translate3d(-10px, 0, 0) scale(1.1);
+    transform: translate3d(-10px, 0, 0) scale(1.1);
+}
+
+.premium-banner-ib-content p img {
+    min-width: unset !important;
+    max-width: none !important;
+    width: auto !important;
+    -webkit-transform: none !important;
+    -ms-transform: none !important;
+    transform: none !important;
+    display: inline;
 }

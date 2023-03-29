@@ -7,8 +7,8 @@
   margin: 0;
   display: inline-block;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
-          transform: translate(0, 0); }
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0); }
 
 .premium-dual-header-first-clip .premium-dual-header-first-span,
 .premium-dual-header-second-clip {
@@ -31,7 +31,7 @@
 .premium-dual-header-second-header.gradient {
   background-size: 300% 300% !important;
   -webkit-animation: Gradient 10s ease-in-out infinite;
-          animation: Gradient 10s ease-in-out infinite; }
+  animation: Gradient 10s ease-in-out infinite; }
 
 @-webkit-keyframes Gradient {
   0% {

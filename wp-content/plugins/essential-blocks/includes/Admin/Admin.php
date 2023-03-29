@@ -38,10 +38,15 @@ class Admin {
         add_action( 'wp_ajax_get_eb_admin_templates', [$this, 'templates'] );
         add_action( 'wp_ajax_get_eb_admin_template_count', [$this, 'template_count'] );
 
+        //Redirect after Plugin is updated
         add_action( 'admin_init', [$this, 'maybe_redirect'] );
     }
 
     public function maybe_redirect(){
+        if ( wp_doing_ajax()) {
+            return;
+        }
+
         if( get_transient('essential_block_maybe_whatsnew_redirect') == true ) {
             delete_transient( 'essential_block_maybe_whatsnew_redirect' );
 

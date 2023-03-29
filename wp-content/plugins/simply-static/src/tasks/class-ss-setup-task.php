@@ -174,6 +174,12 @@ class Setup_Task extends Task {
 		$files = new \RecursiveIteratorIterator( new \RecursiveDirectoryIterator( $dir, \RecursiveDirectoryIterator::SKIP_DOTS ), \RecursiveIteratorIterator::CHILD_FIRST );
 
 		foreach ( $files as $fileinfo ) {
+			$can_delete_file = apply_filters( 'ss_can_delete_file', true, $fileinfo, $dir );
+
+			if ( ! $can_delete_file ) {
+				continue;
+			}
+
 			if ( $fileinfo->isDir() ) {
 				if ( false === rmdir( $fileinfo->getRealPath() ) ) {
 					return false;

@@ -1040,6 +1040,27 @@ class Premium_Button extends Widget_Base {
 			)
 		);
 
+		$this->add_control(
+			'button_width',
+			array(
+				'label'      => __( 'Width', 'premium-addons-for-elementor' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', '%', 'custom' ),
+				'range'      => array(
+					'px' => array(
+						'min' => 1,
+						'max' => 500,
+					),
+				),
+				'selectors'  => array(
+					'{{WRAPPER}} .premium-button' => 'width: {{SIZE}}{{UNIT}};',
+				),
+				'condition'  => array(
+					'premium_button_size!' => 'block',
+				),
+			)
+		);
+
 		if ( $draw_icon ) {
 			$this->add_control(
 				'svg_color',

@@ -882,7 +882,7 @@ class Premium_Pricing_Table extends Widget_Base {
 						'icon_type' => array( 'icon', 'svg' ),
 					),
 					'selectors' => array(
-						'{{WRAPPER}} {{CURRENT_ITEM}}.premium-pricing-list-item .premium-drawable-icon *, {{WRAPPER}} {{CURRENT_ITEM}}.premium-pricing-list-item svg:not([class*="premium-"])' => 'stroke: {{VALUE}};',
+						'{{WRAPPER}} {{CURRENT_ITEM}}.premium-drawable-icon *, {{WRAPPER}} {{CURRENT_ITEM}}.premium-pricing-list-item svg:not([class*="premium-"])' => 'stroke: {{VALUE}};',
 					),
 				)
 			);
@@ -3522,7 +3522,7 @@ class Premium_Pricing_Table extends Widget_Base {
 						view.addRenderAttribute( key, 'class', [ 'elementor-repeater-item-' + item._id, 'premium-pricing-list-item' ] );
 
 						if( 'icon' === item.icon_type ) {
-							var listIconHTML = 'yes' === item.draw_svg ? elementor.helpers.renderIcon( view, item.premium_pricing_list_item_icon_updated, { 'class': [ 'premium-pricing-feature-icon', 'premium-svg-nodraw', 'premium-drawable-icon' ] , 'aria-hidden': true }, 'i' , 'object' ) : false,
+							var listIconHTML = 'yes' !== item.draw_svg ? elementor.helpers.renderIcon( view, item.premium_pricing_list_item_icon_updated, { 'class': [ 'premium-pricing-feature-icon', 'premium-svg-nodraw', 'premium-drawable-icon' ] , 'aria-hidden': true }, 'i' , 'object' ) : false,
 								listIconMigrated = elementor.helpers.isIconMigrated( item, 'premium_pricing_list_item_icon_updated' );
 						}
 

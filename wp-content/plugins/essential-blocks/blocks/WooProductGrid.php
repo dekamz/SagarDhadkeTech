@@ -71,7 +71,13 @@ class WooProductGrid extends Block {
         ];
 
         foreach ( $_essential_attributes as $key => $value ) {
-            $_essential_attributes[$key] = ! empty( $attributes[$key] ) ? $attributes[$key] : $value;
+            if ( isset( $attributes[$key] ) && is_bool( $attributes[$key] ) ) {
+                $_essential_attributes[$key] = $attributes[$key];
+            } elseif ( ! empty( $attributes[$key] ) ) {
+                $_essential_attributes[$key] = $attributes[$key];
+            } else {
+                $_essential_attributes[$key] = $value;
+            }
         }
 
         $args = isset( $attributes['queryData'] ) ? $attributes['queryData'] : [];

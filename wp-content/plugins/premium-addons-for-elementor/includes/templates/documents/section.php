@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Premium_Section_Document extends Premium_Document_Base {
 
 	public function get_name() {
-		return 'premium_page';
+		return 'premium_section';
 	}
 
 	public static function get_title() {

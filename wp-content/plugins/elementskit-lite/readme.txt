@@ -1,28 +1,28 @@
-=== ElementsKit Elementor Addons and Templates Library===
+=== ElementsKit Elementor addons ===
 Contributors: xpeedstudio, Ataurr, emranio
-Tags: Elementor addons, elementor mega menu builder, elementor header footer builder, Elementor widgets, Accordion tab, Elementor modules, page builder addons, addons, addon, widgets, widget
+Tags: Elementor addons, mega menu builder, widgets for elementor, header footer builder, Elementor widgets,elementor addon, Accordion tab, Elementor modules, page builder addons, addons
 Requires at least: 5.0
-Tested up to: 6.1
+Tested up to: 6.2
 Requires PHP: 7.1
-Stable tag: 2.8.1
+Stable tag: 2.8.5
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Elementor Addons come with Header Footer Builder, Mega Menu Builder, Free Elementor Widgets, Pricing table addon, Team member, testimonial Widgets, addons Etc under the hood. It has 80+ custom Elementor widget addons to create any site with on the fly.
+Elementor Addons come with Header Footer Builder, Mega Menu Builder, Free Elementor Widgets, Templates Library Pricing table, Team member, testimonial Widgets, Etc under the hood. It has 80+ custom widgets to create any site with on the fly.
 
 
 == Description ==
 
-ElementsKit Elementor addons is an ultimate and all-in-one addons for Elementor Page Builder. It includes the most comprehensive modules, such as **Header Footer Builder, Mega Menu Builder, Layout template Library**, etc under the one hood. It has **80+ custom elementor widgets** such as an Advanced accordion, Pricing table, Team member, testimonial, Accordion, tab, Countdown Timer, etc to create any site with ease. 
+**ElementsKit Elementor addons** is an ultimate and all-in-one addons for Elementor Page Builder. It includes the most comprehensive modules, such as **Header Footer Builder, Mega Menu Builder, Layout template Library**, etc under the one hood. It has **80+ custom elementor widgets** such as an Advanced accordion, Pricing table, Team member, testimonial, Accordion, tab, Countdown Timer, etc to create any site with ease. This is the best addon for elementor.
 
-It has unique and powerful custom controls, such as Image Picker, Ajax Select2, Advanced Widgets, and many more. Why do you need multiple elementor addons? Where is everything under the one hood?
+
+**Elementskit** has Exclusive features that blow your mind. Like our Mega Menu Builder, Header and Footer Builder layout library, **One Page Scroll, Sticky Content, and Parallax Effects, you will get tons of Premium features that you have never imagined in elementor addons.**
+
+This addon has unique and powerful custom controls, such as Image Picker, Ajax Select2, Advanced Widgets, and many more. Why do you need multiple elementor addons? Where is everything under the one hood?
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/VhBl3dHT5SY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
-
-**Elementskit** has Exclusive features that blow your mind. Like our Mega Menu Builder, Header and Footer Builder layout library, **One Page Scroll, Sticky Content, and Parallax Effects, you will get tons of Premium features that you have never imagined in elementor addons.**
 
 
 
@@ -42,15 +42,15 @@ WordPress 4.9+
 
 == = KEY FEATURES == ==
 
-- Header Footer Builder
+- Elementor Header Footer Builder
 - Elementor Widget Builder
-- Mega Menu Builder
+- Mega Menu Builder for elementor
 - Vertical Mega Menu
 - 74+ Free and Premium Widgets
 - 45+ Pre-designed Header & Footer Templates
-- 79+ Ready Pages
-- 416+ Ready Sections
-- WooCommerce Widgets
+- 79+ Ready Pages to build any website
+- 416+ Ready Sections to just download and use on your website.
+- WooCommerce Widgets for your woocommerce shop page.
 - One Page Scroll
 - Sticky Content - PRO
 - Parallax Effects - PRO
@@ -63,16 +63,16 @@ WordPress 4.9+
 - Build with Elementor
 
 
-== Layoutkit Template library ==
+== Layoutkit Elementor Template library ==
 ElementsKit has Layout Template library features in which over 112+ ready-made template pages like the Home page,  about us page, service page, and contact pages. And 500+ built-in sections are available. Just click the layout icon Elementor canvas and insert it into your site; it’s so easy to use without any hassle like importing JSON. You will get a complete native feel when you use this.
 
 
 == 500+ Readymade Section ==
-ElementsKit comes with 500+ readymade blocks. Make any website on the fly with these blocks from the exclusive layout kit template library. You don’t need to create from scratch. Just input the design from the Layoutkit library and modify it according to your need. That’s it. Your site is ready to launch.
+ElementsKit comes with 500+ readymade section blocks. Make any website on the fly with these blocks from the exclusive layout kit template library. You don’t need to create from scratch. Just input the design from the Layoutkit library and modify it according to your need. That’s it. Your site is ready to launch.
 
 
 == Modular based and Lightweight ==
-ElementsKit builds optimization in mind. We develop our plugin Modular based, so you don’t need any add-ons. You can enable/disable specific elements from the ElementsKit option panel to prevent overloading your website with Extra CSS or JS code you will not use, which helps your website have a blazing-fast performance.
+ElementsKit builds optimization in mind. We develop our Modular-based plugin, so you don’t need any addons. You can enable/disable specific elements from the ElementsKit option panel to prevent overloading your website with Extra CSS or JS code you will not use, which helps your website have a blazing-fast performance.
 
 
 == Completely Customizable ==
@@ -90,10 +90,10 @@ We have over 50+  widgets with our free plugin. And Every widget is built with c
 It offers lots of styles including heading titles with background color text style, heading titles with background image style, WordPress heading titles with gradient sub-title style, heading with blue focused titles, headline titles with top subtitle, and heading titles with separator style.
 
 == 2. Button Widget ==
- [ **Button Widget** ](https://wpmet.com/plugin/elementskit/button/?addons=elementor) - Our Button Widget helps you to create amazing buttons with text, color, hover effects, and other effects. This will also enable you to create call-to-action buttons.
+ [ **Button Widget** ](https://wpmet.com/plugin/elementskit/button/) - Our Button Widget helps you to create amazing buttons with text, color, hover effects, and other effects. This will also enable you to create call-to-action buttons.
 
  [ Check out our video screencast ](https://www.youtube.com/watch?v=Gcx9uP-7pao&list=PL3t2OjZ6gY8MVnyA4OLB6qXb77-roJOuY&index=18)
-Our button widget offers lots of styles including a rounded button with an icon style, a box-shaped link button with an icon, a dropdown cta button with an icon, a WordPress button WooCommerce buttons style, add-ons call to action button in video icon style, fancy add to cart button gradient click-through style.
+Our button widget offers lots of styles including a rounded button with an icon style, a box-shaped link button with an icon, a dropdown cta button with an icon, a WordPress button WooCommerce buttons style, addons call to action button in video icon style, fancy add to cart button gradient click-through style.
 
 == 3. Team Widget ==
 [ **Team Widget** ](https://wpmet.com/plugin/elementskit/team/) - Our Team widget allows you to showcase the members with their names, positions, bios, pictures, and social media links. Using the team member, you can customize the team section as you need it.
@@ -102,7 +102,7 @@ Our button widget offers lots of styles including a rounded button with an icon 
 It offers a Full-width carousel slider style, slider full image & details with hover style, incorporates staff style, WordPress in a grid style, WordPress round image & shadow box style, long height image, gradient hover effects style for the team member.
 
 == 4. Accordion Widget ==
-[ **Accordion Widget** ](https://wpmet.com/plugin/elementskit/accordion/?addons=elementor) - Display your texts in a foldable and concise way using Accordion FAQ Widget. By using it on your pages, posts, or anywhere on your site, the length of the page can be shorthand with custom options in color, icon, style, and motion effects.
+[ **Accordion Widget** ](https://wpmet.com/plugin/elementskit/accordion/) - Display your texts in a foldable and concise way using Accordion FAQ Widget. By using it on your pages, posts, or anywhere on your site, the length of the page can be shorthand with custom options in color, icon, style, and motion effects.
 
  [ Check out our video screencast](https://www.youtube.com/watch?v=omOe7iThK48&feature=youtu.be)
 Our accordion widget offers lots of styles like Solid color style, gradient color faq, accordion block style, box-shadow, simple faq style, accordions in tabs style, wp service box, collapsible content accordion, info box style, and floating point.
@@ -114,12 +114,12 @@ Our accordion widget offers lots of styles like Solid color style, gradient colo
 Our Tab addon offers lots of styles like general line style, fill color box style, full grid with icon text, vertical gradient style, WordPress animated style, WP collapsible accordion style, faq style, WooCommerce product style, fill body content box style for tabs.
 
 == 6. Social Icons Widget ==
-[ **Social Icons Widget** ](https://wpmet.com/plugin/elementskit/social-media/?addons=elementor) - Display your social media icons including Facebook, Instagram, Twitter, and Linkedin with our Social icons Widget on your WordPress website. Moreover, you can customize these with different shapes, colors, styles, text, borders, etc.
+[ **Social Icons Widget** ](https://wpmet.com/plugin/elementskit/social-media/) - Display your social media icons including Facebook, Instagram, Twitter, and Linkedin with our Social icons Widget on your WordPress website. Moreover, you can customize these with different shapes, colors, styles, text, borders, etc.
 [ Check out our video screencast ](https://www.youtube.com/watch?v=vK2pV6AwNYs&feature=youtu.be)
 Our Social Icons Widget offers lots of styles including filled circle color style, icons with square border, icons with filled square color style, text with rectangle color style, icons with multi-color, and social media account icons with text.
 
 == 7. Blog Posts Widget ==
-[**Blog Posts Widget**](https://wpmet.com/plugin/elementskit/blog/?addons=elementor) -  Do you want to display your blog posts more intelligently so that visitors love them? If yes, you need to try the blog posts widget of ElementsKit.
+[**Blog Posts Widget**](https://wpmet.com/plugin/elementskit/blog/) -  Do you want to display your blog posts more intelligently so that visitors love them? If yes, you need to try the blog posts widget of ElementsKit.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=9O_mPiS-8bY&feature=youtu.be)
 With this amazing widget, you can set the layout style, show/hide the featured image, set image position, define featured image size, set the number of posts to be displayed per row, show/hide post title, pagination, select posts by category and other parameters, order the post based by date, title, author, modification, and comments.
@@ -127,13 +127,13 @@ You can also customize the read more button and make necessary changes in the st
 
 
 == 8. Client Logo Widget == 
-[ **Client Logo Widget** ](https://wpmet.com/plugin/elementskit/client-logo/?addons=elementor) - Our Client Logo widget helps you to showcase client and sponsor logos on your Elementor web pages with different styles including a carousel slider. You can also customize the logo section as per your need.
+[ **Client Logo Widget** ](https://wpmet.com/plugin/elementskit/client-logo/) - Our Client Logo widget helps you to showcase client and sponsor logos on your Elementor web pages with different styles including a carousel slider. You can also customize the logo section as per your need.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=l4JJVvk3kJQ&feature=youtu.be)
 Our Client and sponsor logo addon offers lots of styles like gradient box effects, box shadow effects, solid color effects, slider with thin border effects, client double row slider, black and white effects, carousel style, client logo no gutter style, carousel slider with full inner navigation effects.
 
 == 9. Countdown Timer Widget==
- [ **Countdown Timer Widget** ](https://wpmet.com/plugin/elementskit/countdown-timer/?addons=elementor) - Our Countdown Timer widget will allow you to use the countdown timer feature on your website. You can use lots of effects, styles, and formats.
+ [ **Countdown Timer Widget** ](https://wpmet.com/plugin/elementskit/countdown-timer/) - Our Countdown Timer widget will allow you to use the countdown timer feature on your website. You can use lots of effects, styles, and formats.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=m7WcVE3umaM&feature=youtu.be)
 It offers lots of styles like the timer in fill color style for events, birthday countdown in timer line stroke color style, clock timer with colorful fill style, WordPress counter with colorful gradient fill style, WP counter box border style, counter box dark border style.
@@ -145,112 +145,112 @@ It offers lots of styles like the timer in fill color style for events, birthday
 It offers lots of styles for your WordPress FAQ box like shadow style, border style, transparent background with border, list style, toggle style, accordion style, a box with title background, and simple faq style.
 
 == 11. Funfact Widget ==
-[ **Funfact Widget** ](https://wpmet.com/plugin/elementskit/funfact/?addons=elementor) -  Using the Funfact widget, you can showcase the number, statistics, achievements, and facts in a progressive number counter. This animated number counter helps to customize the background, icon, and format to display your number counter accordingly.
+[ **Funfact Widget** ](https://wpmet.com/plugin/elementskit/funfact/) -  Using the Funfact widget, you can showcase the number, statistics, achievements, and facts in a progressive number counter. This animated number counter helps to customize the background, icon, and format to display your number counter accordingly.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=YJCVWamwW0A&feature=youtu.be)
 It offers lots of styles like box-shadow style, funfacts with fill icon box, number counter radius with border icon box, WordPress animated number counter style, WP stats animated number counter style, social media fans counter, modules statistic counters, project counter style, product counter style, followers counter style.
 
 == 12. Icon Box Widget ==
-[ **Icon Box Widget** ](https://wpmet.com/plugin/elementskit/icon-box/?addons=elementor) - The icon box widget allows you to display a short brief about the services you provide or products you offer within boxes with customization options like icon type, badge, content, box container, background, overlay, etc.
+[ **Icon Box Widget** ](https://wpmet.com/plugin/elementskit/icon-box/) - The icon box widget allows you to display a short brief about the services you provide or products you offer within boxes with customization options like icon type, badge, content, box container, background, overlay, etc.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=vom3nCp1ytc&feature=youtu.be)
 It offers lots of styles like icon box with default style, gradient hover style, service box with icon, WordPress colorful icon box shape with fill color, service box style, wp icon box shape with image overlay, a box with left side icon, list style with colorful icon box.
 
 == 13.Image Accordion Widget ==
-[ **Image Accordion Widget** ](https://wpmet.com/plugin/elementskit/image-accordion/?addons=elementor) - With our image accordion widget, you can display multiple images in a shortened format with a title, subtitle, description, and call to action button.
+[ **Image Accordion Widget** ](https://wpmet.com/plugin/elementskit/image-accordion/) - With our image accordion widget, you can display multiple images in a shortened format with a title, subtitle, description, and call to action button.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=SeebZHPsAkI&feature=youtu.be)
 It offers lots of styles like the default style, 4 columns style, extensions slider carousel, 4 columns no gutters style, WordPress slider style, 5 columns no gutters style for Image Accordion.
 
 == 14. Image Box Widget ==
-[ **Image BoxWidget** ](https://wpmet.com/plugin/elementskit/image-box/?addons=elementor) - The Image Box Widget lets you add image boxes that combine images with headlines, texts, and call-to-action buttons. You can style up the boxes with lots of effects and formats.
+[ **Image BoxWidget** ](https://wpmet.com/plugin/elementskit/image-box/) - The Image Box Widget lets you add image boxes that combine images with headlines, texts, and call-to-action buttons. You can style up the boxes with lots of effects and formats.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=GrsBHIsaYZo&feature=youtu.be)
 It offers lots of styles like a modern image box, a box with content, a border-bottom on center style, a border-bottom on the right style, a WordPress box with the right content, a box with sidebar, an image box content slide down.
 
 == 15. Pie Chart Widget ==
-[ **Pie Chart Widget** ](https://wpmet.com/plugin/elementskit/piechart/?addons=elementor) - This Pie Chart widget allows you to create data pie charts on your web pages. Using this Pie Chart widget, you can design its styles, chart content, and percentage according to your expectations.
+[ **Pie Chart Widget** ](https://wpmet.com/plugin/elementskit/piechart/) - This Pie Chart widget allows you to create data pie charts on your web pages. Using this Pie Chart widget, you can design its styles, chart content, and percentage according to your expectations.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=_2gaHU3bWjA&feature=youtu.be)
 It offers lots of styles like colorful chart style,   black color style, WP gradient style, WordPress thin line with the colorful style, thin line chart style, and data.
 
 == 16. Pricing Table Widget ==
-[ **Pricing Table Widget** ](https://wpmet.com/plugin/elementskit/pricing-new/?addons=elementor) - Describe your clear product value with the pricing table widget. It helps to customize the header, price tag, features, button, pricing figure, ordering, and much more.
+[ **Pricing Table Widget** ](https://wpmet.com/plugin/elementskit/pricing-new/) - Describe your clear product value with the pricing table widget. It helps to customize the header, price tag, features, button, pricing figure, ordering, and much more.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=ARkybC52qAU&feature=youtu.be)
 This Pricing Table widget offers lots of styling options including a table with default style, table 04 column with gradient style,   table block 03 columns with gradient red color style, pricing grid 03 columns with box shadow style, table 03 column with box-shadow custom style.
 
 == 17. Progress Bar Widget ==
-[ **Progress Bar Widget** ](https://wpmet.com/plugin/elementskit/progressbar/?addons=elementor) - Visualize your project’s progress with our progress bar widget. Using it, you can showcase skills, success rates, future goal predictions, or project progress with lots of styles and control options.
+[ **Progress Bar Widget** ](https://wpmet.com/plugin/elementskit/progressbar/) - Visualize your project’s progress with our progress bar widget. Using it, you can showcase skills, success rates, future goal predictions, or project progress with lots of styles and control options.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=LJRu_nMqUtY&feature=youtu.be)
 This widget offers lots of styling options including the progress bar with line shape, fatter line, animated skill bar line with shadow, percentage bar line with white background, bar line with a rounded style, bar with tooltip, skill bar with tooltip square, dots style, and tooltip circle point.
 
 == 18. Testimonial Widget ==
-[ **Testimonial Widget** ](https://wpmet.com/plugin/elementskit/testimonial/?addons=elementor) - Show your clients feedback, and recommendations on your sites with a perfect testimonial widget. Like our other addons, it has various customizable options like layout, wrapper content style, description, title separator, client, etc.
+[ **Testimonial Widget** ](https://wpmet.com/plugin/elementskit/testimonial/) - Show your clients feedback, and recommendations on your sites with a perfect testimonial widget. Like our other addons, it has various customizable options like layout, wrapper content style, description, title separator, client, etc.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=SzNlJFx1QUo&feature=youtu.be)
 The testimonial widget offers lots of styling options including the  Company logo with image style, grid style, gradient on hover style,  Commentor info with text, rotator style for WordPress, showcase plugin with border, reviews with modern design, WP Star ratings with gradient effect.
 
 == 19. MailChimp Widget ==
-[ **MailChimp Widget** ](https://wpmet.com/plugin/elementskit/mail-chimp/?addons=elementor) - Create and manage a mailing list, automated mailing, newsletter, and many other options with the MailChimp widget for WordPress sites. Through this, you can personalize your sign-up form with attractive and multiple styles.
+[ **MailChimp Widget** ](https://wpmet.com/plugin/elementskit/mail-chimp/) - Create and manage a mailing list, automated mailing, newsletter, and many other options with the MailChimp widget for WordPress sites. Through this, you can personalize your sign-up form with attractive and multiple styles.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=rmvVqYtrPdQ&feature=youtu.be)
 Our MailChimp widget offers lots of styling options including horizontal default subscribe style, horizontal subscribe gradient style for eCommerce, MailChimp with the newsletter, subscribe single button, contact form 7 for WordPress, single buttons for WooCommerce sites, form subscribe with single button style.
 
 == 20. Header Info Widget ==
-[ **Header Info Widget** ] - Display your logos, texts, business info, advertisements, and banners using our header add-ons. This widget contains a header, icon, text, content, styles with color, blocks, typography, and other advanced features. Our Header Info addon offers lots of styling options including a sticky header for WordPress with an icon, a sticky menu with text, headers with blue color, a sticky widget with a logo, a floating menu with a banner image, a template with a dark style, WordPress header style with hover effect, menu with content,   website header design with typography.
+[ **Header Info Widget** ] - Display your logos, texts, business info, advertisements, and banners using our header addons. This widget contains a header, icon, text, content, styles with color, blocks, typography, and other advanced features. Our Header Info addon offers lots of styling options including a sticky header for WordPress with an icon, a sticky menu with text, headers with blue color, a sticky widget with a logo, a floating menu with a banner image, a template with a dark style, WordPress header style with hover effect, menu with content,   website header design with typography.
 
 == 21. Image Comparison Widget ==
-[ **Image Comparison Widget** ](https://wpmet.com/plugin/elementskit/image-comparision?addons=elementor) - Display your image widget that compares two images and gives an attractive before and after slider effect. With our image comparison widget, you can compare the image by selecting vertical or horizontal with motion effects, customize label color, typography, background type, margin, padding, etc for before and after images.
+[ **Image Comparison Widget** ](https://wpmet.com/plugin/elementskit/image-comparision) - Display your image widget that compares two images and gives an attractive before and after slider effect. With our image comparison widget, you can compare the image by selecting vertical or horizontal with motion effects, customize label color, typography, background type, margin, padding, etc for before and after images.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=BJiDEaLvddQ&feature=youtu.be)
 This Image Comparison addon offers lots of styling options including a before and after slider with the vertical style, sliders with a horizontal style, WordPress Before after slider with a dark style, slider with a border, sliders with hover, and a comparison slider with border-radius.
 
 == 22. Call To Action Widget ==
-[ **Call To Action Widget** ](https://wpmet.com/plugin/elementskit/call-to-action/?addons=elementor) - Bring an image, button, content, and other features under one box with the call to action widget. With this call to action widget, you can select an image, button, title, color, and many more styling options.
+[ **Call To Action Widget** ](https://wpmet.com/plugin/elementskit/call-to-action/) - Bring an image, button, content, and other features under one box with the call to action widget. With this call to action widget, you can select an image, button, title, color, and many more styling options.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=nVHM65aLrcY&feature=youtu.be)
 It offers lots of widgets presets including image, title, button, colorful effects, gradient look, rounded button, dark background image, background image with title & subtitle for a call-to-action button.
 
 == 23. Video Widget ==
-[ **Video Widget** ](https://wpmet.com/plugin/elementskit/video/?addons=elementor) -  The video widget gives you the ability to add playable videos to your page. Through this, you can easily upload, preview, autoplay, play on mobile, Image overlay, and so on with different styles and many more features.
+[ **Video Widget** ](https://wpmet.com/plugin/elementskit/video/) -  The video widget gives you the ability to add playable videos to your page. Through this, you can easily upload, preview, autoplay, play on mobile, Image overlay, and so on with different styles and many more features.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=bbnP-zjNnkk&feature=youtu.be)
 This Video widget offers lots of styles including embedded video addons with the play button, button text, icon, image overlay, and thumbnail. Also, WP embeds video addons for youtube Livestream and Vimeo.
 
 == 24. Post Tab Widget ==
-[ **Post Tab Widget** ](https://wpmet.com/plugin/elementskit/post-tab/?addons=elementor) - This post tab widget helps you to display your blogs, popular posts, and recent posts in tabs as per the category. With it, you can customize post count, categories, and columns with unique styles.
+[ **Post Tab Widget** ](https://wpmet.com/plugin/elementskit/post-tab/) - This post tab widget helps you to display your blogs, popular posts, and recent posts in tabs as per the category. With it, you can customize post count, categories, and columns with unique styles.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=ZoZv7sYqdwU&feature=youtu.be)
 Our Post Tab widget offers lots of styles including  image, hover style, vertical style, subtitle, separator style for WooCommerce sites, red color style, 2 columns, 3 columns, and  4 columns.
 
 == 25. Category List Widget ==
-[ **Category List Widget** ](https://wpmet.com/plugin/elementskit/category-list/?addons=elementor) - Organize every section of each category in a list. Our category list widget comes with various styles, layouts, and other advanced options. Using this widget, you can customize the section easily.
+[ **Category List Widget** ](https://wpmet.com/plugin/elementskit/category-list/) - Organize every section of each category in a list. Our category list widget comes with various styles, layouts, and other advanced options. Using this widget, you can customize the section easily.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=ECFC0QregXg&feature=youtu.be)
 This Widget offers lots of styles including vertical style, horizontal style, etc. Besides, it offers a Widget with an icon, subtitle, label, categories, and post tags.
 
 == 26. Post List Widget ==
-[ **Post List Widget** ](https://wpmet.com/plugin/elementskit/post-list?addons=elementor) -   The post list widget will let you display your posts in a well-formatted list. Customize your post list elements with this and select category, change layout, text, metadata, and many more.
+[ **Post List Widget** ](https://wpmet.com/plugin/elementskit/post-list) -   The post list widget will let you display your posts in a well-formatted list. Customize your post list elements with this and select category, change layout, text, metadata, and many more.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=LTt3kvPGsCo&feature=youtu.be)
 It offers lots of styles including vertical and horizontal styles. Also, widgets with icons, media, labels, categories, post tags, and post lists.
 
 == 27. Page List Widget ==
-[ **Page List Widget** ](https://wpmet.com/plugin/elementskit/page-list/?addons=elementor) - The page List widget helps to display your list of pages in a horizontal or vertical layout and customize using the widget for a WordPress website. You can change the layout, target, icon, text, subtitle, etc.
+[ **Page List Widget** ](https://wpmet.com/plugin/elementskit/page-list/) - The page List widget helps to display your list of pages in a horizontal or vertical layout and customize using the widget for a WordPress website. You can change the layout, target, icon, text, subtitle, etc.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=X7GdOwcy5Uo&feature=youtu.be)
 It offers lots of styles including a Page list widget with a vertical style, and WordPress sitemaps with a horizontal style. Again, the page list with text, background color, icon, subtitle, and label.
 
 == 28. Header Offcanvas Widget ==
-[ **Header Offcanvas Widget** ](https://wpmet.com/plugin/elementskit/header-offcanvas/?addons=elementor) - Header Offcanvas allow the user to display sidebar content like the demo and registration when the specific button is triggered. This menu provides options to add content blocks of title, text, video, images, forms, social icons, etc.
+[ **Header Offcanvas Widget** ](https://wpmet.com/plugin/elementskit/header-offcanvas/) - Header Offcanvas allow the user to display sidebar content like the demo and registration when the specific button is triggered. This menu provides options to add content blocks of title, text, video, images, forms, social icons, etc.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=fb4usBDqLnk&feature=youtu.be)
 This Widget offers multiple styles including the OffCanvas sidebar with the header, border, panels, menus, menu style with sidebar, gradient style, classic style, and shadow style.
 
 == 29. Drop Caps Widget ==
-[ **Drop Caps Widget** ](https://wpmet.com/plugin/elementskit/drop-caps/?addons=elementor) - This Drop Caps Widget lets you display the first letter in a stylish, large, and capitalized format. Using this, you can customize the color, content, border, radius, and other more.
+[ **Drop Caps Widget** ](https://wpmet.com/plugin/elementskit/drop-caps/) - This Drop Caps Widget lets you display the first letter in a stylish, large, and capitalized format. Using this, you can customize the color, content, border, radius, and other more.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=SyO81w-pgi0&feature=youtu.be)
 Our Drop Caps Widget offers lots of styles including default style, background style, background rectangular style for WordPress, background border style, and background full radius style.
@@ -260,67 +260,67 @@ Our Drop Caps Widget offers lots of styles including default style, background s
 This widget offers lots of styles including Submenu item styles, submenu panel styles, nav menu hamburger styles, mobile page navigation menu logos for WordPress, light style, dark style, and mixed style.
 
 == 31. Dual Button Widget ==
-[ **Dual Button Widget** ](https://wpmet.com/plugin/elementskit/dual-button-2/?addons=elementor) - Display two buttons side by side with the dual button widget. You can even make colorful call-to-action dual buttons with this widget.
+[ **Dual Button Widget** ](https://wpmet.com/plugin/elementskit/dual-button-2/) - Display two buttons side by side with the dual button widget. You can even make colorful call-to-action dual buttons with this widget.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=Yk4RikCqW3g&feature=youtu.be)
 It offers multiple buttons like buttons with middle text, border radius, calls to action buttons, dual button style, WP square button with icon, rounded button with icon, CTA buttons with separator icon, and WordPress button addon with the both-sided icon.
 
 == 32. Business Hours Widget ==
-[ **Business Hours Widget** ](https://wpmet.com/plugin/elementskit/business-hours?addons=elementor) - Use the business hour widget to inform about your opening hours so users can get updates on whether you are currently open or not. Use this widget with unique designs and styles.
+[ **Business Hours Widget** ](https://wpmet.com/plugin/elementskit/business-hours) - Use the business hour widget to inform about your opening hours so users can get updates on whether you are currently open or not. Use this widget with unique designs and styles.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=nhp67zqBOFM&feature=youtu.be)
 The business Hours widget offers multiple styles like reservation hours style, widgets opening hours, indicator style, WP pre-defined business timings, office hours widget, custom working days & hours, opening times, and closing times.
 
 == 33. Social Share Widget ==
-[ **Social Share Widget** ](https://wpmet.com/plugin/elementskit/social-share/?addons=elementor) - Share your content on your social media accounts with one button click. Our social share widget will enable you to share blog posts, news, and the latest updates on Facebook, Twitter, Linkedin, Pinterest, and more.
+[ **Social Share Widget** ](https://wpmet.com/plugin/elementskit/social-share/) - Share your content on your social media accounts with one button click. Our social share widget will enable you to share blog posts, news, and the latest updates on Facebook, Twitter, Linkedin, Pinterest, and more.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=j1OMUDFaaaA&feature=youtu.be)
 Social share addon offers multiple styles like button style, floating buttons style, vertical floating share buttons for WordPress, horizontal floating share button style, share with icons & text, and WP  share icons in button style.
 
 == 34. Caldera Forms Widget ==
-[ **Caldera Forms Widget** ](https://wpmet.com/plugin/elementskit/caldera-form/?addons=elementor) - Build your contact form with the caldera forms widget. Caldera forms Elementor addon comes up with different types of form styles for capturing leads.
+[ **Caldera Forms Widget** ](https://wpmet.com/plugin/elementskit/caldera-form/) - Build your contact form with the caldera forms widget. Caldera forms Elementor addon comes up with different types of form styles for capturing leads.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=umCaUQFC7JY&feature=youtu.be)
 It offers multiple styles like Vertical style, horizontal style, nurture with colors, submit button for WordPress, radio and checkbox button, forms with background,   forms with outer background, double column caldera form with a full-width button, dark color field, double column field distribution, form manager, WP form creator.
 
 == 35. Contact Form 7 Widget ==
-[ **Contact Form 7 Widget** ](https://wpmet.com/plugin/elementskit/contact/?addons=elementor) - Contact Form 7 Widget will help you to create various types of contact forms. Using our Contact Form 7, you can design your form container, and fields and choose the preferred form layout to style it exclusively.
+[ **Contact Form 7 Widget** ](https://wpmet.com/plugin/elementskit/contact/) - Contact Form 7 Widget will help you to create various types of contact forms. Using our Contact Form 7, you can design your form container, and fields and choose the preferred form layout to style it exclusively.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=rgm3eTMYr24&feature=youtu.be)
 Contact form 7 addon offers multiple styles including vertical style and horizontal style, gradient button style, colors, animated line style, outline style, flat style, WordPress feedback form, WordPress forms with the label, forms without the label, form with the bottom border.
 
 == 36. Ninja Forms Widget ==
-[ **Ninja Forms Widget** ](https://wpmet.com/plugin/elementskit/ninja-forms/?addons=elementor) - The ninja forms widget will give you the facilities to create contact forms with different types and styles. You can customize every element of the form as per your need.
+[ **Ninja Forms Widget** ](https://wpmet.com/plugin/elementskit/ninja-forms/) - The ninja forms widget will give you the facilities to create contact forms with different types and styles. You can customize every element of the form as per your need.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=XOwlb5u2GrQ&feature=youtu.be)
 Ninja Forms offers multiple styles including feedback form addons, WP event registration forms, inquiry form templates, custom contact forms, pdf form submissions, user registration forms, WordPress appointment forms, survey forms, email subscription forms, newsletter forms, donation forms, booking forms for WordPress, WP application forms, WordPress employment verification forms, and star rating forms.
 
 == 37. WP Forms Widget ==
-[ **WP Forms Widget** ]( https://wpmet.com/plugin/elementskit/wp-forms/?addons=elementor) - The WP Forms widget lets you build any type of form like a contact form, suggestion form, newsletter, subscribe form, etc with different styling options.
+[ **WP Forms Widget** ]( https://wpmet.com/plugin/elementskit/wp-forms/) - The WP Forms widget lets you build any type of form like a contact form, suggestion form, newsletter, subscribe form, etc with different styling options.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=XOwlb5u2GrQ&feature=youtu.be)
 Check out our video screencast WP Forms offers multiple form styles including a custom contact form, WP feedback form builder, payment form widget, WordPress survey form, donation form addon, email submit form, contact form widget, WordPress user registration form, and contact form builder.
 
 == 38. weForms Widget ==
-[ **weForms Widget** ](https://wpmet.com/plugin/elementskit/we-forms/?addons=elementor) - weForms widget will help you to build various contact forms with different colors, fields, labels, buttons, and more customization facilities.
+[ **weForms Widget** ](https://wpmet.com/plugin/elementskit/we-forms/) - weForms widget will help you to build various contact forms with different colors, fields, labels, buttons, and more customization facilities.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=4uYi0833Kjw&feature=youtu.be)
 weForms offers multiple form styles including support form, volunteer application form builder, WP event registration form,  contact form builder, contact form extension, weForms widget, and WordPress form builder.
 
 == 39. Header Search Widget ==
-[ **Header Search Widget** ](https://wpmet.com/plugin/elementskit/header-search?addons=elementor) - Ever thought of customizing the search box positioned at the header? The Header Search Widget from ElementsKit will let you do that just in a few minutes.
+[ **Header Search Widget** ](https://wpmet.com/plugin/elementskit/header-search) - Ever thought of customizing the search box positioned at the header? The Header Search Widget from ElementsKit will let you do that just in a few minutes.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=poBmDTuXBL0&feature=youtu.be)
 Be it the search icon, placeholder text, font size, border type, background color, or placeholder color, you can customize all of these with the header search widget. And you know what? It’s a free feature!
 
 == 40. Lottie Widget ==
-[ **Lottie Widget** ](https://wpmet.com/plugin/elementskit/lottie/?addons=elementor) - Our Lottie animation widget gives you the ability to add Lottie Animations to your elementor pages.  Just easily export a JSON file or provide a URL to use animation. Moreover, you can enable reverse animation, autoplay, loop, render type, select hover options, and lots of other features.
+[ **Lottie Widget** ](https://wpmet.com/plugin/elementskit/lottie/) - Our Lottie animation widget gives you the ability to add Lottie Animations to your elementor pages.  Just easily export a JSON file or provide a URL to use animation. Moreover, you can enable reverse animation, autoplay, loop, render type, select hover options, and lots of other features.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=yey37Nxqjno&feature=youtu.be)
 Lottie addon offers multiple styles of animation including custom count loop, autoplay, increase speed, reverse animation, hover pause effect, hover play effect, hover with reverse play effect, custom link, scroll parallax effect, individual hover style, and viewport animation style.
 
 == 41. Post Grid Widget ==
-[ **Post Grid Widget** ](https://wpmet.com/plugin/elementskit/post-grid/?addons=elementor) - The post grid widget will help you to display your content, image, post, product, etc in a group with different styles. It has customizable options including categories, post count with grid styles, motion effects, and more.
+[ **Post Grid Widget** ](https://wpmet.com/plugin/elementskit/post-grid/) - The post grid widget will help you to display your content, image, post, product, etc in a group with different styles. It has customizable options including categories, post count with grid styles, motion effects, and more.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=Mz_KiyAdGhI&feature=youtu.be)
 Post grid offers multiple styles including two grid layout style, three grid layout style, WordPress four grid layout style, WP custom post grid, WordPress post type grid, post display,   content grid addons, post view widget, masonry layout with animation, grid with zoom in animation, slide-up animation.
@@ -367,152 +367,152 @@ We have developed Awesome exclusive modules which saved tons of time when you ar
 == Exclusive PRO Addons widgets for Elementor ==
 
 == 1. Gallery Widget (PRO) ==
-[ **Gallery Widget (PRO)** ](https://wpmet.com/plugin/elementskit/gallery/?addons=elementor) - Showcase your recent photos, company environment, events, etc to your visitors with a gallery widget. Our image gallery widget comes with different styles in content, layout, thumbnail, overlay, filter, sequence, alignment, filter label, ordering, etc.
+[ **Gallery Widget (PRO)** ](https://wpmet.com/plugin/elementskit/gallery/) - Showcase your recent photos, company environment, events, etc to your visitors with a gallery widget. Our image gallery widget comes with different styles in content, layout, thumbnail, overlay, filter, sequence, alignment, filter label, ordering, etc.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=5pRmbZ2Gpvc&feature=youtu.be)
 Gallery addon offers multiple styles including style grid, style masonry, style 4 column masonry, style 4 column masonry no popup, gallery style grid 4 column addon, WP image carousel style, justified image gallery for WordPress, grid layout, custom caption & attractive hover effects, filter images within your gallery, and enticing image effects.
 
 == 2. Advanced Accordion Widget (PRO) ==
-[ **Advanced Accordion Widget (PRO)** ](https://wpmet.com/plugin/elementskit/advaced-accordion/?addons=elementor) -   Showcase your features like image, content, blog, social feed, faq, countdown timer, progress bar, or MailChimp subscription form within the accordion in a nested format. With our advanced accordion, customize your content, choose style, icon, enable or disable loop count, etc.
+[ **Advanced Accordion Widget (PRO)** ](https://wpmet.com/plugin/elementskit/advaced-accordion/) -   Showcase your features like image, content, blog, social feed, faq, countdown timer, progress bar, or MailChimp subscription form within the accordion in a nested format. With our advanced accordion, customize your content, choose style, icon, enable or disable loop count, etc.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=oV-7-NNiGZo&feature=youtu.be)
 The advanced accordion addon offers multiple styles including image accordion, accordion content, display text content with accordion effect, faq accordions, responsive accordion, collapsible content style accordion, multi-color accordion addon, nested accordion for WordPress, toggle icon accordion, gradient accordion with spacing.
 
 == 3. Advanced Tab Widget (PRO) ==
-[ **Advanced Tab Widget (PRO)** ](https://wpmet.com/plugin/elementskit/advanced-tab-one/?addons=elementor) - Display nested elements including text box, image box, icon box, contact form, MailChimp subscription form, FAQ, team, social feed, blog, and much more within the tabs. Our Advanced tab widget provides custom options in style, icon, nav alignment, and others.
+[ **Advanced Tab Widget (PRO)** ](https://wpmet.com/plugin/elementskit/advanced-tab-one/) - Display nested elements including text box, image box, icon box, contact form, MailChimp subscription form, FAQ, team, social feed, blog, and much more within the tabs. Our Advanced tab widget provides custom options in style, icon, nav alignment, and others.
 Check out our video screencast Advanced tab addon offers multiple styles including horizontal layout tabs, vertical style tabs, content boxes with icon style tabs, full grid text style tabs, full grid buttons with vertical tab style, WordPress full grid horizontal content box tab, icon text with progress style tab, left side nav with modern gradient tab, WP showcase nested tabs, toggle on icon tab style, WordPress responsive tabs, WooCommerce tabs, advanced tabs.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=eNMp_6NturY=youtu.be)
 Advanced tab addon offers multiple styles including horizontal layout tabs, vertical style tabs, content boxs with icon style tabs, full grid text style tabs, full grid buttons with vertical tab style, WordPress full grid horizontal content box tab, icon text with progress style tab, left side nav with modern gradient tab, WP showcase nested tabs, toggle on icon tab style, WordPress responsive tabs, WooCommerce tabs, advanced tabs.
 
 == 4. Timeline Widget (Pro) ==
-[ **Timeline Widget (Pro)** ](https://wpmet.com/plugin/elementskit/time-line/?addons=elementor) - Create your timeline chart using the timeline widget and showcase your timeline, and roadmap horizontally and vertically. With this, get advanced styles in timeline, content, background, border, positioning, etc.
+[ **Timeline Widget (Pro)** ](https://wpmet.com/plugin/elementskit/time-line/) - Create your timeline chart using the timeline widget and showcase your timeline, and roadmap horizontally and vertically. With this, get advanced styles in timeline, content, background, border, positioning, etc.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=4GYhT8kh2VQ=youtu.be)
 It offers multiple styles including background color box, vertical  hover effects, one-side content, line icons, horizontal style, vertical style, WordPress multiple content source, WP custom content, and post timelines.
 
 == 5. Chart Widget (PRO) ==
-[ **Chart Widget (PRO)** ](https://wpmet.com/plugin/elementskit/chart/?addons=elementor) -  Show a graphical representation of data to see the analytics side of your workflow. Add line chart, pie chart, bar chart, radar chart, doughnut chart, and others with tons of styling options including change of data, color, label, category, tooltip, legend, title, animation, etc.
+[ **Chart Widget (PRO)** ](https://wpmet.com/plugin/elementskit/chart/) -  Show a graphical representation of data to see the analytics side of your workflow. Add line chart, pie chart, bar chart, radar chart, doughnut chart, and others with tons of styling options including change of data, color, label, category, tooltip, legend, title, animation, etc.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=5VxO1LP6TtY=youtu.be)
 Chart addon offers multiple styles including Vertical bar charts, bar charts with vertical label bottom, horizontal bar charts, advanced charts, WordPress bar charts with horizontal label right, line charts bottom, WordPress line charts bottom no label, line charts top, wp line charts top label bottom, WP radar charts, doughnut charts widget, and pie charts.
 
 == 6. Data Table Widget (PRO) ==
-[ **Data Table Widget (PRO)** ](https://wpmet.com/plugin/elementskit/table/?addons=elementor) - The table widget will let you create data tables with advanced styling options and features. Show your data with a customizable table, body content, search, info, and more.
+[ **Data Table Widget (PRO)** ](https://wpmet.com/plugin/elementskit/table/) - The table widget will let you create data tables with advanced styling options and features. Show your data with a customizable table, body content, search, info, and more.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=ECFC0QregXg=youtu.be)
 Table addon offers multiple styles including comparison table, yoga schedule table, super easy sortable table style, row span or column span table, WP data table style, responsive tables, WordPress table addon, and Google sheets data table.
 
 == 7. Creative Button  Widget(PRO) ==
-[ **Creative Button  Widget(PRO)** ](https://wpmet.com/plugin/elementskit/creative-buttons/?addons=elementor) - Create advanced buttons with a creative button widget. You can customize buttons with hover effects, content, buttons, borders, shadows, icons, and more.
+[ **Creative Button  Widget(PRO)** ](https://wpmet.com/plugin/elementskit/creative-buttons/) - Create advanced buttons with a creative button widget. You can customize buttons with hover effects, content, buttons, borders, shadows, icons, and more.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=FBlDECSZJJA=youtu.be)
 Creative button addon offers multiple styles including creative hover button, mouse hover button, WP Winona button style, left to right with hyphen button, center ripple effect style button, WordPress fade with icon on hover button, and creative button style.
 
 == 8. Motion Text Widget (PRO) ==
-[ **Motion Text Widget (PRO)** ](https://wpmet.com/plugin/elementskit/motion-text/?addons=elementor) - The motion text widget helps you to display your text with text motion animations, split text animation with styles, colors, typography, text shadows, and more.
+[ **Motion Text Widget (PRO)** ](https://wpmet.com/plugin/elementskit/motion-text/) - The motion text widget helps you to display your text with text motion animations, split text animation with styles, colors, typography, text shadows, and more.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=r2its1DH5j4=youtu.be)
 Motion text addon offers multiple styles including animated text widget, reveal in top style, reveal in bottom style for WordPress, reveal in left style, reveal in the right style, raindrop character-based style, lightening character-based style, WP jolt zoom character based style, magnify character-based style, beat character-based style, fade in creative text style.
 
 == 9. Instagram feed Widget(PRO) ==
-[ **Instagram feed Widget(PRO)** ](https://wpmet.com/plugin/elementskit/instagram/?addons=elementor) - Display your Instagram feed directly from your account in different ways using the Instagram feed widget. You can customize your feed style, color, content, and more features.
+[ **Instagram feed Widget(PRO)** ](https://wpmet.com/plugin/elementskit/instagram/) - Display your Instagram feed directly from your account in different ways using the Instagram feed widget. You can customize your feed style, color, content, and more features.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=byGY4GVmh7Y=youtu.be)
 Instagram feed widget offers multiple styles including Instagram photos only feed style, list style, photo list with hover Instagram feed style, Instagram posts with a card layout, wp card layout with content inside, WordPress card layout content​ outer style, Instagram posts overlay feed style, carousel layout feed, gallery masonry layout feed, and feed with profile link.
 
 == 10. Facebook feed  Widget(PRO) ==
-[ **Facebook feed  Widget(PRO)** ](https://wpmet.com/plugin/elementskit/facebook-feed/?addons=elementor) - Showcase updates from your Facebook profile, groups, pages, photos, and more in front of your website’s audience by using the Facebook feed widget. You can change every section with hover, animation, loading effects, etc.
+[ **Facebook feed  Widget(PRO)** ](https://wpmet.com/plugin/elementskit/facebook-feed/) - Showcase updates from your Facebook profile, groups, pages, photos, and more in front of your website’s audience by using the Facebook feed widget. You can change every section with hover, animation, loading effects, etc.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=zGqes9wXrAI=youtu.be)
 Facebook feed addon offers multiple styles including masonry style, grid style facebook page image post, WP post list style facebook photos, image list feed style for WordPress, customizable facebook feed in card layout, and Facebook feed in overlay layout.
 
 == 11. Twitter feed Widget(PRO) ==
-[ **Twitter feed Widget(PRO)** ](https://wpmet.com/plugin/elementskit/twitter/?addons=elementor) - Display images, profiles, and tweets automatically on your websites with a Twitter feed widget. You can customize your styles, layout, cover photo, header, dashboard, and more using the Twitter feed addon.
+[ **Twitter feed Widget(PRO)** ](https://wpmet.com/plugin/elementskit/twitter/) - Display images, profiles, and tweets automatically on your websites with a Twitter feed widget. You can customize your styles, layout, cover photo, header, dashboard, and more using the Twitter feed addon.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=Kae4LwnKkbU=youtu.be)
 Twitter feed addon offers multiple styles including style with the cover photo, masonry style, masonry style 4 columns, cover photo with feed style grid, WP list view, WordPress custom feed carousel, and Twitter widget with follow button.
 
 == 12. Woocommerce Product List Widget (PRO) ==
-[ **Woocommerce Product List Widget (PRO)** ](https://wpmet.com/plugin/elementskit/woo-product-list/?addons=elementor) - Display your eCommerce product list using the WooCommerce product list widget. You can take control over listing options, order by, product limit, layout, title, rating, price, add to cart, and more.
+[ **Woocommerce Product List Widget (PRO)** ](https://wpmet.com/plugin/elementskit/woo-product-list/) - Display your eCommerce product list using the WooCommerce product list widget. You can take control over listing options, order by, product limit, layout, title, rating, price, add to cart, and more.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=VYNE-r6mWEo=youtu.be)
 Woocommerce product list addon offers multiple styles including horizontal style, product horizontal flipped style, content on the product for WordPress, WordPress add to cart on woo product list, WooCommerce checkout on the product list, and eCommerce shop product list addon.
 
 == 13. Woocommerce Product Carousel Widget (PRO) ==
-[ **Woocommerce Product Carousel Widget (PRO)** ](https://wpmet.com/plugin/elementskit/woo-product-carousel/?addons=elementor) -  Display eCommerce product sliders on your website using the WooCommerce product carousel widget which comes up with lots of advanced features and customization options.
+[ **Woocommerce Product Carousel Widget (PRO)** ](https://wpmet.com/plugin/elementskit/woo-product-carousel/) -  Display eCommerce product sliders on your website using the WooCommerce product carousel widget which comes up with lots of advanced features and customization options.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=Uk0sS_MHwYE=youtu.be)
 WooCommerce product carousel addon offers multiple styles including mentor display WooCommerce product slider, vertical WooCommerce carousel widget, WordPress specific products slider, related products slider, wp WooCommerce category slider, product carousel, WooCommerce most viewed products, and WooCommerce products from attributes.
 
 == 14. Woocommerce Category List Widget (PRO) ==
-[ **Woocommerce Category List Widget (PRO)** ](https://wpmet.com/plugin/elementskit/woo-category-list/?addons=elementor) - Our Woocommerce category list widget offers an advanced and easy way to display Woo-Categories anywhere on the website. Using this addon, you can display your woo category list in the grid, carousel, and tile style.
+[ **Woocommerce Category List Widget (PRO)** ](https://wpmet.com/plugin/elementskit/woo-category-list/) - Our Woocommerce category list widget offers an advanced and easy way to display Woo-Categories anywhere on the website. Using this addon, you can display your woo category list in the grid, carousel, and tile style.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=4QzP4DVE1VQ=youtu.be)
 It offers multiple styles including Woo all category showing addon, product category widget, WordPress stylish layouts for category lists, WP woo category grid layouts, and advanced category list widget.
 
 == 15. Woocommerce Mini Cart Widget (PRO) ==
-[ **Woocommerce Mini Cart Widget (PRO)** ](https://wpmet.com/plugin/elementskit/woo-mini-cart/?addons=elementor) - Add multiple items to the cart and checkout without leaving the product page you’re on with the WooCommerce mini cart widget. We have designed our mini cart with many customizable options in the cart button, body, header, item, etc.
+[ **Woocommerce Mini Cart Widget (PRO)** ](https://wpmet.com/plugin/elementskit/woo-mini-cart/) - Add multiple items to the cart and checkout without leaving the product page you’re on with the WooCommerce mini cart widget. We have designed our mini cart with many customizable options in the cart button, body, header, item, etc.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=q4xlHQ1OaB8&feature=youtu.be)
 Our Woocommerce Mini Cart Widget offers lots of styles including WooCommerce mini cart with a header, button, icon, woo cart qty with hover effect, sticky cart with red color style, WooCommerce mini basket with notices content for WordPress.
 
 == 16. Advanced Toggle Widget ==
-[ **Advanced Toggle WIdget** ](https://wpmet.com/plugin/elementskit/advanced-toggle/?addons=elementor) - Creating amazing pricing tables, icon boxes, and packages with the Advanced Toggle widget enables your WordPress site visitors to switch from one category to another. Get styling options in the switch container, switch toggle, and content area.
+[ **Advanced Toggle WIdget** ](https://wpmet.com/plugin/elementskit/advanced-toggle/) - Creating amazing pricing tables, icon boxes, and packages with the Advanced Toggle widget enables your WordPress site visitors to switch from one category to another. Get styling options in the switch container, switch toggle, and content area.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=XOwlb5u2GrQ&feature=youtu.be)
 It offers lots of styles including advanced toggle with the heading, no heading, style square for WordPress,  switch style, and no heading dark style.
 
 == 17. Vertical Mega Menu Widget ==
-[ **Vertical Mega Menu Widget** ](https://products.wpmet.com/megamenu/?addons=elementor) - Display your mega menu vertically on your WordPress site with our vertical mega menu. With this widget, you can customize your Mega Menu content, select an icon, choose icon color, choose badge text, color, position, etc.
+[ **Vertical Mega Menu Widget** ](https://products.wpmet.com/megamenu/) - Display your mega menu vertically on your WordPress site with our vertical mega menu. With this widget, you can customize your Mega Menu content, select an icon, choose icon color, choose badge text, color, position, etc.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=4FqJkg1pHCo&feature=youtu.be)
 Our Vertical mega menu offers lots of styles including light style, dark style for WordPress, mega menu with light version toggle, dropdown menu with content, drag and drop menu with icon, mobile responsive vertical menu with badge text,  vertical mega menu with sidebar content, vertical menu with dash icons.
 
 == 18. Hotspot Widget (PRO) ==
-[ **Hotspot Widget (PRO)** ](https://wpmet.com/plugin/elementskit/hotspot/?addons=elementor) - This hotspot Widget will help you to point out a specific part of your image with a tooltip and reveal an associated text after clicking. It comes with a bunch of styling features like color, indicator, content, hover, animation, loading effects, etc.
+[ **Hotspot Widget (PRO)** ](https://wpmet.com/plugin/elementskit/hotspot/) - This hotspot Widget will help you to point out a specific part of your image with a tooltip and reveal an associated text after clicking. It comes with a bunch of styling features like color, indicator, content, hover, animation, loading effects, etc.
 
 [ Check out our video screencast ](https://www.youtube.com/watch?v=XOwlb5u2GrQ&feature=youtu.be)
 Check out our video screencast Our Hotspot Widget offers lots of styles including default style with points, the logo with active style with maps, WP widget content with click style, hover style, and mixed line style product showcase for WordPress.
 
 == 19. Zoom Widget (PRO) ==
-[ **Zoom Widget (PRO)** ](https://wpmet.com/plugin/elementskit/zoom/?addons=elementor) - Want to create a Zoom meeting and place that on your website? If yes, leverage the Zoom Widget from ElementsKit. With this widget in your hand, you can set the meeting hosts, start time and date, time zone, duration, and password.
+[ **Zoom Widget (PRO)** ](https://wpmet.com/plugin/elementskit/zoom/) - Want to create a Zoom meeting and place that on your website? If yes, leverage the Zoom Widget from ElementsKit. With this widget in your hand, you can set the meeting hosts, start time and date, time zone, duration, and password.
 
 [ Check out our video screencast ](https://youtu.be/yIiov9mkLuo)
 You are at full liberty to use a normal or flat layout, enable countdown and meeting details, and show or hide the meeting ID, status, and topic. Additionally, you can also show the meeting start URL, set the button text, and many more from the settings.
 
 == 20. Behance Feed Widget (PRO) ==
-[ **Behance Feed Widget (PRO)** ](https://wpmet.com/plugin/elementskit/behance-feed/?addons=elementor) - Display your Behance Feed on your website using this widget. You can choose to fetch from 6 to 30 stories per request.
+[ **Behance Feed Widget (PRO)** ](https://wpmet.com/plugin/elementskit/behance-feed/) - Display your Behance Feed on your website using this widget. You can choose to fetch from 6 to 30 stories per request.
 
 [ Check out our video screencast ](https://youtu.be/9b02KISGAEU)
 On top of that, you can also set the column gap and column count as per your preference. There are six different styles to display your Behance feed to your website’s audience.
 
 == 21. Breadcrumb Widget (PRO) ==
-[ **Breadcrumb Widget (PRO)** ](https://wpmet.com/plugin/elementskit/breadcrumb/?addons=elementor) - Customize the breadcrumb of your website by setting the max title word length and showing/hiding the category trail.
+[ **Breadcrumb Widget (PRO)** ](https://wpmet.com/plugin/elementskit/breadcrumb/) - Customize the breadcrumb of your website by setting the max title word length and showing/hiding the category trail.
 
 == 22. Dribbble Feed Widget (PRO) ==
-[ **Dribbble Feed Widget (PRO)** ](https://wpmet.com/plugin/elementskit/dribbble-feed/?addons=elementor) - Wanna showcase your Dribbble feed to your website visitors? Then this is the widget you need to make use of.
+[ **Dribbble Feed Widget (PRO)** ](https://wpmet.com/plugin/elementskit/dribbble-feed/) - Wanna showcase your Dribbble feed to your website visitors? Then this is the widget you need to make use of.
 
 [ Check out our video screencast ](https://youtu.be/tp9pOFQqxFA)
 With this versatile widget, you can choose your favorite style of displaying the feed. On top of that, you can show the feed in 1 to 12 columns and enable the header for better exposure.
 
 == 23. Video Gallery Widget (PRO) ==
-[ **Video Gallery Widget (PRO)** ](https://wpmet.com/plugin/elementskit/video-gallery/?addons=elementor) - Add as many videos as you want to your website and design an attractive video gallery with this widget. Place the videos from 1 to 6 columns and choose either grid, masonry, or carousel style. You can also change the button icon, show or hide the filter, and play the button on hover or not. When it comes to playing the videos of the gallery, you can set it to be played in a popup or inline.
+[ **Video Gallery Widget (PRO)** ](https://wpmet.com/plugin/elementskit/video-gallery/) - Add as many videos as you want to your website and design an attractive video gallery with this widget. Place the videos from 1 to 6 columns and choose either grid, masonry, or carousel style. You can also change the button icon, show or hide the filter, and play the button on hover or not. When it comes to playing the videos of the gallery, you can set it to be played in a popup or inline.
 
 == 24. Facebook Review Widget (PRO) == 
-[ **Facebook Review Widget (PRO)** ](https://wpmet.com/plugin/elementskit/facebook-review/?addons=elementor) - If you’ve got a Facebook page for your business or service, you can add public Facebook reviews on your website to earn the trust of new visitors.
+[ **Facebook Review Widget (PRO)** ](https://wpmet.com/plugin/elementskit/facebook-review/) - If you’ve got a Facebook page for your business or service, you can add public Facebook reviews on your website to earn the trust of new visitors.
 
 [ Check out our video screencast ](https://youtu.be/efYKe_Lj6vM)
 When you showcase the user reviews to new visitors, they can estimate the quality of the product or service you’re offering to your clients. This Facebook review widget gives you the ultimate freedom to set the review layout and content styles.
 
 == 25. Yelp Widget (PRO) ==
-[ **Yelp Widget (PRO)** ](https://wpmet.com/plugin/elementskit/yelp-review/?addons=elementor) - Yelp widget will help you show the user reviews straight from the Yelp website to yours. This widget offers you ample scope to customize the layout, content presentation, and other styles.
+[ **Yelp Widget (PRO)** ](https://wpmet.com/plugin/elementskit/yelp-review/) - Yelp widget will help you show the user reviews straight from the Yelp website to yours. This widget offers you ample scope to customize the layout, content presentation, and other styles.
 
 [ Check out our video screencast ](https://youtu.be/xjlZoT2ZYQU)
 This widget lets you choose from review type, layout styles, card type, and card appearance. Moreover, you can also personalize the column gap and column count. When it comes to the content settings, you’ll have the control to set the thumbnail badge, align the content center, set stars inline, and make other changes as per your preference.
 
 == 26. Popup Modal Widget (PRO) ==
-[ **Popup Modal Widget (PRO)** ](https://wpmet.com/plugin/elementskit/popup-modal/?addons=elementor) - Popup Modal Widget lets you design amazing popups and help you place them wherever you want them on your website. There are more than a dozen of options for you to customize these popups in every possible way you can think of.
+[ **Popup Modal Widget (PRO)** ](https://wpmet.com/plugin/elementskit/popup-modal/) - Popup Modal Widget lets you design amazing popups and help you place them wherever you want them on your website. There are more than a dozen of options for you to customize these popups in every possible way you can think of.
 
 [ Check out our video screencast ](https://youtu.be/R9sMrFHfEzs)
 Firstly, you can choose your desired toggler type, show type, and position. Next, you can redefine the label, alignment, width, etc. And then step by step, you can customize the content, overlay, close icon, header, and footer of the popup modal you’re going to use. So, what more do you want?
@@ -521,7 +521,7 @@ Firstly, you can choose your desired toggler type, show type, and position. Next
 [ **Google Map Widget (PRO)** ](https://wpmet.com/plugin/elementskit/google-map/) - Want to show your business address to visitors with a Google Map? Don’t worry as long as you’ve got ElementsKit. All you need to use is the Google Map widget of ElementsKit. It comes with multiple map types such as the basic, multiple markers, static, polyline, overlay, polygon, with routes, and panorama. You can choose the address type, zoom level, latitude, and longitude. From the marker settings, you can customize the title and content label. This map also lets you leverage different controls, and themes to make sure you can ensure the best user experience for your visitors.
 
 == 28. Unfold Widget (PRO) ==
-[ **Unfold Widget (PRO)** ](https://wpmet.com/plugin/elementskit/unfold/?addons=elementor) - You might be folding up certain sections (texts/images) to let the visitors choose the ones they feel interested to go through. In that case, they can just unfold the section they want to explore by clicking on the read more button. If your goal is to customize the way visitors unfold any folded sections, then you can try this widget from ElementsKit. With Unfold widget, you can set the text and media file to unfold, personalize the expand/collapse button text, add and edit the folded text heading, and enable/disable a template. Furthermore, you’ve got the options to set the collapsed content height, set the button alignment, transition duration, and more.
+[ **Unfold Widget (PRO)** ](https://wpmet.com/plugin/elementskit/unfold/) - You might be folding up certain sections (texts/images) to let the visitors choose the ones they feel interested to go through. In that case, they can just unfold the section they want to explore by clicking on the read more button. If your goal is to customize the way visitors unfold any folded sections, then you can try this widget from ElementsKit. With Unfold widget, you can set the text and media file to unfold, personalize the expand/collapse button text, add and edit the folded text heading, and enable/disable a template. Furthermore, you’ve got the options to set the collapsed content height, set the button alignment, transition duration, and more.
 
 
 == PRO Modules Features in premium Addon version ==
@@ -607,6 +607,15 @@ Visit  [wpmet](https://wpmet.com/)  to learn more about how to get the best of W
 
 
 == Changelog ==
+Version: 2.8.5 (2023-02-28)
+Fixed: Swiper column break on initial load
+Improved: Tab Widget layout choose style
+Improved: Post Grid Widget title controls
+Improved: Accessibility for widgets and modules
+Improved: Pricing Table Widget button hover
+Improved: Layout Library responsiveness and category filter
+Tweaked: Video Widget glow effect control
+
 Version: 2.8.1 (2023-01-16)
 Added: Flex container support
 Improved: Widgets searching keywords for editor panel

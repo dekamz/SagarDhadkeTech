@@ -386,7 +386,7 @@ class Premium_Grid extends Widget_Base {
 			array(
 				'label'       => __( 'Height', 'premium-addons-for-elementor' ),
 				'label_block' => true,
-				'size_units'  => array( 'px', 'em', '%' ),
+				'size_units'  => array( 'px', 'em', '%', 'custom' ),
 				'type'        => Controls_Manager::SLIDER,
 				'range'       => array(
 					'px' => array(
@@ -413,7 +413,7 @@ class Premium_Grid extends Widget_Base {
 			array(
 				'label'       => __( 'Position', 'premium-addons-for-elementor' ),
 				'label_block' => true,
-				'size_units'  => array( 'px', 'em', '%' ),
+				'size_units'  => array( 'px', 'em', '%', 'custom' ),
 				'type'        => Controls_Manager::SLIDER,
 				'condition'   => array(
 					'premium_gallery_load_more' => 'yes',
@@ -1658,7 +1658,7 @@ class Premium_Grid extends Widget_Base {
 			array(
 				'label'       => __( 'Position', 'premium-addons-for-elementor' ),
 				'type'        => Controls_Manager::SLIDER,
-				'size_units'  => array( 'px', '%', 'em' ),
+				'size_units'  => array( 'px', '%', 'em', 'custom' ),
 				'range'       => array(
 					'px' => array(
 						'min' => 0,

@@ -3,6 +3,9 @@
 $headerMeta = ! is_array( $headerMeta ) ? (array) $headerMeta : $headerMeta;
 $footerMeta = ! is_array( $footerMeta ) ? (array) $footerMeta : $footerMeta;
 
+error_log( print_r( $headerMeta, 1 ) );
+error_log( print_r( $footerMeta, 1 ) );
+
 
 $headerMeta = array_map(function ($item) {
     return $item->value;

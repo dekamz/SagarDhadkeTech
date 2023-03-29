@@ -19,11 +19,8 @@
         LibraryCollection: null,
         KeywordsModel: null,
         ModalCollectionView: null,
-        ModalTabsCollection: null,
-        ModalTabsCollectionView: null,
         FiltersCollectionView: null,
         FiltersItemView: null,
-        ModalTabsItemView: null,
         ModalTemplateItemView: null,
         ModalInsertTemplateBehavior: null,
         ModalTemplateModel: null,
@@ -31,7 +28,9 @@
         ModalPreviewView: null,
         ModalHeaderBack: null,
         ModalHeaderLogo: null,
+        ModalHeaderMenu: null,
         KeywordsView: null,
+        SearchFieldView: null,
         TabModel: null,
         CategoryModel: null,
 
@@ -87,10 +86,6 @@
                 model: self.ModalTemplateModel
             });
 
-            self.ModalTabsCollection = Backbone.Collection.extend({
-                model: self.TabModel
-            });
-
             self.CategoryModel = Backbone.Model.extend({
                 defaults: {
                     slug: '',
@@ -133,6 +128,27 @@
                         dropdownParent: this.$el
                     });
                 }
+            });
+
+            self.SearchFieldView = Marionette.ItemView.extend({
+
+                id: 'elementor-template-library-filter-text-wrapper',
+
+                template: '#tmpl-premium-template-modal-search-field',
+                ui: {
+                    searchField: '#elementor-template-library-filter-text'
+                },
+
+                events: {
+                    'keyup @ui.searchField': 'onSearchInput'
+                },
+
+                onSearchInput: function (event) {
+                    var searchQuery = $(event.target).val();
+                    PremiumEditor.setFilter('search', searchQuery);
+                },
+
+
             });
 
             self.ModalPreviewView = Marionette.ItemView.extend({
@@ -210,7 +226,8 @@
                 regions: {
                     contentTemplates: '.premium-templates-list',
                     contentFilters: '.premium-filters-list',
-                    contentKeywords: '.premium-keywords-list'
+                    contentKeywords: '.premium-keywords-list',
+                    searchField: '.premium-templates-search'
                 }
 
             });
@@ -232,8 +249,6 @@
                         innerTemplatesLength = Object.keys(innerTemplates).length,
                         options = {},
                         insertMedia = !$(event.currentTarget).hasClass("premium-template-insert-no-media");
-
-                    // console.log(insertMedia);
 
                     PremiumEditor.layout.showLoadingView();
                     if (innerTemplatesLength > 0) {
@@ -341,42 +356,6 @@
 
             });
 
-            self.ModalTabsItemView = Marionette.ItemView.extend({
-
-                template: '#tmpl-premium-template-modal-tabs-item',
-
-                className: function () {
-                    return 'elementor-template-library-menu-item';
-                },
-
-                ui: function () {
-                    return {
-                        tabsLabels: 'label',
-                        tabsInput: 'input'
-                    };
-                },
-
-                events: function () {
-                    return {
-                        'click @ui.tabsLabels': 'onTabClick'
-                    };
-                },
-
-                onRender: function () {
-                    if (this.model.get('slug') === PremiumEditor.getTab()) {
-                        this.ui.tabsInput.attr('checked', 'checked');
-                    }
-                },
-
-                onTabClick: function (event) {
-
-                    var $clickedInput = jQuery(event.target);
-                    PremiumEditor.setTab($clickedInput.val());
-                    PremiumEditor.setFilter('keyword', '');
-                }
-
-            });
-
             self.FiltersCollectionView = Marionette.CompositeView.extend({
 
                 id: 'premium-template-library-filters',
@@ -385,24 +364,44 @@
 
                 childViewContainer: '#premium-modal-filters-container',
 
-                getChildView: function (childModel) {
+                getChildView: function () {
                     return self.FiltersItemView;
                 }
 
             });
 
-            self.ModalTabsCollectionView = Marionette.CompositeView.extend({
+            //Filter Tabs (new)
+            self.ModalTabsView = Marionette.ItemView.extend({
 
                 template: '#tmpl-premium-template-modal-tabs',
 
-                childViewContainer: '#premium-modal-tabs-items',
+                id: "elementor-template-library-header-menu",
 
-                initialize: function () {
-                    this.listenTo(PremiumEditor.channels.layout, 'tamplate:cloned', this._renderChildren);
+                templateHelpers: function () {
+
+                    return {
+                        tabs: PremiumEditor.getTabs()
+                    }
                 },
 
-                getChildView: function (childModel) {
-                    return self.ModalTabsItemView;
+                ui: function () {
+                    return {
+                        filterTab: ".elementor-template-library-menu-item",
+                    };
+                },
+
+                events: function () {
+                    return {
+                        'click @ui.filterTab': 'onTabClick'
+                    };
+                },
+
+                onTabClick: function (event) {
+
+                    var $clickedInput = jQuery(event.target);
+
+                    PremiumEditor.setTab($clickedInput.data('tab'));
+                    PremiumEditor.setFilter('keyword', '');
                 }
 
             });
@@ -474,10 +473,23 @@
                 filter: function (childModel) {
 
                     var filter = PremiumEditor.getFilter('category'),
-                        keyword = PremiumEditor.getFilter('keyword');
+                        keyword = PremiumEditor.getFilter('keyword'),
+                        search = PremiumEditor.getFilter('search');
 
-                    if (!filter && !keyword) {
+                    if (!filter && !keyword && !search) {
                         return true;
+                    }
+
+                    if (search) {
+                        // console.log(childModel.get('template_id'), parseInt(search));
+
+                        var foundKeywords = childModel.get('keywords').find(function (keyword) {
+                            return -1 != keyword.indexOf(search)
+                        });
+
+                        // console.log(foundKeywords);
+
+                        return childModel.get('template_id') === parseInt(search);
                     }
 
                     if (keyword && !filter) {
@@ -492,7 +504,7 @@
 
                 },
 
-                getChildView: function (childModel) {
+                getChildView: function () {
                     return self.ModalTemplateItemView;
                 },
 
@@ -545,11 +557,18 @@
                     var filter = PremiumEditor.getFilter('category'),
                         keyword = PremiumEditor.getFilter('keyword');
 
+                    if (['back', 'initial'].includes(preview)) {
+                        header.headerActions.$el.addClass('header-actions-hidden');
+                        jQuery('#premium-template-modal-header-tabs').removeClass('insert-temp-preview');
+                    } else {
+                        jQuery('.header-actions-hidden').removeClass('header-actions-hidden');
+                        jQuery('#premium-template-modal-header-tabs').addClass('insert-temp-preview');
+                    }
+
                     if ('back' === preview) {
+
                         header.headerLogo.show(new self.ModalHeaderLogo());
-                        header.headerTabs.show(new self.ModalTabsCollectionView({
-                            collection: PremiumEditor.collections.tabs
-                        }));
+                        header.headerTabs.show(new self.ModalTabsView());
 
                         header.headerActions.empty();
                         PremiumEditor.setTab(PremiumEditor.getTab());
@@ -608,28 +627,31 @@
                     this.getRegion('modalContent').show(new self.ModalBodyView());
 
                     var contentView = this.getContentView(),
+                        tabName = PremiumEditor.getTab(),
                         header = this.getHeaderView(),
                         keywordsModel = new self.KeywordsModel({
                             keywords: keywords
                         });
 
-                    PremiumEditor.collections.tabs = new self.ModalTabsCollection(PremiumEditor.getTabs());
-
-                    header.headerTabs.show(new self.ModalTabsCollectionView({
-                        collection: PremiumEditor.collections.tabs
-                    }));
+                    header.headerTabs.show(new self.ModalTabsView());
 
                     contentView.contentTemplates.show(new self.ModalCollectionView({
                         collection: templatesCollection
                     }));
 
-                    contentView.contentFilters.show(new self.FiltersCollectionView({
-                        collection: categoriesCollection
-                    }));
+                    if ('premium_section' === tabName) {
 
-                    contentView.contentKeywords.show(new self.KeywordsView({
-                        model: keywordsModel
-                    }));
+                        contentView.searchField.show(new self.SearchFieldView());
+
+                        contentView.contentFilters.show(new self.FiltersCollectionView({
+                            collection: categoriesCollection
+                        }));
+
+                        contentView.contentKeywords.show(new self.KeywordsView({
+                            model: keywordsModel
+                        }));
+
+                    }
 
                 }
 
@@ -837,10 +859,7 @@
                 PremiumEditor.initPremTempsButton();
             });
 
-            window.elementor.on(
-                'document:loaded',
-                window._.bind(PremiumEditor.onPreviewLoaded, PremiumEditor)
-            );
+            window.elementor.on('document:loaded', window._.bind(PremiumEditor.onPreviewLoaded, PremiumEditor));
 
             PremiumEditorViews.init();
             PremiumControlsViews.init();
@@ -881,38 +900,6 @@
 
             addSectionTmpl.html(addSectionTmplHTML);
 
-            // if ($addNewSection.length && PremiumTempsData.PremiumTemplatesBtn) {
-            //     $addPremiumTemplate = $(addPremiumTemplate).prependTo($addNewSection);
-            // }
-
-
-            // window.elementor.$previewContents.on(
-            //     'click.addPremiumTemplate',
-            //     '.elementor-editor-section-settings .elementor-editor-element-add',
-            //     function () {
-
-            //         var $this = $(this),
-            //             $section = $this.closest('.elementor-top-section'),
-            //             modelID = $section.data('model-cid');
-
-            //         if (elementor.previewView.collection.length) {
-            //             $.each(elementor.previewView.collection.models, function (index, model) {
-            //                 if (modelID === model.cid) {
-            //                     PremiumEditor.atIndex = index;
-            //                 }
-            //             });
-            //         }
-
-            //         if (PremiumTempsData.PremiumTemplatesBtn) {
-            //             setTimeout(function () {
-            //                 var $addNew = $section.prev('.elementor-add-section').find('.elementor-add-new-section');
-            //                 $addNew.prepend(addPremiumTemplate);
-            //             }, 100);
-            //         }
-
-            //     }
-            // );
-
         },
 
         getFilter: function (name) {
@@ -944,16 +931,18 @@
             var tabs = [];
 
             _.each(this.tabs, function (item, slug) {
+
                 tabs.push({
                     slug: slug,
-                    title: item.title
+                    title: item.title,
+                    active: slug === PremiumEditor.getTab()
                 });
             });
 
             return tabs;
         },
 
-        getPreview: function (name) {
+        getPreview: function () {
             return this.channels.layout.request('preview');
         },
 
@@ -1025,6 +1014,7 @@
             if (tab.data.templates && tab.data.categories) {
                 self.layout.showTemplatesView(tab.data.templates, tab.data.categories, tab.data.keywords);
             } else {
+
                 $.ajax({
                     url: ajaxurl,
                     type: 'get',

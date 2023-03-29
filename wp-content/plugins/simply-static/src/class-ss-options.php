@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Options {
 	/**
 	 * Singleton instance
-	 * @var Simply_Static\Options
+	 * @var \Simply_Static\Options
 	 */
 	protected static $instance = null;
 
@@ -48,7 +48,9 @@ class Options {
 		if ( null === self::$instance ) {
 			self::$instance = new self();
 
-			$options = apply_filters( 'ss_get_options', get_option( Plugin::SLUG ) );
+            $db_options = get_option( Plugin::SLUG );
+
+			$options = apply_filters( 'ss_get_options', $db_options );
 			if ( false === $options ) {
 				$options = array();
 			}
@@ -72,10 +74,22 @@ class Options {
 	 * Updates the option identified by $name with the value provided in $value
 	 * @param string $name The option name
 	 * @param mixed $value The option value
-	 * @return Simply_Static\Options
+	 * @return \Simply_Static\Options
 	 */
 	public function set( $name, $value ) {
 		$this->options[ $name ] = $value;
+		return $this;
+	}
+
+	/**
+	 * Set all options.
+	 *
+	 * @param array $options All options.
+	 *
+	 * @return \Simply_Static\Options
+	 */
+	public function set_options( $options ) {
+		$this->options = $options;
 		return $this;
 	}
 
@@ -128,7 +142,7 @@ class Options {
 	 * @return boolean
 	 */
 	public function save() {
-		return update_option( Plugin::SLUG, $this->options );
+		return is_network_admin() ? update_site_option( Plugin::SLUG, $this->options ) : update_option( Plugin::SLUG, $this->options );
 	}
 
 	/**

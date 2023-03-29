@@ -61,7 +61,7 @@ if ( ! class_exists( 'Premium_Templates_Manager' ) ) {
 			$ids     = array_keys( $tabs );
 			$default = $ids[0];
 
-			$data['tabs']       = $this->get_template_tabs();
+			$data['tabs']       = $tabs;
 			$data['defaultTab'] = $default;
 
 			return $data;

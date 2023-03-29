@@ -67,7 +67,7 @@ class PostCarousel extends PostBlock {
         $queryData = $attributes["queryData"];
 
         //Query Result
-        $query = $this->get_posts( $queryData );
+        $query = apply_filters('eb_post_carousel_query_results', $this->get_posts( $queryData ));
 
         $attributes = wp_parse_args( $attributes, $this->get_default_attributes() );
 

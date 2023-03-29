@@ -92,8 +92,14 @@ class Premium_Maps extends Widget_Base {
 	 * @return array CSS style handles.
 	 */
 	public function get_style_depends() {
-		return array(
-			'premium-addons',
+
+		$icons_css = apply_filters( 'papro_activated', false ) ? array( 'elementor-icons' ) : array();
+
+		return array_merge(
+			$icons_css,
+			array(
+				'premium-addons',
+			)
 		);
 	}
 
@@ -109,8 +115,8 @@ class Premium_Maps extends Widget_Base {
 		return array(
 			'elementor-waypoints',
 			'pa-maps-cluster',
-			'pa-maps-api',
 			'pa-maps',
+			'pa-maps-api',
 		);
 	}
 

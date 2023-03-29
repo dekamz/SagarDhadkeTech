@@ -569,7 +569,7 @@ abstract class Widget_Base extends Element_Base {
 			}
 		}
 
-		$attributes['e-action-hash'] = Plugin::instance()->frontend->create_action_hash( 'lightbox', $action_hash_params );
+		$attributes['data-e-action-hash'] = Plugin::instance()->frontend->create_action_hash( 'lightbox', $action_hash_params );
 
 		$this->add_render_attribute( $element, $attributes, null, $overwrite );
 
@@ -854,7 +854,7 @@ abstract class Widget_Base extends Element_Base {
 	 * @param string $toolbar Optional. Toolbar type. Accepted values are `advanced`, `basic` or `none`. Default is
 	 *                        `basic`.
 	 */
-	protected function add_inline_editing_attributes( $key, $toolbar = 'basic' ) {
+	public function add_inline_editing_attributes( $key, $toolbar = 'basic' ) {
 		if ( ! Plugin::$instance->editor->is_edit_mode() ) {
 			return;
 		}

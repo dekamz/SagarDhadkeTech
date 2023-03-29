@@ -379,7 +379,14 @@ class Pa_Nav_Menu_Walker extends \Walker_Nav_Menu {
 
 		if ( in_array( 'menu-item-has-children', $classes, true ) || 'true' == $item_meta->mega_content_enabled ) {
 
-			$dropdown_icon_class = 0 === $depth ? $settings['submenu_icon']['value'] : $this->get_default_submenu_icon();
+			// $dropdown_icon_class = 0 === $depth ? $settings['submenu_icon']['value'] : $this->get_default_submenu_icon();
+
+			// submenu_item_icon.
+			if ( 0 === $depth ) {
+				$dropdown_icon_class = $settings['submenu_icon']['value'];
+			} else {
+				$dropdown_icon_class = ! empty( $settings['submenu_item_icon']['value'] ) ? $settings['submenu_item_icon']['value'] : $this->get_default_submenu_icon();
+			}
 
 			if ( ! empty( $dropdown_icon_class ) ) {
 

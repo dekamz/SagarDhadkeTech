@@ -202,7 +202,7 @@ class Premium_Person extends Widget_Base {
 				'label'       => __( 'Width', 'premium-addons-for-elementor' ),
 				'type'        => Controls_Manager::SLIDER,
 				'description' => __( 'Enter image width in (PX, EM, %), default is 100%', 'premium-addons-for-elementor' ),
-				'size_units'  => array( 'px', 'em', '%' ),
+				'size_units'  => array( 'px', 'em', '%', 'custom' ),
 				'range'       => array(
 					'px' => array(
 						'min' => 1,
@@ -407,7 +407,7 @@ class Premium_Person extends Widget_Base {
 			array(
 				'label'      => __( 'Custom Height', 'premium-addons-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px', 'em' ),
+				'size_units' => array( 'px', 'em', 'custom' ),
 				'range'      => array(
 					'px' => array(
 						'min' => 0,

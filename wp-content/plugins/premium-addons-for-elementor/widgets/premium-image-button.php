@@ -989,6 +989,27 @@ class Premium_Image_Button extends Widget_Base {
 		);
 
 		$this->add_control(
+			'button_width',
+			array(
+				'label'      => __( 'Width', 'premium-addons-for-elementor' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', '%', 'custom' ),
+				'range'      => array(
+					'px' => array(
+						'min' => 1,
+						'max' => 500,
+					),
+				),
+				'selectors'  => array(
+					'{{WRAPPER}} .premium-image-button' => 'width: {{SIZE}}{{UNIT}};',
+				),
+				'condition'  => array(
+					'premium_image_button_size!' => 'block',
+				),
+			)
+		);
+
+		$this->add_control(
 			'svg_color',
 			array(
 				'label'     => __( 'After Draw Fill Color', 'premium-addons-for-elementor' ),

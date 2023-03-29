@@ -13,7 +13,7 @@ if($ekit_video_popup_video_type == 'self') {
 	$this->add_render_attribute('button', ['class' => ['ekit-video-popup'], 'href' => $ekit_video_popup_url]);
 }
 
-$this->add_render_attribute('button', ['class' => ['ekit-video-popup-btn']]);
+$this->add_render_attribute('button', ['class' => ['ekit-video-popup-btn'], 'aria-label' => "video-popup"]);
 ?>
 
 <a <?php $this->print_render_attribute_string('button'); ?>>

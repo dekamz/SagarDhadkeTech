@@ -60,31 +60,33 @@ $pa_news = self::get_pa_news();
 				</div>
 			</div>
 
-			<div class="pa-dash-block col-6">
-				<div class="pa-section-info-wrap">
+			<?php if ( is_array( $pa_news ) ) : ?>
+				<div class="pa-dash-block col-6">
+					<div class="pa-section-info-wrap">
 
-					<div class="pa-section-info pa-news-section">
-						<h4>
-							<i class="pa-element-icon dashicons dashicons-admin-post icon-inline"></i>
-							<?php esc_html_e( 'Latest News', 'premium-addons-for-elementor' ); ?>
-						</h4>
+						<div class="pa-section-info pa-news-section">
+							<h4>
+								<i class="pa-element-icon dashicons dashicons-admin-post icon-inline"></i>
+								<?php esc_html_e( 'Latest News', 'premium-addons-for-elementor' ); ?>
+							</h4>
 
-						<div class="pa-news-grid">
-							<?php foreach ( $pa_news as $index => $post ) : ?>
-								<div class="pa-news-post">
-									<div class="pa-post-img-container">
-										<img src="<?php echo esc_url( $post['featured_img_url'] ); ?>">
+							<div class="pa-news-grid">
+								<?php foreach ( $pa_news as $index => $post ) : ?>
+									<div class="pa-news-post">
+										<div class="pa-post-img-container">
+											<img src="<?php echo esc_url( $post['featured_img_url'] ); ?>">
+										</div>
+										<p><?php echo wp_kses_post( $post['title']['rendered'] ); ?></p>
+										<p><?php echo wp_kses_post( date( 'j F, Y', strtotime( $post['date'] ) ) ); ?></p>
+										<a href="<?php echo esc_url( Helper_Functions::get_campaign_link( $post['link'], 'about-page', 'wp-dash', 'dashboard' ) ); ?>" target="_blank"></a>
 									</div>
-									<p><?php echo wp_kses_post( $post['title']['rendered'] ); ?></p>
-									<p><?php echo wp_kses_post( date( 'j F, Y', strtotime( $post['date'] ) ) ); ?></p>
-									<a href="<?php echo esc_url( Helper_Functions::get_campaign_link( $post['link'], 'about-page', 'wp-dash', 'dashboard' ) ); ?>" target="_blank"></a>
-								</div>
-							<?php endforeach; ?>
-						</div>
+								<?php endforeach; ?>
+							</div>
 
+						</div>
 					</div>
 				</div>
-			</div>
+			<?php endif; ?>
 
 			<div class="pa-dash-block col-3">
 				<div class="pa-section-info-wrap">

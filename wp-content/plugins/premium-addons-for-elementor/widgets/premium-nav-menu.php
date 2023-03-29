@@ -87,6 +87,7 @@ class Premium_Nav_Menu extends Widget_Base {
 	 */
 	public function get_style_depends() {
 		return array(
+			'font-awesome-5-all',
 			'premium-addons',
 		);
 	}
@@ -960,6 +961,29 @@ class Premium_Nav_Menu extends Widget_Base {
 				'skin'                   => 'inline',
 				'exclude_inline_options' => array( 'svg' ),
 				'frontend_available'     => true,
+			)
+		);
+
+		$this->add_control(
+			'submenu_item_icon',
+			array(
+				'label'                  => __( 'Submenu Item Icon', 'premium-addons-for-elementor' ),
+				'type'                   => Controls_Manager::ICONS,
+				'recommended'            => array(
+					'fa-solid' => array(
+						'chevron-down',
+						'angle-down',
+						'caret-down',
+						'plus',
+					),
+				),
+				'label_block'            => false,
+				'skin'                   => 'inline',
+				'exclude_inline_options' => array( 'svg' ),
+				'frontend_available'     => true,
+				'condition'              => array(
+					'menu_type' => 'wordpress_menu',
+				),
 			)
 		);
 
@@ -2231,7 +2255,7 @@ class Premium_Nav_Menu extends Widget_Base {
 			array(
 				'label'       => __( 'Height', 'premium-addons-for-elementor' ),
 				'type'        => Controls_Manager::SLIDER,
-				'size_units'  => array( 'px', 'em', '%' ),
+				'size_units'  => array( 'px', 'em', '%', 'custom' ),
 				'label_block' => true,
 				'selectors'   => array(
 					'{{WRAPPER}}.premium-nav-hor > .elementor-widget-container > .premium-nav-widget-container > .premium-ver-inner-container > .premium-nav-menu-container' => 'height: {{SIZE}}{{UNIT}};',
@@ -2247,7 +2271,7 @@ class Premium_Nav_Menu extends Widget_Base {
 			array(
 				'label'       => __( 'Width', 'premium-addons-for-elementor' ),
 				'type'        => Controls_Manager::SLIDER,
-				'size_units'  => array( 'px', '%' ),
+				'size_units'  => array( 'px', '%', 'custom' ),
 				'range'       => array(
 					'px' => array(
 						'min' => 0,
@@ -3533,7 +3557,7 @@ class Premium_Nav_Menu extends Widget_Base {
 				'label'       => __( 'Minimum Width', 'premium-addons-for-elementor' ),
 				'type'        => Controls_Manager::SLIDER,
 				'label_block' => true,
-				'size_units'  => array( 'px', 'em', '%' ),
+				'size_units'  => array( 'px', 'em', '%', 'custom' ),
 				'range'       => array(
 					'px' => array(
 						'min' => 0,
@@ -3541,7 +3565,10 @@ class Premium_Nav_Menu extends Widget_Base {
 					),
 				),
 				'selectors'   => array(
-					'{{WRAPPER}} .premium-nav-menu-container .premium-sub-menu, {{WRAPPER}} .premium-mobile-menu-container .premium-sub-menu' => 'min-width: {{SIZE}}{{UNIT}};',
+					// '{{WRAPPER}} .premium-nav-menu-container .premium-sub-menu, {{WRAPPER}} .premium-mobile-menu-container .premium-sub-menu' => 'min-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .premium-mobile-menu-container .premium-sub-menu,
+                    {{WRAPPER}}.premium-nav-ver .premium-nav-menu-item.menu-item-has-children .premium-sub-menu,
+                    {{WRAPPER}}.premium-nav-hor .premium-nav-menu-item.menu-item-has-children .premium-sub-menu' => 'min-width: {{SIZE}}{{UNIT}};',
 				),
 				'condition'   => array(
 					'menu_type!' => 'custom',
@@ -4441,7 +4468,8 @@ class Premium_Nav_Menu extends Widget_Base {
 		}
 
 		$is_edit_mode = \Elementor\Plugin::$instance->editor->is_edit_mode();
-		$hidden_cls   = $is_edit_mode ? '' : 'elementor-invisible';
+		// $hidden_cls   = $is_edit_mode ? '' : 'elementor-invisible';premium-addons-invisible
+		$hidden_cls   = $is_edit_mode ? '' : 'premium-addons-invisible';
 
 		$this->add_render_attribute(
 			'wrapper',

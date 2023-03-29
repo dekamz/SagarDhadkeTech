@@ -1969,7 +1969,7 @@ class Premium_Modalbox extends Widget_Base {
 			array(
 				'label'       => __( 'Width', 'premium-addons-for-elementor' ),
 				'type'        => Controls_Manager::SLIDER,
-				'size_units'  => array( 'px', '%', 'em' ),
+				'size_units'  => array( 'px', '%', 'em', 'custom' ),
 				'range'       => array(
 					'px' => array(
 						'min' => 50,
@@ -1993,7 +1993,7 @@ class Premium_Modalbox extends Widget_Base {
 			array(
 				'label'       => __( 'Max Height', 'premium-addons-for-elementor' ),
 				'type'        => Controls_Manager::SLIDER,
-				'size_units'  => array( 'px', 'em', 'vh' ),
+				'size_units'  => array( 'px', 'em', 'vh', 'custom' ),
 				'range'       => array(
 					'px' => array(
 						'min' => 50,

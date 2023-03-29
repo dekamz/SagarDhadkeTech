@@ -5,11 +5,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 2em;
   height: 2em;
   line-height: 0;
@@ -41,8 +41,8 @@
 .premium-carousel-wrapper a.ver-carousel-arrow {
   left: 50%;
   -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%); }
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%); }
 
 .premium-carousel-dots-above ul.slick-dots {
   position: absolute;
@@ -53,11 +53,11 @@
   top: 50%;
   bottom: auto;
   -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
+  -ms-flex-direction: column;
+  flex-direction: column; }
 
 /*
 * Custom Navigation Dot
@@ -76,20 +76,20 @@
 @-webkit-keyframes hvr-ripple-out {
   0% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
     opacity: 1; }
   100% {
     -webkit-transform: scale(1.5);
-            transform: scale(1.5);
+    transform: scale(1.5);
     opacity: 0; } }
 @keyframes hvr-ripple-out {
   0% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
     opacity: 1; }
   100% {
     -webkit-transform: scale(1.5);
-            transform: scale(1.5);
+    transform: scale(1.5);
     opacity: 0; } }
 
 .premium-carousel-ripple-yes .premium-carousel-wrapper {
@@ -104,8 +104,8 @@
     content: "";
     position: absolute;
     -webkit-transform: scale(1);
-        -ms-transform: scale(1);
-            transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
     top: 0;
     right: 0;
     bottom: 0;
@@ -117,19 +117,19 @@
     background-color: rgba(0, 0, 0, 0.3); }
   .premium-carousel-ripple-yes ul.slick-dots li:hover:before {
     -webkit-animation: hvr-ripple-out 1.3s infinite;
-            animation: hvr-ripple-out 1.3s infinite; }
+    animation: hvr-ripple-out 1.3s infinite; }
 
 .premium-carousel-wrapper.premium-carousel-scale .slick-slide {
   -webkit-transform: scale(1.25, 1.25);
-      -ms-transform: scale(1.25, 1.25);
-          transform: scale(1.25, 1.25);
+  -ms-transform: scale(1.25, 1.25);
+  transform: scale(1.25, 1.25);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out; }
 
 .premium-carousel-wrapper.premium-carousel-scale div.slick-active {
   -webkit-transform: scale(1, 1);
-      -ms-transform: scale(1, 1);
-          transform: scale(1, 1); }
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1); }
 
 [dir="rtl"] .premium-carousel-inner .slick-slide {
   float: right; }
