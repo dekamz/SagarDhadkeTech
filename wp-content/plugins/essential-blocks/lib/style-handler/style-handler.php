@@ -231,57 +231,52 @@ if ( ! class_exists( 'EbStyleHandler' ) ) {
         public function stylehandler_generate_post_content() {
             $post_id = get_the_ID();
             if ( $post_id ) {
-                $upload_dir = wp_upload_dir();
-                $base_path  = $upload_dir['basedir'];
-                $style_file = $base_path . '/eb-style/eb-style-' . $post_id . '.min.css';
-                if ( ! file_exists( $style_file ) ) {
-                    $post_type = get_post_type( $post_id );
-                    $post      = get_post( $post_id );
-                    //If This page is draft, return
-                    if ( isset( $post->post_status ) && 'auto-draft' == $post->post_status ) {
-                        return;
+                $post_type = get_post_type( $post_id );
+                $post      = get_post( $post_id );
+                //If This page is draft, return
+                if ( isset( $post->post_status ) && 'auto-draft' == $post->post_status ) {
+                    return;
+                }
+                // Return if it's a post revision
+                if ( false !== wp_is_post_revision( $post_id ) ) {
+                    return;
+                }
+
+                if ( $post_type === 'wp_template_part' || $post_type === 'wp_template' ) {
+                    // Todo: have to do something for FSE
+                    $post           = get_post( $post_id );
+                    $parsed_content = parse_blocks( $post->post_content );
+                } else {
+                    $parsed_content = parse_blocks( $post->post_content );
+                }
+
+                if ( empty( $parsed_content ) ) {
+                    delete_post_meta( $post_id, '_eb_reusable_block_ids' );
+                }
+
+                if ( is_array( $parsed_content ) && ! empty( $parsed_content ) ) {
+                    $eb_blocks          = [];
+                    $recursive_response = EbStyleHandlerParseCss::eb_block_style_recursive( $parsed_content, $eb_blocks );
+                    $reusable_Blocks    = ! empty( $recursive_response['reusableBlocks'] ) ? $recursive_response['reusableBlocks'] : [];
+
+                    // remove empty reusable blocks
+                    $reusable_Blocks = array_filter( $reusable_Blocks, function ( $v ) {
+                        return ! empty( $v );
+                    } );
+                    unset( $recursive_response["reusableBlocks"] );
+
+                    $style       = EbStyleHandlerParseCss::blocks_to_style_array( $recursive_response );
+                    $reusableIds = $reusable_Blocks && is_array( $reusable_Blocks ) ? array_keys( $reusable_Blocks ) : [];
+                    if ( ! empty( $reusableIds ) ) {
+                        update_option( '_eb_reusable_block_ids', $reusableIds );
                     }
-                    // Return if it's a post revision
-                    if ( false !== wp_is_post_revision( $post_id ) ) {
-                        return;
-                    }
+                    update_post_meta( $post_id, '_eb_reusable_block_ids', $reusableIds );
+                    $this->write_block_css( $style, $post ); //Write CSS file for this page
 
-                    if ( $post_type === 'wp_template_part' || $post_type === 'wp_template' ) {
-                        // Todo: have to do something for FSE
-                        $post           = get_post( $post_id );
-                        $parsed_content = parse_blocks( $post->post_content );
-                    } else {
-                        $parsed_content = parse_blocks( $post->post_content );
-                    }
-
-                    if ( empty( $parsed_content ) ) {
-                        delete_post_meta( $post_id, '_eb_reusable_block_ids' );
-                    }
-
-                    if ( is_array( $parsed_content ) && ! empty( $parsed_content ) ) {
-                        $eb_blocks          = [];
-                        $recursive_response = EbStyleHandlerParseCss::eb_block_style_recursive( $parsed_content, $eb_blocks );
-                        $reusable_Blocks    = ! empty( $recursive_response['reusableBlocks'] ) ? $recursive_response['reusableBlocks'] : [];
-
-                        // remove empty reusable blocks
-                        $reusable_Blocks = array_filter( $reusable_Blocks, function ( $v ) {
-                            return ! empty( $v );
-                        } );
-                        unset( $recursive_response["reusableBlocks"] );
-
-                        $style       = EbStyleHandlerParseCss::blocks_to_style_array( $recursive_response );
-                        $reusableIds = $reusable_Blocks && is_array( $reusable_Blocks ) ? array_keys( $reusable_Blocks ) : [];
-                        if ( ! empty( $reusableIds ) ) {
-                            update_option( '_eb_reusable_block_ids', $reusableIds );
-                        }
-                        update_post_meta( $post_id, '_eb_reusable_block_ids', $reusableIds );
-                        $this->write_block_css( $style, $post ); //Write CSS file for this page
-
-                        if ( ! empty( $reusable_Blocks ) ) {
-                            foreach ( $reusable_Blocks as $blockId => $block ) {
-                                $style = EbStyleHandlerParseCss::blocks_to_style_array( $block );
-                                $this->write_reusable_block_css( $style, $blockId );
-                            }
+                    if ( ! empty( $reusable_Blocks ) ) {
+                        foreach ( $reusable_Blocks as $blockId => $block ) {
+                            $style = EbStyleHandlerParseCss::blocks_to_style_array( $block );
+                            $this->write_reusable_block_css( $style, $blockId );
                         }
                     }
                 }
@@ -321,7 +316,7 @@ if ( ! class_exists( 'EbStyleHandler' ) ) {
                 if ( ! empty( $css = EbStyleHandlerParseCss::build_css( $block_styles ) ) ) {
                     $upload_dir = wp_upload_dir()['basedir'] . '/eb-style/reusable-blocks/';
                     if ( ! file_exists( $upload_dir ) ) {
-                        mkdir( $upload_dir );
+                        mkdir( $upload_dir, 0777, true );
                     }
                     file_put_contents( $upload_dir . 'eb-reusable-' . abs( $id ) . '.min.css', $css );
                 }

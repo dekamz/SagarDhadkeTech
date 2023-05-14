@@ -20,11 +20,17 @@ class PostBlock extends Base {
 	}
 
     public function get_posts( $request ){
+
         $block_type = $request->has_param('block_type') ? $request->get_param('block_type') : 'post-grid';
 
         $query      = unserialize($request['query_data']);
         $attributes = unserialize($request['attributes']);
         $pageNumber = isset($request['pageNumber']) ? (int)$request['pageNumber'] - 1 : 1;
+
+        //Check if param is empty
+        if (!is_array($query) || !is_array($attributes)) {
+            wp_send_json_error("Invalid request param");
+        }
 
         if (isset($query['per_page']) && isset($query['offset'])) {
 			$query['offset'] = (int)$query['offset'] + ((int)$query['per_page'] * (int)$pageNumber);

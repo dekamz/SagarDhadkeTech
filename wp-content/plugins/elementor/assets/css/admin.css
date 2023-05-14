@@ -1,4 +1,4 @@
-/*! elementor - v3.12.0 - 29-03-2023 */
+/*! elementor - v3.13.2 - 11-05-2023 */
 .elementor-button, .dialog-type-confirm .dialog-buttons-wrapper .dialog-button,
 .dialog-type-alert .dialog-buttons-wrapper .dialog-button,
 .e-btn,
@@ -255,16 +255,16 @@
 }
 #adminmenu #toplevel_page_elementor a[href="admin.php?page=go_elementor_pro"] {
   font-weight: 600;
-  background-color: var(--e-a-btn-bg-accent);
-  color: var(--e-a-btn-color-invert);
+  background-color: #93003c;
+  color: #ffffff;
   margin: 3px 10px 0;
   display: block;
   text-align: center;
-  border-radius: var(--e-a-border-radius);
-  transition: var(--e-a-transition);
+  border-radius: 3px;
+  transition: all 0.3s;
 }
-#adminmenu #toplevel_page_elementor a[href="admin.php?page=go_elementor_pro"]:hover {
-  background-color: var(--e-a-btn-bg-accent-hover);
+#adminmenu #toplevel_page_elementor a[href="admin.php?page=go_elementor_pro"]:hover, #adminmenu #toplevel_page_elementor a[href="admin.php?page=go_elementor_pro"]:focus {
+  background-color: #c60051;
   box-shadow: none;
 }
 #adminmenu #menu-posts-elementor_library .wp-menu-image:before {
@@ -278,9 +278,11 @@
 }
 
 .elementor-plugins-gopro {
-  color: #524CFF;
-  text-shadow: 1px 1px 1px #eee;
+  color: #93003c;
   font-weight: bold;
+}
+.elementor-plugins-gopro:hover, .elementor-plugins-gopro:focus {
+  color: #c60051;
 }
 
 #elementor-switch-mode {
@@ -788,7 +790,7 @@ fieldset:disabled a.e-button {
   --e-notice-context-color: #524CFF;
   --e-notice-context-tint: var(--e-context-cta-tint-1);
   --e-notice-box-shadow: 0 1px 4px rgba(0,0,0,.15);
-  --e-notice-dismiss-color: #3A3F45;
+  --e-notice-dismiss-color: #3f444b;
 }
 
 .e-notice {
@@ -1804,7 +1806,7 @@ fieldset:disabled a.e-button {
   margin-top: 50px;
 }
 #elementor-role-manager h3 {
-  color: #3A3F45;
+  color: #3f444b;
   font-weight: normal;
   font-size: 22px;
 }
@@ -1813,7 +1815,7 @@ fieldset:disabled a.e-button {
 }
 #elementor-role-manager .elementor-role-row {
   background: #ffffff;
-  color: #3A3F45;
+  color: #3f444b;
   margin-bottom: 2px;
 }
 #elementor-role-manager .elementor-role-row .elementor-role-label {

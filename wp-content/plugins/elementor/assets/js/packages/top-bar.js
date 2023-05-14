@@ -131,11 +131,15 @@ function action_extends() { action_extends = Object.assign ? Object.assign.bind(
 function Action({
   icon: Icon,
   title,
+  visible = true,
   ...props
 }) {
   const {
     type
   } = useMenuContext();
+  if (!visible) {
+    return null;
+  }
   return type === 'toolbar' ? /*#__PURE__*/React.createElement(ToolbarMenuItem, action_extends({
     title: title
   }, props), /*#__PURE__*/React.createElement(Icon, null)) : /*#__PURE__*/React.createElement(PopoverMenuItem, action_extends({}, props, {
@@ -171,11 +175,15 @@ function ToggleAction({
   icon: Icon,
   title,
   value,
+  visible = true,
   ...props
 }) {
   const {
     type
   } = useMenuContext();
+  if (!visible) {
+    return null;
+  }
   return type === 'toolbar' ? /*#__PURE__*/React.createElement(ToolbarMenuToggleItem, toggle_action_extends({
     value: value || title,
     title: title
@@ -192,11 +200,15 @@ function link_extends() { link_extends = Object.assign ? Object.assign.bind() : 
 function Link({
   icon: Icon,
   title,
+  visible = true,
   ...props
 }) {
   const {
     type
   } = useMenuContext();
+  if (!visible) {
+    return null;
+  }
   return type === 'toolbar' ? /*#__PURE__*/React.createElement(ToolbarMenuItem, link_extends({
     title: title
   }, props), /*#__PURE__*/React.createElement(Icon, null)) : /*#__PURE__*/React.createElement(PopoverMenuItem, link_extends({}, props, {
@@ -618,13 +630,29 @@ function TopBar() {
 }
 ;// CONCATENATED MODULE: external "__UNSTABLE__elementorPackages.editor"
 var external_UNSTABLE_elementorPackages_editor_namespaceObject = __UNSTABLE__elementorPackages.editor;
+;// CONCATENATED MODULE: external "__UNSTABLE__elementorPackages.v1Adapters"
+var external_UNSTABLE_elementorPackages_v1Adapters_namespaceObject = __UNSTABLE__elementorPackages.v1Adapters;
+;// CONCATENATED MODULE: ./packages/top-bar/src/sync/index.ts
+
+function sync() {
+  redirectOldMenus();
+}
+function redirectOldMenus() {
+  // Currently, in V1, when you click `esc` it opens the hamburger menu in the panel.
+  // In V2, we don't have this panel, so we redirect the user to the elements panel instead.
+  (0,external_UNSTABLE_elementorPackages_v1Adapters_namespaceObject.listenTo)((0,external_UNSTABLE_elementorPackages_v1Adapters_namespaceObject.routeOpenEvent)('panel/menu'), () => {
+    (0,external_UNSTABLE_elementorPackages_v1Adapters_namespaceObject.openRoute)('panel/elements/categories');
+  });
+}
 ;// CONCATENATED MODULE: ./packages/top-bar/src/init.ts
 
 
 
 
 
+
 function init() {
+  sync();
   (0,external_UNSTABLE_elementorPackages_editor_namespaceObject.injectIntoTop)({
     name: 'top-bar',
     filler: TopBar

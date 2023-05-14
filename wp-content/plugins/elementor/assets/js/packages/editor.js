@@ -91,7 +91,43 @@ function useSettings() {
   }
   return context;
 }
+;// CONCATENATED MODULE: ./packages/editor/src/sync/use-color-scheme.ts
+
+
+function useColorScheme() {
+  const [colorScheme, setColorScheme] = (0,external_React_namespaceObject.useState)(() => getV1ColorScheme());
+  (0,external_React_namespaceObject.useEffect)(() => {
+    return (0,external_UNSTABLE_elementorPackages_v1Adapters_namespaceObject.listenTo)((0,external_UNSTABLE_elementorPackages_v1Adapters_namespaceObject.v1ReadyEvent)(), () => setColorScheme(getV1ColorScheme()));
+  }, []);
+  (0,external_React_namespaceObject.useEffect)(() => {
+    return (0,external_UNSTABLE_elementorPackages_v1Adapters_namespaceObject.listenTo)((0,external_UNSTABLE_elementorPackages_v1Adapters_namespaceObject.commandEndEvent)('document/elements/settings'), e => {
+      const event = e;
+
+      // The User-Preferences settings object has a key named `ui_theme` that controls the color scheme.
+      const isColorScheme = event.args?.settings && 'ui_theme' in event.args.settings;
+      if (isColorScheme) {
+        setColorScheme(getV1ColorScheme());
+      }
+    });
+  }, []);
+  return colorScheme;
+}
+function getV1ColorScheme() {
+  return window.elementor?.getPreferences?.('ui_theme') || 'auto';
+}
+;// CONCATENATED MODULE: ./packages/editor/src/components/theme-provider.tsx
+
+
+function ThemeProvider({
+  children
+}) {
+  const colorScheme = useColorScheme();
+  return /*#__PURE__*/React.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.ThemeProvider, {
+    colorScheme: colorScheme
+  }, children);
+}
 ;// CONCATENATED MODULE: ./packages/editor/src/init.tsx
+
 
 
 
@@ -108,7 +144,7 @@ function init(domElement, settings) {
     store: store
   }, /*#__PURE__*/React.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.DirectionProvider, {
     rtl: (0,external_wp_i18n_namespaceObject.isRTL)()
-  }, /*#__PURE__*/React.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.ThemeProvider, null, /*#__PURE__*/React.createElement(Shell, null))))), domElement);
+  }, /*#__PURE__*/React.createElement(ThemeProvider, null, /*#__PURE__*/React.createElement(Shell, null))))), domElement);
 }
 ;// CONCATENATED MODULE: ./packages/editor/src/index.ts
 

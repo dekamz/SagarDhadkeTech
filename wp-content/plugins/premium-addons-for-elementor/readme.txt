@@ -3,9 +3,9 @@ Contributors: Leap13, Rimoun
 Tags: elementor, elementor addons, widgets, elementor elements, templates
 Donate Link: https://premiumaddons.com/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme
 Requires at least: 5.0
-Tested Up To: 6.1.1
+Tested Up To: 6.2
 Requires PHP: 7.0
-Stable Tag: 4.9.52
+Stable Tag: 4.9.55
 License: GPL v3.0
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -222,6 +222,21 @@ Premium Addonsis 100% Ads Free, Ads can only be detected from Youtube videos, th
 14. Premium Progress Bar Widget
 
 == Changelog ==
+
+= 4.9.55 =
+
+- Fixed: Mega Menu widget conflict with Elementor Sticky option.
+
+= 4.9.54 =
+
+- Fixed: Mega Menu widget loading issues.
+- Fixed: SVG Draw widget not working inside Horizontal Scroll widget.
+- Fixed: Page jumps to top issue on mobile devices with SVG Draw widget.
+
+= 4.9.53 =
+
+- Tweak: Links HTML markup improved for better SEO in Blog widget.
+- Fixed: PHP warning: get_page_by_title() is deprecated.
 
 = 4.9.52 =
 

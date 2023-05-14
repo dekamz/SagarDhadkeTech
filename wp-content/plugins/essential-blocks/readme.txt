@@ -1,10 +1,10 @@
-=== Essential Blocks for Gutenberg ===
+=== Essential Blocks - Page Builder Gutenberg Blocks, Patterns & Templates ===
 Contributors: wpdevteam, re_enter_rupok, asif2bd, rahat89, priyomukul, hztyfoon, fencermonir, jamilbd07, sumaiyasiddika
-Tags: gutenberg, blocks, editor, gutenberg blocks, block, visual editor, page builder
+Tags: block, gutenberg, blocks, gutenberg blocks, editor, button, post grid, TOC, countdown, progress bar, flipbox, advanced tab, slider, gutenberg editor, forms, woocommerce, template, page builder, block plugin, pattern, gutenberg templates, gutenberg patterns, block editor, block pattern, block template, Website Builder, starter templates, site editor, woocommerce, woocommerce block, google map, instagram feed, Nft, popup, social icon, testimonial, info box, team member
 Requires at least: 5.8
-Tested up to: 6.1
+Tested up to: 6.2
 Requires PHP: 5.6
-Stable tag: 4.0.4
+Stable tag: 4.0.8
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -196,6 +196,26 @@ Yes. You will need the Gutenberg block editor installed and activated in your Wo
 If you found the recent version of Essential Blocks isn't working or conflicting with other plugins then you can use earlier versions of the plugin.
 
 == Changelog ==
+
+= 4.0.8 - 18/04/2023
+- Fixed: Security update & bugfix
+
+= 4.0.7 - 17/04/2023
+- Fixed: **Count Down** block's error in style tab
+- Fixed: **Flipbox** block's richtext invalid html tag issue
+- Fixed: Assets generation issue
+- Fixed: **Advanced Navigation** block's undefined js error
+
+= 4.0.6 - 10/04/2023
+- Added: Alignment option for **Advanced Video** block
+- Fixed: **Feature List** block's image upload issue
+- Fixed: Style generation issue in nested reusable block
+- Improved: Line break options in **Flipbox** block
+
+= 4.0.5 - 29/03/2023 =
+- Added: Richtext support in **Slider** block
+- Fixed: **Table of Content** block error fix
+- Fixed: **Post Grid** api response error fix
 
 = 4.0.4 - 20/03/2023 =
 - Added: Custom Filters in **Post Grid** and **Post Carrousel** block

@@ -1,4 +1,4 @@
-/*! elementor - v3.12.0 - 29-03-2023 */
+/*! elementor - v3.13.2 - 11-05-2023 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -566,12 +566,6 @@ var Migrator = /*#__PURE__*/function () {
     key: "migrate",
     value:
     /**
-     * Migrations configuration by `elType`.
-     *
-     * @type {Object}
-     */
-
-    /**
      * Migrate element settings into new settings object, using a map object.
      *
      * @param {Object} settings - Settings to migrate.
@@ -662,6 +656,11 @@ var Migrator = /*#__PURE__*/function () {
   return Migrator;
 }();
 exports["default"] = Migrator;
+/**
+ * Migrations configuration by `elType`.
+ *
+ * @type {Object}
+ */
 (0, _defineProperty2.default)(Migrator, "config", {
   section: {
     legacyControlsMapping: _section.default,

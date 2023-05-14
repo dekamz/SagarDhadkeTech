@@ -39,30 +39,51 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
+  "AIIcon": function() { return /* reexport */ ai_icon; },
   "AdjustmentsHorizontalIcon": function() { return /* reexport */ adjustments_horizontal_icon; },
+  "ArchiveTemplateIcon": function() { return /* reexport */ archive_template_icon; },
   "ArrowUpRightIcon": function() { return /* reexport */ arrow_up_right_icon; },
+  "CheckedCircleIcon": function() { return /* reexport */ checked_circle_icon; },
   "ChevronDownIcon": function() { return /* reexport */ chevron_down_icon; },
+  "ContainerTemplateIcon": function() { return /* reexport */ container_template_icon; },
   "DesktopIcon": function() { return /* reexport */ desktop_icon; },
   "DotsVerticalIcon": function() { return /* reexport */ dots_vertical_icon; },
+  "Error404TemplateIcon": function() { return /* reexport */ error_404_template_icon; },
+  "ExpandIcon": function() { return /* reexport */ expand_icon; },
   "EyeIcon": function() { return /* reexport */ eye_icon; },
   "FileReportIcon": function() { return /* reexport */ file_report_icon; },
   "FolderIcon": function() { return /* reexport */ folder_icon; },
+  "FooterTemplateIcon": function() { return /* reexport */ footer_template_icon; },
+  "HeaderTemplateIcon": function() { return /* reexport */ header_template_icon; },
   "HelpIcon": function() { return /* reexport */ help_icon; },
   "HistoryIcon": function() { return /* reexport */ history_icon; },
   "KeyboardIcon": function() { return /* reexport */ keyboard_icon; },
+  "LandingPageTemplateIcon": function() { return /* reexport */ landing_page_template_icon; },
   "LaptopIcon": function() { return /* reexport */ laptop_icon; },
+  "LoopItemTemplateIcon": function() { return /* reexport */ loop_item_template_icon; },
+  "MessageIcon": function() { return /* reexport */ message_icon; },
   "MobileLandscapeIcon": function() { return /* reexport */ mobile_landscape_icon; },
   "MobilePortraitIcon": function() { return /* reexport */ mobile_icon; },
+  "PageTemplateIcon": function() { return /* reexport */ page_template_icon; },
+  "PageTypeIcon": function() { return /* reexport */ page_type_icon; },
   "PlusIcon": function() { return /* reexport */ plus_icon; },
+  "PopupTemplateIcon": function() { return /* reexport */ popup_template_icon; },
+  "PostTypeIcon": function() { return /* reexport */ post_type_icon; },
+  "RefreshIcon": function() { return /* reexport */ refresh_icon; },
   "SearchIcon": function() { return /* reexport */ search_icon; },
+  "SearchResultsTemplateIcon": function() { return /* reexport */ search_results_template_icon; },
+  "SectionTemplateIcon": function() { return /* reexport */ section_template_icon; },
   "SettingsIcon": function() { return /* reexport */ settings_icon; },
+  "ShrinkIcon": function() { return /* reexport */ shrink_icon; },
   "StructureIcon": function() { return /* reexport */ structure_icon; },
   "TabletLandscapeIcon": function() { return /* reexport */ tablet_landscape_icon; },
   "TabletPortraitIcon": function() { return /* reexport */ tablet_icon; },
   "ThemeBuilderIcon": function() { return /* reexport */ theme_builder_icon; },
   "ToggleRightIcon": function() { return /* reexport */ toggle_right_icon; },
+  "UpgradeIcon": function() { return /* reexport */ upgrade_icon; },
   "WidescreenIcon": function() { return /* reexport */ widescreen_icon; },
-  "WordpressIcon": function() { return /* reexport */ wordpress_icon; }
+  "WordpressIcon": function() { return /* reexport */ wordpress_icon; },
+  "XIcon": function() { return /* reexport */ x_icon; }
 });
 
 ;// CONCATENATED MODULE: external "React"
@@ -85,6 +106,38 @@ const AdjustmentsHorizontalIcon = /*#__PURE__*/external_React_namespaceObject.fo
   }));
 });
 /* harmony default export */ var adjustments_horizontal_icon = (AdjustmentsHorizontalIcon);
+;// CONCATENATED MODULE: ./packages/icons/src/components/archive-template-icon.tsx
+function archive_template_icon_extends() { archive_template_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return archive_template_icon_extends.apply(this, arguments); }
+
+
+const ArchiveTemplateIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props, ref) => {
+  return /*#__PURE__*/external_React_namespaceObject.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.SvgIcon, archive_template_icon_extends({
+    viewBox: "0 0 24 24"
+  }, props, {
+    ref: ref
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M3.25 4.5C3.25 4.08579 3.58579 3.75 4 3.75H10C10.4142 3.75 10.75 4.08579 10.75 4.5V12C10.75 12.4142 10.4142 12.75 10 12.75H4C3.58579 12.75 3.25 12.4142 3.25 12V4.5ZM4.75 5.25V11.25H9.25V5.25H4.75ZM13.25 4.5C13.25 4.08579 13.5858 3.75 14 3.75H20C20.4142 3.75 20.75 4.08579 20.75 4.5V12C20.75 12.4142 20.4142 12.75 20 12.75H14C13.5858 12.75 13.25 12.4142 13.25 12V4.5ZM14.75 5.25V11.25H19.25V5.25H14.75ZM3.25 16C3.25 15.5858 3.58579 15.25 4 15.25H10C10.4142 15.25 10.75 15.5858 10.75 16C10.75 16.4142 10.4142 16.75 10 16.75H4C3.58579 16.75 3.25 16.4142 3.25 16ZM13.25 16C13.25 15.5858 13.5858 15.25 14 15.25H20C20.4142 15.25 20.75 15.5858 20.75 16C20.75 16.4142 20.4142 16.75 20 16.75H14C13.5858 16.75 13.25 16.4142 13.25 16ZM3.25 20C3.25 19.5858 3.58579 19.25 4 19.25H10C10.4142 19.25 10.75 19.5858 10.75 20C10.75 20.4142 10.4142 20.75 10 20.75H4C3.58579 20.75 3.25 20.4142 3.25 20ZM13.25 20C13.25 19.5858 13.5858 19.25 14 19.25H20C20.4142 19.25 20.75 19.5858 20.75 20C20.75 20.4142 20.4142 20.75 20 20.75H14C13.5858 20.75 13.25 20.4142 13.25 20Z"
+  }));
+});
+/* harmony default export */ var archive_template_icon = (ArchiveTemplateIcon);
+;// CONCATENATED MODULE: ./packages/icons/src/components/ai-icon.tsx
+function ai_icon_extends() { ai_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return ai_icon_extends.apply(this, arguments); }
+
+
+const AIIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props, ref) => {
+  return /*#__PURE__*/external_React_namespaceObject.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.SvgIcon, ai_icon_extends({
+    viewBox: "0 0 24 24"
+  }, props, {
+    ref: ref
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M18.25 3.25C18.6642 3.25 19 3.58579 19 4C19 4.33152 19.1317 4.64946 19.3661 4.88388C19.6005 5.1183 19.9185 5.25 20.25 5.25C20.6642 5.25 21 5.58579 21 6C21 6.41421 20.6642 6.75 20.25 6.75C19.9185 6.75 19.6005 6.8817 19.3661 7.11612C19.1317 7.35054 19 7.66848 19 8C19 8.41421 18.6642 8.75 18.25 8.75C17.8358 8.75 17.5 8.41421 17.5 8C17.5 7.66848 17.3683 7.35054 17.1339 7.11612C16.8995 6.8817 16.5815 6.75 16.25 6.75C15.8358 6.75 15.5 6.41421 15.5 6C15.5 5.58579 15.8358 5.25 16.25 5.25C16.5815 5.25 16.8995 5.1183 17.1339 4.88388C17.3683 4.64946 17.5 4.33152 17.5 4C17.5 3.58579 17.8358 3.25 18.25 3.25ZM18.25 5.88746C18.2318 5.90673 18.2133 5.92576 18.1945 5.94454C18.1758 5.96333 18.1567 5.98182 18.1375 6C18.1567 6.01819 18.1758 6.03667 18.1945 6.05546C18.2133 6.07424 18.2318 6.09327 18.25 6.11254C18.2682 6.09327 18.2867 6.07424 18.3055 6.05546C18.3242 6.03667 18.3433 6.01819 18.3625 6C18.3433 5.98182 18.3242 5.96333 18.3055 5.94454C18.2867 5.92576 18.2682 5.90673 18.25 5.88746ZM9.25 5.25C9.66421 5.25 10 5.58579 10 6C10 7.39239 10.5531 8.72774 11.5377 9.71231C12.5223 10.6969 13.8576 11.25 15.25 11.25C15.6642 11.25 16 11.5858 16 12C16 12.4142 15.6642 12.75 15.25 12.75C13.8576 12.75 12.5223 13.3031 11.5377 14.2877C10.5531 15.2723 10 16.6076 10 18C10 18.4142 9.66421 18.75 9.25 18.75C8.83579 18.75 8.5 18.4142 8.5 18C8.5 16.6076 7.94688 15.2723 6.96231 14.2877C5.97774 13.3031 4.64239 12.75 3.25 12.75C2.83579 12.75 2.5 12.4142 2.5 12C2.5 11.5858 2.83579 11.25 3.25 11.25C4.64239 11.25 5.97774 10.6969 6.96231 9.71231C7.94688 8.72774 8.5 7.39239 8.5 6C8.5 5.58579 8.83579 5.25 9.25 5.25ZM9.25 9.09234C8.93321 9.70704 8.52103 10.2749 8.02297 10.773C7.52491 11.271 6.95704 11.6832 6.34234 12C6.95704 12.3168 7.52491 12.729 8.02297 13.227C8.52103 13.7251 8.93321 14.293 9.25 14.9077C9.56679 14.293 9.97897 13.7251 10.477 13.227C10.9751 12.729 11.543 12.3168 12.1577 12C11.543 11.6832 10.9751 11.271 10.477 10.773C9.97897 10.2749 9.56679 9.70704 9.25 9.09234ZM18.25 15.25C18.6642 15.25 19 15.5858 19 16C19 16.3315 19.1317 16.6495 19.3661 16.8839C19.6005 17.1183 19.9185 17.25 20.25 17.25C20.6642 17.25 21 17.5858 21 18C21 18.4142 20.6642 18.75 20.25 18.75C19.9185 18.75 19.6005 18.8817 19.3661 19.1161C19.1317 19.3505 19 19.6685 19 20C19 20.4142 18.6642 20.75 18.25 20.75C17.8358 20.75 17.5 20.4142 17.5 20C17.5 19.6685 17.3683 19.3505 17.1339 19.1161C16.8995 18.8817 16.5815 18.75 16.25 18.75C15.8358 18.75 15.5 18.4142 15.5 18C15.5 17.5858 15.8358 17.25 16.25 17.25C16.5815 17.25 16.8995 17.1183 17.1339 16.8839C17.3683 16.6495 17.5 16.3315 17.5 16C17.5 15.5858 17.8358 15.25 18.25 15.25ZM18.25 17.8875C18.2318 17.9067 18.2133 17.9258 18.1945 17.9445C18.1758 17.9633 18.1567 17.9818 18.1375 18C18.1567 18.0182 18.1758 18.0367 18.1945 18.0555C18.2133 18.0742 18.2318 18.0933 18.25 18.1125C18.2682 18.0933 18.2867 18.0742 18.3055 18.0555C18.3242 18.0367 18.3433 18.0182 18.3625 18C18.3433 17.9818 18.3242 17.9633 18.3055 17.9445C18.2867 17.9258 18.2682 17.9067 18.25 17.8875Z"
+  }));
+});
+/* harmony default export */ var ai_icon = (AIIcon);
 ;// CONCATENATED MODULE: ./packages/icons/src/components/arrow-up-right-icon.tsx
 function arrow_up_right_icon_extends() { arrow_up_right_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return arrow_up_right_icon_extends.apply(this, arguments); }
 
@@ -105,6 +158,26 @@ const ArrowUpRightIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef(
   }));
 });
 /* harmony default export */ var arrow_up_right_icon = (ArrowUpRightIcon);
+;// CONCATENATED MODULE: ./packages/icons/src/components/checked-circle-icon.tsx
+function checked_circle_icon_extends() { checked_circle_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return checked_circle_icon_extends.apply(this, arguments); }
+
+
+const CheckedCircleIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props, ref) => {
+  return /*#__PURE__*/external_React_namespaceObject.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.SvgIcon, checked_circle_icon_extends({
+    viewBox: "0 0 24 24"
+  }, props, {
+    ref: ref
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M8.26884 2.99217C9.45176 2.50219 10.7196 2.25 12 2.25C13.2804 2.25 14.5482 2.50219 15.7312 2.99217C16.9141 3.48216 17.9889 4.20034 18.8943 5.10571C19.7997 6.01108 20.5178 7.08591 21.0078 8.26884C21.4978 9.45176 21.75 10.7196 21.75 12C21.75 13.2804 21.4978 14.5482 21.0078 15.7312C20.5178 16.9141 19.7997 17.9889 18.8943 18.8943C17.9889 19.7997 16.9141 20.5178 15.7312 21.0078C14.5482 21.4978 13.2804 21.75 12 21.75C10.7196 21.75 9.45176 21.4978 8.26884 21.0078C7.08591 20.5178 6.01108 19.7997 5.10571 18.8943C4.20034 17.9889 3.48216 16.9141 2.99217 15.7312C2.50219 14.5482 2.25 13.2804 2.25 12C2.25 10.7196 2.50219 9.45176 2.99217 8.26884C3.48216 7.08591 4.20034 6.01108 5.10571 5.10571C6.01108 4.20034 7.08591 3.48216 8.26884 2.99217ZM12 3.75C10.9166 3.75 9.8438 3.96339 8.84286 4.37799C7.84193 4.7926 6.93245 5.40029 6.16637 6.16637C5.40029 6.93245 4.79259 7.84193 4.37799 8.84286C3.96339 9.8438 3.75 10.9166 3.75 12C3.75 13.0834 3.96339 14.1562 4.37799 15.1571C4.79259 16.1581 5.40029 17.0675 6.16637 17.8336C6.93245 18.5997 7.84193 19.2074 8.84286 19.622C9.8438 20.0366 10.9166 20.25 12 20.25C13.0834 20.25 14.1562 20.0366 15.1571 19.622C16.1581 19.2074 17.0675 18.5997 17.8336 17.8336C18.5997 17.0675 19.2074 16.1581 19.622 15.1571C20.0366 14.1562 20.25 13.0834 20.25 12C20.25 10.9166 20.0366 9.8438 19.622 8.84286C19.2074 7.84193 18.5997 6.93245 17.8336 6.16637C17.0675 5.40029 16.1581 4.7926 15.1571 4.37799C14.1562 3.96339 13.0834 3.75 12 3.75Z"
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M16.2414 8.99563C16.5343 9.28852 16.5343 9.7634 16.2414 10.0563L11.2933 15.0044C11.0004 15.2973 10.5255 15.2973 10.2326 15.0044L7.75861 12.5303C7.46572 12.2374 7.46572 11.7626 7.75861 11.4697C8.0515 11.1768 8.52638 11.1768 8.81927 11.4697L10.763 13.4134L15.1807 8.99563C15.4736 8.70274 15.9485 8.70274 16.2414 8.99563Z"
+  }));
+});
+/* harmony default export */ var checked_circle_icon = (CheckedCircleIcon);
 ;// CONCATENATED MODULE: ./packages/icons/src/components/chevron-down-icon.tsx
 function chevron_down_icon_extends() { chevron_down_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return chevron_down_icon_extends.apply(this, arguments); }
 
@@ -121,6 +194,22 @@ const ChevronDownIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((
   }));
 });
 /* harmony default export */ var chevron_down_icon = (ChevronDownIcon);
+;// CONCATENATED MODULE: ./packages/icons/src/components/container-template-icon.tsx
+function container_template_icon_extends() { container_template_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return container_template_icon_extends.apply(this, arguments); }
+
+
+const ContainerTemplateIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props, ref) => {
+  return /*#__PURE__*/external_React_namespaceObject.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.SvgIcon, container_template_icon_extends({
+    viewBox: "0 0 24 24"
+  }, props, {
+    ref: ref
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M4.75 5.25C4.05964 5.25 3.5 5.80964 3.5 6.5V17.5C3.5 18.1904 4.05964 18.75 4.75 18.75H7.75C8.16421 18.75 8.5 19.0858 8.5 19.5C8.5 19.9142 8.16421 20.25 7.75 20.25H4.75C3.23122 20.25 2 19.0188 2 17.5V6.5C2 4.98122 3.23122 3.75 4.75 3.75H16.75C18.2688 3.75 19.5 4.98122 19.5 6.5V8C19.5 8.41421 19.1642 8.75 18.75 8.75C18.3358 8.75 18 8.41421 18 8V6.5C18 5.80964 17.4404 5.25 16.75 5.25H4.75ZM12.75 13.25C12.6676 13.25 12.5982 13.281 12.5546 13.3217C12.5128 13.3607 12.5 13.4021 12.5 13.4333V18.5667C12.5 18.5979 12.5128 18.6393 12.5546 18.6783C12.5982 18.719 12.6676 18.75 12.75 18.75H19.75C19.8324 18.75 19.9018 18.719 19.9454 18.6783C19.9872 18.6393 20 18.5979 20 18.5667V14.8333C20 14.8021 19.9872 14.7607 19.9454 14.7217C19.9018 14.681 19.8324 14.65 19.75 14.65H16.25C16.06 14.65 15.8771 14.5779 15.7383 14.4483L14.4544 13.25H12.75ZM11.5312 12.2251C11.8627 11.9156 12.3019 11.75 12.75 11.75H14.75C14.94 11.75 15.1229 11.8221 15.2617 11.9517L16.5456 13.15H19.75C20.1981 13.15 20.6373 13.3156 20.9688 13.6251C21.3021 13.9361 21.5 14.3695 21.5 14.8333V18.5667C21.5 19.0305 21.3021 19.4639 20.9688 19.7749C20.6373 20.0844 20.1981 20.25 19.75 20.25H12.75C12.3019 20.25 11.8627 20.0844 11.5312 19.7749C11.1979 19.4639 11 19.0305 11 18.5667V13.4333C11 12.9695 11.1979 12.5361 11.5312 12.2251Z"
+  }));
+});
+/* harmony default export */ var container_template_icon = (ContainerTemplateIcon);
 ;// CONCATENATED MODULE: ./packages/icons/src/components/desktop-icon.tsx
 function desktop_icon_extends() { desktop_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return desktop_icon_extends.apply(this, arguments); }
 
@@ -155,6 +244,50 @@ const DotsVerticalIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef(
   }));
 });
 /* harmony default export */ var dots_vertical_icon = (DotsVerticalIcon);
+;// CONCATENATED MODULE: ./packages/icons/src/components/error-404-template-icon.tsx
+function error_404_template_icon_extends() { error_404_template_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return error_404_template_icon_extends.apply(this, arguments); }
+
+
+const Error404TemplateIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props, ref) => {
+  return /*#__PURE__*/external_React_namespaceObject.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.SvgIcon, error_404_template_icon_extends({
+    viewBox: "0 0 24 24"
+  }, props, {
+    ref: ref
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M7 3.75C6.66848 3.75 6.35054 3.8817 6.11612 4.11612C5.8817 4.35054 5.75 4.66848 5.75 5V19C5.75 19.3315 5.8817 19.6495 6.11612 19.8839C6.35054 20.1183 6.66848 20.25 7 20.25H17C17.3315 20.25 17.6495 20.1183 17.8839 19.8839C18.1183 19.6495 18.25 19.3315 18.25 19V8.75H15C14.5359 8.75 14.0908 8.56563 13.7626 8.23744C13.4344 7.90925 13.25 7.46413 13.25 7V3.75H7ZM14.75 4.81066L17.1893 7.25H15C14.9337 7.25 14.8701 7.22366 14.8232 7.17678C14.7763 7.12989 14.75 7.0663 14.75 7V4.81066ZM5.05546 3.05546C5.57118 2.53973 6.27065 2.25 7 2.25H14C14.1989 2.25 14.3897 2.32902 14.5303 2.46967L19.5303 7.46967C19.671 7.61032 19.75 7.80109 19.75 8V19C19.75 19.7293 19.4603 20.4288 18.9445 20.9445C18.4288 21.4603 17.7293 21.75 17 21.75H7C6.27065 21.75 5.57118 21.4603 5.05546 20.9445C4.53973 20.4288 4.25 19.7293 4.25 19V5C4.25 4.27065 4.53973 3.57118 5.05546 3.05546ZM12 10.25C12.4142 10.25 12.75 10.5858 12.75 11V14C12.75 14.4142 12.4142 14.75 12 14.75C11.5858 14.75 11.25 14.4142 11.25 14V11C11.25 10.5858 11.5858 10.25 12 10.25ZM11.25 17C11.25 16.5858 11.5858 16.25 12 16.25H12.01C12.4242 16.25 12.76 16.5858 12.76 17C12.76 17.4142 12.4242 17.75 12.01 17.75H12C11.5858 17.75 11.25 17.4142 11.25 17Z"
+  }));
+});
+/* harmony default export */ var error_404_template_icon = (Error404TemplateIcon);
+;// CONCATENATED MODULE: ./packages/icons/src/components/expand-icon.tsx
+function expand_icon_extends() { expand_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return expand_icon_extends.apply(this, arguments); }
+
+
+const ExpandIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props, ref) => {
+  return /*#__PURE__*/external_React_namespaceObject.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.SvgIcon, expand_icon_extends({
+    viewBox: "0 0 24 24"
+  }, props, {
+    ref: ref
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M4.53033 8.46967C4.82322 8.76256 4.82322 9.23744 4.53033 9.53033L2.06066 12L4.53033 14.4697C4.82322 14.7626 4.82322 15.2374 4.53033 15.5303C4.23744 15.8232 3.76256 15.8232 3.46967 15.5303L0.46967 12.5303C0.176777 12.2374 0.176777 11.7626 0.46967 11.4697L3.46967 8.46967C3.76256 8.17678 4.23744 8.17678 4.53033 8.46967Z"
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M19.4697 8.46967C19.7626 8.17678 20.2374 8.17678 20.5303 8.46967L23.5303 11.4697C23.8232 11.7626 23.8232 12.2374 23.5303 12.5303L20.5303 15.5303C20.2374 15.8232 19.7626 15.8232 19.4697 15.5303C19.1768 15.2374 19.1768 14.7626 19.4697 14.4697L21.9393 12L19.4697 9.53033C19.1768 9.23744 19.1768 8.76256 19.4697 8.46967Z"
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M0.25 12C0.25 11.5858 0.585786 11.25 1 11.25H10C10.4142 11.25 10.75 11.5858 10.75 12C10.75 12.4142 10.4142 12.75 10 12.75H1C0.585786 12.75 0.25 12.4142 0.25 12Z"
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M13.25 12C13.25 11.5858 13.5858 11.25 14 11.25L23 11.25C23.4142 11.25 23.75 11.5858 23.75 12C23.75 12.4142 23.4142 12.75 23 12.75L14 12.75C13.5858 12.75 13.25 12.4142 13.25 12Z"
+  }));
+});
+/* harmony default export */ var expand_icon = (ExpandIcon);
 ;// CONCATENATED MODULE: ./packages/icons/src/components/eye-icon.tsx
 function eye_icon_extends() { eye_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return eye_icon_extends.apply(this, arguments); }
 
@@ -203,6 +336,42 @@ const FolderIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props
   }));
 });
 /* harmony default export */ var folder_icon = (FolderIcon);
+;// CONCATENATED MODULE: ./packages/icons/src/components/footer-template-icon.tsx
+function footer_template_icon_extends() { footer_template_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return footer_template_icon_extends.apply(this, arguments); }
+
+
+const FooterTemplateIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props, ref) => {
+  return /*#__PURE__*/external_React_namespaceObject.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.SvgIcon, footer_template_icon_extends({
+    viewBox: "0 0 24 24"
+  }, props, {
+    ref: ref,
+    sx: {
+      stroke: 'currentColor',
+      ...props.sx
+    }
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M19 19.25C19.1381 19.25 19.25 19.1381 19.25 19L19.25 16.75L4.75 16.75L4.75 19C4.75 19.1381 4.86193 19.25 5 19.25L19 19.25ZM3.25 19C3.25 19.9665 4.0335 20.75 5 20.75L19 20.75C19.9665 20.75 20.75 19.9665 20.75 19L20.75 5C20.75 4.0335 19.9665 3.25 19 3.25L5 3.25C4.0335 3.25 3.25 4.0335 3.25 5L3.25 19ZM4.75 15.25L19.25 15.25L19.25 5C19.25 4.86193 19.1381 4.75 19 4.75L5 4.75C4.86193 4.75 4.75 4.86193 4.75 5L4.75 15.25Z"
+  }));
+});
+/* harmony default export */ var footer_template_icon = (FooterTemplateIcon);
+;// CONCATENATED MODULE: ./packages/icons/src/components/header-template-icon.tsx
+function header_template_icon_extends() { header_template_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return header_template_icon_extends.apply(this, arguments); }
+
+
+const HeaderTemplateIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props, ref) => {
+  return /*#__PURE__*/external_React_namespaceObject.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.SvgIcon, header_template_icon_extends({
+    viewBox: "0 0 24 24"
+  }, props, {
+    ref: ref
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M5 4.75C4.86193 4.75 4.75 4.86193 4.75 5V7.25H19.25V5C19.25 4.86193 19.1381 4.75 19 4.75H5ZM20.75 5C20.75 4.0335 19.9665 3.25 19 3.25H5C4.0335 3.25 3.25 4.0335 3.25 5V19C3.25 19.9665 4.0335 20.75 5 20.75H19C19.9665 20.75 20.75 19.9665 20.75 19V5ZM19.25 8.75H4.75V19C4.75 19.1381 4.86193 19.25 5 19.25H19C19.1381 19.25 19.25 19.1381 19.25 19V8.75Z"
+  }));
+});
+/* harmony default export */ var header_template_icon = (HeaderTemplateIcon);
 ;// CONCATENATED MODULE: ./packages/icons/src/components/help-icon.tsx
 function help_icon_extends() { help_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return help_icon_extends.apply(this, arguments); }
 
@@ -251,6 +420,22 @@ const KeyboardIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((pro
   }));
 });
 /* harmony default export */ var keyboard_icon = (KeyboardIcon);
+;// CONCATENATED MODULE: ./packages/icons/src/components/landing-page-template-icon.tsx
+function landing_page_template_icon_extends() { landing_page_template_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return landing_page_template_icon_extends.apply(this, arguments); }
+
+
+const LandingPageTemplateIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props, ref) => {
+  return /*#__PURE__*/external_React_namespaceObject.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.SvgIcon, landing_page_template_icon_extends({
+    viewBox: "0 0 24 24"
+  }, props, {
+    ref: ref
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M7 3.5C6.66848 3.5 6.35054 3.6317 6.11612 3.86612C5.8817 4.10054 5.75 4.41848 5.75 4.75V9.25C5.75 9.66421 5.41421 10 5 10C4.58579 10 4.25 9.66421 4.25 9.25V4.75C4.25 4.02065 4.53973 3.32118 5.05546 2.80546C5.57118 2.28973 6.27065 2 7 2H14C14.1989 2 14.3897 2.07902 14.5303 2.21967L19.5303 7.21967C19.671 7.36032 19.75 7.55109 19.75 7.75V9.25C19.75 9.66421 19.4142 10 19 10C18.5858 10 18.25 9.66421 18.25 9.25V8.5H15C14.5359 8.5 14.0908 8.31563 13.7626 7.98744C13.4344 7.65925 13.25 7.21413 13.25 6.75V3.5H7ZM14.75 4.56066L17.1893 7H15C14.9337 7 14.8701 6.97366 14.8232 6.92678C14.7763 6.87989 14.75 6.8163 14.75 6.75V4.56066ZM5 11C5.41421 11 5.75 11.3358 5.75 11.75V12.25C5.75 12.6642 5.41421 13 5 13C4.58579 13 4.25 12.6642 4.25 12.25V11.75C4.25 11.3358 4.58579 11 5 11ZM18.25 12.25V11.75C18.25 11.3358 18.5858 11 19 11C19.4142 11 19.75 11.3358 19.75 11.75V12.25C19.75 12.6642 19.4142 13 19 13C18.5858 13 18.25 12.6642 18.25 12.25ZM5 14.5C5.41421 14.5 5.75 14.8358 5.75 15.25V15.75C5.75 16.1642 5.41421 16.5 5 16.5C4.58579 16.5 4.25 16.1642 4.25 15.75V15.25C4.25 14.8358 4.58579 14.5 5 14.5ZM18.25 15.75V15.25C18.25 14.8358 18.5858 14.5 19 14.5C19.4142 14.5 19.75 14.8358 19.75 15.25V15.75C19.75 16.1642 19.4142 16.5 19 16.5C18.5858 16.5 18.25 16.1642 18.25 15.75ZM5 18C5.41421 18 5.75 18.3358 5.75 18.75C5.75 19.0815 5.8817 19.3995 6.11612 19.6339C6.35054 19.8683 6.66848 20 7 20H17C17.3315 20 17.6495 19.8683 17.8839 19.6339C18.1183 19.3995 18.25 19.0815 18.25 18.75C18.25 18.3358 18.5858 18 19 18C19.4142 18 19.75 18.3358 19.75 18.75C19.75 19.4793 19.4603 20.1788 18.9445 20.6945C18.4288 21.2103 17.7293 21.5 17 21.5H7C6.27065 21.5 5.57118 21.2103 5.05546 20.6945C4.53973 20.1788 4.25 19.4793 4.25 18.75C4.25 18.3358 4.58579 18 5 18Z"
+  }));
+});
+/* harmony default export */ var landing_page_template_icon = (LandingPageTemplateIcon);
 ;// CONCATENATED MODULE: ./packages/icons/src/components/laptop-icon.tsx
 function laptop_icon_extends() { laptop_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return laptop_icon_extends.apply(this, arguments); }
 
@@ -267,6 +452,46 @@ const LaptopIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props
   }));
 });
 /* harmony default export */ var laptop_icon = (LaptopIcon);
+;// CONCATENATED MODULE: ./packages/icons/src/components/loop-item-template-icon.tsx
+function loop_item_template_icon_extends() { loop_item_template_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return loop_item_template_icon_extends.apply(this, arguments); }
+
+
+const LoopItemTemplateIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props, ref) => {
+  return /*#__PURE__*/external_React_namespaceObject.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.SvgIcon, loop_item_template_icon_extends({
+    viewBox: "0 0 24 24"
+  }, props, {
+    ref: ref
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M3.25003 3C3.25003 2.58578 3.58581 2.25 4.00003 2.25H12.1795C12.3784 2.25 12.5692 2.32902 12.7099 2.46967C12.8505 2.61032 12.9295 2.80109 12.9295 3L12.9295 10.5C12.9295 10.9142 12.5937 11.25 12.1795 11.25H4C3.80109 11.25 3.61032 11.171 3.46967 11.0303C3.32902 10.8897 3.25 10.6989 3.25 10.5L3.25003 3ZM4.75002 3.75L4.75 9.75H11.4295L11.4295 3.75H4.75002ZM3.25003 13.5C3.25003 13.0858 3.58581 12.75 4.00003 12.75H12.1795C12.5937 12.75 12.9295 13.0858 12.9295 13.5C12.9295 13.9142 12.5937 14.25 12.1795 14.25H4.00003C3.58581 14.25 3.25003 13.9142 3.25003 13.5Z"
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    d: "M20.4919 6.96052L20.4757 7.02512L20.4514 7.08164L18.8002 9.14069L18.7516 9.19721C18.6059 9.31833 18.3874 9.32641 18.2336 9.20529C18.0555 9.06802 18.0312 8.8177 18.1688 8.64006L19.2616 7.27543H15.6515L15.5787 7.26736C15.3925 7.23506 15.2468 7.07357 15.2468 6.8717C15.2468 6.64561 15.4249 6.46796 15.6515 6.46796H19.2616L18.1607 5.10334L18.1203 5.03874C18.0312 4.86917 18.0717 4.65115 18.2255 4.53003C18.3955 4.39276 18.6545 4.41699 18.7921 4.59463L20.411 6.61331L20.4514 6.67791L20.4757 6.72635L20.5 6.81518V6.88785L20.4919 6.96052Z"
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    d: "M7.96771 21.4919L7.90296 21.4758L7.8463 21.4516L5.78226 19.8043L5.72559 19.7559C5.60418 19.6105 5.59609 19.3925 5.7175 19.2391C5.8551 19.0614 6.10603 19.0372 6.2841 19.1745L7.65204 20.2646V16.6633L7.66013 16.5906C7.69251 16.4049 7.85439 16.2595 8.05675 16.2595C8.28339 16.2595 8.46147 16.4372 8.46147 16.6633V20.2646L9.8294 19.1664L9.89415 19.126C10.0641 19.0372 10.2827 19.0776 10.4041 19.231C10.5417 19.4006 10.5174 19.659 10.3393 19.7962L8.31577 21.4112L8.25101 21.4516L8.20245 21.4758L8.11341 21.5H8.04056L7.96771 21.4919Z"
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M18.9883 4.43971L20.606 6.4569C20.6121 6.46446 20.6177 6.47237 20.6228 6.48058L20.6633 6.54518C20.6675 6.55189 20.6714 6.5588 20.6749 6.56588L20.6992 6.61433C20.7066 6.62908 20.7125 6.64452 20.7169 6.66043L20.7411 6.74925C20.747 6.77073 20.75 6.7929 20.75 6.81518V6.88785C20.75 6.89709 20.7495 6.90633 20.7485 6.91552L20.7404 6.9882C20.7391 6.99935 20.7371 7.0104 20.7344 7.02129L20.7182 7.08589C20.715 7.09885 20.7107 7.11153 20.7054 7.1238L20.6811 7.18032C20.6722 7.20104 20.6606 7.22046 20.6465 7.23805L18.9899 9.30371L18.9413 9.36014C18.9322 9.37073 18.9222 9.38053 18.9115 9.38946C18.6782 9.58335 18.3292 9.59806 18.0799 9.40245C17.7863 9.17522 17.7547 8.76653 17.9712 8.48697L17.9737 8.48378L18.7411 7.52543H15.6515C15.6423 7.52543 15.6331 7.52493 15.624 7.52391L15.5511 7.51584C15.546 7.51527 15.541 7.51455 15.5359 7.51368C15.2339 7.46128 14.9968 7.1991 14.9968 6.8717C14.9968 6.50696 15.2874 6.21796 15.6515 6.21796H18.7387L17.9662 5.2603C17.9599 5.25258 17.9542 5.24448 17.9489 5.23607L17.9084 5.17147C17.9051 5.16609 17.9019 5.16058 17.8989 5.15496C17.7566 4.88388 17.8181 4.53362 18.0697 4.33455C18.3447 4.11356 18.7623 4.15006 18.9883 4.43971ZM18.5945 4.74773C18.5452 4.68419 18.447 4.67254 18.3826 4.72453L18.3802 4.72645C18.3269 4.7684 18.3074 4.84949 18.3384 4.91599L18.3647 4.95798L19.4562 6.311C19.5166 6.38594 19.5287 6.48894 19.4871 6.5758C19.4456 6.66267 19.3579 6.71796 19.2616 6.71796H15.6515C15.5624 6.71796 15.4968 6.78425 15.4968 6.8717C15.4968 6.94594 15.5482 7.0055 15.6157 7.01993L15.6653 7.02543H19.2616C19.3577 7.02543 19.4453 7.08054 19.4869 7.16719C19.5285 7.25383 19.5168 7.35667 19.4567 7.4317L18.3655 8.79442C18.3083 8.86955 18.325 8.96008 18.3862 9.00729L18.3883 9.00889C18.4423 9.05143 18.5216 9.05306 18.5789 9.0146L18.6078 8.98098L20.2351 6.95174L20.2381 6.94488L20.2453 6.9161L20.25 6.87397V6.84873L20.2411 6.8162L20.2333 6.80056L20.2068 6.75836L18.5945 4.74773ZM7.41385 16.5476C7.46655 16.2453 7.72979 16.0095 8.05675 16.0095C8.42089 16.0095 8.71147 16.2985 8.71147 16.6633V19.7433L9.6729 18.9715C9.68063 18.9653 9.68872 18.9595 9.69713 18.9543L9.76189 18.9139C9.76726 18.9105 9.77276 18.9074 9.77837 18.9045C10.0493 18.7629 10.3996 18.8237 10.5991 19.0746C10.8212 19.3496 10.7843 19.7673 10.4938 19.9928L8.47171 21.6066C8.46415 21.6126 8.45625 21.6182 8.44804 21.6233L8.38329 21.6637C8.37658 21.6679 8.36967 21.6717 8.3626 21.6753L8.31403 21.6995C8.29933 21.7068 8.28394 21.7127 8.26808 21.717L8.17904 21.7412C8.15765 21.7471 8.13558 21.75 8.11341 21.75H8.04056C8.03136 21.75 8.02216 21.7495 8.01302 21.7485L7.94017 21.7404C7.92907 21.7392 7.91806 21.7372 7.90722 21.7345L7.84246 21.7184C7.82955 21.7151 7.81692 21.7109 7.80468 21.7057L7.74802 21.6814C7.72734 21.6726 7.70794 21.661 7.69036 21.647L5.61969 19.9944L5.56313 19.9459C5.55251 19.9368 5.54268 19.9269 5.53373 19.9161C5.33908 19.6831 5.32427 19.3341 5.52071 19.0849C5.7484 18.7922 6.15709 18.7609 6.43673 18.9765L6.43992 18.979L7.40204 19.7457V16.6633C7.40204 16.654 7.40255 16.6448 7.40357 16.6356L7.41167 16.5629C7.41224 16.5578 7.41296 16.5527 7.41385 16.5476ZM7.90753 16.6278L7.90204 16.6771V20.2646C7.90204 20.3606 7.84705 20.4481 7.76055 20.4898C7.67405 20.5315 7.57132 20.5199 7.49623 20.4601L6.13019 19.3715C6.05427 19.314 5.96256 19.331 5.91514 19.3922L5.91354 19.3942C5.87123 19.4477 5.86954 19.5259 5.90781 19.5827L5.94151 19.6116L7.97575 21.235L7.98285 21.238L8.01194 21.2453L8.05438 21.25H8.08001L8.11297 21.241L8.12882 21.2331L8.17117 21.2067L10.1867 19.5982C10.2503 19.5492 10.2616 19.4522 10.21 19.3885L10.208 19.3862C10.166 19.333 10.0839 19.313 10.0165 19.3444L9.9743 19.3707L8.61797 20.4595C8.54297 20.5197 8.44008 20.5316 8.35336 20.49C8.26664 20.4484 8.21147 20.3608 8.21147 20.2646V16.6633C8.21147 16.5758 8.14589 16.5095 8.05675 16.5095C7.98116 16.5095 7.92184 16.5614 7.90753 16.6278Z"
+  }));
+});
+/* harmony default export */ var loop_item_template_icon = (LoopItemTemplateIcon);
+;// CONCATENATED MODULE: ./packages/icons/src/components/message-icon.tsx
+function message_icon_extends() { message_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return message_icon_extends.apply(this, arguments); }
+
+
+const MessageIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props, ref) => {
+  return /*#__PURE__*/external_React_namespaceObject.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.SvgIcon, message_icon_extends({
+    viewBox: "0 0 24 24"
+  }, props, {
+    ref: ref
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M7 5C6.40326 5 5.83097 5.23705 5.40901 5.65901C4.98705 6.08097 4.75 6.65326 4.75 7.25V18.4393L7.46967 15.7197C7.61032 15.579 7.80109 15.5 8 15.5H17C17.5967 15.5 18.169 15.2629 18.591 14.841C19.0129 14.419 19.25 13.8467 19.25 13.25V7.25C19.25 6.65326 19.0129 6.08097 18.591 5.65901C18.169 5.23705 17.5967 5 17 5H7ZM4.34835 4.59835C5.05161 3.89509 6.00544 3.5 7 3.5H17C17.9946 3.5 18.9484 3.89509 19.6516 4.59835C20.3549 5.30161 20.75 6.25544 20.75 7.25V13.25C20.75 14.2446 20.3549 15.1984 19.6516 15.9017C18.9484 16.6049 17.9946 17 17 17H8.31066L4.53033 20.7803C4.31583 20.9948 3.99324 21.059 3.71299 20.9429C3.43273 20.8268 3.25 20.5533 3.25 20.25V7.25C3.25 6.25544 3.64509 5.30161 4.34835 4.59835Z"
+  }));
+});
+/* harmony default export */ var message_icon = (MessageIcon);
 ;// CONCATENATED MODULE: ./packages/icons/src/components/mobile-landscape-icon.tsx
 function mobile_landscape_icon_extends() { mobile_landscape_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return mobile_landscape_icon_extends.apply(this, arguments); }
 
@@ -299,6 +524,86 @@ const MobileIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props
   }));
 });
 /* harmony default export */ var mobile_icon = (MobileIcon);
+;// CONCATENATED MODULE: ./packages/icons/src/components/page-template-icon.tsx
+function page_template_icon_extends() { page_template_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return page_template_icon_extends.apply(this, arguments); }
+
+
+const PageTemplateIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props, ref) => {
+  return /*#__PURE__*/external_React_namespaceObject.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.SvgIcon, page_template_icon_extends({
+    viewBox: "0 0 24 24"
+  }, props, {
+    ref: ref
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M6 3.75C5.66848 3.75 5.35054 3.8817 5.11612 4.11612C4.8817 4.35054 4.75 4.66848 4.75 5V19C4.75 19.3315 4.8817 19.6495 5.11612 19.8839C5.35054 20.1183 5.66848 20.25 6 20.25H8C8.41421 20.25 8.75 20.5858 8.75 21C8.75 21.4142 8.41421 21.75 8 21.75H6C5.27065 21.75 4.57118 21.4603 4.05546 20.9445C3.53973 20.4288 3.25 19.7293 3.25 19V5C3.25 4.27065 3.53973 3.57118 4.05546 3.05546C4.57118 2.53973 5.27065 2.25 6 2.25H13C13.1989 2.25 13.3897 2.32902 13.5303 2.46967L18.5303 7.46967C18.671 7.61032 18.75 7.80109 18.75 8V12C18.75 12.4142 18.4142 12.75 18 12.75C17.5858 12.75 17.25 12.4142 17.25 12V8.75H14C13.5359 8.75 13.0908 8.56563 12.7626 8.23744C12.4344 7.90925 12.25 7.46413 12.25 7V3.75H6ZM13.75 4.81066L16.1893 7.25H14C13.9337 7.25 13.8701 7.22366 13.8232 7.17678C13.7763 7.12989 13.75 7.0663 13.75 7V4.81066ZM12 14.75C11.9176 14.75 11.8482 14.781 11.8046 14.8217C11.7628 14.8607 11.75 14.9021 11.75 14.9333V20.0667C11.75 20.0979 11.7628 20.1393 11.8046 20.1783C11.8482 20.219 11.9176 20.25 12 20.25H19C19.0824 20.25 19.1518 20.219 19.1954 20.1783C19.2372 20.1393 19.25 20.0979 19.25 20.0667V16.3333C19.25 16.3021 19.2372 16.2607 19.1954 16.2217C19.1518 16.181 19.0824 16.15 19 16.15H15.5C15.31 16.15 15.1271 16.0779 14.9883 15.9483L13.7044 14.75H12ZM10.7812 13.7251C11.1127 13.4156 11.5519 13.25 12 13.25H14C14.19 13.25 14.3729 13.3221 14.5117 13.4517L15.7956 14.65H19C19.4481 14.65 19.8873 14.8156 20.2188 15.1251C20.5521 15.4361 20.75 15.8695 20.75 16.3333V20.0667C20.75 20.5305 20.5521 20.9639 20.2188 21.2749C19.8873 21.5844 19.4481 21.75 19 21.75H12C11.5519 21.75 11.1127 21.5844 10.7812 21.2749C10.4479 20.9639 10.25 20.5305 10.25 20.0667V14.9333C10.25 14.4695 10.4479 14.0361 10.7812 13.7251Z"
+  }));
+});
+/* harmony default export */ var page_template_icon = (PageTemplateIcon);
+;// CONCATENATED MODULE: ./packages/icons/src/components/page-type-icon.tsx
+function page_type_icon_extends() { page_type_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return page_type_icon_extends.apply(this, arguments); }
+
+
+const PageTypeIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props, ref) => {
+  return /*#__PURE__*/external_React_namespaceObject.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.SvgIcon, page_type_icon_extends({
+    viewBox: "0 0 24 24"
+  }, props, {
+    ref: ref,
+    sx: {
+      stroke: 'currentColor',
+      ...props.sx
+    }
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M7 3.75C6.66848 3.75 6.35054 3.8817 6.11612 4.11612C5.8817 4.35054 5.75 4.66848 5.75 5V19C5.75 19.3315 5.8817 19.6495 6.11612 19.8839C6.35054 20.1183 6.66848 20.25 7 20.25H17C17.3315 20.25 17.6495 20.1183 17.8839 19.8839C18.1183 19.6495 18.25 19.3315 18.25 19V8.75H15C14.5359 8.75 14.0908 8.56563 13.7626 8.23744C13.4344 7.90925 13.25 7.46413 13.25 7V3.75H7ZM14.75 4.81066L17.1893 7.25H15C14.9337 7.25 14.8701 7.22366 14.8232 7.17678C14.7763 7.12989 14.75 7.0663 14.75 7V4.81066ZM5.05546 3.05546C5.57118 2.53973 6.27065 2.25 7 2.25H14C14.1989 2.25 14.3897 2.32902 14.5303 2.46967L19.5303 7.46967C19.671 7.61032 19.75 7.80109 19.75 8V19C19.75 19.7293 19.4603 20.4288 18.9445 20.9445C18.4288 21.4603 17.7293 21.75 17 21.75H7C6.27065 21.75 5.57118 21.4603 5.05546 20.9445C4.53973 20.4288 4.25 19.7293 4.25 19V5C4.25 4.27065 4.53973 3.57118 5.05546 3.05546Z"
+  }));
+});
+/* harmony default export */ var page_type_icon = (PageTypeIcon);
+;// CONCATENATED MODULE: ./packages/icons/src/components/popup-template-icon.tsx
+function popup_template_icon_extends() { popup_template_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return popup_template_icon_extends.apply(this, arguments); }
+
+
+const PopupTemplateIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props, ref) => {
+  return /*#__PURE__*/external_React_namespaceObject.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.SvgIcon, popup_template_icon_extends({
+    viewBox: "0 0 24 24"
+  }, props, {
+    ref: ref
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M19 19.25C19.1381 19.25 19.25 19.1381 19.25 19V4.75L4.75 4.75L4.75 19.25L19 19.25ZM19 20.75C19.9665 20.75 20.75 19.9665 20.75 19L20.75 5C20.75 4.0335 19.9665 3.25 19 3.25L5 3.25C4.0335 3.25 3.25 4.0335 3.25 5L3.25 19C3.25 19.9665 4.0335 20.75 5 20.75L19 20.75ZM4.75 19.25L4.75 4.75L4.75 19C4.75 19.1381 4.86193 19.25 5 19.25H4.75ZM4.75 4.75L19.25 4.75L19.25 5C19.25 4.86193 19.1381 4.75 19 4.75L5 4.75C4.86193 4.75 4.75 4.86193 4.75 5V4.75Z"
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M11.5911 7.46967C11.884 7.17678 12.3588 7.17678 12.6517 7.46967L16.6519 11.4698C16.9448 11.7627 16.9448 12.2376 16.6519 12.5305C16.359 12.8234 15.8841 12.8234 15.5912 12.5305L11.5911 8.53033C11.2982 8.23744 11.2982 7.76256 11.5911 7.46967Z"
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M16.6514 7.46967C16.9443 7.76256 16.9443 8.23744 16.6514 8.53033L12.6513 12.5305C12.3584 12.8234 11.8835 12.8234 11.5906 12.5305C11.2977 12.2376 11.2977 11.7627 11.5906 11.4698L15.5908 7.46967C15.8837 7.17678 16.3585 7.17678 16.6514 7.46967Z"
+  }));
+});
+/* harmony default export */ var popup_template_icon = (PopupTemplateIcon);
+;// CONCATENATED MODULE: ./packages/icons/src/components/post-type-icon.tsx
+function post_type_icon_extends() { post_type_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return post_type_icon_extends.apply(this, arguments); }
+
+
+const PostTypeIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props, ref) => {
+  return /*#__PURE__*/external_React_namespaceObject.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.SvgIcon, post_type_icon_extends({
+    viewBox: "0 0 24 24"
+  }, props, {
+    ref: ref,
+    sx: {
+      stroke: 'currentColor',
+      ...props.sx
+    }
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M7 3.75C6.30964 3.75 5.75 4.30964 5.75 5V19C5.75 19.6904 6.30964 20.25 7 20.25H17C17.6904 20.25 18.25 19.6904 18.25 19V5C18.25 4.30964 17.6904 3.75 17 3.75H7ZM4.25 5C4.25 3.48122 5.48122 2.25 7 2.25H17C18.5188 2.25 19.75 3.48122 19.75 5V19C19.75 20.5188 18.5188 21.75 17 21.75H7C5.48122 21.75 4.25 20.5188 4.25 19V5ZM8.25 7C8.25 6.58579 8.58579 6.25 9 6.25H15C15.4142 6.25 15.75 6.58579 15.75 7C15.75 7.41421 15.4142 7.75 15 7.75H9C8.58579 7.75 8.25 7.41421 8.25 7ZM8.25 11C8.25 10.5858 8.58579 10.25 9 10.25H15C15.4142 10.25 15.75 10.5858 15.75 11C15.75 11.4142 15.4142 11.75 15 11.75H9C8.58579 11.75 8.25 11.4142 8.25 11ZM8.25 15C8.25 14.5858 8.58579 14.25 9 14.25H13C13.4142 14.25 13.75 14.5858 13.75 15C13.75 15.4142 13.4142 15.75 13 15.75H9C8.58579 15.75 8.25 15.4142 8.25 15Z"
+  }));
+});
+/* harmony default export */ var post_type_icon = (PostTypeIcon);
 ;// CONCATENATED MODULE: ./packages/icons/src/components/plus-icon.tsx
 function plus_icon_extends() { plus_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return plus_icon_extends.apply(this, arguments); }
 
@@ -315,6 +620,44 @@ const PlusIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props, 
   }));
 });
 /* harmony default export */ var plus_icon = (PlusIcon);
+;// CONCATENATED MODULE: ./packages/icons/src/components/search-results-template-icon.tsx
+function search_results_template_icon_extends() { search_results_template_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return search_results_template_icon_extends.apply(this, arguments); }
+
+
+const SearchResultsTemplateIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props, ref) => {
+  return /*#__PURE__*/external_React_namespaceObject.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.SvgIcon, search_results_template_icon_extends({
+    viewBox: "0 0 24 24"
+  }, props, {
+    ref: ref
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M7 3.75C6.66848 3.75 6.35054 3.8817 6.11612 4.11612C5.8817 4.35054 5.75 4.66848 5.75 5V19C5.75 19.3315 5.8817 19.6495 6.11612 19.8839C6.35054 20.1183 6.66848 20.25 7 20.25H12C12.4142 20.25 12.75 20.5858 12.75 21C12.75 21.4142 12.4142 21.75 12 21.75H7C6.27065 21.75 5.57118 21.4603 5.05546 20.9445C4.53973 20.4288 4.25 19.7293 4.25 19V5C4.25 4.27065 4.53973 3.57118 5.05546 3.05546C5.57118 2.53973 6.27065 2.25 7 2.25H14C14.1989 2.25 14.3897 2.32902 14.5303 2.46967L19.5303 7.46967C19.671 7.61032 19.75 7.80109 19.75 8V12.5C19.75 12.9142 19.4142 13.25 19 13.25C18.5858 13.25 18.25 12.9142 18.25 12.5V8.75H15C14.5359 8.75 14.0908 8.56563 13.7626 8.23744C13.4344 7.90925 13.25 7.46413 13.25 7V3.75H7ZM14.75 4.81066L17.1893 7.25H15C14.9337 7.25 14.8701 7.22366 14.8232 7.17678C14.7763 7.12989 14.75 7.0663 14.75 7V4.81066ZM16.5 15.75C15.5335 15.75 14.75 16.5335 14.75 17.5C14.75 18.4665 15.5335 19.25 16.5 19.25C17.4665 19.25 18.25 18.4665 18.25 17.5C18.25 16.5335 17.4665 15.75 16.5 15.75ZM13.25 17.5C13.25 15.7051 14.7051 14.25 16.5 14.25C18.2949 14.25 19.75 15.7051 19.75 17.5C19.75 18.1257 19.5732 18.7102 19.2667 19.2061L21.5303 21.4697C21.8232 21.7626 21.8232 22.2374 21.5303 22.5303C21.2374 22.8232 20.7626 22.8232 20.4697 22.5303L18.2061 20.2667C17.7102 20.5732 17.1257 20.75 16.5 20.75C14.7051 20.75 13.25 19.2949 13.25 17.5Z"
+  }));
+});
+/* harmony default export */ var search_results_template_icon = (SearchResultsTemplateIcon);
+;// CONCATENATED MODULE: ./packages/icons/src/components/refresh-icon.tsx
+function refresh_icon_extends() { refresh_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return refresh_icon_extends.apply(this, arguments); }
+
+
+const RefreshIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props, ref) => {
+  return /*#__PURE__*/external_React_namespaceObject.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.SvgIcon, refresh_icon_extends({
+    viewBox: "0 0 24 24"
+  }, props, {
+    ref: ref
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M7.55012 4.45178C9.23098 3.48072 11.1845 3.08925 13.1097 3.33767C15.035 3.58609 16.8251 4.46061 18.2045 5.82653C19.5838 7.19245 20.4757 8.97399 20.743 10.8967C20.8 11.307 20.5136 11.6858 20.1033 11.7428C19.6931 11.7998 19.3142 11.5135 19.2572 11.1032C19.0353 9.50635 18.2945 8.02677 17.149 6.89236C16.0035 5.75795 14.5167 5.03165 12.9178 4.82534C11.3189 4.61902 9.69644 4.94414 8.30047 5.75061C7.24361 6.36117 6.36093 7.22198 5.72541 8.24995H8.00009C8.41431 8.24995 8.75009 8.58574 8.75009 8.99995C8.75009 9.41417 8.41431 9.74995 8.00009 9.74995H4.51686C4.5055 9.75021 4.49412 9.75021 4.48272 9.74995H4.00009C3.58588 9.74995 3.25009 9.41417 3.25009 8.99995V4.99995C3.25009 4.58574 3.58588 4.24995 4.00009 4.24995C4.41431 4.24995 4.75009 4.58574 4.75009 4.99995V7.00691C5.48358 5.96916 6.43655 5.0951 7.55012 4.45178Z",
+    fill: "black"
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M3.89686 12.2571C4.30713 12.2001 4.68594 12.4864 4.74295 12.8967C4.96487 14.4936 5.70565 15.9731 6.85119 17.1075C7.99673 18.242 9.48347 18.9683 11.0824 19.1746C12.6813 19.3809 14.3037 19.0558 15.6997 18.2493C16.7566 17.6387 17.6393 16.7779 18.2748 15.75H16.0001C15.5859 15.75 15.2501 15.4142 15.2501 15C15.2501 14.5857 15.5859 14.25 16.0001 14.25H19.4833C19.4947 14.2497 19.5061 14.2497 19.5175 14.25H20.0001C20.4143 14.25 20.7501 14.5857 20.7501 15V19C20.7501 19.4142 20.4143 19.75 20.0001 19.75C19.5859 19.75 19.2501 19.4142 19.2501 19V16.993C18.5166 18.0307 17.5636 18.9048 16.4501 19.5481C14.7692 20.5192 12.8157 20.9107 10.8904 20.6622C8.9652 20.4138 7.17504 19.5393 5.79572 18.1734C4.4164 16.8074 3.52443 15.0259 3.25723 13.1032C3.20022 12.6929 3.48658 12.3141 3.89686 12.2571Z",
+    fill: "black"
+  }));
+});
+/* harmony default export */ var refresh_icon = (RefreshIcon);
 ;// CONCATENATED MODULE: ./packages/icons/src/components/search-icon.tsx
 function search_icon_extends() { search_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return search_icon_extends.apply(this, arguments); }
 
@@ -331,6 +674,22 @@ const SearchIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props
   }));
 });
 /* harmony default export */ var search_icon = (SearchIcon);
+;// CONCATENATED MODULE: ./packages/icons/src/components/section-template-icon.tsx
+function section_template_icon_extends() { section_template_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return section_template_icon_extends.apply(this, arguments); }
+
+
+const SectionTemplateIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props, ref) => {
+  return /*#__PURE__*/external_React_namespaceObject.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.SvgIcon, section_template_icon_extends({
+    viewBox: "0 0 24 24"
+  }, props, {
+    ref: ref
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M3.75 5.25C3.6837 5.25 3.62011 5.27634 3.57322 5.32322C3.52634 5.37011 3.5 5.4337 3.5 5.5V6.5C3.5 6.91421 3.16421 7.25 2.75 7.25C2.33579 7.25 2 6.91421 2 6.5V5.5C2 5.03587 2.18438 4.59075 2.51256 4.26256C2.84075 3.93438 3.28587 3.75 3.75 3.75H4.75C5.16421 3.75 5.5 4.08579 5.5 4.5C5.5 4.91421 5.16421 5.25 4.75 5.25H3.75ZM8.5 4.5C8.5 4.08579 8.83579 3.75 9.25 3.75H12.25C12.6642 3.75 13 4.08579 13 4.5C13 4.91421 12.6642 5.25 12.25 5.25H9.25C8.83579 5.25 8.5 4.91421 8.5 4.5ZM16 4.5C16 4.08579 16.3358 3.75 16.75 3.75H17.75C18.2141 3.75 18.6592 3.93437 18.9874 4.26256C19.3156 4.59075 19.5 5.03587 19.5 5.5V6.5C19.5 6.91421 19.1642 7.25 18.75 7.25C18.3358 7.25 18 6.91421 18 6.5V5.5C18 5.43369 17.9737 5.37011 17.9268 5.32322C17.8799 5.27634 17.8163 5.25 17.75 5.25H16.75C16.3358 5.25 16 4.91421 16 4.5ZM2.75 9.75C3.16421 9.75 3.5 10.0858 3.5 10.5V13.5C3.5 13.9142 3.16421 14.25 2.75 14.25C2.33579 14.25 2 13.9142 2 13.5V10.5C2 10.0858 2.33579 9.75 2.75 9.75ZM12.75 13.25C12.6676 13.25 12.5982 13.281 12.5546 13.3217C12.5128 13.3607 12.5 13.4021 12.5 13.4333V18.5667C12.5 18.5979 12.5128 18.6393 12.5546 18.6783C12.5982 18.719 12.6676 18.75 12.75 18.75H19.75C19.8324 18.75 19.9018 18.719 19.9454 18.6783C19.9872 18.6393 20 18.5979 20 18.5667V14.8333C20 14.8021 19.9872 14.7607 19.9454 14.7217C19.9018 14.681 19.8324 14.65 19.75 14.65H16.25C16.06 14.65 15.8771 14.5779 15.7383 14.4483L14.4544 13.25H12.75ZM11.5312 12.2251C11.8627 11.9156 12.3019 11.75 12.75 11.75H14.75C14.94 11.75 15.1229 11.8221 15.2617 11.9517L16.5456 13.15H19.75C20.1981 13.15 20.6373 13.3156 20.9688 13.6251C21.3021 13.9361 21.5 14.3695 21.5 14.8333V18.5667C21.5 19.0305 21.3021 19.4639 20.9688 19.7749C20.6373 20.0844 20.1981 20.25 19.75 20.25H12.75C12.3019 20.25 11.8627 20.0844 11.5312 19.7749C11.1979 19.4639 11 19.0305 11 18.5667V13.4333C11 12.9695 11.1979 12.5361 11.5312 12.2251ZM2.75 16.75C3.16421 16.75 3.5 17.0858 3.5 17.5V18.5C3.5 18.5663 3.52634 18.6299 3.57322 18.6768C3.62011 18.7237 3.68369 18.75 3.75 18.75H4.75C5.16421 18.75 5.5 19.0858 5.5 19.5C5.5 19.9142 5.16421 20.25 4.75 20.25H3.75C3.28587 20.25 2.84075 20.0656 2.51256 19.7374C2.18437 19.4092 2 18.9641 2 18.5V17.5C2 17.0858 2.33579 16.75 2.75 16.75Z"
+  }));
+});
+/* harmony default export */ var section_template_icon = (SectionTemplateIcon);
 ;// CONCATENATED MODULE: ./packages/icons/src/components/settings-icon.tsx
 function settings_icon_extends() { settings_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return settings_icon_extends.apply(this, arguments); }
 
@@ -347,6 +706,50 @@ const SettingsIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((pro
   }));
 });
 /* harmony default export */ var settings_icon = (SettingsIcon);
+;// CONCATENATED MODULE: ./packages/icons/src/components/shrink-icon.tsx
+function shrink_icon_extends() { shrink_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return shrink_icon_extends.apply(this, arguments); }
+
+
+const ShrinkIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props, ref) => {
+  return /*#__PURE__*/external_React_namespaceObject.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.SvgIcon, shrink_icon_extends({
+    viewBox: "0 0 24 24"
+  }, props, {
+    ref: ref
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M6.46967 15.5303C6.17678 15.2374 6.17678 14.7626 6.46967 14.4697L8.93934 12L6.46967 9.53033C6.17678 9.23744 6.17678 8.76256 6.46967 8.46967C6.76256 8.17678 7.23744 8.17678 7.53033 8.46967L10.5303 11.4697C10.8232 11.7626 10.8232 12.2374 10.5303 12.5303L7.53033 15.5303C7.23744 15.8232 6.76256 15.8232 6.46967 15.5303Z"
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M17.5303 15.5303C17.2374 15.8232 16.7626 15.8232 16.4697 15.5303L13.4697 12.5303C13.1768 12.2374 13.1768 11.7626 13.4697 11.4697L16.4697 8.46967C16.7626 8.17678 17.2374 8.17678 17.5303 8.46967C17.8232 8.76256 17.8232 9.23744 17.5303 9.53033L15.0607 12L17.5303 14.4697C17.8232 14.7626 17.8232 15.2374 17.5303 15.5303Z"
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M10.75 12C10.75 12.4142 10.4142 12.75 10 12.75L1 12.75C0.585787 12.75 0.25 12.4142 0.25 12C0.25 11.5858 0.585787 11.25 1 11.25L10 11.25C10.4142 11.25 10.75 11.5858 10.75 12Z"
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M23.75 12C23.75 12.4142 23.4142 12.75 23 12.75H14C13.5858 12.75 13.25 12.4142 13.25 12C13.25 11.5858 13.5858 11.25 14 11.25H23C23.4142 11.25 23.75 11.5858 23.75 12Z"
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M17.0303 9.21967C17.3232 9.51256 17.3232 9.98744 17.0303 10.2803L14.5607 12.75L17.0303 15.2197C17.3232 15.5126 17.3232 15.9874 17.0303 16.2803C16.7374 16.5732 16.2626 16.5732 15.9697 16.2803L12.9697 13.2803C12.6768 12.9874 12.6768 12.5126 12.9697 12.2197L15.9697 9.21967C16.2626 8.92678 16.7374 8.92678 17.0303 9.21967Z"
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M5.96967 9.21967C6.26256 8.92678 6.73744 8.92678 7.03033 9.21967L10.0303 12.2197C10.3232 12.5126 10.3232 12.9874 10.0303 13.2803L7.03033 16.2803C6.73744 16.5732 6.26256 16.5732 5.96967 16.2803C5.67678 15.9874 5.67678 15.5126 5.96967 15.2197L8.43934 12.75L5.96967 10.2803C5.67678 9.98744 5.67678 9.51256 5.96967 9.21967Z"
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M12.75 12.75C12.75 12.3358 13.0858 12 13.5 12H22.25C22.6642 12 23 12.3358 23 12.75C23 13.1642 22.6642 13.5 22.25 13.5H13.5C13.0858 13.5 12.75 13.1642 12.75 12.75Z"
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M0 12.75C3.62117e-08 12.3358 0.335786 12 0.75 12L9.5 12C9.91421 12 10.25 12.3358 10.25 12.75C10.25 13.1642 9.91421 13.5 9.5 13.5L0.75 13.5C0.335786 13.5 -3.62117e-08 13.1642 0 12.75Z"
+  }));
+});
+/* harmony default export */ var shrink_icon = (ShrinkIcon);
 ;// CONCATENATED MODULE: ./packages/icons/src/components/structure-icon.tsx
 function structure_icon_extends() { structure_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return structure_icon_extends.apply(this, arguments); }
 
@@ -427,6 +830,22 @@ const ToggleRightIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((
   }));
 });
 /* harmony default export */ var toggle_right_icon = (ToggleRightIcon);
+;// CONCATENATED MODULE: ./packages/icons/src/components/upgrade-icon.tsx
+function upgrade_icon_extends() { upgrade_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return upgrade_icon_extends.apply(this, arguments); }
+
+
+const UpgradeIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props, ref) => {
+  return /*#__PURE__*/external_React_namespaceObject.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.SvgIcon, upgrade_icon_extends({
+    viewBox: "0 0 24 24"
+  }, props, {
+    ref: ref
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M12 5.25C12.2508 5.25 12.485 5.37533 12.6241 5.58397L16.1703 10.9033L20.5315 7.41435C20.7777 7.21743 21.1207 7.19544 21.39 7.35933C21.6592 7.52321 21.7973 7.83798 21.7355 8.14709L19.7355 18.1471C19.6654 18.4977 19.3576 18.75 19 18.75H5.00004C4.64253 18.75 4.33472 18.4977 4.26461 18.1471L2.2646 8.14709C2.20278 7.83798 2.34084 7.52321 2.61012 7.35933C2.8794 7.19544 3.22241 7.21743 3.46856 7.41435L7.82977 10.9033L11.376 5.58397C11.5151 5.37533 11.7493 5.25 12 5.25ZM12 7.35208L8.62408 12.416C8.50748 12.5909 8.32282 12.7089 8.1151 12.7411C7.90738 12.7734 7.69566 12.717 7.53152 12.5857L4.13926 9.87185L5.61489 17.25H18.3852L19.8608 9.87185L16.4686 12.5857C16.3044 12.717 16.0927 12.7734 15.885 12.7411C15.6773 12.7089 15.4926 12.5909 15.376 12.416L12 7.35208Z"
+  }));
+});
+/* harmony default export */ var upgrade_icon = (UpgradeIcon);
 ;// CONCATENATED MODULE: ./packages/icons/src/components/widescreen-icon.tsx
 function widescreen_icon_extends() { widescreen_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return widescreen_icon_extends.apply(this, arguments); }
 
@@ -459,7 +878,48 @@ const WordpressIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((pr
   }));
 });
 /* harmony default export */ var wordpress_icon = (WordpressIcon);
+;// CONCATENATED MODULE: ./packages/icons/src/components/x-icon.tsx
+function x_icon_extends() { x_icon_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return x_icon_extends.apply(this, arguments); }
+
+
+const XIcon = /*#__PURE__*/external_React_namespaceObject.forwardRef((props, ref) => {
+  return /*#__PURE__*/external_React_namespaceObject.createElement(external_UNSTABLE_elementorPackages_ui_namespaceObject.SvgIcon, x_icon_extends({
+    viewBox: "0 0 24 24"
+  }, props, {
+    ref: ref
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M18.5303 5.46967C18.8232 5.76256 18.8232 6.23744 18.5303 6.53033L6.53033 18.5303C6.23744 18.8232 5.76256 18.8232 5.46967 18.5303C5.17678 18.2374 5.17678 17.7626 5.46967 17.4697L17.4697 5.46967C17.7626 5.17678 18.2374 5.17678 18.5303 5.46967Z"
+  }), /*#__PURE__*/external_React_namespaceObject.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M5.46967 5.46967C5.76256 5.17678 6.23744 5.17678 6.53033 5.46967L18.5303 17.4697C18.8232 17.7626 18.8232 18.2374 18.5303 18.5303C18.2374 18.8232 17.7626 18.8232 17.4697 18.5303L5.46967 6.53033C5.17678 6.23744 5.17678 5.76256 5.46967 5.46967Z"
+  }));
+});
+/* harmony default export */ var x_icon = (XIcon);
 ;// CONCATENATED MODULE: ./packages/icons/src/index.ts
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

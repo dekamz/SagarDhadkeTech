@@ -35,7 +35,7 @@ class Util {
 	 * @return string home URL
 	 */
 	public static function origin_url() {
-		return apply_filters( 'ss_origin_url', home_url() );
+		return apply_filters( 'ss_origin_url', untrailingslashit( home_url() ) );
 	}
 
 	/**
@@ -43,7 +43,7 @@ class Util {
 	 * @return string home URL
 	 */
 	public static function wp_installation_url() {
-		return site_url();
+		return untrailingslashit( site_url() );
 	}
 
 	/**
@@ -167,6 +167,15 @@ class Util {
 		return $contents;
 	}
 
+    public static function is_valid_scheme( $scheme ) {
+        $valid_schemes = apply_filters( 'simply_static_valid_schemes', [
+           'http',
+           'https',
+        ]);
+
+        return in_array( $scheme, $valid_schemes );
+    }
+
 	/**
 	 * Given a URL extracted from a page, return an absolute URL
 	 *
@@ -220,6 +229,9 @@ class Util {
 
 		// if no path, check for an ending slash; if there isn't one, add one
 		if ( ! isset( $parsed_extracted_url['path'] ) ) {
+            if ( isset( $parsed_extracted_url['scheme'] ) && ! self::is_valid_scheme( $parsed_extracted_url['scheme'] ) ) {
+                return $extracted_url;
+            }
 			$clean_url     = self::remove_params_and_fragment( $extracted_url );
 			$fragment      = substr( $extracted_url, strlen( $clean_url ) );
 			$extracted_url = trailingslashit( $clean_url ) . $fragment;
@@ -298,6 +310,19 @@ class Util {
 	 */
 	public static function is_local_url( $url ) {
 		return ( stripos( self::strip_protocol_from_url( $url ), self::origin_host() ) === 0 );
+	}
+
+	/**
+	 * Check if WP-Cron is running.
+	 *
+	 * @return bool
+	 */
+	public static function is_cron(): bool {
+		if ( ! defined( 'DISABLE_WP_CRON' ) || DISABLE_WP_CRON !== true || defined( 'SS_CRON' ) ) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**

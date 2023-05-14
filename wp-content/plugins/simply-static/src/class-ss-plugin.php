@@ -15,7 +15,7 @@ class Plugin {
 	 * Plugin version
 	 * @var string
 	 */
-	const VERSION = '2.2.8';
+	const VERSION = '2.3.1';
 
 	/**
 	 * The slug of the plugin; used in actions, filters, i18n, table names, etc.
@@ -43,7 +43,7 @@ class Plugin {
 
 	/**
 	 * Archive creation process
-	 * @var Simply_Static\Archive_Creation_Job
+	 * @var \Simply_Static\Archive_Creation_Job
 	 */
 	protected $archive_creation_job = null;
 
@@ -211,7 +211,8 @@ class Plugin {
 				self::SLUG . '-generate-styles',
 				'ss_generate',
 				[
-					'is_network_admin' => is_network_admin() ? '1' : '0'
+					'is_network_admin' => is_network_admin() ? '1' : '0',
+					'is_cron'          => Util::is_cron() ? '1' : '0'
 				]
 			);
 		}
@@ -303,15 +304,8 @@ class Plugin {
 			Util::delete_debug_log();
 			Util::debug_log( "Received request to start generating a static archive" );
 
-			if ( ! defined( 'DISABLE_WP_CRON' ) || defined( 'SS_CRON' ) ) {
-				if ( ! wp_next_scheduled( 'simply_static_site_export_cron' ) ) {
-					wp_schedule_single_event( time(), 'simply_static_site_export_cron', [ 'blog_id' => $blog_id ] );
-				}
-			} else {
-				// Cron is unavaiable.
-				do_action( 'ss_before_static_export', $blog_id );
-				$this->archive_creation_job->start( $blog_id );
-			}
+			do_action( 'ss_before_static_export', $blog_id );
+			$this->archive_creation_job->start( $blog_id );
 		} elseif ( $action === 'cancel' ) {
 			Util::debug_log( "Received request to cancel static archive generation" );
 			$this->archive_creation_job->cancel();
@@ -424,6 +418,13 @@ class Plugin {
 		wp_send_json( array(
 			'html' => $content
 		) );
+	}
+
+	/**
+	 * @return Archive_Creation_Job|null
+	 */
+	public function get_archive_creation_job() {
+		return $this->archive_creation_job;
 	}
 
 	/**

@@ -58,7 +58,7 @@ class Fetch_Urls_Task extends Task {
 			Util::debug_log( "URL: " . $static_page->url );
 			$this->save_pages_status( count( $static_pages ) + 1, intval( $total_pages ) );
 
-			$excludable = $this->find_excludable( $static_page );
+			$excludable = apply_filters( 'ss_find_excludable', $this->find_excludable( $static_page ), $static_page );
 			if ( $excludable !== false ) {
 				$save_file   = $excludable['do_not_save'] !== '1';
 				$follow_urls = $excludable['do_not_follow'] !== '1';
@@ -107,7 +107,7 @@ class Fetch_Urls_Task extends Task {
 
 			$this->handle_200_response( $static_page, $save_file, $follow_urls );
 
-			do_action( 'ss_after_setup_static_page', $static_page );
+			do_action( 'ss_after_setup_static_page', $static_page, $pages_remaining );
 
 		}
 
@@ -184,7 +184,8 @@ class Fetch_Urls_Task extends Task {
 		$origin_url      = Util::origin_url();
 		$destination_url = $this->options->get_destination_url();
 		$current_url     = $static_page->url;
-		$redirect_url    = $static_page->redirect_url;
+		$redirect_url    = remove_query_arg( 'simply_static_page', $static_page->redirect_url );
+
 
 		Util::debug_log( "redirect_url: " . $redirect_url );
 
@@ -257,7 +258,7 @@ class Fetch_Urls_Task extends Task {
 	}
 
 	/**
-	 * Find executeable.
+	 * Find excludable.
 	 *
 	 * @param object $static_page current page.
 	 *

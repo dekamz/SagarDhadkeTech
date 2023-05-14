@@ -2360,6 +2360,12 @@
         var PremiumSVGDrawerHandler = ModuleHandler.extend({
 
             bindEvents: function () {
+
+                ScrollTrigger.config({
+                    limitCallbacks: true,
+                    ignoreMobileResize: true
+                });
+
                 this.run();
             },
 

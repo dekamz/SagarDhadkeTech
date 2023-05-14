@@ -1,5 +1,5 @@
 <div class="elementskit-testimonial-slider slick-slider arrow_inside elementskit-default-testimonial <?php echo !empty($settings['ekit_testimonial_show_dot']) ? 'slick-dotted' : '' ?>" <?php echo $this->get_render_attribute_string('wrapper'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already escaped by elementor ?>>
-	<div class="swiper-container">
+	<div <?php $this->print_render_attribute_string('swiper-container'); ?>>
         <div class="slick-list swiper-wrapper">
 		<?php
 			// start foreach loop

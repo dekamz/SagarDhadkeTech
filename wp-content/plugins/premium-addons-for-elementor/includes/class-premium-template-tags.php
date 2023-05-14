@@ -129,11 +129,27 @@ class Premium_Template_Tags {
 	 */
 	public function get_id_by_title( $title ) {
 
-		$template = get_page_by_title( $title, OBJECT, 'elementor_library' );
+		$args = array(
+			'post_type'      => 'elementor_library',
+			'post_status'    => 'publish',
+			'posts_per_page' => 1,
+			'title'          => $title,
+		);
 
-		$template_id = isset( $template->ID ) ? $template->ID : $title;
+		$query = new \WP_Query( $args );
 
-		return $template_id;
+		$post_id = '';
+
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				$post_id = get_the_ID();
+
+			}
+			wp_reset_postdata();
+		}
+
+		return $post_id;
 	}
 
 	/**
@@ -959,14 +975,14 @@ class Premium_Template_Tags {
 						</div>
 						<?php if ( in_array( $skin, array( 'modern', 'cards' ), true ) ) : ?>
 							<div class="premium-blog-effect-container <?php echo esc_attr( 'premium-blog-' . $post_effect . '-effect' ); ?>">
-								<a class="premium-blog-post-link" href="<?php the_permalink(); ?>" target="<?php echo esc_attr( $target ); ?>"></a>
+								<a class="premium-blog-post-link" href="<?php the_permalink(); ?>" target="<?php echo esc_attr( $target ); ?>"><span><?php esc_html( the_title() ); ?></span></a>
 								<?php if ( 'squares' === $settings['premium_blog_hover_color_effect'] ) { ?>
 									<div class="premium-blog-squares-square-container"></div>
 								<?php } ?>
 							</div>
 						<?php else : ?>
 							<div class="premium-blog-thumbnail-overlay">
-								<a class="elementor-icon" href="<?php the_permalink(); ?>" target="<?php echo esc_attr( $target ); ?>" aria-hidden="true"></a>
+								<a class="elementor-icon" href="<?php the_permalink(); ?>" target="<?php echo esc_attr( $target ); ?>" aria-hidden="true"><span><?php esc_html( the_title() ); ?></span></a>
 							</div>
 						<?php endif; ?>
 					</div>

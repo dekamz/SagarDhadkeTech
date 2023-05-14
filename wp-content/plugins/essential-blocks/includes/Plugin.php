@@ -24,7 +24,7 @@ use EssentialBlocks\Integrations\PluginInstaller;
 final class Plugin {
     use HasSingletone;
 
-    public $version = '4.0.4';
+    public $version = '4.0.8';
 
     public $admin;
     /**
@@ -80,7 +80,7 @@ final class Plugin {
             self::$blocks->register_blocks( $this->assets );
         } );
 
-        FontLoader::get_instance('essential-blocks');
+        FontLoader::get_instance( 'essential-blocks' );
 
         // Templates
         PageTemplates::get_instance();

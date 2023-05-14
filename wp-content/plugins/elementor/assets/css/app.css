@@ -1,4 +1,4 @@
-/*! elementor - v3.12.0 - 29-03-2023 */
+/*! elementor - v3.13.2 - 11-05-2023 */
 @import "//fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap";
 @import "//fonts.googleapis.com/css2?family=DM%20Sans&display=swap";
 @import "//fonts.googleapis.com/css2?family=Source%20Serif%20Pro&display=swap";
@@ -259,7 +259,7 @@ Auto-import is designed for CSS that not dependent on the loading order.
 :root {
   --app-background-color: #ffffff;
   --app-box-shadow-color: rgba(var(--box-shadow-color, rgba(0, 0, 0, 0.15)), 0.2);
-  --app-header-color: #1A1C1E;
+  --app-header-color: #1f2124;
   --app-logo-color: #ffffff;
   --app-logo-background-color: #0C0D0E;
   --app-title-color: #0C0D0E;
@@ -270,7 +270,7 @@ Auto-import is designed for CSS that not dependent on the loading order.
 }
 
 .eps-theme-dark {
-  --app-background-color: #1A1C1E;
+  --app-background-color: #1f2124;
   --app-box-shadow-color: rgba(var(--box-shadow-color, rgba(0, 0, 0, 0.15)), 0.2);
   --app-header-color: #D5D8DC;
   --app-logo-color: #0C0D0E;
@@ -324,10 +324,10 @@ Auto-import is designed for CSS that not dependent on the loading order.
   --text-xs-color: #515962;
   --text-xxs-color: #515962;
   --gray-900: #0C0D0E;
-  --gray-800: #1A1C1E;
-  --gray-750: #222325;
-  --gray-725: #2F3032;
-  --gray-700: #3A3F45;
+  --gray-800: #1f2124;
+  --gray-750: #2b2c31;
+  --gray-725: #333438;
+  --gray-700: #3f444b;
   --gray-600: #515962;
   --gray-500: #69727D;
   --gray-400: #818A96;
@@ -356,10 +356,10 @@ Auto-import is designed for CSS that not dependent on the loading order.
   --danger: #F84343;
   --danger-bg: #390A0A;
   --body-color: #BABFC5;
-  --body-bg: #1A1C1E;
+  --body-bg: #1f2124;
   --link-color: #0077CC;
   --link-hover-color: #2e3338;
-  --hr-color: #2F3032;
+  --hr-color: #333438;
   --box-shadow-color: rgba(0, 0, 0, 0.15);
   --display-1-color: #BABFC5;
   --display-2-color: #BABFC5;
@@ -378,10 +378,10 @@ Auto-import is designed for CSS that not dependent on the loading order.
   --text-xs-color: #BABFC5;
   --text-xxs-color: #BABFC5;
   --gray-900: #0C0D0E;
-  --gray-800: #1A1C1E;
-  --gray-750: #222325;
-  --gray-725: #2F3032;
-  --gray-700: #3A3F45;
+  --gray-800: #1f2124;
+  --gray-750: #2b2c31;
+  --gray-725: #333438;
+  --gray-700: #3f444b;
   --gray-600: #515962;
   --gray-500: #69727D;
   --gray-400: #818A96;
@@ -418,16 +418,6 @@ body {
   line-height: 1.5;
   color: var(--body-color);
   background-color: var(--body-bg);
-}
-
-::-moz-selection {
-  background-color: #F3BAFD;
-  color: #fff;
-}
-
-::selection {
-  background-color: #F3BAFD;
-  color: #fff;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -908,9 +898,9 @@ h6,
 }
 
 .eps-theme-dark {
-  --e-elementor-loader-color: #1A1C1E;
-  --e-elementor-loader-wrapper-color: #222325;
-  --e-elementor-loader-box-color: #3A3F45;
+  --e-elementor-loader-color: #1f2124;
+  --e-elementor-loader-wrapper-color: #2b2c31;
+  --e-elementor-loader-box-color: #3f444b;
 }
 
 .elementor-loading {
@@ -1105,7 +1095,7 @@ h6,
 }
 
 .e-app-export-kit-content {
-  --e-app-export-kit-content-title-color: #3A3F45;
+  --e-app-export-kit-content-title-color: #3f444b;
   --e-app-export-kit-content-description-color: #515962;
   --e-app-export-kit-content-sm-notice-color: #BABFC5;
 }
@@ -1145,7 +1135,7 @@ h6,
 }
 
 .eps-theme-dark .e-app-wizard-footer {
-  --e-app-wizard-footer-border-color: #2F3032;
+  --e-app-wizard-footer-border-color: #333438;
 }
 
 .e-app-export-templates-features__locked {
@@ -1176,13 +1166,13 @@ h6,
 }
 
 .eps-theme-dark {
-  --card-background-color-hover: #222325;
-  --card-border: 1px solid #2F3032;
-  --card-header-footer-border: 1px solid #2F3032;
-  --card-header-footer-active-border: 1px solid #1A1C1E;
+  --card-background-color-hover: #2b2c31;
+  --card-border: 1px solid #333438;
+  --card-header-footer-border: 1px solid #333438;
+  --card-header-footer-active-border: 1px solid #1f2124;
   --card-headline-color: #D5D8DC;
-  --card-figure-background-color: #3A3F45;
-  --card-image-overlay-background-color: rgba(58, 63, 69, 0.5);
+  --card-figure-background-color: #3f444b;
+  --card-image-overlay-background-color: rgba(63, 68, 75, 0.5);
 }
 
 .eps-card {
@@ -1260,7 +1250,7 @@ h6,
 
 :root {
   --menu-item-color: #515962;
-  --menu-item-color-hover: #3A3F45;
+  --menu-item-color-hover: #3f444b;
   --menu-item-color-active: #0C0D0E;
   --menu-item-background-color-hover: #F9FAFA;
   --menu-item-background-color-active: #E6E8EA;
@@ -1271,8 +1261,8 @@ h6,
   --menu-item-color: #D5D8DC;
   --menu-item-color-hover: #BABFC5;
   --menu-item-color-active: #9DA5AE;
-  --menu-item-background-color-hover: #222325;
-  --menu-item-background-color-active: #2F3032;
+  --menu-item-background-color-hover: #2b2c31;
+  --menu-item-background-color-active: #333438;
   --menu-item-action-button-color: #818A96;
 }
 
@@ -1988,26 +1978,26 @@ h6,
 }
 
 .eps-theme-dark {
-  --select2-selection-background-color: #3A3F45;
+  --select2-selection-background-color: #3f444b;
   --select2-selection-color: #D5D8DC;
   --select2-selection-border-color: #818A96;
   --select2-selection-opened-focused-border-color: #9DA5AE;
   --select2-single-selection-rendered-color: #D5D8DC;
-  --select2-default-single-selection-background-color: #3A3F45;
+  --select2-default-single-selection-background-color: #3f444b;
   --select2-default-single-selection-border-color: #69727D;
-  --select2-default-multiple-selection-background-color: #3A3F45;
+  --select2-default-multiple-selection-background-color: #3f444b;
   --select2-default-multiple-selection-choice-background-color: #69727D;
   --select2-default-multiple-selection-choice-color: #D5D8DC;
   --select2-default-multiple-selection-choice-border-color: #69727D;
   --select2-default-multiple-selection-choice-remove-color: #BABFC5;
   --select2-default-multiple-selection-choice-remove-hover-color: #D5D8DC;
-  --select2-default-results-selected-option-background-color: #3A3F45;
+  --select2-default-results-selected-option-background-color: #3f444b;
   --select2-default-results-selected-option-color: #D5D8DC;
   --select2-default-results-highlighted-option-background-color: #69727D;
   --select2-default-results-highlighted-option-color: #D5D8DC;
   --select2-results-selected-option-background-color: #69727D;
   --select2-results-selected-option-color: #D5D8DC;
-  --select2-dropdown-background-color: #3A3F45;
+  --select2-dropdown-background-color: #3f444b;
   --select2-dropdown-border-color: #818A96;
 }
 
@@ -2132,13 +2122,13 @@ h6,
 }
 
 .eps-theme-dark .eps-list {
-  --eps-list-item-separated-border-color: #3A3F45;
+  --eps-list-item-separated-border-color: #3f444b;
 }
 
 :root {
   --popover-background-color: #ffffff;
   --popover-item-color: #515962;
-  --popover-item-hover-color: #3A3F45;
+  --popover-item-hover-color: #3f444b;
   --popover-item-danger-hover-color: #DC2626;
   --popover-item-background-color: #ffffff;
   --popover-box-shadow-color: rgba(0, 0, 0, 0.15);
@@ -2147,14 +2137,14 @@ h6,
 }
 
 .eps-theme-dark {
-  --popover-background-color: #1A1C1E;
+  --popover-background-color: #1f2124;
   --popover-item-color: #ffffff;
   --popover-item-hover-color: #D5D8DC;
   --popover-item-danger-hover-color: #F84343;
-  --popover-item-background-color: #1A1C1E;
+  --popover-item-background-color: #1f2124;
   --popover-box-shadow-color: rgba(0, 0, 0, 0.15);
   --popover-box-shadow-size: 0px 1px 20px;
-  --popover-arrow-color: #1A1C1E;
+  --popover-arrow-color: #1f2124;
 }
 
 .eps-popover {
@@ -2228,8 +2218,8 @@ h6,
 }
 
 .eps-box {
-  --eps-box-color: #1A1C1E;
-  --eps-box-input-color: #1A1C1E;
+  --eps-box-color: #1f2124;
+  --eps-box-input-color: #1f2124;
   padding: 0;
   border-radius: 0.1875rem;
   color: var(--eps-box-color);
@@ -2358,8 +2348,8 @@ h6,
 }
 
 .eps-theme-dark {
-  --e-app-drag-drop-background-color: #222325;
-  --e-app-drag-drop-outline-color: #2F3032;
+  --e-app-drag-drop-background-color: #2b2c31;
+  --e-app-drag-drop-outline-color: #333438;
 }
 
 .e-app-drag-drop {
@@ -2508,7 +2498,7 @@ h6,
   --eps-text-field-color: #BABFC5;
   --eps-text-field-background-color: transparent;
   --eps-text-field-placeholder-color: #9DA5AE;
-  --eps-text-field-outlined-border-color: #3A3F45;
+  --eps-text-field-outlined-border-color: #3f444b;
   --eps-text-field-outlined-focus-border-color: #9DA5AE;
 }
 .eps-theme-dark--outlined {
@@ -2532,7 +2522,7 @@ h6,
 }
 
 .e-app-export-kit-content {
-  --e-app-export-kit-content-title-color: #3A3F45;
+  --e-app-export-kit-content-title-color: #3f444b;
   --e-app-export-kit-content-description-color: #515962;
   --e-app-export-kit-content-sm-notice-color: #BABFC5;
 }
@@ -2564,7 +2554,7 @@ h6,
 }
 
 .e-app-import-export-kit-data {
-  --e-app-import-export-kit-data-site-area-color: #3A3F45;
+  --e-app-import-export-kit-data-site-area-color: #3f444b;
   --e-app-import-export-kit-data-included-color: #69727D;
 }
 .e-app-import-export-kit-data__site-area, .e-app-import-export-kit-data__included {
@@ -2917,7 +2907,7 @@ h6,
 .eps-search-input {
   --eps-search-input-background-color: #D5D8DC;
   --eps-search-input-background-color-focus: #ffffff;
-  --eps-search-input-color: #3A3F45;
+  --eps-search-input-color: #3f444b;
   --eps-search-input-placeholder-color: #69727D;
 }
 
@@ -2990,7 +2980,7 @@ h6,
 
 :root {
   --eps-sort-select-select-background-color: #D5D8DC;
-  --eps-sort-select-select-color: #3A3F45;
+  --eps-sort-select-select-color: #3f444b;
   --eps-sort-select-button-background-color: #D5D8DC;
   --eps-sort-select-button-border: 1px solid var(--e-a-border-color);
 }
@@ -2999,7 +2989,7 @@ h6,
   --eps-sort-select-select-background-color: #515962;
   --eps-sort-select-select-color: #BABFC5;
   --eps-sort-select-button-background-color: #515962;
-  --eps-sort-select-button-border: 1px solid #1A1C1E;
+  --eps-sort-select-button-border: 1px solid #1f2124;
 }
 
 .eps-sort-select {
@@ -3298,7 +3288,7 @@ h6,
 }
 
 .eps-table {
-  --eps-table-body-color: #3A3F45;
+  --eps-table-body-color: #3f444b;
   border-spacing: 0 2px;
   table-layout: fixed;
   width: 100%;
@@ -3347,7 +3337,7 @@ h6,
 }
 
 .e-app-import-plugins-pro-banner {
-  --e-app-import-plugins-pro-banner-heading-color: #3A3F45;
+  --e-app-import-plugins-pro-banner-heading-color: #3f444b;
   --e-app-import-plugins-pro-banner-description-color: #515962;
   margin-bottom: 1.875rem;
 }
@@ -3412,7 +3402,7 @@ h6,
 }
 
 .e-app-import-export-message-banner {
-  --e-app-import-export-message-banner-heading-color: #3A3F45;
+  --e-app-import-export-message-banner-heading-color: #3f444b;
   --e-app-import-export-message-banner-description-color: #515962;
   margin-bottom: 1.875rem;
 }

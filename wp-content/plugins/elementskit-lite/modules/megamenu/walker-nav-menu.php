@@ -296,10 +296,9 @@ class ElementsKit_Menu_Walker extends \Walker_Nav_Menu {
 		if ( $depth === 0 ) {
 			if ( $this->is_megamenu( $args->menu ) == 1 ) {
 				$item_meta = $this->get_item_meta( $item->ID );
-
 				if ( $item_meta['menu_enable'] == 1 && class_exists( 'Elementor\Plugin' ) ) {
 					$builder_post_title = 'dynamic-content-megamenu-menuitem' . $item->ID;
-					$builder_post       = get_page_by_title( $builder_post_title, OBJECT, 'elementskit_content' );
+					$builder_post       = Utils::get_page_by_title( $builder_post_title, 'elementskit_content' );
 					$output            .= '<div class="elementskit-megamenu-panel">';
 					if ( $builder_post != null ) {
 						$elementor = \Elementor\Plugin::instance();

@@ -60,7 +60,7 @@ class Admin {
         add_menu_page(
             __( 'Essential Blocks', 'essential-blocks' ),
             __( 'Essential Blocks', 'essential-blocks' ),
-            'delete_user',
+            'activate_plugins',
             'essential-blocks',
             [$this, 'admin_page'],
             ESSENTIAL_BLOCKS_ADMIN_URL . 'assets/images/eb-icon-21x21.svg',
@@ -72,7 +72,7 @@ class Admin {
             '',
             'Welcome Page',
             'Welcome Page',
-            'delete_user',
+            'activate_plugins',
             'welcome-essential-blocks',
             [$this, 'welcome_page']
         );
@@ -271,8 +271,11 @@ class Admin {
      * AJAX Save function
      */
     public function save() {
-        if ( isset( $_POST['admin_nonce'] ) && ! wp_verify_nonce( $_POST['admin_nonce'], 'admin-nonce' ) ) {
+        if ( !isset( $_POST['admin_nonce'] ) || ! wp_verify_nonce( $_POST['admin_nonce'], 'admin-nonce' ) ) {
             wp_send_json_error( __( 'Nonce Error', 'essential-blocks' ) );
+        }
+        if (!current_user_can('activate_plugins')) {
+            wp_send_json_error( __( 'You are not authorized to save this!', 'essential-blocks' ) );
         }
 
         if ( isset( $_POST['type'] ) ) {
@@ -311,7 +314,7 @@ class Admin {
      * AJAX Get function
      */
     public function get() {
-        if ( isset( $_POST['admin_nonce'] ) && ! wp_verify_nonce( $_POST['admin_nonce'], 'admin-nonce' ) ) {
+        if ( !isset( $_POST['admin_nonce'] ) || ! wp_verify_nonce( $_POST['admin_nonce'], 'admin-nonce' ) ) {
             wp_send_json_error( __( 'Nonce Error', 'essential-blocks' ) );
         }
 
@@ -334,7 +337,7 @@ class Admin {
      * AJAX Get Templately Templates
      */
     public function templates() {
-        if ( isset( $_POST['admin_nonce'] ) && ! wp_verify_nonce( $_POST['admin_nonce'], 'admin-nonce' ) ) {
+        if ( !isset( $_POST['admin_nonce'] ) || ! wp_verify_nonce( $_POST['admin_nonce'], 'admin-nonce' ) ) {
             wp_send_json_error( __( 'Nonce Error', 'essential-blocks' ) );
         }
         $headers = [
@@ -369,7 +372,7 @@ class Admin {
      * AJAX Get Templately Templates
      */
     public function template_count() {
-        if ( isset( $_POST['admin_nonce'] ) && ! wp_verify_nonce( $_POST['admin_nonce'], 'admin-nonce' ) ) {
+        if ( !isset( $_POST['admin_nonce'] ) || ! wp_verify_nonce( $_POST['admin_nonce'], 'admin-nonce' ) ) {
             wp_send_json_error( __( 'Nonce Error', 'essential-blocks' ) );
         }
         $headers = [

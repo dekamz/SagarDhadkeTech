@@ -1610,7 +1610,7 @@ class ElementsKit_Widget_Client_Logo extends Widget_Base {
         $seperotor_enable = $settings['ekit_client_logo_separator'] == 'yes' ? 'log-separator' : '';
         ?>
         <div <?php echo $this->get_render_attribute_string( 'wrapper' ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Already escaped by elementor ?>>
-            <div class="swiper-container">
+            <div class="<?php echo esc_attr(\ElementsKit_Lite\Utils::swiper_class()); ?>">
                 <div class="slick-list swiper-wrapper">
                     <?php
 

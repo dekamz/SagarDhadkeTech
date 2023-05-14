@@ -1,4 +1,4 @@
-/*! elementor - v3.12.0 - 29-03-2023 */
+/*! elementor - v3.13.2 - 11-05-2023 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -437,10 +437,10 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ "../core/experiments/assets/js/admin/behaviors/experiments-dependency.js":
-/*!*******************************************************************************!*\
-  !*** ../core/experiments/assets/js/admin/behaviors/experiments-dependency.js ***!
-  \*******************************************************************************/
+/***/ "../core/experiments/assets/js/admin/behaviors/experiments-messages.js":
+/*!*****************************************************************************!*\
+  !*** ../core/experiments/assets/js/admin/behaviors/experiments-messages.js ***!
+  \*****************************************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -460,11 +460,11 @@ var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/run
 var STATE_ACTIVE = 'active';
 var STATE_INACTIVE = 'inactive';
 var STATE_DEFAULT = 'default';
-var ExperimentsDependency = /*#__PURE__*/function () {
-  function ExperimentsDependency(_ref) {
+var ExperimentsMessages = /*#__PURE__*/function () {
+  function ExperimentsMessages(_ref) {
     var selects = _ref.selects,
       submit = _ref.submit;
-    (0, _classCallCheck2.default)(this, ExperimentsDependency);
+    (0, _classCallCheck2.default)(this, ExperimentsMessages);
     (0, _defineProperty2.default)(this, "elements", {});
     this.elements = {
       /**
@@ -477,7 +477,7 @@ var ExperimentsDependency = /*#__PURE__*/function () {
       submit: submit
     };
   }
-  (0, _createClass2.default)(ExperimentsDependency, [{
+  (0, _createClass2.default)(ExperimentsMessages, [{
     key: "bindEvents",
     value: function bindEvents() {
       var _this = this;
@@ -499,7 +499,11 @@ var ExperimentsDependency = /*#__PURE__*/function () {
           }
           break;
         case STATE_INACTIVE:
-          this.deactivateDependantExperiments(experimentId);
+          if (this.shouldShowDeactivationDialog(experimentId)) {
+            this.showDeactivationDialog(experimentId);
+          } else {
+            this.deactivateDependantExperiments(experimentId);
+          }
           break;
         default:
           break;
@@ -533,7 +537,11 @@ var ExperimentsDependency = /*#__PURE__*/function () {
   }, {
     key: "getExperimentActualState",
     value: function getExperimentActualState(experimentId) {
-      var state = this.getExperimentSelect(experimentId).value;
+      var _this$getExperimentSe;
+      var state = (_this$getExperimentSe = this.getExperimentSelect(experimentId)) === null || _this$getExperimentSe === void 0 ? void 0 : _this$getExperimentSe.value;
+      if (!state) {
+        return this.getExperimentData(experimentId).state;
+      }
       if (state !== STATE_DEFAULT) {
         return state;
       }
@@ -567,8 +575,9 @@ var ExperimentsDependency = /*#__PURE__*/function () {
         var _ref3 = (0, _slicedToArray2.default)(_ref2, 2),
           id = _ref3[0],
           experimentData = _ref3[1];
-        var isDependant = experimentData.dependencies.includes(experimentId);
-        if (isDependant) {
+        var isDependant = experimentData.dependencies.includes(experimentId),
+          isActive = _this4.getExperimentActualState(id) === STATE_ACTIVE;
+        if (isDependant && isActive) {
           _this4.setExperimentState(id, STATE_INACTIVE);
         }
       });
@@ -580,48 +589,41 @@ var ExperimentsDependency = /*#__PURE__*/function () {
       return !this.areAllDependenciesActive(dependencies);
     }
   }, {
-    key: "showDependenciesDialog",
-    value: function showDependenciesDialog(experimentId) {
-      var _this5 = this;
-      var experiment = this.getExperimentData(experimentId),
-        dependencies = this.getExperimentDependencies(experimentId);
-      var dependenciesList = this.joinDepenednciesNames(dependencies.map(function (d) {
-        return d.title;
-      }), ', ', ' & ');
-
-      // Translators: %1$s: Experiment title, %2$s: Experiment dependencies list
-      var message = __('In order to use %1$s, first you need to activate %2$s.', 'elementor').replace('%1$s', "<strong>".concat(experiment.title, "</strong>")).replace('%2$s', "<strong>".concat(dependenciesList, "</strong>"));
-      elementorCommon.dialogsManager.createWidget('confirm', {
-        id: 'e-experiments-dependency-dialog',
-        headerMessage: __('First, activate another experiment.', 'elementor'),
-        message: message,
+    key: "shouldShowDeactivationDialog",
+    value: function shouldShowDeactivationDialog(experimentId) {
+      var getExperimentData = this.getExperimentData(experimentId),
+        isInitialStateActive = getExperimentData.state === STATE_ACTIVE || getExperimentData.state === STATE_DEFAULT && getExperimentData.default === STATE_ACTIVE,
+        hasMessage = !!this.getMessage(experimentId, 'on_deactivate');
+      return hasMessage && isInitialStateActive;
+    }
+  }, {
+    key: "showDialog",
+    value: function showDialog(dialog) {
+      return elementorCommon.dialogsManager.createWidget('confirm', {
+        id: 'e-experiments-messages-dialog',
+        headerMessage: dialog.headerMessage,
+        message: dialog.message,
         position: {
           my: 'center center',
           at: 'center center'
         },
         strings: {
-          confirm: __('Activate', 'elementor'),
-          cancel: __('Cancel', 'elementor')
+          confirm: dialog.strings.confirm,
+          cancel: dialog.strings.cancel
         },
         hide: {
           onOutsideClick: false,
           onBackgroundClick: false,
           onEscKeyPress: false
         },
-        onConfirm: function onConfirm() {
-          dependencies.forEach(function (dependency) {
-            _this5.setExperimentState(dependency.name, STATE_ACTIVE);
-          });
-          _this5.elements.submit.click();
-        },
-        onCancel: function onCancel() {
-          _this5.setExperimentState(experimentId, STATE_INACTIVE);
-        }
+        onConfirm: dialog.onConfirm,
+        onCancel: dialog.onCancel
       }).show();
     }
   }, {
-    key: "joinDepenednciesNames",
-    value: function joinDepenednciesNames(array, glue) {
+    key: "joinDependenciesNames",
+    value: function joinDependenciesNames(array) {
+      var glue = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
       var finalGlue = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
       if ('' === finalGlue) {
         return array.join(glue);
@@ -636,10 +638,67 @@ var ExperimentsDependency = /*#__PURE__*/function () {
         lastItem = clone.pop();
       return clone.join(glue) + finalGlue + lastItem;
     }
+  }, {
+    key: "showDependenciesDialog",
+    value: function showDependenciesDialog(experimentId) {
+      var _this5 = this;
+      var experiment = this.getExperimentData(experimentId),
+        experimentName = experiment.title,
+        dialogMessage = this.joinDependenciesNames(this.getExperimentDependencies(experimentId).map(function (d) {
+          return d.title;
+        }));
+
+      // Translators: %1$s: Experiment title, %2$s: Comma-separated dependencies list
+      var message = __('In order to use %1$s, first you need to activate %2$s.', 'elementor').replace('%1$s', "<strong>".concat(experimentName, "</strong>")).replace('%2$s', dialogMessage);
+      this.showDialog({
+        message: message,
+        headerMessage: __('First, activate another experiment.', 'elementor'),
+        strings: {
+          confirm: __('Activate', 'elementor'),
+          cancel: __('Cancel', 'elementor')
+        },
+        onConfirm: function onConfirm() {
+          _this5.getExperimentDependencies(experimentId).forEach(function (dependency) {
+            _this5.setExperimentState(dependency.name, STATE_ACTIVE);
+          });
+          _this5.elements.submit.click();
+        },
+        onCancel: function onCancel() {
+          _this5.setExperimentState(experimentId, STATE_INACTIVE);
+        }
+      });
+    }
+  }, {
+    key: "showDeactivationDialog",
+    value: function showDeactivationDialog(experimentId) {
+      var _this6 = this;
+      this.showDialog({
+        message: this.getMessage(experimentId, 'on_deactivate'),
+        headerMessage: __('Are you sure?', 'elementor'),
+        strings: {
+          confirm: __('Deactivate', 'elementor'),
+          cancel: __('Dismiss', 'elementor')
+        },
+        onConfirm: function onConfirm() {
+          _this6.setExperimentState(experimentId, STATE_INACTIVE);
+          _this6.deactivateDependantExperiments(experimentId);
+          _this6.elements.submit.click();
+        },
+        onCancel: function onCancel() {
+          _this6.setExperimentState(experimentId, STATE_ACTIVE);
+        }
+      });
+    }
+  }, {
+    key: "getMessage",
+    value: function getMessage(experimentId, messageId) {
+      var _this$getExperimentDa;
+      return (_this$getExperimentDa = this.getExperimentData(experimentId)) === null || _this$getExperimentDa === void 0 ? void 0 : _this$getExperimentDa.messages[messageId];
+    }
   }]);
-  return ExperimentsDependency;
+  return ExperimentsMessages;
 }();
-exports["default"] = ExperimentsDependency;
+exports["default"] = ExperimentsMessages;
 
 /***/ }),
 
@@ -663,7 +722,7 @@ var _get2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helper
 var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/inherits */ "../node_modules/@babel/runtime/helpers/inherits.js"));
 var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js"));
 var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "../node_modules/@babel/runtime/helpers/getPrototypeOf.js"));
-var _experimentsDependency = _interopRequireDefault(__webpack_require__(/*! ./behaviors/experiments-dependency */ "../core/experiments/assets/js/admin/behaviors/experiments-dependency.js"));
+var _experimentsMessages = _interopRequireDefault(__webpack_require__(/*! ./behaviors/experiments-messages */ "../core/experiments/assets/js/admin/behaviors/experiments-messages.js"));
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 var ExperimentsModule = /*#__PURE__*/function (_elementorModules$Vie) {
@@ -736,7 +795,7 @@ var ExperimentsModule = /*#__PURE__*/function (_elementorModules$Vie) {
     value: function onInit() {
       var _this3 = this;
       (0, _get2.default)((0, _getPrototypeOf2.default)(ExperimentsModule.prototype), "onInit", this).call(this);
-      this.experimentsDependency = new _experimentsDependency.default({
+      this.experimentsDependency = new _experimentsMessages.default({
         selects: this.elements.$experimentSelects.toArray(),
         submit: this.elements.$experimentForm.find('#submit').get(0)
       });

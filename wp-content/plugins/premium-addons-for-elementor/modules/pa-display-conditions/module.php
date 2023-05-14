@@ -339,7 +339,7 @@ class Module {
 		$element->add_control(
 			'pa_condition_info',
 			array(
-				'label'     => __( 'Helpful Information', 'premium-addons-pro' ),
+				'label'     => __( 'Helpful Information', 'premium-addons-for-elementor' ),
 				'separator' => 'before',
 				'type'      => Controls_Manager::HEADING,
 				'condition' => array(
@@ -349,8 +349,8 @@ class Module {
 		);
 
 		$docs = array(
-			'https://premiumaddons.com/docs/elementor-display-conditions-tutorial/' => __( 'Getting started »', 'premium-addons-pro' ),
-			'https://premiumaddons.com/docs/elementor-editor-not-loading-with-display-conditions/' => __( 'Fix editor not loading with Display Conditions enabled »', 'premium-addons-pro' ),
+			'https://premiumaddons.com/docs/elementor-display-conditions-tutorial/' => __( 'Getting started »', 'premium-addons-for-elementor' ),
+			'https://premiumaddons.com/docs/elementor-editor-not-loading-with-display-conditions/' => __( 'Fix editor not loading with Display Conditions enabled »', 'premium-addons-for-elementor' ),
 		);
 
 		$doc_index = 1;

@@ -1,4 +1,4 @@
-/*! elementor - v3.12.0 - 29-03-2023 */
+/*! elementor - v3.13.2 - 11-05-2023 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -47,104 +47,6 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 var Container = /*#__PURE__*/function (_ArgsObject) {
   (0, _inherits2.default)(Container, _ArgsObject);
   var _super = _createSuper(Container);
-  // TODO: Swap those backwards compatibility is required.
-
-  /**
-   * Container type.
-   *
-   * @type {string}
-   */
-
-  /**
-   * Container id.
-   *
-   * @type {string}
-   */
-
-  /**
-   * Document Object.
-   *
-   * @type  {{}}
-   */
-
-  /**
-   * Container model.
-   *
-   * @type {(Backbone.Model|BaseElementModel)}
-   */
-
-  /**
-   * Container settings.
-   *
-   * @type {Backbone.Model}
-   */
-
-  /**
-   * Container view.
-   *
-   * @type {ViewsOptions}
-   */
-
-  /**
-   * Container parent.
-   *
-   * @type {Container}
-   */
-
-  /**
-   * Container children(s).
-   *
-   * @type {ChildrenArray}
-   */
-
-  /**
-   * Container dynamic.
-   *
-   * @type {Backbone.Model}
-   */
-
-  /**
-   * Container globals.
-   *
-   * @type {Backbone.Model}
-   */
-
-  /**
-   * Container label.
-   *
-   * @type {string}
-   */
-
-  /**
-   * Container controls.
-   *
-   * @type {{}}
-   */
-
-  /**
-   * Repeaters containers
-   *
-   * @type {{}}
-   */
-
-  /**
-   * Container renderer (The one who render).
-   *
-   * @type {Container}
-   */
-
-  /**
-   * Container panel.
-   *
-   * @type {Panel}
-   */
-
-  /**
-   * Controls placeholders.
-   *
-   * @type {{}}
-   */
-
   /**
    * Function constructor().
    *
@@ -160,21 +62,101 @@ var Container = /*#__PURE__*/function (_ArgsObject) {
     _this = _super.call(this, args);
 
     // Validate args.
+    /**
+     * Container type.
+     *
+     * @type {string}
+     */
     (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "type", void 0);
+    /**
+     * Container id.
+     *
+     * @type {string}
+     */
     (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "id", void 0);
+    /**
+     * Document Object.
+     *
+     * @type  {{}}
+     */
     (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "document", void 0);
+    /**
+     * Container model.
+     *
+     * @type {(Backbone.Model|BaseElementModel)}
+     */
     (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "model", void 0);
+    /**
+     * Container settings.
+     *
+     * @type {Backbone.Model}
+     */
     (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "settings", void 0);
+    /**
+     * Container view.
+     *
+     * @type {ViewsOptions}
+     */
     (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "view", void 0);
+    /**
+     * Container parent.
+     *
+     * @type {Container}
+     */
     (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "parent", void 0);
+    /**
+     * Container children(s).
+     *
+     * @type {ChildrenArray}
+     */
     (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "children", new _childrenArray.default());
+    /**
+     * Container dynamic.
+     *
+     * @type {Backbone.Model}
+     */
     (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "dynamic", void 0);
+    /**
+     * Container globals.
+     *
+     * @type {Backbone.Model}
+     */
     (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "globals", void 0);
+    /**
+     * Container label.
+     *
+     * @type {string}
+     */
     (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "label", void 0);
+    /**
+     * Container controls.
+     *
+     * @type {{}}
+     */
     (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "controls", {});
+    /**
+     * Repeaters containers
+     *
+     * @type {{}}
+     */
     (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "repeaters", {});
+    /**
+     * Container renderer (The one who render).
+     *
+     * @type {Container}
+     */
     (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "renderer", void 0);
+    /**
+     * Container panel.
+     *
+     * @type {Panel}
+     */
     (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "panel", void 0);
+    /**
+     * Controls placeholders.
+     *
+     * @type {{}}
+     */
     (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "placeholders", {});
     _this.validateArgs(args);
     args = Object.entries(args);
@@ -544,6 +526,11 @@ var Container = /*#__PURE__*/function (_ArgsObject) {
     value: function isDesignable() {
       return elementor.userCan('design') && this.isEditable();
     }
+  }, {
+    key: "isGridContainer",
+    value: function isGridContainer() {
+      return 'grid' === this.parent.settings.get('container_type');
+    }
 
     /**
      * @return {boolean}
@@ -664,6 +651,7 @@ var Container = /*#__PURE__*/function (_ArgsObject) {
   return Container;
 }(_argsObject.default);
 exports["default"] = Container;
+// TODO: Swap those backwards compatibility is required.
 (0, _defineProperty2.default)(Container, "TYPE_REPEATER", 'repeater-control');
 (0, _defineProperty2.default)(Container, "TYPE_REPEATER_ITEM", 'repeater');
 
@@ -1375,6 +1363,16 @@ var _default = /*#__PURE__*/function (_elementorModules$Mod) {
         });
       }
       dialog.show();
+    }
+  }, {
+    key: "introductionViewed",
+    get: function get() {
+      var introductionKey = this.getSettings('introductionKey');
+      return elementor.config.user.introduction[introductionKey];
+    },
+    set: function set(isViewed) {
+      var introductionKey = this.getSettings('introductionKey');
+      elementor.config.user.introduction[introductionKey] = true;
     }
   }, {
     key: "setViewed",

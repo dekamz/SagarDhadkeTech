@@ -29,8 +29,8 @@
   display: flex;
   height: 100%; }
   .premium-banner-img-wrap .premium-banner-ib-img {
-    -ms-flex-negative: 0;
     -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
     flex-shrink: 0; }
 
 .premium-banner-ib-desc .premium-banner-read-more {
@@ -1269,6 +1269,10 @@
 .premium-blog-thumb-effect-wrapper {
   position: relative;
   overflow: hidden; }
+  .premium-blog-thumb-effect-wrapper span {
+    display: none; }
+  .premium-blog-thumb-effect-wrapper:hover .premium-blog-thumbnail-overlay {
+    opacity: 1; }
 
 .premium-blog-effect-container:not(.premium-blog-bordered-effect) .premium-blog-post-link {
   position: absolute;
@@ -1664,9 +1668,6 @@
   -webkit-transform: translate(100%, 0%);
   -ms-transform: translate(100%, 0%);
   transform: translate(100%, 0%); }
-
-.premium-blog-thumb-effect-wrapper:hover .premium-blog-thumbnail-overlay {
-  opacity: 1; }
 
 .premium-blog-clear-fix {
   clear: both; }
@@ -5834,12 +5835,13 @@ body.premium-scroll-disabled {
   margin: 0; }
 
 /**Fix: conflict with Elementor's sticky feature. */
+.elementor-sticky__spacer .premium-nav-widget-container {
+  visibility: unset !important;
+  opacity: unset !important; }
+
 .elementor-sticky__spacer .premium-mega-content-container {
   visibility: hidden !important;
   opacity: 0 !important; }
-
-.premium-addons-invisible {
-  visibility: hidden; }
 
 /************ Premium Team Members ************/
 /**********************************************/

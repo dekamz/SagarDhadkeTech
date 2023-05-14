@@ -1,4 +1,4 @@
-/*! elementor - v3.12.0 - 29-03-2023 */
+/*! elementor - v3.13.2 - 11-05-2023 */
 (self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["frontend-modules"],{
 
 /***/ "../assets/dev/js/editor/utils/is-instanceof.js":
@@ -98,6 +98,189 @@ class _default extends elementorModules.ViewModule {
   onSettingsChange() {}
 }
 exports["default"] = _default;
+
+/***/ }),
+
+/***/ "../assets/dev/js/frontend/handlers/base-carousel.js":
+/*!***********************************************************!*\
+  !*** ../assets/dev/js/frontend/handlers/base-carousel.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = void 0;
+var _baseSwiper = _interopRequireDefault(__webpack_require__(/*! ./base-swiper */ "../assets/dev/js/frontend/handlers/base-swiper.js"));
+class CarouselHandlerBase extends _baseSwiper.default {
+  getDefaultSettings() {
+    return {
+      selectors: {
+        carousel: `.${elementorFrontend.config.swiperClass}`,
+        slideContent: '.swiper-slide'
+      }
+    };
+  }
+  getDefaultElements() {
+    const selectors = this.getSettings('selectors'),
+      elements = {
+        $swiperContainer: this.$element.find(selectors.carousel)
+      };
+    elements.$slides = elements.$swiperContainer.find(selectors.slideContent);
+    return elements;
+  }
+  getSwiperSettings() {
+    const elementSettings = this.getElementSettings(),
+      slidesToShow = +elementSettings.slides_to_show || 3,
+      isSingleSlide = 1 === slidesToShow,
+      elementorBreakpoints = elementorFrontend.config.responsive.activeBreakpoints,
+      defaultSlidesToShowMap = {
+        mobile: 1,
+        tablet: isSingleSlide ? 1 : 2
+      };
+    const swiperOptions = {
+      slidesPerView: slidesToShow,
+      loop: 'yes' === elementSettings.infinite,
+      speed: elementSettings.speed,
+      handleElementorBreakpoints: true
+    };
+    swiperOptions.breakpoints = {};
+    let lastBreakpointSlidesToShowValue = slidesToShow;
+    Object.keys(elementorBreakpoints).reverse().forEach(breakpointName => {
+      // Tablet has a specific default `slides_to_show`.
+      const defaultSlidesToShow = defaultSlidesToShowMap[breakpointName] ? defaultSlidesToShowMap[breakpointName] : lastBreakpointSlidesToShowValue;
+      swiperOptions.breakpoints[elementorBreakpoints[breakpointName].value] = {
+        slidesPerView: +elementSettings['slides_to_show_' + breakpointName] || defaultSlidesToShow,
+        slidesPerGroup: +elementSettings['slides_to_scroll_' + breakpointName] || 1
+      };
+      if (elementSettings.image_spacing_custom) {
+        swiperOptions.breakpoints[elementorBreakpoints[breakpointName].value].spaceBetween = this.getSpaceBetween(breakpointName);
+      }
+      lastBreakpointSlidesToShowValue = +elementSettings['slides_to_show_' + breakpointName] || defaultSlidesToShow;
+    });
+    if ('yes' === elementSettings.autoplay) {
+      swiperOptions.autoplay = {
+        delay: elementSettings.autoplay_speed,
+        disableOnInteraction: 'yes' === elementSettings.pause_on_interaction
+      };
+    }
+    if (isSingleSlide) {
+      swiperOptions.effect = elementSettings.effect;
+      if ('fade' === elementSettings.effect) {
+        swiperOptions.fadeEffect = {
+          crossFade: true
+        };
+      }
+    } else {
+      swiperOptions.slidesPerGroup = +elementSettings.slides_to_scroll || 1;
+    }
+    if (elementSettings.image_spacing_custom) {
+      swiperOptions.spaceBetween = this.getSpaceBetween();
+    }
+    const showArrows = 'arrows' === elementSettings.navigation || 'both' === elementSettings.navigation,
+      showDots = 'dots' === elementSettings.navigation || 'both' === elementSettings.navigation;
+    if (showArrows) {
+      swiperOptions.navigation = {
+        prevEl: '.elementor-swiper-button-prev',
+        nextEl: '.elementor-swiper-button-next'
+      };
+    }
+    if (showDots) {
+      swiperOptions.pagination = {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      };
+    }
+    if ('yes' === elementSettings.lazyload) {
+      swiperOptions.lazy = {
+        loadPrevNext: true,
+        loadPrevNextAmount: 1
+      };
+    }
+    return swiperOptions;
+  }
+  async onInit() {
+    super.onInit(...arguments);
+    if (!this.elements.$swiperContainer.length || 2 > this.elements.$slides.length) {
+      return;
+    }
+    const Swiper = elementorFrontend.utils.swiper;
+    this.swiper = await new Swiper(this.elements.$swiperContainer, this.getSwiperSettings());
+
+    // Expose the swiper instance in the frontend
+    this.elements.$swiperContainer.data('swiper', this.swiper);
+    const elementSettings = this.getElementSettings();
+    if ('yes' === elementSettings.pause_on_hover) {
+      this.togglePauseOnHover(true);
+    }
+  }
+  updateSwiperOption(propertyName) {
+    const elementSettings = this.getElementSettings(),
+      newSettingValue = elementSettings[propertyName],
+      params = this.swiper.params;
+
+    // Handle special cases where the value to update is not the value that the Swiper library accepts.
+    switch (propertyName) {
+      case 'autoplay_speed':
+        params.autoplay.delay = newSettingValue;
+        break;
+      case 'speed':
+        params.speed = newSettingValue;
+        break;
+    }
+    this.swiper.update();
+  }
+  getChangeableProperties() {
+    return {
+      pause_on_hover: 'pauseOnHover',
+      autoplay_speed: 'delay',
+      speed: 'speed',
+      arrows_position: 'arrows_position' // Not a Swiper setting.
+    };
+  }
+
+  onElementChange(propertyName) {
+    if (0 === propertyName.indexOf('image_spacing_custom')) {
+      this.updateSpaceBetween(propertyName);
+      return;
+    }
+    const changeableProperties = this.getChangeableProperties();
+    if (changeableProperties[propertyName]) {
+      // 'pause_on_hover' is implemented by the handler with event listeners, not the Swiper library.
+      if ('pause_on_hover' === propertyName) {
+        const newSettingValue = this.getElementSettings('pause_on_hover');
+        this.togglePauseOnHover('yes' === newSettingValue);
+      } else {
+        this.updateSwiperOption(propertyName);
+      }
+    }
+  }
+  onEditSettingsChange(propertyName) {
+    if ('activeItemIndex' === propertyName) {
+      this.swiper.slideToLoop(this.getEditSettings('activeItemIndex') - 1);
+    }
+  }
+  getSpaceBetween() {
+    let device = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+    return elementorFrontend.utils.controls.getResponsiveControlValue(this.getElementSettings(), 'image_spacing_custom', 'size', device) || 0;
+  }
+  updateSpaceBetween(propertyName) {
+    const deviceMatch = propertyName.match('image_spacing_custom_(.*)'),
+      device = deviceMatch ? deviceMatch[1] : 'desktop',
+      newSpaceBetween = this.getSpaceBetween(device);
+    if ('desktop' !== device) {
+      this.swiper.params.breakpoints[elementorFrontend.config.responsive.activeBreakpoints[device].value].spaceBetween = newSpaceBetween;
+    }
+    this.swiper.params.spaceBetween = newSpaceBetween;
+    this.swiper.update();
+  }
+}
+exports["default"] = CarouselHandlerBase;
 
 /***/ }),
 
@@ -478,6 +661,7 @@ var _stretchElement = _interopRequireDefault(__webpack_require__(/*! ./tools/str
 var _stretchedElement = _interopRequireDefault(__webpack_require__(/*! ./handlers/stretched-element */ "../assets/dev/js/frontend/handlers/stretched-element.js"));
 var _base = _interopRequireDefault(__webpack_require__(/*! ./handlers/base */ "../assets/dev/js/frontend/handlers/base.js"));
 var _baseSwiper = _interopRequireDefault(__webpack_require__(/*! ./handlers/base-swiper */ "../assets/dev/js/frontend/handlers/base-swiper.js"));
+var _baseCarousel = _interopRequireDefault(__webpack_require__(/*! ./handlers/base-carousel */ "../assets/dev/js/frontend/handlers/base-carousel.js"));
 var _nestedTabs = _interopRequireDefault(__webpack_require__(/*! elementor/modules/nested-tabs/assets/js/frontend/handlers/nested-tabs */ "../modules/nested-tabs/assets/js/frontend/handlers/nested-tabs.js"));
 _modules.default.frontend = {
   Document: _document.default,
@@ -488,6 +672,7 @@ _modules.default.frontend = {
     Base: _base.default,
     StretchedElement: _stretchedElement.default,
     SwiperBase: _baseSwiper.default,
+    CarouselBase: _baseCarousel.default,
     NestedTabs: _nestedTabs.default
   }
 };
@@ -1355,13 +1540,16 @@ class NestedTabs extends _base.default {
       $activeTitle = this.elements.$tabTitles.filter(activeTitleFilter),
       $activeContent = this.elements.$tabContents.filter(activeContentFilter);
     $activeTitle.add($activeContent).removeClass(activeClass);
-    $activeTitle.attr({
+    $activeTitle.attr(this.getTitleDeactivationAttributes());
+    $activeContent[settings.hideTabFn](0, () => this.onHideTabContent($activeContent));
+    $activeContent.attr('hidden', 'hidden');
+  }
+  getTitleDeactivationAttributes() {
+    return {
       tabindex: '-1',
       'aria-selected': 'false',
       'aria-expanded': 'false'
-    });
-    $activeContent[settings.hideTabFn](0, () => this.onHideTabContent($activeContent));
-    $activeContent.attr('hidden', 'hidden');
+    };
   }
   onHideTabContent($activeContent) {}
   activateTab(tabIndex) {
@@ -1601,7 +1789,7 @@ class NestedTabs extends _base.default {
       currentTabTitleIndex = parseInt(currentTabTitle.getAttribute('data-tab'));
     if (isOnlyTabPressed && this.tabTitleHasActiveContentContainer(currentTabTitleIndex) && !!$firstFocusableItem) {
       event.preventDefault();
-      $firstFocusableItem.focus();
+      $firstFocusableItem.trigger('focus');
     }
   }
   itemInsideContentContainerHasFocus(position) {
@@ -3201,10 +3389,10 @@ var store = __webpack_require__(/*! ../internals/shared-store */ "../node_module
 (module.exports = function (key, value) {
   return store[key] || (store[key] = value !== undefined ? value : {});
 })('versions', []).push({
-  version: '3.28.0',
+  version: '3.30.1',
   mode: IS_PURE ? 'pure' : 'global',
   copyright: '© 2014-2023 Denis Pushkarev (zloirock.ru)',
-  license: 'https://github.com/zloirock/core-js/blob/v3.28.0/LICENSE',
+  license: 'https://github.com/zloirock/core-js/blob/v3.30.1/LICENSE',
   source: 'https://github.com/zloirock/core-js'
 });
 

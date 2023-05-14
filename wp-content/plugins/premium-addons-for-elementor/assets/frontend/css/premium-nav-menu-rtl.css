@@ -1505,11 +1505,12 @@ body.premium-scroll-disabled {
 }
 
 /**Fix: conflict with Elementor's sticky feature. */
+.elementor-sticky__spacer .premium-nav-widget-container {
+    visibility: unset !important;
+    opacity: unset !important;
+}
+
 .elementor-sticky__spacer .premium-mega-content-container {
     visibility: hidden !important;
     opacity: 0 !important;
-}
-
-.premium-addons-invisible {
-    visibility: hidden;
 }

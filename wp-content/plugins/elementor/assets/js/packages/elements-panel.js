@@ -28,16 +28,27 @@ var external_UNSTABLE_elementorPackages_v1Adapters_namespaceObject = __UNSTABLE_
 
 
 function syncPanelTitle() {
-  const title = (0,external_wp_i18n_namespaceObject.__)('Elements', 'elementor');
-  (0,external_UNSTABLE_elementorPackages_v1Adapters_namespaceObject.listenTo)((0,external_UNSTABLE_elementorPackages_v1Adapters_namespaceObject.routeOpenEvent)('panel/elements'), () => setPanelTitle(title));
+  const panelTitle = (0,external_wp_i18n_namespaceObject.__)('Elements', 'elementor');
+  const tabTitle = (0,external_wp_i18n_namespaceObject.__)('Widgets', 'elementor');
+  (0,external_UNSTABLE_elementorPackages_v1Adapters_namespaceObject.listenTo)((0,external_UNSTABLE_elementorPackages_v1Adapters_namespaceObject.routeOpenEvent)('panel/elements'), () => {
+    setPanelTitle(panelTitle);
+    setTabTitle(tabTitle);
+  });
   (0,external_UNSTABLE_elementorPackages_v1Adapters_namespaceObject.listenTo)((0,external_UNSTABLE_elementorPackages_v1Adapters_namespaceObject.v1ReadyEvent)(), () => {
     if ((0,external_UNSTABLE_elementorPackages_v1Adapters_namespaceObject.isRouteActive)('panel/elements')) {
-      setPanelTitle(title);
+      setPanelTitle(panelTitle);
+      setTabTitle(tabTitle);
     }
   });
 }
 function setPanelTitle(title) {
   window.elementor?.getPanelView?.()?.getHeaderView?.()?.setTitle?.(title);
+}
+function setTabTitle(title) {
+  const tab = document.querySelector('.elementor-component-tab[data-tab="categories"]');
+  if (tab) {
+    tab.textContent = title;
+  }
 }
 ;// CONCATENATED MODULE: ./packages/elements-panel/src/sync/index.ts
 

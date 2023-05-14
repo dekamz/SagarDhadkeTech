@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the ElementsKit Lite package.
 msgid ""
 msgstr ""
-"Project-Id-Version: ElementsKit Lite 2.8.5\n"
+"Project-Id-Version: ElementsKit Lite 2.8.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/elementskit-lite\n"
-"POT-Creation-Date: 2023-02-27 08:57:00+00:00\n"
+"POT-Creation-Date: 2023-05-02 10:50:47+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1543,7 +1543,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: modules/megamenu/walker-nav-menu.php:315
+#: modules/megamenu/walker-nav-menu.php:314
 msgid "No content found"
 msgstr ""
 

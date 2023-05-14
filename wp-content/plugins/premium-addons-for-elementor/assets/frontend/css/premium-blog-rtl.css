@@ -5,6 +5,14 @@
     overflow: hidden;
 }
 
+.premium-blog-thumb-effect-wrapper span {
+    display: none;
+}
+
+.premium-blog-thumb-effect-wrapper:hover .premium-blog-thumbnail-overlay {
+    opacity: 1;
+}
+
 .premium-blog-effect-container:not(.premium-blog-bordered-effect) .premium-blog-post-link {
     position: absolute;
     top: 0;
@@ -506,10 +514,6 @@
     -ms-transform: translate(-100%, 0%);
     -webkit-transform: translate(-100%, 0%);
     transform: translate(-100%, 0%);
-}
-
-.premium-blog-thumb-effect-wrapper:hover .premium-blog-thumbnail-overlay {
-    opacity: 1;
 }
 
 .premium-blog-clear-fix {

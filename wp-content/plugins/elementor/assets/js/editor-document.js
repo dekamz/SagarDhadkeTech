@@ -1,4 +1,4 @@
-/*! elementor - v3.12.0 - 29-03-2023 */
+/*! elementor - v3.13.2 - 11-05-2023 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -374,22 +374,20 @@ var CommandHistoryDebounceBase = /*#__PURE__*/function (_CommandHistoryBase) {
     }
   }], [{
     key: "getInstanceType",
-    value:
-    /**
-     * Function debounce().
-     *
-     * Will debounce every function you pass in, at the same debounce flow.
-     *
-     * @param {Function}
-     */
-
-    function getInstanceType() {
+    value: function getInstanceType() {
       return 'CommandHistoryDebounceBase';
     }
   }]);
   return CommandHistoryDebounceBase;
 }(_commandHistoryBase.default);
 exports["default"] = CommandHistoryDebounceBase;
+/**
+ * Function debounce().
+ *
+ * Will debounce every function you pass in, at the same debounce flow.
+ *
+ * @param {Function}
+ */
 (0, _defineProperty2.default)(CommandHistoryDebounceBase, "debounce", undefined);
 
 /***/ }),
@@ -979,12 +977,7 @@ var CommandInfra = /*#__PURE__*/function (_ArgsObject) {
     value: function onCatchApply(e) {} // eslint-disable-line no-unused-vars
   }], [{
     key: "getInstanceType",
-    value:
-    /**
-     * @type {Object}
-     */
-
-    function getInstanceType() {
+    value: function getInstanceType() {
       return 'CommandInfra';
     }
 
@@ -1025,6 +1018,9 @@ var CommandInfra = /*#__PURE__*/function (_ArgsObject) {
   return CommandInfra;
 }(_argsObject.default);
 exports["default"] = CommandInfra;
+/**
+ * @type {Object}
+ */
 (0, _defineProperty2.default)(CommandInfra, "registerConfig", null);
 
 /***/ }),
@@ -1107,7 +1103,6 @@ var _console = _interopRequireDefault(__webpack_require__(/*! elementor-api/util
  * @property {number} minor  The third number
  * @property {string} build  The fourth number
  */
-
 var softDeprecated = function softDeprecated(name, version, replacement) {
   if (elementorWebCliConfig.isDebug) {
     deprecatedMessage('soft', name, version, replacement);

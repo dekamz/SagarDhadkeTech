@@ -4,7 +4,11 @@
     var PremiumNavMenuHandler = function ($scope, $) {
 
         // we don't need to wait for content dom load since the script is loaded in the footer.
-        $scope.find('.premium-nav-widget-container').removeClass('premium-addons-invisible');
+        // $scope.find('.premium-nav-widget-container').removeClass('premium-addons-invisible');
+
+        if (!elementorFrontend.isEditMode() ) {
+            $scope.find('.premium-nav-widget-container').css({ visibility: 'visible', opacity: 1 });
+        }
 
         var settings = $scope.find('.premium-nav-widget-container').data('settings');
 

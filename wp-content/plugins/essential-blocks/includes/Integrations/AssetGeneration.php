@@ -25,7 +25,7 @@ class AssetGeneration extends ThirdPartyIntegration {
         /**
          * Nonce verification
          */
-        if ( isset( $_POST['admin_nonce'] ) && ! wp_verify_nonce( sanitize_key( $_POST['admin_nonce'] ), 'admin-nonce' ) ) {
+        if ( !isset( $_POST['admin_nonce'] ) || ! wp_verify_nonce( $_POST['admin_nonce'], 'admin-nonce' ) ) {
             die( esc_html__( 'Nonce did not match', 'essential-blocks' ) );
         }
 
@@ -36,21 +36,28 @@ class AssetGeneration extends ThirdPartyIntegration {
 
         $upload_dir = wp_upload_dir();
         $base_path  = $upload_dir['basedir'];
-        Self::remove_directory_files( $base_path . '/eb-style' );
+        self::remove_directory_files( $base_path . '/eb-style' );
         $response_data = [
             'messsage' => __( 'Successfully saved data!', 'essential-blocks' )
         ];
         wp_send_json_success( $response_data );
     }
 
-    public static function remove_directory_files( $dir ) {
-        foreach ( glob( $dir . '/*' ) as $file ) {
-            if ( is_dir( $file ) ) {
-                self::remove_directory_files( $file );
-            } else {
-                unlink( $file );
+    public static function remove_directory_files( $src ) {
+        if ( is_dir( $src ) ) {
+            $dir = opendir( $src );
+            while ( false !== ( $file = readdir( $dir ) ) ) {
+                if (  ( $file != '.' ) && ( $file != '..' ) ) {
+                    $full = $src . '/' . $file;
+                    if ( is_dir( $full ) ) {
+                        self::remove_directory_files( $full );
+                    } else {
+                        unlink( $full );
+                    }
+                }
             }
+            closedir( $dir );
+            rmdir( $src );
         }
-        rmdir( $dir );
     }
 }

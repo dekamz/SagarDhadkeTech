@@ -18,7 +18,7 @@ class GlobalStyles extends ThirdPartyIntegration
 
         self::$global_style_options_key = 'eb_global_styles';
         self::$block_defaults_options_key = 'eb_block_defaults';
-        
+
         $this->add_ajax([
             'global_styles_get' => [
                 'callback' => 'global_styles_get_callback',
@@ -65,6 +65,9 @@ class GlobalStyles extends ThirdPartyIntegration
     {
         if (!wp_verify_nonce($_POST['admin_nonce'], 'admin-nonce')) {
             die(__('Nonce did not match', 'essential-blocks'));
+        }
+        if (!current_user_can('edit_posts')) {
+            wp_send_json_error( __( 'You are not authorized!', 'essential-blocks' ) );
         }
 
         if (isset($_POST['eb_global_style_key']) && isset($_POST['eb_global_style_value'])) {
@@ -117,6 +120,9 @@ class GlobalStyles extends ThirdPartyIntegration
     {
         if (!wp_verify_nonce($_POST['admin_nonce'], 'admin-nonce')) {
             die(__('Nonce did not match', 'essential-blocks'));
+        }
+        if (!current_user_can('edit_posts')) {
+            wp_send_json_error( __( 'You are not authorized!', 'essential-blocks' ) );
         }
 
         if (isset($_POST['eb_block_defaults_value'])) {

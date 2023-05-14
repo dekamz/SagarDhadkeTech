@@ -48,8 +48,9 @@ class Astra_Posts_Structure_Markup {
 	 * @return string
 	 */
 	public function astra_archive_custom_title( $title ) {
-		$post_type = strval( get_post_type() );
-		$title     = ! empty( astra_get_option( 'ast-dynamic-archive-' . $post_type . '-custom-title', '' ) ) ? astra_get_option( 'ast-dynamic-archive-' . $post_type . '-custom-title' ) : $title;
+		$post_type    = strval( get_post_type() );
+		$custom_title = astra_get_option( 'ast-dynamic-archive-' . $post_type . '-custom-title', '' );
+		$title        = ! empty( $custom_title ) ? $custom_title : $title;
 		return $title;
 	}
 
@@ -78,6 +79,13 @@ class Astra_Posts_Structure_Markup {
 		// If banner title section is disabled then halt further processing.
 		if ( 'single' === $type ) {
 			if ( false === astra_get_option( 'ast-single-' . $post_type . '-title', ( class_exists( 'WooCommerce' ) && 'product' === $post_type ) ? false : true ) ) {
+				add_filter( 'astra_single_layout_one_banner_visibility', '__return_false' );
+				return;
+			}
+
+			$visibility = get_post_meta( absint( astra_get_post_id() ), 'ast-banner-title-visibility', true );
+			$visibility = apply_filters( 'astra_banner_title_area_visibility', $visibility );
+			if ( 'disabled' === $visibility ) {
 				add_filter( 'astra_single_layout_one_banner_visibility', '__return_false' );
 				return;
 			}
@@ -205,7 +213,7 @@ class Astra_Posts_Structure_Markup {
 			astra_single_header_top();
 		} else {
 			?>
-			 <section class="ast-archive-description">
+			<section class="ast-archive-description">
 			<?php
 			do_action( 'astra_before_archive_title' );
 		}
@@ -214,12 +222,12 @@ class Astra_Posts_Structure_Markup {
 
 		if ( $is_singular ) {
 			?>
-			 </header> <!-- .entry-header -->
+			</header> <!-- .entry-header -->
 			<?php
 			astra_single_header_bottom();
 		} else {
 			?>
-			 </section>
+			</section>
 			<?php
 			do_action( 'astra_after_archive_title' );
 		}

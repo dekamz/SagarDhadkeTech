@@ -4468,18 +4468,17 @@ class Premium_Nav_Menu extends Widget_Base {
 		}
 
 		$is_edit_mode = \Elementor\Plugin::$instance->editor->is_edit_mode();
-		// $hidden_cls   = $is_edit_mode ? '' : 'elementor-invisible';premium-addons-invisible
-		$hidden_cls   = $is_edit_mode ? '' : 'premium-addons-invisible';
+        $hidden_style   = $is_edit_mode ? '' : 'visibility:hidden; opacity:0;';
 
 		$this->add_render_attribute(
 			'wrapper',
 			array(
 				'data-settings' => json_encode( $menu_settings ),
 				'class'         => array(
-					$hidden_cls,
 					'premium-nav-widget-container',
 					'premium-nav-pointer-' . $settings['pointer'],
 				),
+                'style' => $hidden_style
 			)
 		);
 

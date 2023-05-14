@@ -86,6 +86,8 @@ class WPSEO_Upgrade {
 			'19.6-RC0'   => 'upgrade_196',
 			'19.11-RC0'  => 'upgrade_1911',
 			'20.2-RC0'   => 'upgrade_202',
+			'20.5-RC0'   => 'upgrade_205',
+			'20.7-RC0'   => 'upgrade_207',
 		];
 
 		array_walk( $routines, [ $this, 'run_upgrade_routine' ], $version );
@@ -984,6 +986,23 @@ class WPSEO_Upgrade {
 	}
 
 	/**
+	 * Performs the 20.5 upgrade routine.
+	 */
+	private function upgrade_205() {
+		if ( ! \wp_next_scheduled( Cleanup_Integration::START_HOOK ) ) {
+			\wp_schedule_single_event( ( time() + ( MINUTE_IN_SECONDS * 5 ) ), Cleanup_Integration::START_HOOK );
+		}
+	}
+
+	/**
+	 * Performs the 20.7 upgrade routine.
+	 * Removes the metadata related to the settings page introduction modal for all the users.
+	 */
+	private function upgrade_207() {
+		add_action( 'shutdown', [ $this, 'delete_user_introduction_meta' ] );
+	}
+
+	/**
 	 * Sets the home_url option for the 15.1 upgrade routine.
 	 *
 	 * @return void
@@ -1622,5 +1641,14 @@ class WPSEO_Upgrade {
 			array_merge( array_values( $object_ids ), array_values( $newest_indexable_ids ), [ $object_type ] )
 		);
 		// phpcs:enable
+	}
+
+	/**
+	 * Removes the settings' introduction modal data for users.
+	 *
+	 * @return void
+	 */
+	public function delete_user_introduction_meta() {
+		delete_metadata( 'user', 0, '_yoast_settings_introduction', '', true );
 	}
 }

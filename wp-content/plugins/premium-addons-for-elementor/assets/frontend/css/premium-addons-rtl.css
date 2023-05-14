@@ -1485,6 +1485,14 @@
     overflow: hidden;
 }
 
+.premium-blog-thumb-effect-wrapper span {
+    display: none;
+}
+
+.premium-blog-thumb-effect-wrapper:hover .premium-blog-thumbnail-overlay {
+    opacity: 1;
+}
+
 .premium-blog-effect-container:not(.premium-blog-bordered-effect) .premium-blog-post-link {
     position: absolute;
     top: 0;
@@ -1986,10 +1994,6 @@
     -ms-transform: translate(-100%, 0%);
     -webkit-transform: translate(-100%, 0%);
     transform: translate(-100%, 0%);
-}
-
-.premium-blog-thumb-effect-wrapper:hover .premium-blog-thumbnail-overlay {
-    opacity: 1;
 }
 
 .premium-blog-clear-fix {
@@ -7264,13 +7268,14 @@ body.premium-scroll-disabled {
 }
 
 /**Fix: conflict with Elementor's sticky feature. */
+.elementor-sticky__spacer .premium-nav-widget-container {
+    visibility: unset !important;
+    opacity: unset !important;
+}
+
 .elementor-sticky__spacer .premium-mega-content-container {
     visibility: hidden !important;
     opacity: 0 !important;
-}
-
-.premium-addons-invisible {
-    visibility: hidden;
 }
 /************ Premium Team Members ************/
 /*********************************************/

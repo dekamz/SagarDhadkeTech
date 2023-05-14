@@ -2411,6 +2411,14 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
 				'data-config'	=> wp_json_encode($config),
 			]
 		);
+
+		// Swiper container
+		$this->add_render_attribute(
+			'swiper-container',
+			[
+				'class'	=> \ElementsKit_Lite\Utils::swiper_class(),
+			]
+		);
 		
 		$dir_common = Handler::get_dir() .'common/';
 

@@ -485,6 +485,10 @@ class Helper_Functions {
 
 		$vimeo_data = wp_remote_get( 'http://www.vimeo.com/api/v2/video/' . intval( $video_id ) . '.php' );
 
+		if ( is_wp_error( $vimeo_data ) ) {
+			return false;
+		}
+
 		if ( isset( $vimeo_data['response']['code'] ) ) {
 
 			if ( 200 === $vimeo_data['response']['code'] ) {
