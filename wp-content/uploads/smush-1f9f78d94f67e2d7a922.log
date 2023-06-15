@@ -1,0 +1,486 @@
+[2023-06-15 10:46:16 : INFO] - Re_Smush_It_Task server status: Online 
+[2023-06-15 10:46:19 : INFO] - 
+ 
+[2023-06-15 10:46:19 : INFO] - Header for logs at time:  Thu, 15 Jun 2023 10:46:19 +0000 on http://localhost/SagarDhadkeTech 
+[2023-06-15 10:46:19 : INFO] - WP: 6.2.2 
+[2023-06-15 10:46:19 : INFO] - PHP: 8.2.0 (apache2handler, Windows NT DESKTOP-6I64348 10.0 build 19045 (Windows 10) AMD64) 
+[2023-06-15 10:46:19 : INFO] - MySQL: 10.4.27 
+[2023-06-15 10:46:19 : INFO] - WPLANG: en_US 
+[2023-06-15 10:46:19 : INFO] - Server: Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/8.2.0 
+[2023-06-15 10:46:19 : INFO] - Outbound connections: N 
+[2023-06-15 10:46:19 : INFO] - Disabled Functions:  
+[2023-06-15 10:46:19 : INFO] - max_execution_time: 120 
+[2023-06-15 10:46:19 : INFO] - memory_limit: 512M (used: 77.5M | 80M) 
+[2023-06-15 10:46:19 : INFO] - multisite: N 
+[2023-06-15 10:46:19 : INFO] - openssl: OpenSSL 3.0.7 1 Nov 2022 
+[2023-06-15 10:46:25 : INFO] - A total of 62 tasks of type smush found and will be processed in this iteration 
+[2023-06-15 10:46:25 : DEBUG] - Lock option (updraft_lock_smush, wp_options) was created in the database 
+[2023-06-15 10:46:25 : INFO] - Lock (updraft_lock_smush, wp_options) acquired after initialising the database 
+[2023-06-15 10:46:25 : INFO] - Processing task with ID : 1, and type 'smush' 
+[2023-06-15 10:46:25 : INFO] - Re_Smush_It_Task - Attachment ID : 12, Started on : June 15, 2023 10:46:19 
+[2023-06-15 10:46:25 : INFO] - File: LogoMakr-0cMuVI.png, Compression quality: 100 
+[2023-06-15 10:46:26 : INFO] - Backing up the original image - 2023/01/LogoMakr-0cMuVI-updraft-pre-smush-original.png 
+[2023-06-15 10:46:26 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:46:26 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/LogoMakr-0cMuVI.png.The file was compressed from 4.89 KB to 2.61 KB saving 46.71 percent using WP-Optimize 
+[2023-06-15 10:46:26 : INFO] - Completed processing task with ID : 1, and type 'smush' 
+[2023-06-15 10:46:26 : INFO] - Processing task with ID : 2, and type 'smush' 
+[2023-06-15 10:46:26 : INFO] - Re_Smush_It_Task - Attachment ID : 13, Started on : June 15, 2023 10:46:19 
+[2023-06-15 10:46:26 : INFO] - File: mouse2-1.png, Compression quality: 100 
+[2023-06-15 10:46:28 : INFO] - Backing up the original image - 2023/01/mouse2-1-updraft-pre-smush-original.png 
+[2023-06-15 10:46:28 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:46:28 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/mouse2-1.png.The file was compressed from 1.43 KB to 1.22 KB saving 14.31 percent using WP-Optimize 
+[2023-06-15 10:46:28 : INFO] - Completed processing task with ID : 2, and type 'smush' 
+[2023-06-15 10:46:28 : INFO] - Processing task with ID : 3, and type 'smush' 
+[2023-06-15 10:46:28 : INFO] - Re_Smush_It_Task - Attachment ID : 14, Started on : June 15, 2023 10:46:20 
+[2023-06-15 10:46:28 : INFO] - File: profile-image-1-1.jpg, Compression quality: 100 
+[2023-06-15 10:46:31 : INFO] - Backing up the original image - 2023/01/profile-image-1-1-updraft-pre-smush-original.jpg 
+[2023-06-15 10:46:31 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:46:31 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/profile-image-1-1.jpg.The file was compressed from 309.96 KB to 303.96 KB saving 1.94 percent using WP-Optimize 
+[2023-06-15 10:46:31 : INFO] - Completed processing task with ID : 3, and type 'smush' 
+[2023-06-15 10:46:31 : INFO] - Processing task with ID : 4, and type 'smush' 
+[2023-06-15 10:46:31 : INFO] - Re_Smush_It_Task - Attachment ID : 15, Started on : June 15, 2023 10:46:20 
+[2023-06-15 10:46:31 : INFO] - File: JFD-Profile-mask-1.png, Compression quality: 100 
+[2023-06-15 10:46:33 : INFO] - Backing up the original image - 2023/01/JFD-Profile-mask-1-updraft-pre-smush-original.png 
+[2023-06-15 10:46:33 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:46:33 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/JFD-Profile-mask-1.png.The file was compressed from 22.68 KB to 12.84 KB saving 43.37 percent using WP-Optimize 
+[2023-06-15 10:46:33 : INFO] - Completed processing task with ID : 4, and type 'smush' 
+[2023-06-15 10:46:33 : INFO] - Processing task with ID : 5, and type 'smush' 
+[2023-06-15 10:46:33 : INFO] - Re_Smush_It_Task - Attachment ID : 16, Started on : June 15, 2023 10:46:20 
+[2023-06-15 10:46:33 : INFO] - File: elementor.png, Compression quality: 100 
+[2023-06-15 10:46:34 : INFO] - Backing up the original image - 2023/01/elementor-updraft-pre-smush-original.png 
+[2023-06-15 10:46:34 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:46:34 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/elementor.png.The file was compressed from 1.71 KB to 1.71 KB saving 0 percent using WP-Optimize 
+[2023-06-15 10:46:34 : INFO] - Completed processing task with ID : 5, and type 'smush' 
+[2023-06-15 10:46:34 : INFO] - Processing task with ID : 6, and type 'smush' 
+[2023-06-15 10:46:35 : INFO] - Re_Smush_It_Task - Attachment ID : 17, Started on : June 15, 2023 10:46:20 
+[2023-06-15 10:46:35 : INFO] - File: ps-1.png, Compression quality: 100 
+[2023-06-15 10:46:36 : INFO] - Backing up the original image - 2023/01/ps-1-updraft-pre-smush-original.png 
+[2023-06-15 10:46:36 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:46:36 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/ps-1.png.The file was compressed from 2.59 KB to 2.21 KB saving 14.76 percent using WP-Optimize 
+[2023-06-15 10:46:36 : INFO] - Completed processing task with ID : 6, and type 'smush' 
+[2023-06-15 10:46:36 : INFO] - Processing task with ID : 7, and type 'smush' 
+[2023-06-15 10:46:36 : INFO] - Re_Smush_It_Task - Attachment ID : 18, Started on : June 15, 2023 10:46:20 
+[2023-06-15 10:46:36 : INFO] - File: dot2-1.png, Compression quality: 100 
+[2023-06-15 10:46:37 : INFO] - Backing up the original image - 2023/01/dot2-1-updraft-pre-smush-original.png 
+[2023-06-15 10:46:37 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:46:37 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/dot2-1.png.The file was compressed from 2.37 KB to 2.19 KB saving 7.73 percent using WP-Optimize 
+[2023-06-15 10:46:37 : INFO] - Completed processing task with ID : 7, and type 'smush' 
+[2023-06-15 10:46:37 : INFO] - Processing task with ID : 8, and type 'smush' 
+[2023-06-15 10:46:37 : INFO] - Re_Smush_It_Task - Attachment ID : 19, Started on : June 15, 2023 10:46:20 
+[2023-06-15 10:46:37 : INFO] - File: banner-bg-1.jpg, Compression quality: 100 
+[2023-06-15 10:46:41 : INFO] - Backing up the original image - 2023/01/banner-bg-1-updraft-pre-smush-original.jpg 
+[2023-06-15 10:46:41 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:46:41 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/banner-bg-1.jpg.The file was compressed from 243.88 KB to 232.92 KB saving 4.5 percent using WP-Optimize 
+[2023-06-15 10:46:41 : INFO] - Completed processing task with ID : 8, and type 'smush' 
+[2023-06-15 10:46:41 : INFO] - Processing task with ID : 9, and type 'smush' 
+[2023-06-15 10:46:41 : INFO] - Re_Smush_It_Task - Attachment ID : 20, Started on : June 15, 2023 10:46:20 
+[2023-06-15 10:46:41 : INFO] - File: pixel-perfect-1.png, Compression quality: 100 
+[2023-06-15 10:46:42 : INFO] - Backing up the original image - 2023/01/pixel-perfect-1-updraft-pre-smush-original.png 
+[2023-06-15 10:46:42 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:46:42 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/pixel-perfect-1.png.The file was compressed from 9.90 KB to 5.69 KB saving 42.55 percent using WP-Optimize 
+[2023-06-15 10:46:42 : INFO] - Completed processing task with ID : 9, and type 'smush' 
+[2023-06-15 10:46:42 : INFO] - Processing task with ID : 10, and type 'smush' 
+[2023-06-15 10:46:42 : INFO] - Re_Smush_It_Task - Attachment ID : 21, Started on : June 15, 2023 10:46:20 
+[2023-06-15 10:46:42 : INFO] - File: hight-quality-1.png, Compression quality: 100 
+[2023-06-15 10:46:43 : INFO] - Backing up the original image - 2023/01/hight-quality-1-updraft-pre-smush-original.png 
+[2023-06-15 10:46:43 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:46:43 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/hight-quality-1.png.The file was compressed from 7.00 KB to 4.37 KB saving 37.53 percent using WP-Optimize 
+[2023-06-15 10:46:43 : INFO] - Completed processing task with ID : 10, and type 'smush' 
+[2023-06-15 10:46:43 : INFO] - Processing task with ID : 11, and type 'smush' 
+[2023-06-15 10:46:43 : INFO] - Re_Smush_It_Task - Attachment ID : 22, Started on : June 15, 2023 10:46:20 
+[2023-06-15 10:46:43 : INFO] - File: awesome-data-1.png, Compression quality: 100 
+[2023-06-15 10:46:44 : INFO] - Backing up the original image - 2023/01/awesome-data-1-updraft-pre-smush-original.png 
+[2023-06-15 10:46:44 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:46:44 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/awesome-data-1.png.The file was compressed from 7.52 KB to 4.64 KB saving 38.33 percent using WP-Optimize 
+[2023-06-15 10:46:45 : INFO] - Completed processing task with ID : 11, and type 'smush' 
+[2023-06-15 10:46:45 : INFO] - Processing task with ID : 12, and type 'smush' 
+[2023-06-15 10:46:45 : INFO] - Re_Smush_It_Task - Attachment ID : 23, Started on : June 15, 2023 10:46:20 
+[2023-06-15 10:46:45 : INFO] - File: 1-1.png, Compression quality: 100 
+[2023-06-15 10:46:46 : INFO] - Backing up the original image - 2023/01/1-1-updraft-pre-smush-original.png 
+[2023-06-15 10:46:46 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:46:46 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/1-1.png.The file was compressed from 6.32 KB to 4.83 KB saving 23.51 percent using WP-Optimize 
+[2023-06-15 10:46:46 : INFO] - Completed processing task with ID : 12, and type 'smush' 
+[2023-06-15 10:46:46 : INFO] - Processing task with ID : 13, and type 'smush' 
+[2023-06-15 10:46:46 : INFO] - Re_Smush_It_Task - Attachment ID : 24, Started on : June 15, 2023 10:46:21 
+[2023-06-15 10:46:46 : INFO] - File: about-1-1.jpg, Compression quality: 100 
+[2023-06-15 10:46:50 : INFO] - Backing up the original image - 2023/01/about-1-1-updraft-pre-smush-original.jpg 
+[2023-06-15 10:46:50 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:46:50 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/about-1-1.jpg.The file was compressed from 517.00 KB to 503.05 KB saving 2.7 percent using WP-Optimize 
+[2023-06-15 10:46:51 : INFO] - Completed processing task with ID : 13, and type 'smush' 
+[2023-06-15 10:46:51 : INFO] - Processing task with ID : 14, and type 'smush' 
+[2023-06-15 10:46:51 : INFO] - Re_Smush_It_Task - Attachment ID : 25, Started on : June 15, 2023 10:46:21 
+[2023-06-15 10:46:51 : INFO] - File: JFD-Profile-mask-2-1.png, Compression quality: 100 
+[2023-06-15 10:46:52 : INFO] - Backing up the original image - 2023/01/JFD-Profile-mask-2-1-updraft-pre-smush-original.png 
+[2023-06-15 10:46:52 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:46:52 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/JFD-Profile-mask-2-1.png.The file was compressed from 20.81 KB to 12.19 KB saving 41.41 percent using WP-Optimize 
+[2023-06-15 10:46:52 : INFO] - Completed processing task with ID : 14, and type 'smush' 
+[2023-06-15 10:46:52 : INFO] - Processing task with ID : 15, and type 'smush' 
+[2023-06-15 10:46:52 : INFO] - Re_Smush_It_Task - Attachment ID : 26, Started on : June 15, 2023 10:46:21 
+[2023-06-15 10:46:52 : INFO] - File: 2-1.png, Compression quality: 100 
+[2023-06-15 10:46:54 : INFO] - Backing up the original image - 2023/01/2-1-updraft-pre-smush-original.png 
+[2023-06-15 10:46:54 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:46:54 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/2-1.png.The file was compressed from 18.95 KB to 14.63 KB saving 22.8 percent using WP-Optimize 
+[2023-06-15 10:46:54 : INFO] - Completed processing task with ID : 15, and type 'smush' 
+[2023-06-15 10:46:54 : INFO] - Processing task with ID : 16, and type 'smush' 
+[2023-06-15 10:46:54 : INFO] - Re_Smush_It_Task - Attachment ID : 27, Started on : June 15, 2023 10:46:21 
+[2023-06-15 10:46:54 : INFO] - File: color-1.png, Compression quality: 100 
+[2023-06-15 10:46:56 : INFO] - Backing up the original image - 2023/01/color-1-updraft-pre-smush-original.png 
+[2023-06-15 10:46:56 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:46:56 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/color-1.png.The file was compressed from 31.73 KB to 10.84 KB saving 65.84 percent using WP-Optimize 
+[2023-06-15 10:46:56 : INFO] - Completed processing task with ID : 16, and type 'smush' 
+[2023-06-15 10:46:56 : INFO] - Processing task with ID : 17, and type 'smush' 
+[2023-06-15 10:46:56 : INFO] - Re_Smush_It_Task - Attachment ID : 28, Started on : June 15, 2023 10:46:21 
+[2023-06-15 10:46:56 : INFO] - File: 11-1.jpg, Compression quality: 100 
+[2023-06-15 10:46:58 : INFO] - Backing up the original image - 2023/01/11-1-updraft-pre-smush-original.jpg 
+[2023-06-15 10:46:58 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:46:58 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/11-1.jpg.The file was compressed from 36.12 KB to 36.12 KB saving 0 percent using WP-Optimize 
+[2023-06-15 10:46:58 : INFO] - Completed processing task with ID : 17, and type 'smush' 
+[2023-06-15 10:46:58 : INFO] - Processing task with ID : 18, and type 'smush' 
+[2023-06-15 10:46:58 : INFO] - Re_Smush_It_Task - Attachment ID : 29, Started on : June 15, 2023 10:46:21 
+[2023-06-15 10:46:58 : INFO] - File: play-icon-6.png, Compression quality: 100 
+[2023-06-15 10:47:00 : INFO] - Backing up the original image - 2023/01/play-icon-6-updraft-pre-smush-original.png 
+[2023-06-15 10:47:00 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:00 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/play-icon-6.png.The file was compressed from 3.75 KB to 3.75 KB saving 0 percent using WP-Optimize 
+[2023-06-15 10:47:00 : INFO] - Completed processing task with ID : 18, and type 'smush' 
+[2023-06-15 10:47:00 : INFO] - Processing task with ID : 19, and type 'smush' 
+[2023-06-15 10:47:00 : INFO] - Re_Smush_It_Task - Attachment ID : 30, Started on : June 15, 2023 10:46:21 
+[2023-06-15 10:47:00 : INFO] - File: 22-1.jpg, Compression quality: 100 
+[2023-06-15 10:47:02 : INFO] - Backing up the original image - 2023/01/22-1-updraft-pre-smush-original.jpg 
+[2023-06-15 10:47:02 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:02 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/22-1.jpg.The file was compressed from 21.23 KB to 21.23 KB saving 0 percent using WP-Optimize 
+[2023-06-15 10:47:02 : INFO] - Completed processing task with ID : 19, and type 'smush' 
+[2023-06-15 10:47:02 : INFO] - Processing task with ID : 20, and type 'smush' 
+[2023-06-15 10:47:02 : INFO] - Re_Smush_It_Task - Attachment ID : 31, Started on : June 15, 2023 10:46:21 
+[2023-06-15 10:47:02 : INFO] - File: play-icon-1-1.png, Compression quality: 100 
+[2023-06-15 10:47:04 : INFO] - Backing up the original image - 2023/01/play-icon-1-1-updraft-pre-smush-original.png 
+[2023-06-15 10:47:04 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:04 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/play-icon-1-1.png.The file was compressed from 3.75 KB to 3.75 KB saving 0 percent using WP-Optimize 
+[2023-06-15 10:47:04 : INFO] - Completed processing task with ID : 20, and type 'smush' 
+[2023-06-15 10:47:04 : INFO] - Processing task with ID : 21, and type 'smush' 
+[2023-06-15 10:47:04 : INFO] - Re_Smush_It_Task - Attachment ID : 32, Started on : June 15, 2023 10:46:21 
+[2023-06-15 10:47:04 : INFO] - File: 33-1.jpg, Compression quality: 100 
+[2023-06-15 10:47:06 : INFO] - Backing up the original image - 2023/01/33-1-updraft-pre-smush-original.jpg 
+[2023-06-15 10:47:07 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:07 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/33-1.jpg.The file was compressed from 93.38 KB to 89.79 KB saving 3.84 percent using WP-Optimize 
+[2023-06-15 10:47:07 : INFO] - Completed processing task with ID : 21, and type 'smush' 
+[2023-06-15 10:47:07 : INFO] - Processing task with ID : 22, and type 'smush' 
+[2023-06-15 10:47:07 : INFO] - Re_Smush_It_Task - Attachment ID : 33, Started on : June 15, 2023 10:46:21 
+[2023-06-15 10:47:07 : INFO] - File: play-icon-2-1.png, Compression quality: 100 
+[2023-06-15 10:47:08 : INFO] - Backing up the original image - 2023/01/play-icon-2-1-updraft-pre-smush-original.png 
+[2023-06-15 10:47:08 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:08 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/play-icon-2-1.png.The file was compressed from 3.75 KB to 3.75 KB saving 0 percent using WP-Optimize 
+[2023-06-15 10:47:08 : INFO] - Completed processing task with ID : 22, and type 'smush' 
+[2023-06-15 10:47:08 : INFO] - Processing task with ID : 23, and type 'smush' 
+[2023-06-15 10:47:08 : INFO] - Re_Smush_It_Task - Attachment ID : 34, Started on : June 15, 2023 10:46:21 
+[2023-06-15 10:47:08 : INFO] - File: 55-1.jpg, Compression quality: 100 
+[2023-06-15 10:47:10 : INFO] - Backing up the original image - 2023/01/55-1-updraft-pre-smush-original.jpg 
+[2023-06-15 10:47:10 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:10 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/55-1.jpg.The file was compressed from 93.40 KB to 88.63 KB saving 5.11 percent using WP-Optimize 
+[2023-06-15 10:47:10 : INFO] - Completed processing task with ID : 23, and type 'smush' 
+[2023-06-15 10:47:10 : INFO] - Processing task with ID : 24, and type 'smush' 
+[2023-06-15 10:47:10 : INFO] - Re_Smush_It_Task - Attachment ID : 35, Started on : June 15, 2023 10:46:21 
+[2023-06-15 10:47:10 : INFO] - File: play-icon-3-1.png, Compression quality: 100 
+[2023-06-15 10:47:13 : INFO] - Backing up the original image - 2023/01/play-icon-3-1-updraft-pre-smush-original.png 
+[2023-06-15 10:47:13 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:13 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/play-icon-3-1.png.The file was compressed from 3.75 KB to 3.75 KB saving 0 percent using WP-Optimize 
+[2023-06-15 10:47:13 : INFO] - Completed processing task with ID : 24, and type 'smush' 
+[2023-06-15 10:47:13 : INFO] - Processing task with ID : 25, and type 'smush' 
+[2023-06-15 10:47:13 : INFO] - Re_Smush_It_Task - Attachment ID : 36, Started on : June 15, 2023 10:46:22 
+[2023-06-15 10:47:13 : INFO] - File: 44-1.jpg, Compression quality: 100 
+[2023-06-15 10:47:14 : INFO] - Backing up the original image - 2023/01/44-1-updraft-pre-smush-original.jpg 
+[2023-06-15 10:47:14 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:14 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/44-1.jpg.The file was compressed from 31.84 KB to 31.84 KB saving 0 percent using WP-Optimize 
+[2023-06-15 10:47:14 : INFO] - Completed processing task with ID : 25, and type 'smush' 
+[2023-06-15 10:47:14 : INFO] - Processing task with ID : 26, and type 'smush' 
+[2023-06-15 10:47:14 : INFO] - Re_Smush_It_Task - Attachment ID : 37, Started on : June 15, 2023 10:46:22 
+[2023-06-15 10:47:14 : INFO] - File: play-icon-4-1.png, Compression quality: 100 
+[2023-06-15 10:47:16 : INFO] - Backing up the original image - 2023/01/play-icon-4-1-updraft-pre-smush-original.png 
+[2023-06-15 10:47:16 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:16 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/play-icon-4-1.png.The file was compressed from 3.75 KB to 3.75 KB saving 0 percent using WP-Optimize 
+[2023-06-15 10:47:16 : INFO] - Completed processing task with ID : 26, and type 'smush' 
+[2023-06-15 10:47:16 : INFO] - Processing task with ID : 27, and type 'smush' 
+[2023-06-15 10:47:16 : INFO] - Re_Smush_It_Task - Attachment ID : 38, Started on : June 15, 2023 10:46:22 
+[2023-06-15 10:47:16 : INFO] - File: 66-1.jpg, Compression quality: 100 
+[2023-06-15 10:47:19 : INFO] - Backing up the original image - 2023/01/66-1-updraft-pre-smush-original.jpg 
+[2023-06-15 10:47:19 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:19 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/66-1.jpg.The file was compressed from 91.47 KB to 89.25 KB saving 2.42 percent using WP-Optimize 
+[2023-06-15 10:47:19 : INFO] - Completed processing task with ID : 27, and type 'smush' 
+[2023-06-15 10:47:19 : INFO] - Processing task with ID : 28, and type 'smush' 
+[2023-06-15 10:47:19 : INFO] - Re_Smush_It_Task - Attachment ID : 39, Started on : June 15, 2023 10:46:22 
+[2023-06-15 10:47:19 : INFO] - File: play-icon-5-1.png, Compression quality: 100 
+[2023-06-15 10:47:19 : INFO] - 
+ 
+[2023-06-15 10:47:19 : INFO] - Header for logs at time:  Thu, 15 Jun 2023 10:47:19 +0000 on http://localhost/SagarDhadkeTech 
+[2023-06-15 10:47:19 : INFO] - WP: 6.2.2 
+[2023-06-15 10:47:19 : INFO] - PHP: 8.2.0 (apache2handler, Windows NT DESKTOP-6I64348 10.0 build 19045 (Windows 10) AMD64) 
+[2023-06-15 10:47:19 : INFO] - MySQL: 10.4.27 
+[2023-06-15 10:47:19 : INFO] - WPLANG: en_US 
+[2023-06-15 10:47:19 : INFO] - Server: Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/8.2.0 
+[2023-06-15 10:47:19 : INFO] - Outbound connections: N 
+[2023-06-15 10:47:19 : INFO] - Disabled Functions:  
+[2023-06-15 10:47:19 : INFO] - max_execution_time: 120 
+[2023-06-15 10:47:19 : INFO] - memory_limit: 512M (used: 77.3M | 80M) 
+[2023-06-15 10:47:19 : INFO] - multisite: N 
+[2023-06-15 10:47:19 : INFO] - openssl: OpenSSL 3.0.7 1 Nov 2022 
+[2023-06-15 10:47:19 : INFO] - A total of 35 tasks of type smush found and will be processed in this iteration 
+[2023-06-15 10:47:19 : DEBUG] - Lock option (updraft_lock_smush, wp_options) already existed in the database 
+[2023-06-15 10:47:19 : INFO] - Lock (updraft_lock_smush, wp_options) could not be acquired (it is locked) 
+[2023-06-15 10:47:19 : INFO] - Failed to gain semaphore lock (smush) - another process is already processing the queue - aborting (if this is wrong - i.e. if the other process crashed without removing the lock, then another can be started after 1 minute 
+[2023-06-15 10:47:21 : INFO] - Backing up the original image - 2023/01/play-icon-5-1-updraft-pre-smush-original.png 
+[2023-06-15 10:47:21 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:21 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/play-icon-5-1.png.The file was compressed from 3.75 KB to 3.75 KB saving 0 percent using WP-Optimize 
+[2023-06-15 10:47:21 : INFO] - Completed processing task with ID : 28, and type 'smush' 
+[2023-06-15 10:47:21 : INFO] - Processing task with ID : 29, and type 'smush' 
+[2023-06-15 10:47:21 : INFO] - Re_Smush_It_Task - Attachment ID : 40, Started on : June 15, 2023 10:46:22 
+[2023-06-15 10:47:21 : INFO] - File: object-2-1.png, Compression quality: 100 
+[2023-06-15 10:47:24 : INFO] - Backing up the original image - 2023/01/object-2-1-updraft-pre-smush-original.png 
+[2023-06-15 10:47:24 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:24 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/object-2-1.png.The file was compressed from 74.05 KB to 53.44 KB saving 27.83 percent using WP-Optimize 
+[2023-06-15 10:47:24 : INFO] - Completed processing task with ID : 29, and type 'smush' 
+[2023-06-15 10:47:24 : INFO] - Processing task with ID : 30, and type 'smush' 
+[2023-06-15 10:47:24 : INFO] - Re_Smush_It_Task - Attachment ID : 41, Started on : June 15, 2023 10:46:22 
+[2023-06-15 10:47:24 : INFO] - File: computer-1.jpg, Compression quality: 100 
+[2023-06-15 10:47:29 : INFO] - Backing up the original image - 2023/01/computer-1-updraft-pre-smush-original.jpg 
+[2023-06-15 10:47:29 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:29 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/computer-1.jpg.The file was compressed from 581.38 KB to 572.04 KB saving 1.61 percent using WP-Optimize 
+[2023-06-15 10:47:29 : INFO] - Completed processing task with ID : 30, and type 'smush' 
+[2023-06-15 10:47:29 : INFO] - Processing task with ID : 31, and type 'smush' 
+[2023-06-15 10:47:29 : INFO] - Re_Smush_It_Task - Attachment ID : 42, Started on : June 15, 2023 10:46:22 
+[2023-06-15 10:47:29 : INFO] - File: JFD-Profile-mask-3-1.png, Compression quality: 100 
+[2023-06-15 10:47:30 : INFO] - Backing up the original image - 2023/01/JFD-Profile-mask-3-1-updraft-pre-smush-original.png 
+[2023-06-15 10:47:30 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:30 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/JFD-Profile-mask-3-1.png.The file was compressed from 15.73 KB to 10.48 KB saving 33.4 percent using WP-Optimize 
+[2023-06-15 10:47:31 : INFO] - Completed processing task with ID : 31, and type 'smush' 
+[2023-06-15 10:47:31 : INFO] - Processing task with ID : 32, and type 'smush' 
+[2023-06-15 10:47:31 : INFO] - Re_Smush_It_Task - Attachment ID : 43, Started on : June 15, 2023 10:46:22 
+[2023-06-15 10:47:31 : INFO] - File: object-6-1.png, Compression quality: 100 
+[2023-06-15 10:47:32 : INFO] - Backing up the original image - 2023/01/object-6-1-updraft-pre-smush-original.png 
+[2023-06-15 10:47:32 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:32 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/object-6-1.png.The file was compressed from 17.35 KB to 10.30 KB saving 40.63 percent using WP-Optimize 
+[2023-06-15 10:47:32 : INFO] - Completed processing task with ID : 32, and type 'smush' 
+[2023-06-15 10:47:32 : INFO] - Processing task with ID : 33, and type 'smush' 
+[2023-06-15 10:47:32 : INFO] - Re_Smush_It_Task - Attachment ID : 44, Started on : June 15, 2023 10:46:22 
+[2023-06-15 10:47:32 : INFO] - File: object-5-1.png, Compression quality: 100 
+[2023-06-15 10:47:36 : INFO] - Backing up the original image - 2023/01/object-5-1-updraft-pre-smush-original.png 
+[2023-06-15 10:47:36 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:36 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/object-5-1.png.The file was compressed from 253.44 KB to 71.63 KB saving 71.74 percent using WP-Optimize 
+[2023-06-15 10:47:36 : INFO] - Completed processing task with ID : 33, and type 'smush' 
+[2023-06-15 10:47:36 : INFO] - Processing task with ID : 34, and type 'smush' 
+[2023-06-15 10:47:36 : INFO] - Re_Smush_It_Task - Attachment ID : 45, Started on : June 15, 2023 10:46:22 
+[2023-06-15 10:47:36 : INFO] - File: i1-1.png, Compression quality: 100 
+[2023-06-15 10:47:37 : INFO] - Backing up the original image - 2023/01/i1-1-updraft-pre-smush-original.png 
+[2023-06-15 10:47:37 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:37 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/i1-1.png.The file was compressed from 6.20 KB to 3.67 KB saving 40.85 percent using WP-Optimize 
+[2023-06-15 10:47:37 : INFO] - Completed processing task with ID : 34, and type 'smush' 
+[2023-06-15 10:47:37 : INFO] - Processing task with ID : 35, and type 'smush' 
+[2023-06-15 10:47:37 : INFO] - Re_Smush_It_Task - Attachment ID : 46, Started on : June 15, 2023 10:46:23 
+[2023-06-15 10:47:37 : INFO] - File: i2-1.png, Compression quality: 100 
+[2023-06-15 10:47:38 : INFO] - Backing up the original image - 2023/01/i2-1-updraft-pre-smush-original.png 
+[2023-06-15 10:47:38 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:38 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/i2-1.png.The file was compressed from 5.67 KB to 3.63 KB saving 35.85 percent using WP-Optimize 
+[2023-06-15 10:47:38 : INFO] - Completed processing task with ID : 35, and type 'smush' 
+[2023-06-15 10:47:38 : INFO] - Processing task with ID : 36, and type 'smush' 
+[2023-06-15 10:47:38 : INFO] - Re_Smush_It_Task - Attachment ID : 47, Started on : June 15, 2023 10:46:23 
+[2023-06-15 10:47:38 : INFO] - File: i3-1.png, Compression quality: 100 
+[2023-06-15 10:47:41 : INFO] - Backing up the original image - 2023/01/i3-1-updraft-pre-smush-original.png 
+[2023-06-15 10:47:41 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:41 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/i3-1.png.The file was compressed from 4.91 KB to 3.12 KB saving 36.4 percent using WP-Optimize 
+[2023-06-15 10:47:41 : INFO] - Completed processing task with ID : 36, and type 'smush' 
+[2023-06-15 10:47:41 : INFO] - Processing task with ID : 37, and type 'smush' 
+[2023-06-15 10:47:41 : INFO] - Re_Smush_It_Task - Attachment ID : 48, Started on : June 15, 2023 10:46:23 
+[2023-06-15 10:47:41 : INFO] - File: i4-1.png, Compression quality: 100 
+[2023-06-15 10:47:42 : INFO] - Backing up the original image - 2023/01/i4-1-updraft-pre-smush-original.png 
+[2023-06-15 10:47:42 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:42 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/i4-1.png.The file was compressed from 4.54 KB to 2.87 KB saving 36.66 percent using WP-Optimize 
+[2023-06-15 10:47:42 : INFO] - Completed processing task with ID : 37, and type 'smush' 
+[2023-06-15 10:47:42 : INFO] - Processing task with ID : 38, and type 'smush' 
+[2023-06-15 10:47:42 : INFO] - Re_Smush_It_Task - Attachment ID : 49, Started on : June 15, 2023 10:46:23 
+[2023-06-15 10:47:42 : INFO] - File: effect-2.png, Compression quality: 100 
+[2023-06-15 10:47:43 : INFO] - Backing up the original image - 2023/01/effect-2-updraft-pre-smush-original.png 
+[2023-06-15 10:47:43 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:43 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/effect-2.png.The file was compressed from 18.26 KB to 12.73 KB saving 30.28 percent using WP-Optimize 
+[2023-06-15 10:47:43 : INFO] - Completed processing task with ID : 38, and type 'smush' 
+[2023-06-15 10:47:43 : INFO] - Processing task with ID : 39, and type 'smush' 
+[2023-06-15 10:47:44 : INFO] - Re_Smush_It_Task - Attachment ID : 50, Started on : June 15, 2023 10:46:23 
+[2023-06-15 10:47:44 : INFO] - File: testmonial-1.jpg, Compression quality: 100 
+[2023-06-15 10:47:45 : INFO] - Backing up the original image - 2023/01/testmonial-1-updraft-pre-smush-original.jpg 
+[2023-06-15 10:47:45 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:45 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/testmonial-1.jpg.The file was compressed from 14.11 KB to 14.08 KB saving 0.24 percent using WP-Optimize 
+[2023-06-15 10:47:45 : INFO] - Completed processing task with ID : 39, and type 'smush' 
+[2023-06-15 10:47:45 : INFO] - Processing task with ID : 40, and type 'smush' 
+[2023-06-15 10:47:45 : INFO] - Re_Smush_It_Task - Attachment ID : 51, Started on : June 15, 2023 10:46:23 
+[2023-06-15 10:47:45 : INFO] - File: testimonials-img-1.jpg, Compression quality: 100 
+[2023-06-15 10:47:47 : INFO] - Backing up the original image - 2023/01/testimonials-img-1-updraft-pre-smush-original.jpg 
+[2023-06-15 10:47:47 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:47 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/testimonials-img-1.jpg.The file was compressed from 28.43 KB to 27.67 KB saving 2.7 percent using WP-Optimize 
+[2023-06-15 10:47:47 : INFO] - Completed processing task with ID : 40, and type 'smush' 
+[2023-06-15 10:47:47 : INFO] - Processing task with ID : 41, and type 'smush' 
+[2023-06-15 10:47:47 : INFO] - Re_Smush_It_Task - Attachment ID : 52, Started on : June 15, 2023 10:46:23 
+[2023-06-15 10:47:47 : INFO] - File: effect-22.png, Compression quality: 100 
+[2023-06-15 10:47:48 : INFO] - Backing up the original image - 2023/01/effect-22-updraft-pre-smush-original.png 
+[2023-06-15 10:47:48 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:48 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/effect-22.png.The file was compressed from 11.53 KB to 7.14 KB saving 38.03 percent using WP-Optimize 
+[2023-06-15 10:47:48 : INFO] - Completed processing task with ID : 41, and type 'smush' 
+[2023-06-15 10:47:48 : INFO] - Processing task with ID : 42, and type 'smush' 
+[2023-06-15 10:47:48 : INFO] - Re_Smush_It_Task - Attachment ID : 53, Started on : June 15, 2023 10:46:23 
+[2023-06-15 10:47:48 : INFO] - File: l-1-1-1.png, Compression quality: 100 
+[2023-06-15 10:47:51 : INFO] - Backing up the original image - 2023/01/l-1-1-1-updraft-pre-smush-original.png 
+[2023-06-15 10:47:51 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:51 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/l-1-1-1.png.The file was compressed from 95.67 KB to 92.86 KB saving 2.94 percent using WP-Optimize 
+[2023-06-15 10:47:52 : INFO] - Completed processing task with ID : 42, and type 'smush' 
+[2023-06-15 10:47:52 : INFO] - Processing task with ID : 43, and type 'smush' 
+[2023-06-15 10:47:52 : INFO] - Re_Smush_It_Task - Attachment ID : 54, Started on : June 15, 2023 10:46:23 
+[2023-06-15 10:47:52 : INFO] - File: l-2-1.png, Compression quality: 100 
+[2023-06-15 10:47:54 : INFO] - Backing up the original image - 2023/01/l-2-1-updraft-pre-smush-original.png 
+[2023-06-15 10:47:54 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:54 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/l-2-1.png.The file was compressed from 95.76 KB to 92.62 KB saving 3.28 percent using WP-Optimize 
+[2023-06-15 10:47:54 : INFO] - Completed processing task with ID : 43, and type 'smush' 
+[2023-06-15 10:47:54 : INFO] - Processing task with ID : 44, and type 'smush' 
+[2023-06-15 10:47:54 : INFO] - Re_Smush_It_Task - Attachment ID : 55, Started on : June 15, 2023 10:46:23 
+[2023-06-15 10:47:54 : INFO] - File: l-3-1.png, Compression quality: 100 
+[2023-06-15 10:47:56 : INFO] - Backing up the original image - 2023/01/l-3-1-updraft-pre-smush-original.png 
+[2023-06-15 10:47:56 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:56 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/l-3-1.png.The file was compressed from 97.53 KB to 93.81 KB saving 3.82 percent using WP-Optimize 
+[2023-06-15 10:47:56 : INFO] - Completed processing task with ID : 44, and type 'smush' 
+[2023-06-15 10:47:56 : INFO] - Processing task with ID : 45, and type 'smush' 
+[2023-06-15 10:47:56 : INFO] - Re_Smush_It_Task - Attachment ID : 56, Started on : June 15, 2023 10:46:23 
+[2023-06-15 10:47:56 : INFO] - File: l-4-1.png, Compression quality: 100 
+[2023-06-15 10:47:58 : INFO] - Backing up the original image - 2023/01/l-4-1-updraft-pre-smush-original.png 
+[2023-06-15 10:47:58 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:47:58 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/l-4-1.png.The file was compressed from 95.97 KB to 93.02 KB saving 3.08 percent using WP-Optimize 
+[2023-06-15 10:47:58 : INFO] - Completed processing task with ID : 45, and type 'smush' 
+[2023-06-15 10:47:58 : INFO] - Processing task with ID : 46, and type 'smush' 
+[2023-06-15 10:47:58 : INFO] - Re_Smush_It_Task - Attachment ID : 57, Started on : June 15, 2023 10:46:24 
+[2023-06-15 10:47:58 : INFO] - File: l-5-1.png, Compression quality: 100 
+[2023-06-15 10:48:00 : INFO] - Backing up the original image - 2023/01/l-5-1-updraft-pre-smush-original.png 
+[2023-06-15 10:48:00 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:48:00 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/l-5-1.png.The file was compressed from 96.21 KB to 92.42 KB saving 3.94 percent using WP-Optimize 
+[2023-06-15 10:48:00 : INFO] - Completed processing task with ID : 46, and type 'smush' 
+[2023-06-15 10:48:00 : INFO] - Processing task with ID : 47, and type 'smush' 
+[2023-06-15 10:48:00 : INFO] - Re_Smush_It_Task - Attachment ID : 58, Started on : June 15, 2023 10:46:24 
+[2023-06-15 10:48:00 : INFO] - File: l-7-1.png, Compression quality: 100 
+[2023-06-15 10:48:02 : INFO] - Backing up the original image - 2023/01/l-7-1-updraft-pre-smush-original.png 
+[2023-06-15 10:48:02 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:48:02 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/l-7-1.png.The file was compressed from 95.65 KB to 92.56 KB saving 3.23 percent using WP-Optimize 
+[2023-06-15 10:48:02 : INFO] - Completed processing task with ID : 47, and type 'smush' 
+[2023-06-15 10:48:02 : INFO] - Processing task with ID : 48, and type 'smush' 
+[2023-06-15 10:48:02 : INFO] - Re_Smush_It_Task - Attachment ID : 59, Started on : June 15, 2023 10:46:24 
+[2023-06-15 10:48:02 : INFO] - File: l-8-1.png, Compression quality: 100 
+[2023-06-15 10:48:05 : INFO] - Backing up the original image - 2023/01/l-8-1-updraft-pre-smush-original.png 
+[2023-06-15 10:48:05 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:48:05 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/l-8-1.png.The file was compressed from 97.76 KB to 94.10 KB saving 3.74 percent using WP-Optimize 
+[2023-06-15 10:48:05 : INFO] - Completed processing task with ID : 48, and type 'smush' 
+[2023-06-15 10:48:05 : INFO] - Processing task with ID : 49, and type 'smush' 
+[2023-06-15 10:48:05 : INFO] - Re_Smush_It_Task - Attachment ID : 60, Started on : June 15, 2023 10:46:24 
+[2023-06-15 10:48:05 : INFO] - File: effect-12.png, Compression quality: 100 
+[2023-06-15 10:48:06 : INFO] - Backing up the original image - 2023/01/effect-12-updraft-pre-smush-original.png 
+[2023-06-15 10:48:06 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:48:06 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/effect-12.png.The file was compressed from 8.51 KB to 5.60 KB saving 34.24 percent using WP-Optimize 
+[2023-06-15 10:48:06 : INFO] - Completed processing task with ID : 49, and type 'smush' 
+[2023-06-15 10:48:06 : INFO] - Processing task with ID : 50, and type 'smush' 
+[2023-06-15 10:48:06 : INFO] - Re_Smush_It_Task - Attachment ID : 61, Started on : June 15, 2023 10:46:24 
+[2023-06-15 10:48:06 : INFO] - File: effect-13.png, Compression quality: 100 
+[2023-06-15 10:48:08 : INFO] - Backing up the original image - 2023/01/effect-13-updraft-pre-smush-original.png 
+[2023-06-15 10:48:08 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:48:08 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/effect-13.png.The file was compressed from 7.95 KB to 5.49 KB saving 30.99 percent using WP-Optimize 
+[2023-06-15 10:48:08 : INFO] - Completed processing task with ID : 50, and type 'smush' 
+[2023-06-15 10:48:08 : INFO] - Processing task with ID : 51, and type 'smush' 
+[2023-06-15 10:48:08 : INFO] - Re_Smush_It_Task - Attachment ID : 62, Started on : June 15, 2023 10:46:24 
+[2023-06-15 10:48:08 : INFO] - File: effect-52.png, Compression quality: 100 
+[2023-06-15 10:48:09 : INFO] - Backing up the original image - 2023/01/effect-52-updraft-pre-smush-original.png 
+[2023-06-15 10:48:09 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:48:09 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/effect-52.png.The file was compressed from 11.29 KB to 8.56 KB saving 24.12 percent using WP-Optimize 
+[2023-06-15 10:48:09 : INFO] - Completed processing task with ID : 51, and type 'smush' 
+[2023-06-15 10:48:09 : INFO] - Processing task with ID : 52, and type 'smush' 
+[2023-06-15 10:48:09 : INFO] - Re_Smush_It_Task - Attachment ID : 67, Started on : June 15, 2023 10:46:24 
+[2023-06-15 10:48:09 : INFO] - File: IMG_20220429_201530_740.jpg, Compression quality: 100 
+[2023-06-15 10:48:11 : INFO] - Backing up the original image - 2023/01/IMG_20220429_201530_740-updraft-pre-smush-original.jpg 
+[2023-06-15 10:48:11 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:48:11 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/IMG_20220429_201530_740.jpg.The file was compressed from 59.83 KB to 59.83 KB saving 0 percent using WP-Optimize 
+[2023-06-15 10:48:11 : INFO] - Completed processing task with ID : 52, and type 'smush' 
+[2023-06-15 10:48:11 : INFO] - Processing task with ID : 53, and type 'smush' 
+[2023-06-15 10:48:11 : INFO] - Re_Smush_It_Task - Attachment ID : 71, Started on : June 15, 2023 10:46:24 
+[2023-06-15 10:48:11 : INFO] - File: kotlin.png, Compression quality: 100 
+[2023-06-15 10:48:14 : INFO] - Backing up the original image - 2023/01/kotlin-updraft-pre-smush-original.png 
+[2023-06-15 10:48:14 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:48:14 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/kotlin.png.The file was compressed from 194.39 KB to 69.88 KB saving 64.05 percent using WP-Optimize 
+[2023-06-15 10:48:14 : INFO] - Completed processing task with ID : 53, and type 'smush' 
+[2023-06-15 10:48:14 : INFO] - Processing task with ID : 54, and type 'smush' 
+[2023-06-15 10:48:14 : INFO] - Re_Smush_It_Task - Attachment ID : 72, Started on : June 15, 2023 10:46:24 
+[2023-06-15 10:48:14 : INFO] - File: androidwp.png, Compression quality: 100 
+[2023-06-15 10:48:15 : INFO] - Backing up the original image - 2023/01/androidwp-updraft-pre-smush-original.png 
+[2023-06-15 10:48:15 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:48:15 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/androidwp.png.The file was compressed from 2.63 KB to 2.51 KB saving 4.46 percent using WP-Optimize 
+[2023-06-15 10:48:15 : INFO] - Completed processing task with ID : 54, and type 'smush' 
+[2023-06-15 10:48:15 : INFO] - Processing task with ID : 55, and type 'smush' 
+[2023-06-15 10:48:16 : INFO] - Re_Smush_It_Task - Attachment ID : 73, Started on : June 15, 2023 10:46:24 
+[2023-06-15 10:48:16 : INFO] - File: androidwpnew.png, Compression quality: 100 
+[2023-06-15 10:48:19 : INFO] - Backing up the original image - 2023/01/androidwpnew-updraft-pre-smush-original.png 
+[2023-06-15 10:48:19 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:48:19 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/androidwpnew.png.The file was compressed from 100.48 KB to 44.52 KB saving 55.7 percent using WP-Optimize 
+[2023-06-15 10:48:19 : INFO] - Completed processing task with ID : 55, and type 'smush' 
+[2023-06-15 10:48:19 : INFO] - Processing task with ID : 56, and type 'smush' 
+[2023-06-15 10:48:19 : INFO] - Re_Smush_It_Task - Attachment ID : 78, Started on : June 15, 2023 10:46:24 
+[2023-06-15 10:48:19 : INFO] - File: IMG_20220426_200130_636.jpg, Compression quality: 100 
+[2023-06-15 10:48:20 : INFO] - 
+ 
+[2023-06-15 10:48:20 : INFO] - Header for logs at time:  Thu, 15 Jun 2023 10:48:20 +0000 on http://localhost/SagarDhadkeTech 
+[2023-06-15 10:48:20 : INFO] - WP: 6.2.2 
+[2023-06-15 10:48:20 : INFO] - PHP: 8.2.0 (apache2handler, Windows NT DESKTOP-6I64348 10.0 build 19045 (Windows 10) AMD64) 
+[2023-06-15 10:48:20 : INFO] - MySQL: 10.4.27 
+[2023-06-15 10:48:20 : INFO] - WPLANG: en_US 
+[2023-06-15 10:48:20 : INFO] - Server: Apache/2.4.54 (Win64) OpenSSL/1.1.1p PHP/8.2.0 
+[2023-06-15 10:48:20 : INFO] - Outbound connections: N 
+[2023-06-15 10:48:20 : INFO] - Disabled Functions:  
+[2023-06-15 10:48:20 : INFO] - max_execution_time: 120 
+[2023-06-15 10:48:20 : INFO] - memory_limit: 512M (used: 77.3M | 80M) 
+[2023-06-15 10:48:20 : INFO] - multisite: N 
+[2023-06-15 10:48:20 : INFO] - openssl: OpenSSL 3.0.7 1 Nov 2022 
+[2023-06-15 10:48:20 : INFO] - A total of 7 tasks of type smush found and will be processed in this iteration 
+[2023-06-15 10:48:20 : DEBUG] - Lock option (updraft_lock_smush, wp_options) already existed in the database 
+[2023-06-15 10:48:20 : INFO] - Lock (updraft_lock_smush, wp_options) could not be acquired (it is locked) 
+[2023-06-15 10:48:20 : INFO] - Failed to gain semaphore lock (smush) - another process is already processing the queue - aborting (if this is wrong - i.e. if the other process crashed without removing the lock, then another can be started after 1 minute 
+[2023-06-15 10:48:32 : INFO] - Backing up the original image - 2023/01/IMG_20220426_200130_636-updraft-pre-smush-original.jpg 
+[2023-06-15 10:48:32 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:48:32 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/IMG_20220426_200130_636.jpg.The file was compressed from 1.72 MB to 1.71 MB saving 0.18 percent using WP-Optimize 
+[2023-06-15 10:48:32 : INFO] - Completed processing task with ID : 56, and type 'smush' 
+[2023-06-15 10:48:32 : INFO] - Processing task with ID : 57, and type 'smush' 
+[2023-06-15 10:48:32 : INFO] - Re_Smush_It_Task - Attachment ID : 79, Started on : June 15, 2023 10:46:25 
+[2023-06-15 10:48:32 : INFO] - File: virtual.png, Compression quality: 100 
+[2023-06-15 10:48:33 : INFO] - Backing up the original image - 2023/01/virtual-updraft-pre-smush-original.png 
+[2023-06-15 10:48:33 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:48:33 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/virtual.png.The file was compressed from 33.41 KB to 12.41 KB saving 62.86 percent using WP-Optimize 
+[2023-06-15 10:48:33 : INFO] - Completed processing task with ID : 57, and type 'smush' 
+[2023-06-15 10:48:33 : INFO] - Processing task with ID : 58, and type 'smush' 
+[2023-06-15 10:48:33 : INFO] - Re_Smush_It_Task - Attachment ID : 99, Started on : June 15, 2023 10:46:25 
+[2023-06-15 10:48:33 : INFO] - File: newlogo.png, Compression quality: 100 
+[2023-06-15 10:48:36 : INFO] - Backing up the original image - 2023/01/newlogo-updraft-pre-smush-original.png 
+[2023-06-15 10:48:36 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:48:36 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/01/newlogo.png.The file was compressed from 12.81 KB to 12.81 KB saving 0 percent using WP-Optimize 
+[2023-06-15 10:48:36 : INFO] - Completed processing task with ID : 58, and type 'smush' 
+[2023-06-15 10:48:36 : INFO] - Processing task with ID : 59, and type 'smush' 
+[2023-06-15 10:48:36 : INFO] - Task with ID 59 and type (smush) failed with error code exceeded_max_filesize - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/06/151849050-6b9537e3-4298-49b5-9d44-3f63455d07f0.png - cannot be optimized, file size is above service provider limit 
+[2023-06-15 10:48:36 : INFO] - Processing task with ID : 60, and type 'smush' 
+[2023-06-15 10:48:36 : INFO] - Re_Smush_It_Task - Attachment ID : 223, Started on : June 15, 2023 10:46:25 
+[2023-06-15 10:48:36 : INFO] - File: Screenshot-56.png, Compression quality: 100 
+[2023-06-15 10:48:39 : INFO] - Backing up the original image - 2023/06/Screenshot-56-updraft-pre-smush-original.png 
+[2023-06-15 10:48:39 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:48:40 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/06/Screenshot-56.png.The file was compressed from 298.73 KB to 100.19 KB saving 66.46 percent using WP-Optimize 
+[2023-06-15 10:48:40 : INFO] - Completed processing task with ID : 60, and type 'smush' 
+[2023-06-15 10:48:40 : INFO] - Processing task with ID : 61, and type 'smush' 
+[2023-06-15 10:48:40 : INFO] - Re_Smush_It_Task - Attachment ID : 224, Started on : June 15, 2023 10:46:25 
+[2023-06-15 10:48:40 : INFO] - File: Screenshot-57.png, Compression quality: 100 
+[2023-06-15 10:48:54 : INFO] - Task with ID 61 and type (smush) failed with error code invalid_response - The compression apparently succeeded, but WP-Optimize could not retrieve the compressed image from the remote server. 
+[2023-06-15 10:48:54 : INFO] - data: {"src":"http:\/\/par2.static.resmush.it\/ec1a3c4271745346bb5afcfb9f78db89\/_src_Screenshot-57.png","dest":"http:\/\/par2.static.resmush.it\/ec1a3c4271745346bb5afcfb9f78db89\/Screenshot-57.png","src_size":1940175,"dest_size":556038,"percent":71,"output":"json","expires":"Thu, 15 Jun 2023 12:53:48 +0200","generator":"reSmush.it rev.3.0.4.20210124"} 
+[2023-06-15 10:48:54 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:48:54 : INFO] - Processing task with ID : 62, and type 'smush' 
+[2023-06-15 10:48:54 : INFO] - Re_Smush_It_Task - Attachment ID : 226, Started on : June 15, 2023 10:46:25 
+[2023-06-15 10:48:54 : INFO] - File: Screenshot-59.png, Compression quality: 100 
+[2023-06-15 10:49:03 : INFO] - Backing up the original image - 2023/06/Screenshot-59-updraft-pre-smush-original.png 
+[2023-06-15 10:49:03 : INFO] - There were no WebP conversion tools found on your server. 
+[2023-06-15 10:49:03 : INFO] - Successfully optimized the image - C:\xampp\htdocs\SagarDhadkeTech/wp-content/uploads/2023/06/Screenshot-59.png.The file was compressed from 1.86 MB to 591.43 KB saving 68.92 percent using WP-Optimize 
+[2023-06-15 10:49:03 : INFO] - Completed processing task with ID : 62, and type 'smush' 
+[2023-06-15 10:49:03 : INFO] - Lock option (updraft_lock_smush, wp_options) released 
+[2023-06-15 10:49:03 : INFO] - Successfully processed the queue (smush). 62 tasks were processed out of 62. 
+[2023-06-15 10:49:03 : INFO] - Lock option (updraft_lock_smush, wp_options) was deleted from the database 
+[2023-06-15 10:49:03 : INFO] - Cleaning up tasks of type (smush). A total of 62 tasks will be deleted. 
