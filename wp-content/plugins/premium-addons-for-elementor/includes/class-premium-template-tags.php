@@ -206,7 +206,7 @@ class Premium_Template_Tags {
 			$id = $title;
 		}
 
-		$template_content = $frontend->get_builder_content_for_display( $id, true );
+		$template_content = $frontend->get_builder_content_for_display( $id, false );
 
 		return $template_content;
 

@@ -166,6 +166,10 @@ class Elements_Manager {
 			}
 		}
 
+		if ( ! empty( $element['settings']['eael_wrapper_link_switch'] ) ) {
+			$list['wrapper-link'] = 'wrapper-link';
+		}
+
 		return $list;
 	}
 
@@ -210,7 +214,7 @@ class Elements_Manager {
 			return $post_id;
 		}
 
-		$documents = Plugin::$instance->documents->get( $post_id );
+		$documents = is_object( Plugin::$instance->documents ) ? Plugin::$instance->documents->get( $post_id ) : [];
 
 		if ( ! in_array( get_post_status( $post_id ), [ 'publish', 'private' ] ) || ( is_object( $documents ) && ! $documents->is_built_with_elementor() ) ) {
 			return false;

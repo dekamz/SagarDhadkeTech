@@ -52,6 +52,7 @@ class Blocks {
 
     public static function defaults( $no_object = true, $no_static_data = true ){
         $_blocks = require ESSENTIAL_BLOCKS_DIR_PATH . 'includes/blocks.php';
+        $_blocks = apply_filters( 'essential_blocks_block_lists', $_blocks );
 
         $_blocks = array_map(function ( $block ) use( $no_object, $no_static_data ) {
             if( $no_object ) {
@@ -67,11 +68,11 @@ class Blocks {
             return $block;
         }, $_blocks);
 
-        return array_merge($_blocks, apply_filters('essential_pro_blocks', []));
+        return $_blocks;
     }
 
 
-    public function register_blocks( $assets_manager){
+    public function register_blocks( $assets_manager ){
         $blocks = $this->enabled();
 
         if ( empty( $blocks ) ) {

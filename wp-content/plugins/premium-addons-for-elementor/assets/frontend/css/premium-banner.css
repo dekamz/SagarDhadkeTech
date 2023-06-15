@@ -21,8 +21,8 @@
   display: flex;
   height: 100%; }
   .premium-banner-img-wrap .premium-banner-ib-img {
-    -webkit-flex-shrink: 0;
     -ms-flex-negative: 0;
+    -webkit-flex-shrink: 0;
     flex-shrink: 0; }
 
 .premium-banner-ib-desc .premium-banner-read-more {

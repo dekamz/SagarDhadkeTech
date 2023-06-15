@@ -17,7 +17,9 @@ abstract class PostBlock extends Block {
         'readmoreText'       => 'Read More',
         'showMeta'           => true,
         'headerMeta'         => '[{"value":"categories","label":"Categories"}]',
-        'footerMeta'         => '[{"value":"avatar","label":"Author Avatar"},{"value":"author","label":"Author Name"},{"value":"date","label":"Published Date"}]'
+        'footerMeta'         => '[{"value":"avatar","label":"Author Avatar"},{"value":"author","label":"Author Name"},{"value":"date","label":"Published Date"}]',
+        'authorPrefix'       => 'by',
+        'datePrefix'         => 'on'
     ];
 
     abstract public function get_default_attributes();

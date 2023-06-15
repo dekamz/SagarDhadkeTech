@@ -24,7 +24,7 @@ use EssentialBlocks\Integrations\PluginInstaller;
 final class Plugin {
     use HasSingletone;
 
-    public $version = '4.0.8';
+    public $version = '4.1.1';
 
     public $admin;
     /**
@@ -164,7 +164,9 @@ final class Plugin {
         $this->define( 'ESSENTIAL_BLOCKS_ADMIN_URL', plugin_dir_url( ESSENTIAL_BLOCKS_FILE ) );
         $this->define( 'ESSENTIAL_BLOCKS_PLUGIN_BASENAME', plugin_basename( ESSENTIAL_BLOCKS_FILE ) );
         $this->define( 'ESSENTIAL_BLOCKS_VERSION', $this->version );
+        $this->define( 'ESSENTIAL_BLOCKS_IS_PRO_ACTIVE', class_exists( 'EssentialBlocks\Pro\Plugin' ) ? true : false );
         $this->define( 'ESSENTIAL_BLOCKS_SITE_URL', 'https://essential-blocks.com/' );
+        $this->define( 'ESSENTIAL_BLOCKS_UPGRADE_PRO_URL', 'https://essential-blocks.com/upgrade' );
     }
 
     /**

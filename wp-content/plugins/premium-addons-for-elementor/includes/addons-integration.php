@@ -425,7 +425,7 @@ class Addons_Integration {
 
 		// If the assets are not ready, or file does not exist for any reson.
 		if ( ! wp_style_is( 'pa-frontend', 'enqueued' ) ) {
-			$this->register_old_styles( $dir, $is_rtl, $suffix );
+			$this->enqueue_old_styles( $dir, $is_rtl, $suffix );
 		}
 
 	}
@@ -440,9 +440,9 @@ class Addons_Integration {
 	 * @param string $is_rtl page direction.
 	 * @param string $suffix file suffix.
 	 */
-	public function register_old_styles( $directory, $is_rtl, $suffix ) {
+	public function enqueue_old_styles( $directory, $is_rtl, $suffix ) {
 
-		wp_register_style(
+		wp_enqueue_style(
 			'premium-addons',
 			PREMIUM_ADDONS_URL . 'assets/frontend/' . $directory . '/premium-addons' . $is_rtl . $suffix . '.css',
 			array(),

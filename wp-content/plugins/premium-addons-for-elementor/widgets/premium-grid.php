@@ -38,6 +38,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Premium_Grid extends Widget_Base {
 
 	/**
+	 * Template Instance
+	 *
+	 * @var template_instance
+	 */
+	protected $template_instance;
+
+	/**
 	 * Check for Self Hosted Videos
 	 *
 	 * @var is_self_hosted
@@ -61,8 +68,7 @@ class Premium_Grid extends Widget_Base {
 	 * @access public
 	 */
 	public function getTemplateInstance() {
-		$this->template_instance = Premium_Template_Tags::getInstance();
-		return $this->template_instance;
+		return $this->template_instance = Premium_Template_Tags::getInstance();
 	}
 
 	/**
@@ -2732,7 +2738,12 @@ class Premium_Grid extends Widget_Base {
 
 				$image_id = apply_filters( 'wpml_object_id', $image['premium_gallery_img']['id'], 'elementor_library', true );
 
-				$alt = apply_filters( 'pa_grid_image_alt', get_post( $image_id )->post_title );
+				$image_by_id = get_post( $image_id );
+
+				$alt = '';
+				if ( isset( $image_by_id->post_title ) ) {
+					$alt = apply_filters( 'pa_grid_image_alt', get_post( $image_id )->post_title );
+				}
 
 				$this->add_render_attribute(
 					$key,
