@@ -87,9 +87,6 @@ class Widget_Tabs extends Widget_Base {
 	 * @access protected
 	 */
 	protected function register_controls() {
-		$start = is_rtl() ? 'end' : 'start';
-		$end = is_rtl() ? 'start' : 'end';
-
 		$this->start_controls_section(
 			'section_tabs',
 			[
@@ -188,19 +185,19 @@ class Widget_Tabs extends Widget_Base {
 				'options' => [
 					'' => [
 						'title' => esc_html__( 'Start', 'elementor' ),
-						'icon' => "eicon-align-$start-h",
+						'icon' => 'eicon-h-align-left',
 					],
 					'center' => [
 						'title' => esc_html__( 'Center', 'elementor' ),
-						'icon' => 'eicon-align-center-h',
+						'icon' => 'eicon-h-align-center',
 					],
 					'end' => [
 						'title' => esc_html__( 'End', 'elementor' ),
-						'icon' => "eicon-align-$end-h",
+						'icon' => 'eicon-h-align-right',
 					],
 					'stretch' => [
-						'title' => esc_html__( 'Stretch', 'elementor' ),
-						'icon' => 'eicon-align-stretch-h',
+						'title' => esc_html__( 'Justified', 'elementor' ),
+						'icon' => 'eicon-h-align-stretch',
 					],
 				],
 				'prefix_class' => 'elementor-tabs-alignment-',
@@ -218,19 +215,19 @@ class Widget_Tabs extends Widget_Base {
 				'options' => [
 					'' => [
 						'title' => esc_html__( 'Start', 'elementor' ),
-						'icon' => 'eicon-align-start-v',
+						'icon' => 'eicon-v-align-top',
 					],
 					'center' => [
 						'title' => esc_html__( 'Center', 'elementor' ),
-						'icon' => 'eicon-align-center-v',
+						'icon' => 'eicon-v-align-middle',
 					],
 					'end' => [
 						'title' => esc_html__( 'End', 'elementor' ),
-						'icon' => 'eicon-align-end-v',
+						'icon' => 'eicon-v-align-bottom',
 					],
 					'stretch' => [
-						'title' => esc_html__( 'Stretch', 'elementor' ),
-						'icon' => 'eicon-align-stretch-v',
+						'title' => esc_html__( 'Justified', 'elementor' ),
+						'icon' => 'eicon-v-align-stretch',
 					],
 				],
 				'prefix_class' => 'elementor-tabs-alignment-',
@@ -470,6 +467,8 @@ class Widget_Tabs extends Widget_Base {
 
 		$id_int = substr( $this->get_id_int(), 0, 3 );
 
+		$a11y_improvements_experiment = Plugin::$instance->experiments->is_feature_active( 'a11y_improvements' );
+
 		$this->add_render_attribute( 'elementor-tabs', 'class', 'elementor-tabs' );
 
 		?>
@@ -479,6 +478,7 @@ class Widget_Tabs extends Widget_Base {
 				foreach ( $tabs as $index => $item ) :
 					$tab_count = $index + 1;
 					$tab_title_setting_key = $this->get_repeater_setting_key( 'tab_title', 'tabs', $index );
+					$tab_title = $a11y_improvements_experiment ? $item['tab_title'] : '<a href="">' . $item['tab_title'] . '</a>';
 
 					$this->add_render_attribute( $tab_title_setting_key, [
 						'id' => 'elementor-tab-title-' . $id_int . $tab_count,
@@ -493,7 +493,7 @@ class Widget_Tabs extends Widget_Base {
 					?>
 					<div <?php $this->print_render_attribute_string( $tab_title_setting_key ); ?>><?php
 						// PHPCS - the main text of a widget should not be escaped.
-						echo $item['tab_title']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						echo $tab_title; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					?></div>
 				<?php endforeach; ?>
 			</div>

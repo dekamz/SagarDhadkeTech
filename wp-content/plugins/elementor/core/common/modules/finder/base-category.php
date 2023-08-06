@@ -33,7 +33,6 @@ abstract class Base_Category extends Base_Object {
 	 * TODO: Make abstract.
 	 *
 	 * @since 3.5.0
-	 * @deprecated 3.5.0
 	 * @access public
 	 *
 	 * @return string

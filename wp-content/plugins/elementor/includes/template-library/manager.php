@@ -133,8 +133,9 @@ class Manager {
 	 * Remove an existing template sources from the list of registered template
 	 * sources.
 	 *
-	 * @since 1.0.0
 	 * @deprecated 2.7.0
+	 *
+	 * @since 1.0.0
 	 * @access public
 	 *
 	 * @param string $id The source ID.

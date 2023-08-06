@@ -9,7 +9,6 @@ use Elementor\Core\Base\App as BaseApp;
 use Elementor\Core\Settings\Manager as SettingsManager;
 use Elementor\Plugin;
 use Elementor\TemplateLibrary\Source_Local;
-use Elementor\User;
 use Elementor\Utils;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -71,11 +70,6 @@ class App extends BaseApp {
 
 	public function admin_init() {
 		do_action( 'elementor/app/init', $this );
-
-		// Add the introduction and user settings only when it is needed (when loading the app and not in the editor or admin pages)
-		$this->set_settings( 'user', [
-			'introduction' => (object) User::get_introduction_meta(),
-		] );
 
 		$this->enqueue_assets();
 
