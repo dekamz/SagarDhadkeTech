@@ -304,7 +304,7 @@ class Module {
 		$values = $repeater->get_controls();
 
 		if ( $should_apply ) {
-			$values = array_values( $values );
+			// $values = array_values( $values );
 		}
 
 		$element->add_control(

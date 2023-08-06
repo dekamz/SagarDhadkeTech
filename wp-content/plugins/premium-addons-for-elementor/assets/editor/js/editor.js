@@ -1,7 +1,92 @@
 (function () {
     var $ = jQuery;
 
+    var pinterestToken = null;
+
+    elementor.channels.editor.on('change', function (view) {
+        var changed = view.elementSettingsModel.changed;
+
+        if (changed.access_token) {
+            if (changed.access_token.startsWith('pina_'))
+                pinterestToken = changed.access_token;
+        }
+    });
+
+    function onSectionActivate(sectionName) {
+
+        if ('access_credentials_section' === sectionName) {
+
+            setTimeout(function () {
+
+                var accessToken = jQuery('.elementor-control-access_token textarea').val();
+
+                pinterestToken = accessToken;
+
+            }, 100);
+
+        }
+
+
+    }
+
+
+    elementor.channels.editor.on('section:activated', onSectionActivate);
+
     var selectOptions = elementor.modules.controls.Select2.extend({
+
+        isUpdated: false,
+
+        onReady: function () {
+
+            var options = (0 === this.model.get('options').length);
+
+            if (this.container && "widget" === this.container.type && 'board_id' === this.model.get('name')) {
+                if (options) {
+
+                    var _this = this;
+
+                    if (pinterestToken) {
+
+                        jQuery.ajax({
+                            type: "GET",
+                            url: socialSettings.ajaxurl,
+                            dataType: "JSON",
+                            data: {
+                                action: "get_pinterest_boards",
+                                security: socialSettings.nonce,
+                                token: pinterestToken
+                            },
+                            success: function (res) {
+
+                                if (res.data) {
+
+                                    var options = JSON.parse(res.data);
+
+                                    _this.model.set("options", options);
+
+                                    _this.isUpdated = false;
+
+                                    _this.render();
+
+                                }
+                            },
+                            error: function (err) {
+                                console.log(err);
+                            }
+                        });
+                    }
+
+                    elementor.channels.editor.on('change', function (view) {
+                        var changed = view.elementSettingsModel.changed;
+
+                        if (undefined !== changed.board_id && !_this.isUpdated) {
+                            _this.isUpdated = true;
+                        }
+                    });
+
+                }
+            }
+        },
 
         onBeforeRender: function () {
 
@@ -104,7 +189,7 @@
 
         onBeforeDestroy: function () {
             if (this.ui.select.data('select2')) {
-                this.ui.select.select2('destroy');
+                // this.ui.select.select2('destroy');
             }
 
             this.$el.remove();
@@ -148,15 +233,25 @@
                     post_type: type
                 },
                 success: function (res) {
+
                     var options = JSON.parse(res.data);
                     self.updateTaxOptions(options);
                     self.isUpdated = false;
 
                     if (0 !== options.length) {
-                        var $tax = Object.keys(options);
-                        self.container.settings.setExternalChange({ 'filter_tabs_type': $tax[0] });
+
+                        self.$el.removeClass('elementor-hidden-control');
+
+                        $('.premium-live-temp-title').addClass('control-hidden');
+
+                        // var $tax = Object.keys(options);
+                        // self.container.settings.setExternalChange({ 'filter_tabs_type': $tax[0] });
                         self.container.render();
                         self.render();
+                    } else {
+                        self.$el.addClass('elementor-hidden-control');
+
+                        $('.premium-live-temp-title.control-hidden').removeClass('control-hidden');
                     }
                 },
                 error: function (err) {
@@ -166,7 +261,9 @@
         },
 
         updateTaxOptions: function (options) {
+
             this.model.set("options", options);
+
         },
     });
 

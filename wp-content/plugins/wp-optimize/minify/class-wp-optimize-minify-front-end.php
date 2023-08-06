@@ -75,7 +75,7 @@ class WP_Optimize_Minify_Front_End {
 		}
 
 		if ($this->should_process_html()) {
-			add_action('template_redirect', array('WP_Optimize_Minify_Functions', 'html_compression_start'), PHP_INT_MAX);
+			add_action('template_redirect', array('WP_Optimize_Minify_Functions', 'html_compression_start'), 9);
 		}
 
 		if ($this->should_use_loadCSS()) {

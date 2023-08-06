@@ -4,7 +4,7 @@ Tags: HTML, static website generator, static site, secure, fast
 Requires at least: 5.4
 Tested up to: 6.2
 Requires PHP: 7.4
-Stable tag: 2.3.1
+Stable tag: 3.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,36 +47,15 @@ Develop your site locally and only push the static exported website on a server.
 
 I highly recommend not to use another tool for local development if you are not a programmer as in most cases manual package installation is required.
 
-== Simply CDN ==
-
-Simply CDN is a hosting platform for static sites generated with Simply Static.
-
-Create an account, copy & paste the Security Token into Simply Static, and immediately push your static website live.
-
-[youtube https://youtu.be/7ejlvDxXMXM]
-
-Simply CDN also ships with a bunch of features to simplify the process of working with your static website:
-
-* handles caching and security
-* temporary domains for setup and testing
-* forward form submissions to your e-mail address
-* handles 404 pages with a custom template
-* automatically export changes in the background
-
-It's built on BunnyCDN and combines affordable static site hosting with everything learned while developing Simply Static.
-
-Start your 7-day free trial [here](https://simplycdn.io/#pricing).
-
-
 == Simply Static Pro ==
 
 The pro version of Simply Static enhances the plugin with various features.
 
-[youtube https://www.youtube.com/watch?v=PwdO6B7Iet0]
+[youtube https://www.youtube.com/watch?v=PTuw1ChYCdI]
 
 = GitHub Integration =
 
-With the GitHub integration, you can completely automate your entire development process. 
+With the GitHub integration, you can completely automate your entire development process.
 
 The only thing you need is a GitHub account, no knowledge of Git or GitHub itself is required, as Simply Static Pro handles the entire process for you and keeps your repository up to date.
 
@@ -86,10 +65,17 @@ This allows deploying your static website to:
 * Cloudflare Pages
 * Netlify
 * Vercel
-* Amazon S3
-* Digital Ocean Spaces
-* BunnyCDN (and other CDN providers)
 * SFTP to your server
+
+
+= AWS S3 Integration & Digital Ocean Spaces Integration =
+
+Export directly to Amazon AWS S3 from Simply Static Pro. Connect your bucket and run your export.
+
+
+= BunnyCDN Integration =
+
+Export directly to BunnyCDN and get all the benefits of their CDN - including caching, file optimization and DNS management.
 
 
 = Builds and Single Exports =
@@ -127,6 +113,27 @@ After a comment was submitted, Simply Static automatically exports a new static 
 Use WPML, Polylang or TranslatePress and run static exports per language or all at once.
 
 Simply Static Pro also supports configuring settings per language, using the available language switchers and more to export a your multilingual website as easy as possible.
+
+
+= WP-CLI =
+
+Simply Static Pro has a detailed and comprehensive integration with WP-CLI.
+
+Control every option, run different kinds of exports and more with the WP-CLI integration.
+
+
+= Multisite =
+
+Export your entire network, subsites, change settings on the network level and more.
+
+The multisite integration of Simply Static Pro brings your static network to the next level.
+
+
+= Minification =
+
+Automatically minfiy HTML, CSS and JavaScript files on your static site.
+
+We can even minify inline CSS & JavaScript.
 
 
 = Get the Pro version =
@@ -199,6 +206,45 @@ Simply Static creates a static copy of your WordPress site that is intended to b
 3. Diagnostics
 
 == Changelog ==
+
+= 3.0.4 =
+
+* simplified url_exclude upgrade on update
+* disable browser autocomplete on basic auth settings
+* added additional notice with button in settings panel if all auto-migration fails
+
+= 3.0.3 =
+
+* specific version check for migration handler
+* fixed schema option updates
+
+= 3.0.2 =
+
+* fixed iterator for "clear_local_directory" option
+* reworked "force_replace_urls" to the new options patterns (boolean)
+
+= 3.0.1 =
+
+* prevent error on merge excludes if not an array
+* bust object cache after migration
+
+= 3.0 =
+
+* new admin UI for settings
+* new admin UI for diagnostics
+* new admin UI for generate
+* ported ajax requests to Rest API for better performance and maintainability
+* improved diagnostics with better (and more meaningful) error messages
+* conditional settings for certain setups
+* improved support for Windows Azure (path conversion)
+* auto-migration from old settings + manuall trigger
+* import and export settings via JSON
+
+= 2.3.2 =
+
+* bugfix: Elementor asset loading via webpack
+* repositioned filter for HTTPS args to be able to modify all arguments
+* latest version of WP Background processing added
 
 = 2.3.1 =
 

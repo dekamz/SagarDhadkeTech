@@ -12,7 +12,7 @@
         if( $showProfileName ) : ?>
         <h5 class="author__name">
             <a href="//www.instagram.com/<?php esc_attr_e($username); ?>" target="_blank">
-                <?php echo $author_name; ?>
+                <?php echo wp_kses_post($author_name); ?>
             </a>
         </h5>
     <?php endif; ?>

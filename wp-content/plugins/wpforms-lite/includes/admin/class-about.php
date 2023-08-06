@@ -68,21 +68,15 @@ class WPForms_About {
 	 */
 	public function __construct() {
 
-		// In old PHP we can't define this elsewhere.
-		self::$licenses_features = [
-			'entries'      => esc_html__( 'Form Entries', 'wpforms-lite' ),
-			'fields'       => esc_html__( 'Form Fields', 'wpforms-lite' ),
-			'templates'    => esc_html__( 'Form Templates', 'wpforms-lite' ),
-			'antispam'     => esc_html__( 'Spam Protection and Security', 'wpforms-lite' ),
-			'conditionals' => esc_html__( 'Smart Conditional Logic', 'wpforms-lite' ),
-			'marketing'    => esc_html__( 'Marketing Integrations', 'wpforms-lite' ),
-			'payments'     => esc_html__( 'Payment Forms', 'wpforms-lite' ),
-			'surveys'      => esc_html__( 'Surveys & Polls', 'wpforms-lite' ),
-			'advanced'     => esc_html__( 'Advanced Form Features', 'wpforms-lite' ),
-			'addons'       => esc_html__( 'WPForms Addons', 'wpforms-lite' ),
-			'support'      => esc_html__( 'Customer Support', 'wpforms-lite' ),
-			'sites'        => esc_html__( 'Number of Sites', 'wpforms-lite' ),
-		];
+		$this->hooks();
+	}
+
+	/**
+	 * Register hooks.
+	 *
+	 * @since 1.8.2.3
+	 */
+	private function hooks() {
 
 		// Maybe load tools page.
 		add_action( 'admin_init', [ $this, 'init' ] );
@@ -543,7 +537,12 @@ class WPForms_About {
 							<ul class="list-features list-plain">
 								<li>
 									<i class="fa fa-check" aria-hidden="true"></i>
-									<?php esc_html_e( '600+ customizable form templates', 'wpforms-lite' ); ?>
+									<?php
+									printf( /* translators: %s - number of templates. */
+										esc_html__( '%s customizable form templates', 'wpforms-lite' ),
+										'800+'
+									);
+									?>
 								</li>
 								<li>
 									<i class="fa fa-check" aria-hidden="true"></i>
@@ -767,7 +766,7 @@ class WPForms_About {
 
 				<table>
 					<?php
-					foreach ( self::$licenses_features as $slug => $name ) {
+					foreach ( $this->get_licenses_features_list() as $slug => $name ) {
 						$current = $this->get_license_data( $slug, $license );
 						$next    = $this->get_license_data( $slug, strtolower( $next_license ) );
 
@@ -1224,7 +1223,12 @@ class WPForms_About {
 				'pro'   => [
 					'status' => 'full',
 					'text'   => [
-						'<strong>' . esc_html__( 'All Form Templates including Bonus 600+ pre-made form templates', 'wpforms-lite' ) . '</strong>',
+						'<strong>' .
+						sprintf( /* translators: %s - number of templates. */
+							esc_html__( 'All Form Templates including Bonus %s pre-made form templates', 'wpforms-lite' ),
+							'800+'
+						) .
+						'</strong>',
 					],
 				],
 			],
@@ -1439,7 +1443,7 @@ class WPForms_About {
 					'status' => 'full',
 					'text'   => [
 						'<strong>' . esc_html__( 'All Advanced Features', 'wpforms-lite' ) . '</strong>',
-						esc_html__( 'Multi-page Forms, File Upload Forms, Multiple Form Notifications, File Upload and CSV Attachments, Conditional Form Confirmation, Custom CAPTCHA, Offline Forms, Signature Forms, Save and Resume Form', 'wpforms-lite' ),
+						esc_html__( 'Multi-page Forms, File Upload Forms, Multiple Form Notifications, File Upload and CSV Attachments, Conditional Form Confirmation, Custom CAPTCHA, Offline Forms, Signature Forms, Save and Resume Form, Coupons', 'wpforms-lite' ),
 					],
 				],
 			],
@@ -1466,28 +1470,28 @@ class WPForms_About {
 					'status' => 'full',
 					'text'   => [
 						'<strong>' . esc_html__( 'Pro Addons Included', 'wpforms-lite' ) . '</strong>',
-						esc_html__( 'Form Abandonment, Conversational Forms, Lead Forms, Frontend Post Submission, User Registration, Geolocation, Google Sheets, and more (27 total)', 'wpforms-lite' ),
+						esc_html__( 'Form Abandonment, Conversational Forms, Lead Forms, Frontend Post Submission, User Registration, Geolocation, Google Sheets, Coupons, and more (28 total)', 'wpforms-lite' ),
 					],
 				],
 				'elite'    => [
 					'status' => 'full',
 					'text'   => [
 						'<strong>' . esc_html__( 'All Addons Included', 'wpforms-lite' ) . '</strong>',
-						esc_html__( 'Form Abandonment, Conversational Forms, Lead Forms, Frontend Post Submission, User Registration, Geolocation, Webhooks, Google Sheets, and more (30+ total)', 'wpforms-lite' ),
+						esc_html__( 'Form Abandonment, Conversational Forms, Lead Forms, Frontend Post Submission, User Registration, Geolocation, Webhooks, Google Sheets, Coupons, and more (30+ total)', 'wpforms-lite' ),
 					],
 				],
 				'ultimate' => [
 					'status' => 'full',
 					'text'   => [
 						'<strong>' . esc_html__( 'All Addons Included', 'wpforms-lite' ) . '</strong>',
-						esc_html__( 'Form Abandonment, Conversational Forms, Lead Forms, Frontend Post Submission, User Registration, Geolocation, Webhooks, Google Sheets, and more (30+ total)', 'wpforms-lite' ),
+						esc_html__( 'Form Abandonment, Conversational Forms, Lead Forms, Frontend Post Submission, User Registration, Geolocation, Webhooks, Google Sheets, Coupons, and more (30+ total)', 'wpforms-lite' ),
 					],
 				],
 				'agency'   => [
 					'status' => 'full',
 					'text'   => [
 						'<strong>' . esc_html__( 'All Addons Included', 'wpforms-lite' ) . '</strong>',
-						esc_html__( 'Form Abandonment, Conversational Forms, Lead Forms, Frontend Post Submission, User Registration, Geolocation, Webhooks, Google Sheets, and more (30+ total)', 'wpforms-lite' ),
+						esc_html__( 'Form Abandonment, Conversational Forms, Lead Forms, Frontend Post Submission, User Registration, Geolocation, Webhooks, Google Sheets, Coupons, and more (30+ total)', 'wpforms-lite' ),
 					],
 				],
 			],
@@ -1613,6 +1617,33 @@ class WPForms_About {
 		}
 
 		return $type;
+	}
+
+	/**
+	 * Get the list of features for the licenses.
+	 *
+	 * @since 1.8.2.3
+	 *
+	 * @return array
+	 */
+	private function get_licenses_features_list() {
+
+		self::$licenses_features = [
+			'entries'      => esc_html__( 'Form Entries', 'wpforms-lite' ),
+			'fields'       => esc_html__( 'Form Fields', 'wpforms-lite' ),
+			'templates'    => esc_html__( 'Form Templates', 'wpforms-lite' ),
+			'antispam'     => esc_html__( 'Spam Protection and Security', 'wpforms-lite' ),
+			'conditionals' => esc_html__( 'Smart Conditional Logic', 'wpforms-lite' ),
+			'marketing'    => esc_html__( 'Marketing Integrations', 'wpforms-lite' ),
+			'payments'     => esc_html__( 'Payment Forms', 'wpforms-lite' ),
+			'surveys'      => esc_html__( 'Surveys & Polls', 'wpforms-lite' ),
+			'advanced'     => esc_html__( 'Advanced Form Features', 'wpforms-lite' ),
+			'addons'       => esc_html__( 'WPForms Addons', 'wpforms-lite' ),
+			'support'      => esc_html__( 'Customer Support', 'wpforms-lite' ),
+			'sites'        => esc_html__( 'Number of Sites', 'wpforms-lite' ),
+		];
+
+		return self::$licenses_features;
 	}
 }
 

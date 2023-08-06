@@ -16,11 +16,12 @@
   cursor: pointer;
   -ms-user-select: none;
        -webkit-user-select: none;
-          user-select: none;
+       user-select: none;
   background-image: none;
   border: 1px solid transparent;
 }
 
+.premium-modal-trigger-btn i,
 .premium-modal-trigger-btn>svg,
 .premium-modal-trigger-btn .premium-modal-box-icon {
   -webkit-transition: all 0.3s ease-in-out;

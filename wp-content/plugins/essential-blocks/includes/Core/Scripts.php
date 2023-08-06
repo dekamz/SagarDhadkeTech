@@ -102,7 +102,6 @@ class Scripts {
      */
     public function frontend_backend_assets() {
         wpdev_essential_blocks()->assets->register( 'eb-animation', 'js/eb-animation-load.js' );
-        wpdev_essential_blocks()->assets->register( 'eb-clipboard', 'js/clipboard.min.js' );
         wpdev_essential_blocks()->assets->register( 'animation', 'css/animate.min.css' );
 
         wpdev_essential_blocks()->assets->register( 'vendor-bundle', '../vendor-bundle/index.js' );
@@ -153,6 +152,7 @@ class Scripts {
             'rest_rootURL'    => get_rest_url(),
             'ajax_url'        => admin_url( 'admin-ajax.php' ),
             'nft_nonce'       => wp_create_nonce( 'eb-nft-nonce' ),
+            'placeholder_image' => ESSENTIAL_BLOCKS_PLACEHOLDER_IMAGE,
             'is_pro_active'   => ESSENTIAL_BLOCKS_IS_PRO_ACTIVE ? "true" : "false",
             'upgrade_pro_url' => ESSENTIAL_BLOCKS_UPGRADE_PRO_URL
         ];

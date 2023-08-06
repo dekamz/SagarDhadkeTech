@@ -1544,6 +1544,17 @@ class Premium_Grid extends Widget_Base {
 			)
 		);
 
+		$this->add_responsive_control(
+			'title_spacing',
+			array(
+				'label'     => __( 'Spacing', 'premium-addons-for-elementor' ),
+				'type'      => Controls_Manager::SLIDER,
+				'selectors' => array(
+					'{{WRAPPER}} .premium-gallery-img-name'  => 'margin-bottom: {{SIZE}}px',
+				),
+			)
+		);
+
 		$this->add_control(
 			'premium_gallery_description_heading',
 			array(
@@ -1575,6 +1586,14 @@ class Premium_Grid extends Widget_Base {
 					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
 				),
 				'selector' => '{{WRAPPER}} .premium-gallery-img-desc, {{WRAPPER}} .premium-gallery-img-desc a',
+			)
+		);
+
+		$this->add_control(
+			'container_heading',
+			array(
+				'label' => __( 'Container', 'premium-addons-for-elementor' ),
+				'type'  => Controls_Manager::HEADING,
 			)
 		);
 

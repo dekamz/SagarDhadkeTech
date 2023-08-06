@@ -16,7 +16,7 @@ class FaqSchema {
      * Constructor Class
      */
     public function __construct() {
-        add_action( 'wp_head', [ $this, 'eb_faq_schema' ], 91 );
+        add_action( 'wp_head', [$this, 'eb_faq_schema'], 91 );
     }
 
     /**
@@ -25,7 +25,11 @@ class FaqSchema {
     public function eb_faq_schema() {
         $this->render_accordion_item_faq_schema();
 
-        echo self::$faq_schema;
+        if ( ! empty( self::$faq_schema ) ) {
+            echo wp_kses( self::$faq_schema, [
+                'script' => ['type' => [], 'class' => []]
+            ] );
+        }
     }
 
     /**

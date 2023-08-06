@@ -305,9 +305,9 @@ class Admin {
         }
 
         if ( isset( $_POST['type'] ) ) {
-            $type  = trim( $_POST['type'] );
-            $key   = isset( $_POST['key'] ) ? trim( $_POST['key'] ) : '';
-            $value = isset( $_POST['value'] ) ? trim( $_POST['value'] ) : '';
+            $type  = trim( sanitize_text_field($_POST['type']) );
+            $key   = isset( $_POST['key'] ) ? trim( sanitize_text_field($_POST['key']) ) : '';
+            $value = isset( $_POST['value'] ) ? trim( sanitize_text_field($_POST['value']) ) : '';
 
             $settings = Settings::get_instance();
 
@@ -345,7 +345,7 @@ class Admin {
         }
 
         if ( isset( $_POST['key'] ) ) {
-            $key      = trim( $_POST['key'] );
+            $key      = trim( sanitize_text_field($_POST['key']) );
             $settings = Settings::get_instance();
             $data     = $settings->get( $key );
 

@@ -13,6 +13,7 @@ use PremiumAddons\Modules\PremiumSectionFloatingEffects\Module as Floating_Effec
 use PremiumAddons\Modules\Woocommerce\Module as Woocommerce;
 use PremiumAddons\Includes\Assets_Manager;
 use PremiumAddons\Includes\Premium_Template_Tags;
+use ElementorPro\Plugin as PluginPro;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit();
@@ -84,6 +85,9 @@ class Addons_Integration {
 
 		add_action( 'wp_ajax_update_template_title', array( $this, 'update_template_title' ) );
 
+		add_action( 'wp_ajax_get_pinterest_token', array( $this, 'get_pinterest_token' ) );
+		add_action( 'wp_ajax_get_pinterest_boards', array( $this, 'get_pinterest_boards' ) );
+
 		add_action( 'elementor/editor/before_enqueue_scripts', array( $this, 'enqueue_editor_scripts' ) );
 
 		add_action( 'elementor/preview/enqueue_styles', array( $this, 'enqueue_preview_styles' ) );
@@ -95,13 +99,10 @@ class Addons_Integration {
 		add_action( 'wp_ajax_get_elementor_template_content', array( $this, 'get_template_content' ) );
 
 		if ( defined( 'ELEMENTOR_VERSION' ) ) {
-			if ( version_compare( ELEMENTOR_VERSION, '3.5.0', '>=' ) ) {
-				add_action( 'elementor/controls/register', array( $this, 'init_pa_controls' ) );
-				add_action( 'elementor/widgets/register', array( $this, 'widgets_area' ) );
-			} else {
-				add_action( 'elementor/controls/controls_registered', array( $this, 'init_pa_controls' ) );
-				add_action( 'elementor/widgets/widgets_registered', array( $this, 'widgets_area' ) );
-			}
+
+			add_action( 'elementor/controls/register', array( $this, 'init_pa_controls' ) );
+			add_action( 'elementor/widgets/register', array( $this, 'widgets_area' ) );
+
 		}
 
 		add_action( 'elementor/editor/after_enqueue_scripts', array( $this, 'after_enqueue_scripts' ) );
@@ -184,9 +185,17 @@ class Addons_Integration {
 			wp_send_json_error( 'template ID is not set' );
 		}
 
-		$temp_id = sanitize_text_field( wp_unslash( $_POST['templateID'] ) );
+		$temp_id   = sanitize_text_field( wp_unslash( $_POST['templateID'] ) );
+		$temp_type = sanitize_text_field( wp_unslash( $_POST['tempType'] ) );
 
-		$template_content = $this->template_instance->get_template_content( $temp_id, true );
+		if ( 'loop' === $temp_type ) {
+			/** @var LoopDocument $document */
+			$template_content = PluginPro::elementor()->documents->get( $temp_id );
+
+		} else {
+			$template_content = $this->template_instance->get_template_content( $temp_id, true );
+
+		}
 
 		if ( empty( $template_content ) || ! isset( $template_content ) ) {
 
@@ -217,6 +226,25 @@ class Addons_Integration {
 		}
 
 		$post_name  = 'pa-dynamic-temp-' . sanitize_text_field( wp_unslash( $_POST['key'] ) );
+		$temp_type  = isset( $_POST['type'] ) ? sanitize_text_field( wp_unslash( $_POST['type'] ) ) : false;
+		$meta_input = array(
+			'_elementor_edit_mode'     => 'builder',
+			'_elementor_template_type' => 'page',
+			'_wp_page_template'        => 'elementor_canvas',
+		);
+
+		if ( 'loop' === $temp_type ) {
+			$meta_input = array(
+				'_elementor_edit_mode'     => 'builder',
+				'_elementor_template_type' => 'loop-item',
+			);
+		} elseif ( 'grid' === $temp_type ) {
+			$meta_input = array(
+				'_elementor_edit_mode'     => 'builder',
+				'_elementor_template_type' => 'premium-grid',
+			);
+		}
+
 		$post_title = '';
 		$args       = array(
 			'post_type'              => 'elementor_library',
@@ -240,11 +268,7 @@ class Addons_Integration {
 				'post_title'   => $post_title,
 				'post_name'    => $post_name,
 				'post_status'  => 'publish',
-				'meta_input'   => array(
-					'_elementor_edit_mode'     => 'builder',
-					'_elementor_template_type' => 'page',
-					'_wp_page_template'        => 'elementor_canvas',
-				),
+				'meta_input'   => $meta_input,
 			);
 
 			$post_id = wp_insert_post( $params );
@@ -299,7 +323,17 @@ class Addons_Integration {
 			true
 		);
 
-		if ( self::$modules['premium-blog'] || self::$modules['pa-display-conditions'] ) {
+		$modules = array(
+			self::$modules['premium-blog'],
+			self::$modules['pa-display-conditions'],
+			self::$modules['premium-smart-post-listing'],
+			self::$modules['premium-post-ticker'],
+			self::$modules['premium-notifications'],
+		);
+
+		$localize_settings = in_array( true, $modules, true );
+
+		if ( $localize_settings ) {
 			wp_localize_script(
 				'pa-eq-editor',
 				'PremiumSettings',
@@ -318,6 +352,27 @@ class Addons_Integration {
 				'papro_widgets'   => Admin_Helper::get_pro_elements(),
 			)
 		);
+
+		$pinterest_enabled = isset( self::$modules['premium-pinterest-feed'] ) ? self::$modules['premium-pinterest-feed'] : 1;
+
+		if ( $pinterest_enabled ) {
+
+			$data = array(
+				'ajaxurl' => esc_url( admin_url( 'admin-ajax.php' ) ),
+				'nonce'   => wp_create_nonce( 'pa-social' ),
+			);
+
+			wp_enqueue_script(
+				'pa-social-connect',
+				PREMIUM_ADDONS_URL . 'assets/editor/js/social-connect.js',
+				array( 'elementor-editor' ),
+				PREMIUM_ADDONS_VERSION,
+				true
+			);
+
+			wp_localize_script( 'pa-social-connect', 'socialSettings', $data );
+
+		}
 
 	}
 
@@ -404,11 +459,22 @@ class Addons_Integration {
 			'all'
 		);
 
+		wp_register_style(
+			'pa-world-clock',
+			PREMIUM_ADDONS_URL . 'assets/frontend/' . $dir . '/premium-world-clock' . $suffix . '.css',
+			array(),
+			PREMIUM_ADDONS_VERSION,
+			'all'
+		);
+        
 		$assets_gen_enabled = self::$modules['premium-assets-generator'] ? true : false;
 
 		$type = get_post_type();
 
-		if ( $assets_gen_enabled && ( 'page' === $type || 'post' === $type ) ) {
+		// If dynamic assets is disabled.
+		if ( ! $assets_gen_enabled || ( 'page' !== $type && 'post' !== $type ) ) {
+			$this->enqueue_old_styles( $dir, $is_rtl, $suffix );
+		} else {
 
 			$css_path = '/pa-frontend' . $is_rtl . '-' . Assets_Manager::$post_id . $suffix . '.css';
 
@@ -421,11 +487,13 @@ class Addons_Integration {
 					'all'
 				);
 			}
-		}
 
-		// If the assets are not ready, or file does not exist for any reson.
-		if ( ! wp_style_is( 'pa-frontend', 'enqueued' ) ) {
-			$this->enqueue_old_styles( $dir, $is_rtl, $suffix );
+			$pa_elements = get_option( 'pa_elements_' . Assets_Manager::$post_id, array() );
+
+			// If the assets are not updated, or they are updated but the dynamic CSS file has not been loaded for any reason.
+			if ( ! Assets_Manager::$is_updated || ( ! empty( $pa_elements ) && ! wp_style_is( 'pa-frontend', 'enqueued' ) ) ) {
+				$this->enqueue_old_styles( $dir, $is_rtl, $suffix );
+			}
 		}
 
 	}
@@ -733,7 +801,7 @@ class Addons_Integration {
 
 		wp_register_script(
 			'pa-fontawesome-all',
-			PREMIUM_ADDONS_URL . 'assets/frontend/' . $dir . '/fontawesome-all' . $suffix . '.js',
+			PREMIUM_ADDONS_URL . 'assets/frontend/min-js/fontawesome-all.min.js',
 			array( 'jquery' ),
 			PREMIUM_ADDONS_VERSION,
 			true
@@ -742,6 +810,22 @@ class Addons_Integration {
 		wp_register_script(
 			'pa-scrolltrigger',
 			PREMIUM_ADDONS_URL . 'assets/frontend/' . $dir . '/scrollTrigger' . $suffix . '.js',
+			array( 'jquery' ),
+			PREMIUM_ADDONS_VERSION,
+			true
+		);
+
+		wp_register_script(
+			'pa-notifications',
+			PREMIUM_ADDONS_URL . 'assets/frontend/' . $dir . '/premium-notifications' . $suffix . '.js',
+			array( 'jquery' ),
+			PREMIUM_ADDONS_VERSION,
+			true
+		);
+
+		wp_register_script(
+			'pa-luxon',
+			PREMIUM_ADDONS_URL . 'assets/frontend/' . $dir . '/luxon' . $suffix . '.js',
 			array( 'jquery' ),
 			PREMIUM_ADDONS_VERSION,
 			true
@@ -812,12 +896,38 @@ class Addons_Integration {
 	 */
 	public function enqueue_preview_styles() {
 
+		$custom_css = '
+		.e-preview--show-hidden-elements[data-elementor-device-mode="mobile"] .elementor-edit-area-active .elementor-hidden-mobile.premium-addons-element {
+			display: none;
+		}
+
+		.e-preview--show-hidden-elements[data-elementor-device-mode="tablet"] .elementor-edit-area-active .elementor-hidden-tablet.premium-addons-element {
+			display: none;
+		}
+
+		.e-preview--show-hidden-elements[data-elementor-device-mode="mobile_extra"] .elementor-edit-area-active .elementor-hidden-mobile_extra.premium-addons-element {
+			display: none;
+		}
+
+		.e-preview--show-hidden-elements[data-elementor-device-mode="tablet_extra"] .elementor-edit-area-active .elementor-hidden-tablet_extra.premium-addons-element {
+			display: none;
+		}
+
+		.e-preview--show-hidden-elements[data-elementor-device-mode="widescreen"] .elementor-edit-area-active .elementor-hidden-widescreen.premium-addons-element {
+			display: none;
+		}
+
+		.e-preview--show-hidden-elements[data-elementor-device-mode="desktop"] .elementor-edit-area-active .elementor-hidden-desktop.premium-addons-element {
+			display: none;
+		}';
+
 		wp_enqueue_style( 'pa-prettyphoto' );
 
 		wp_enqueue_style( 'premium-addons' );
 
-		wp_enqueue_style( 'pa-slick' );
+		wp_add_inline_style( 'premium-addons', $custom_css );
 
+		wp_enqueue_style( 'pa-slick' );
 	}
 
 	/**
@@ -930,6 +1040,93 @@ class Addons_Integration {
 	}
 
 	/**
+	 * Get Pinterest account token for Pinterest Feed widget
+	 *
+	 * @since 4.10.2
+	 * @access public
+	 *
+	 * @return void
+	 */
+	public function get_pinterest_token() {
+
+		check_ajax_referer( 'pa-social', 'security' );
+
+		$api_url = 'https://appfb.premiumaddons.com/wp-json/fbapp/v2/pinterest';
+
+		$response = wp_remote_get(
+			$api_url,
+			array(
+				'timeout'   => 60,
+				'sslverify' => false,
+			)
+		);
+
+		$body = wp_remote_retrieve_body( $response );
+		$body = json_decode( $body, true );
+
+		// $transient_name = 'pa_pinterest_token_' . $body;
+
+		// $expire_time = 29 * DAY_IN_SECONDS;
+
+		// set_transient( $transient_name, true, $expire_time );
+
+		wp_send_json_success( $body );
+
+	}
+
+	/**
+	 * Get Pinterest account token for Pinterest Feed widget
+	 *
+	 * @since 4.10.2
+	 * @access public
+	 *
+	 * @return void
+	 */
+	public function get_pinterest_boards() {
+
+		check_ajax_referer( 'pa-social', 'security' );
+
+		if ( ! isset( $_GET['token'] ) ) {
+			wp_send_json_error();
+		}
+
+		$token = sanitize_text_field( wp_unslash( $_GET['token'] ) );
+
+		$transient_name = 'pa_pinterest_boards_' . substr( $token, 0, 15 );
+
+		$body = get_transient( $transient_name );
+
+		if ( false === $body ) {
+
+			$api_url = 'https://api.pinterest.com/v5/boards';
+
+			$response = wp_remote_get(
+				$api_url,
+				array(
+					'headers' => array(
+						'Authorization' => 'Bearer ' . $token,
+					),
+				)
+			);
+
+			$body = wp_remote_retrieve_body( $response );
+			$body = json_decode( $body, true );
+
+			set_transient( $transient_name, $body, 30 * MINUTE_IN_SECONDS );
+
+		}
+
+		$boards = array();
+
+		foreach ( $body['items'] as $index => $board ) {
+			$boards[ $board['id'] ] = $board['name'];
+		}
+
+		wp_send_json_success( wp_json_encode( $boards ) );
+
+	}
+
+	/**
 	 * Load Cross Domain Copy Paste JS Files.
 	 *
 	 * @since 3.21.1
@@ -1026,16 +1223,23 @@ class Addons_Integration {
 			}
 		}
 
-		if ( 'PremiumAddons\Widgets\Premium_Videobox' === $class ) {
+		if ( 'PremiumAddons\Widgets\Premium_Videobox' === $class || 'PremiumAddons\Widgets\Premium_Weather' === $class ) {
 			require_once PREMIUM_ADDONS_PATH . 'widgets/dep/urlopen.php';
 		}
 
+		if ( 'PremiumAddons\Widgets\Premium_Weather' === $class ) {
+			require_once PREMIUM_ADDONS_PATH . 'widgets/dep/pa-weather-handler.php';
+		}
+
+		if ( 'PremiumAddons\Widgets\Premium_Pinterest_Feed' == $class ) {
+			require_once PREMIUM_ADDONS_PATH . 'includes/pa-display-conditions/mobile-detector.php';
+			require_once PREMIUM_ADDONS_PATH . 'widgets/dep/pa-pins-handler.php';
+		}
+
 		if ( class_exists( $class, false ) ) {
-			if ( defined( 'ELEMENTOR_VERSION' ) && version_compare( ELEMENTOR_VERSION, '3.5.0', '>=' ) ) {
-				$widgets_manager->register( new $class() );
-			} else {
-				$widgets_manager->register_widget_type( new $class() );
-			}
+
+			$widgets_manager->register( new $class() );
+
 		}
 
 	}
@@ -1050,70 +1254,69 @@ class Addons_Integration {
 	 */
 	public function init_pa_controls() {
 
-		if ( self::$modules['premium-equal-height'] || self::$modules['premium-blog'] || self::$modules['pa-display-conditions'] ) {
+		/**
+		 * List of Modules that need a custom control.
+		 *
+		 * @var array
+		 */
+		$modules = array(
+			self::$modules['premium-blog'],
+			self::$modules['premium-equal-height'],
+			self::$modules['pa-display-conditions'],
+			self::$modules['premium-smart-post-listing'],
+			self::$modules['premium-post-ticker'],
+			self::$modules['premium-tcloud'],
+			self::$modules['premium-notifications'],
+			self::$modules['premium-pinterest-feed'],
+		);
+
+		$blog_modules = array(
+			self::$modules['premium-blog'],
+			self::$modules['premium-smart-post-listing'],
+			self::$modules['premium-post-ticker'],
+			self::$modules['premium-notifications'],
+		);
+
+		$load_controls = in_array( true, $modules, true );
+
+		$load_blog_controls = in_array( true, $blog_modules, true );
+
+		if ( $load_controls ) {
 
 			$control_manager = \Elementor\Plugin::instance();
 
-			if ( version_compare( ELEMENTOR_VERSION, '3.5.0', '>=' ) ) {
+			if ( self::$modules['premium-equal-height'] || self::$modules['premium-pinterest-feed'] ) {
 
-				// TODO: NEEDS TO BE DYNAMIC.
-				if ( self::$modules['premium-equal-height'] ) {
+				require_once PREMIUM_ADDONS_PATH . 'includes/controls/premium-select.php';
+				$premium_select = __NAMESPACE__ . '\Controls\Premium_Select';
+				$control_manager->controls_manager->register( new $premium_select() );
 
-					require_once PREMIUM_ADDONS_PATH . 'includes/controls/premium-select.php';
-					$premium_select = __NAMESPACE__ . '\Controls\Premium_Select';
-					$control_manager->controls_manager->register( new $premium_select() );
+			}
 
-				}
+			if ( $load_blog_controls ) {
 
-				if ( self::$modules['premium-blog'] ) {
+				require_once PREMIUM_ADDONS_PATH . 'includes/controls/premium-post-filter.php';
 
-					require_once PREMIUM_ADDONS_PATH . 'includes/controls/premium-post-filter.php';
-					require_once PREMIUM_ADDONS_PATH . 'includes/controls/premium-tax-filter.php';
+				$premium_post_filter = __NAMESPACE__ . '\Controls\Premium_Post_Filter';
 
-					$premium_post_filter = __NAMESPACE__ . '\Controls\Premium_Post_Filter';
-					$premium_tax_filter  = __NAMESPACE__ . '\Controls\Premium_Tax_Filter';
+				$control_manager->controls_manager->register( new $premium_post_filter() );
+			}
 
-					$control_manager->controls_manager->register( new $premium_post_filter() );
-					$control_manager->controls_manager->register( new $premium_tax_filter() );
+			if ( self::$modules['premium-blog'] || self::$modules['premium-smart-post-listing'] || self::$modules['premium-tcloud'] ) {
 
-				}
+				require_once PREMIUM_ADDONS_PATH . 'includes/controls/premium-tax-filter.php';
 
-				if ( self::$modules['pa-display-conditions'] ) {
+				$premium_tax_filter = __NAMESPACE__ . '\Controls\Premium_Tax_Filter';
 
-					require_once PREMIUM_ADDONS_PATH . 'includes/controls/premium-acf-selector.php';
-					$premium_acf_selector = __NAMESPACE__ . '\Controls\Premium_Acf_Selector';
-					$control_manager->controls_manager->register( new $premium_acf_selector() );
+				$control_manager->controls_manager->register( new $premium_tax_filter() );
+			}
 
-				}
-			} else {
-				if ( self::$modules['premium-equal-height'] ) {
+			if ( self::$modules['pa-display-conditions'] ) {
 
-					require_once PREMIUM_ADDONS_PATH . 'includes/controls/premium-select.php';
-					$premium_select = __NAMESPACE__ . '\Controls\Premium_Select';
-					$control_manager->controls_manager->register_control( $premium_select::TYPE, new $premium_select() );
+				require_once PREMIUM_ADDONS_PATH . 'includes/controls/premium-acf-selector.php';
+				$premium_acf_selector = __NAMESPACE__ . '\Controls\Premium_Acf_Selector';
+				$control_manager->controls_manager->register( new $premium_acf_selector() );
 
-				}
-
-				if ( self::$modules['premium-blog'] ) {
-
-					require_once PREMIUM_ADDONS_PATH . 'includes/controls/premium-post-filter.php';
-					require_once PREMIUM_ADDONS_PATH . 'includes/controls/premium-tax-filter.php';
-
-					$premium_post_filter = __NAMESPACE__ . '\Controls\Premium_Post_Filter';
-					$premium_tax_filter  = __NAMESPACE__ . '\Controls\Premium_Tax_Filter';
-
-					$control_manager->controls_manager->register_control( $premium_post_filter::TYPE, new $premium_post_filter() );
-					$control_manager->controls_manager->register_control( $premium_tax_filter::TYPE, new $premium_tax_filter() );
-
-				}
-
-				if ( self::$modules['pa-display-conditions'] ) {
-
-					require_once PREMIUM_ADDONS_PATH . 'includes/controls/premium-acf-selector.php';
-					$premium_acf_selector = __NAMESPACE__ . '\Controls\Premium_Acf_Selector';
-					$control_manager->controls_manager->register_control( $premium_acf_selector::TYPE, new $premium_acf_selector() );
-
-				}
 			}
 		}
 

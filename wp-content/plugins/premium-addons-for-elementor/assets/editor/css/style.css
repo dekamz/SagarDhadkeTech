@@ -1,10 +1,10 @@
 @font-face {
     font-family: "pa-elements";
-    src: url("../fonts/pa-elements.eot?j9bteq");
-    src: url("../fonts/pa-elements.eot?j9bteq#iefix") format("embedded-opentype"),
-        url("../fonts/pa-elements.ttf?j9bteq") format("truetype"),
-        url("../fonts/pa-elements.woff?j9bteq") format("woff"),
-        url("../fonts/pa-elements.svg?j9bteq#pa-elements") format("svg");
+    src: url("../fonts/pa-elements.eot?309bz1");
+    src: url("../fonts/pa-elements.eot?309bz1#iefix") format("embedded-opentype"),
+        url("../fonts/pa-elements.ttf?309bz1") format("truetype"),
+        url("../fonts/pa-elements.woff?309bz1") format("woff"),
+        url("../fonts/pa-elements.svg?309bz1#pa-elements") format("svg");
     font-weight: normal;
     font-style: normal;
 }
@@ -155,6 +155,46 @@
 
 .pa-mega-menu:before {
     content: "\e928";
+}
+
+.pa-tags-cloud:before {
+    content: "\e93f";
+}
+
+.pa-world-clock:before {
+    content: "\e943";
+}
+
+.pa-tiktok-feed:before {
+    content: "\e945";
+}
+
+html:not([dir="rtl"]) .pa-tiktok-feed:before {
+    margin-right: -2px;
+}
+
+[dir="rtl"] .pa-tiktok-feed:before {
+    margin-left: -2px;
+}
+
+.pa-weather:before {
+    content: "\e942";
+}
+
+.pa-post-notifications:before {
+    content: "\e940";
+}
+
+.pa-ticker:before {
+    content: "\e941";
+}
+
+.pa-pinterest:before {
+    content: "\e945";
+}
+
+.pa-tiktok:before {
+    content: "\e946";
 }
 
 .editor-pa-doc {
@@ -368,6 +408,10 @@
     content: "\e93e";
 }
 
+.pa-pro-post-listing:before {
+    content: "\e944";
+}
+
 .editor-pa-img {
     max-width: 30px !important;
     max-height: 30px;
@@ -461,6 +505,7 @@ html:not([dir="rtl"]) .premium-promotion-pro-btn {
     display: -moz-box;
     display: -ms-flexbox;
     display: flex;
+    justify-content: center;
 }
 
 .premium-live-editor-iframe-modal .elementor-templates-modal__header__logo__title {
@@ -573,4 +618,15 @@ html:not([dir="rtl"]) .premium-promotion-pro-btn {
 
 .premium-live-temp-label label {
     font-weight: 900;
+}
+
+.elementor-control-type-premium-tax-filter select {
+    padding-left: 5px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.elementor-control-pa_loop_template_id .elementor-template-query-control-actions,
+.elementor-control-pa_grid_template_id .elementor-template-query-control-actions {
+    display: none;
 }

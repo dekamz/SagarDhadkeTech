@@ -648,7 +648,7 @@
                         <?php echo esc_html( $this->notice_options['no'] ); ?>
                     </a>&nbsp;
                     <a href="#" class="<?php echo 'wpinsights-' . esc_attr( $this->plugin_name ) . '-collect' ?>">
-                        <?php echo $this->notice_options['consent_button_text']; ?>
+                        <?php echo esc_html($this->notice_options['consent_button_text']); ?>
                     </a>
                 </p>
                 <div class="wpinsights-data" style="display: none;">

@@ -61,9 +61,10 @@ class Admin_Notices {
 
 		self::$notices = array(
 			'pa-review',
+			'pinterest_notice',
 		);
 
-		delete_option( 'magic_scroll_notice' );
+		delete_option( 'magazine_notice' );
 
 	}
 
@@ -104,6 +105,8 @@ class Admin_Notices {
 		if ( Helper_Functions::check_hide_notifications() ) {
 			return;
 		}
+
+		$this->get_pinterest_notice();
 
 	}
 
@@ -247,6 +250,45 @@ class Admin_Notices {
 			<div class="error pa-new-feature-notice <?php echo esc_attr( $class ); ?>" data-notice="<?php echo esc_attr( $handle ); ?>">
 				<?php echo wp_kses_post( $message ); ?>
 			</div>
+		<?php
+	}
+
+	/**
+	 *
+	 * Shows admin notice for Pinterest Feed.
+	 *
+	 * @since 4.8.8
+	 * @access public
+	 *
+	 * @return void
+	 */
+	public function get_pinterest_notice() {
+
+		$pinterest_notice = get_option( 'pinterest_notice' );
+
+		if ( '1' === $pinterest_notice ) {
+			return;
+		}
+
+		$notice_url = Helper_Functions::get_campaign_link( 'https://premiumaddons.com/elementor-pinterest-feed-widget/', 'pinterest-notification', 'wp-dash', 'pinterest' );
+
+		?>
+
+		<div class="error pa-notice-wrap pa-new-feature-notice">
+			<div class="pa-img-wrap">
+				<img src="<?php echo PREMIUM_ADDONS_URL . 'admin/images/pa-logo-symbol.png'; ?>">
+			</div>
+			<div class="pa-text-wrap">
+				<p>
+					<strong><?php echo __( 'Premium Pinterest Feed widget', 'premium-addons-for-elemetor' ); ?></strong>
+					<?php echo sprintf( __( 'is now available in Premium Addons for Elementor. <a href="%s" target="_blank">Check it out now!</a>', 'premium-addons-for-elementor' ), $notice_url ); ?>
+				</p>
+			</div>
+			<div class="pa-notice-close" data-notice="pinterest">
+				<span class="dashicons dashicons-dismiss"></span>
+			</div>
+		</div>
+
 		<?php
 	}
 

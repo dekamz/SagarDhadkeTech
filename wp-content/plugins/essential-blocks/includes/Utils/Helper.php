@@ -27,6 +27,32 @@
             return $time;
         }
 
+        /**
+         * Remove HTML Tags with Inner Contents
+         * @param string $content
+         * @param mixed $tags
+         * @return string
+         */
+        public static function removeHtmlTagWithInnerContents($contant, $tags) {
+            if (is_array($tags)) {
+                foreach($tags as $tag) {
+                    $contant = preg_replace(
+                        sprintf(
+                            '/<%1$s\b[^>]*>(.*?)<\/%1$s>/is',
+                            $tag
+                        ),
+                        '',
+                        $contant
+                    );
+                }
+            }
+            else {
+                $contant = preg_replace('/<figure\b[^>]*>(.*?)<\/figure>/is', '', $contant);
+            }
+
+            return $contant;
+        }
+
         public static function is_isset( $value, $default = '' ) {
             return isset( $_POST[$value] ) ? $_POST[$value] : $default;
         }

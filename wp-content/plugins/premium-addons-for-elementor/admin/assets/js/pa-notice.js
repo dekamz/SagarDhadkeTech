@@ -4,7 +4,8 @@
         notice = $noticeWrap.data('notice');
 
     var adminNotices = {
-        'radius': 'radius_notice'
+        'radius': 'radius_notice',
+        'pinterest': 'pinterest_notice',
     };
 
     if (undefined !== notice) {

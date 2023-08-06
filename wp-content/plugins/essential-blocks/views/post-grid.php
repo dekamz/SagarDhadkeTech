@@ -1,4 +1,10 @@
+
 <?php
+    $_parent_classes = [
+        'eb-parent-wrapper',
+        'eb-parent-' . $blockId,
+        $classHook
+    ];
     $_wrapper_classes = [
         $blockId,
         $preset,
@@ -6,9 +12,9 @@
     ];
 ?>
 
-<div class="eb-parent-wrapper eb-parent-<?php esc_attr_e( $blockId );?><?php esc_attr_e( $classHook );?>">
+<div class="<?php esc_attr_e( implode( ' ', $_parent_classes ) );?>">
     <div
-        class="eb-post-grid-wrapper <?php esc_attr_e( implode( ' ', $_wrapper_classes ) );?>"
+        class="eb-post-grid-wrapper                                                                                                                                                                                                                                                                                                                                                               <?php esc_attr_e( implode( ' ', $_wrapper_classes ) );?>"
         data-id="<?php esc_attr_e( $blockId );?>"
         data-querydata="<?php esc_attr_e( serialize( $queryData ) );?>"
         data-attributes="<?php esc_attr_e( serialize( $essentialAttr ) );?>">
@@ -32,15 +38,15 @@
 
             if ( ! empty( $posts ) ) {
                 $_defined_vars = get_defined_vars();
-                $_params = isset( $_defined_vars['data'] ) ? $_defined_vars['data' ] : [];
+                $_params       = isset( $_defined_vars['data'] ) ? $_defined_vars['data'] : [];
 
-                $_params = array_merge($_params, [
-                    'posts'              => $posts,
-                    'queryData'          => isset( $queryData ) ? $queryData : [],
-                    'source'             => isset( $queryData['source'] ) ? $queryData['source'] : 'post',
-                    'headerMeta'         => ! empty( $headerMeta ) ? json_decode( $headerMeta ) : [],
-                    'footerMeta'         => ! empty( $footerMeta ) ? json_decode( $footerMeta ) : [],
-                ]);
+                $_params = array_merge( $_params, [
+                    'posts'      => $posts,
+                    'queryData'  => isset( $queryData ) ? $queryData : [],
+                    'source'     => isset( $queryData['source'] ) ? $queryData['source'] : 'post',
+                    'headerMeta' => ! empty( $headerMeta ) ? json_decode( $headerMeta ) : [],
+                    'footerMeta' => ! empty( $footerMeta ) ? json_decode( $footerMeta ) : []
+                ] );
 
                 $helper::views( 'post-partials/grid-markup', $_params );
             }

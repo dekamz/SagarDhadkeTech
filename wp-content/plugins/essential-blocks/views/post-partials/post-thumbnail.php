@@ -18,7 +18,7 @@ if ( $showThumbnail ) {
     } else {
         $thumbnailHTML .= '<div class="ebpg-entry-media">
             <div class="ebpg-entry-thumbnail">
-                <img src="https://via.placeholder.com/250x250.png" alt="No Thumbnail Found">
+                <img src="' . ESSENTIAL_BLOCKS_PLACEHOLDER_IMAGE .'" alt="No Thumbnail Found">
             </div>
         </div>';
     }

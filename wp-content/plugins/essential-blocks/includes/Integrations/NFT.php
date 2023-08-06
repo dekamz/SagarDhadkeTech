@@ -42,9 +42,9 @@ class NFT extends ThirdPartyIntegration {
             $settings    = get_option( 'eb_settings' );
 
             if ( isset( $_POST['openseaApiKey'] ) ) {
-                $opensea_api = $_POST['openseaApiKey'];
+                $opensea_api = sanitize_text_field($_POST['openseaApiKey']);
             } elseif ( is_array( $settings ) && isset( $settings['openseaApi'] ) ) {
-                $opensea_api = $settings['openseaApi'];
+                $opensea_api = sanitize_text_field($settings['openseaApi']);
             }
 
             $param = [];
@@ -118,7 +118,7 @@ class NFT extends ThirdPartyIntegration {
 
         $api = "";
         if ( isset( $_POST['openseaApi'] ) ) {
-            $api = trim( $_POST['openseaApi'] );
+            $api = trim( sanitize_text_field($_POST['openseaApi']) );
         }
 
         $settings = is_array( get_option( 'eb_settings' ) ) ? get_option( 'eb_settings' ) : [];

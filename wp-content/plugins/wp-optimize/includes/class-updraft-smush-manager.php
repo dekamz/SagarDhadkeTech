@@ -74,7 +74,7 @@ class Updraft_Smush_Manager extends Updraft_Task_Manager_1_4 {
 		add_action('ud_task_completed', array($this, 'record_stats'));
 		add_action('ud_task_failed', array($this, 'record_stats'));
 		add_action('prune_smush_logs', array($this, 'prune_smush_logs'));
-		add_action('autosmush_process_queue', array($this, 'autosmush_process_queue'));
+		add_action('process_smush_tasks', array($this, 'process_smush_tasks'));
 		if ('show' == $this->options->get_option('show_smush_metabox', 'show')) {
 			add_action('add_meta_boxes_attachment', array($this, 'add_smush_metabox'), 10, 2);
 			add_filter('attachment_fields_to_edit', array($this, 'add_compress_button_to_media_modal' ), 10, 2);
@@ -142,7 +142,7 @@ class Updraft_Smush_Manager extends Updraft_Task_Manager_1_4 {
 		}
 
 		if (WPO_Image_Utils::is_supported_extension($ext, array_diff($allowed_extensions, array('gif'))) && file_exists($file) && !file_exists($file . '.webp')) {
-			if (WPO_Image_Utils::can_do_webp_conversion()) {
+			if (WPO_WebP_Utils::can_do_webp_conversion()) {
 				printf('<a href="#" class="convert-to-webp" data-attachment-id="%d">%s</a><br>', $attachment_id, __('Convert to WebP', 'wp-optimize'));
 			}
 		}
@@ -254,31 +254,42 @@ class Updraft_Smush_Manager extends Updraft_Task_Manager_1_4 {
 		if ($task) $task->add_logger($this->logger);
 		$this->log($description);
 
-		if (!wp_next_scheduled('autosmush_process_queue')) {
-			wp_schedule_single_event(time() + 300, 'autosmush_process_queue');
+		if (!wp_next_scheduled('process_smush_tasks')) {
+			wp_schedule_single_event(time() + 300, 'process_smush_tasks');
 		}
 	}
 
 	/**
-	 * Process the autosmush queue and sets up a cron job if needed
-	 * for future processing
+	 * Processes the smush tasks in the queue, then cleans up the completed tasks.
+	 *
+	 * Before processing the queue, it first schedules a cron job to re-initiate the process after a certain
+	 * interval, ensuring that the process will be completed later in case the current processing fails
+	 * or is interrupted. This method can be invoked directly or scheduled as a cron job.
 	 */
-	public function autosmush_process_queue() {
-		
-		if (!wp_next_scheduled('autosmush_process_queue') && !$this->is_queue_processed()) {
-			wp_schedule_single_event(time() + 600, 'autosmush_process_queue');
+	public function process_smush_tasks() {
+		/*
+		 * Only add log header when called as a cron job, assuming the log header is already added by the caller
+		 * when called directly. This is to avoid duplicate log headers in the log file.
+		 */
+		if (defined('DOING_CRON') && DOING_CRON) {
+			$this->write_log_header();
 		}
 
-		$this->write_log_header();
-		$this->clear_cached_data();
-		$this->process_queue('smush');
-
+		// If there are no pending tasks, nothing to process. In that case, attempt to clean up old tasks and return
 		if ($this->is_queue_processed()) {
 			$this->clean_up_old_tasks('smush');
+			return;
 		}
 
-	}
+		if (!wp_next_scheduled('process_smush_tasks')) {
+			wp_schedule_single_event(time() + 600, 'process_smush_tasks');
+		}
 
+		// Process the queue
+		$this->clear_cached_data();
+		$this->process_queue('smush');
+		$this->clean_up_old_tasks('smush');
+	}
 
 	/**
 	 * Process the compression of a single image
@@ -540,12 +551,7 @@ class Updraft_Smush_Manager extends Updraft_Task_Manager_1_4 {
 			$task->add_logger($this->logger);
 		}
 
-		$this->clear_cached_data();
-		$this->process_queue('smush');
-
-		if ($this->is_queue_processed()) {
-			$this->clean_up_old_tasks('smush');
-		}
+		$this->process_smush_tasks();
 
 		if (!wp_next_scheduled('prune_smush_logs')) {
 			wp_schedule_single_event(time() + 7200, 'prune_smush_logs');
@@ -1216,6 +1222,23 @@ class Updraft_Smush_Manager extends Updraft_Task_Manager_1_4 {
 		$upload_dir = wp_upload_dir();
 		$upload_base = $upload_dir['basedir'];
 		return $upload_base . '/smush-' . substr(md5(wp_salt()), 0, 20) . '.log';
+	}
+
+	/**
+	 * Delete all smush log files
+	 */
+	public function delete_log_files() {
+		if (!function_exists('glob')) return;
+		$upload_dir = wp_get_upload_dir();
+		$upload_base = $upload_dir['basedir'];
+		$files = glob($upload_base . '/smush-*.log');
+		if (false === $files) return;
+		foreach ($files as $file) {
+			if (is_file($file)) {
+				@unlink($file); // phpcs:ignore Generic.PHP.NoSilencedErrors.Discouraged -- suppress error due to file permission issues
+			}
+		}
+
 	}
 
 	/**

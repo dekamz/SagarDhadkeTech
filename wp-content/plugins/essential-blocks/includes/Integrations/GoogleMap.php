@@ -53,7 +53,7 @@ class GoogleMap extends ThirdPartyIntegration
 
         $api = "";
         if (isset($_POST['googleMapApi'])) {
-            $api = trim($_POST['googleMapApi']);
+            $api = trim(sanitize_text_field($_POST['googleMapApi']));
         }
 
         $settings = is_array(get_option('eb_settings')) ? get_option('eb_settings') : [];

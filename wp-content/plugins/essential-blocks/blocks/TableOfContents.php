@@ -23,7 +23,7 @@ class TableOfContents extends Block {
         $this->assets_manager->register(
             'table-of-contents-block-frontend',
             $this->path() . '/frontend/index.js',
-            ['essential-blocks-eb-clipboard']
+            ['clipboard']
         );
     }
 }
