@@ -109,12 +109,18 @@ class Premium_Template_Tags {
 			)
 		);
 
+		$is_mbinstalled = extension_loaded( 'mbstring' );
 		if ( ! empty( $all_posts ) && ! is_wp_error( $all_posts ) ) {
 			foreach ( $all_posts as $post ) {
-				$this->options[ $post->ID ] = strlen( $post->post_title ) > 30 ? substr( $post->post_title, 0, 30 ) . '...' : $post->post_title;
+
+				if ( $is_mbinstalled ) {
+					$options[ $post->ID ] = mb_strlen( $post->post_title ) > 30 ? mb_substr( $post->post_title, 0, 30 ) . '...' : $post->post_title;
+				} else {
+					$options[ $post->ID ] = strlen( $post->post_title ) > 30 ? substr( $post->post_title, 0, 30 ) . '...' : $post->post_title;
+				}
 			}
 		}
-		return $this->options;
+		return $options;
 	}
 
 	/**
@@ -214,7 +220,7 @@ class Premium_Template_Tags {
 			$id = $title;
 		}
 
-		$template_content = $frontend->get_builder_content_for_display( $id, false );
+		$template_content = $frontend->get_builder_content( $id );
 
 		return $template_content;
 
@@ -633,7 +639,7 @@ class Premium_Template_Tags {
 
 		$total_pages = $query->max_num_pages;
 
-        $this->set_pagination_limit( $total_pages );
+		$this->set_pagination_limit( $total_pages );
 
 		return $query;
 	}
@@ -1153,7 +1159,7 @@ class Premium_Template_Tags {
 
 		$posts = $query->posts;
 
-        if ( count( $posts ) ) {
+		if ( count( $posts ) ) {
 			global $post;
 
 			foreach ( $posts as $post ) {
@@ -1958,10 +1964,10 @@ class Premium_Template_Tags {
 
 			$flag = true;
 
-            if ('infinite' === $req_type ) {
-                $flag = false;
-                $display_featured_posts = false;
-            }
+			if ( 'infinite' === $req_type ) {
+				$flag                   = false;
+				$display_featured_posts = false;
+			}
 
 			if ( count( $posts ) ) {
 
@@ -1969,16 +1975,16 @@ class Premium_Template_Tags {
 
 				foreach ( $posts as $index => $post ) {
 
-                    setup_postdata( $post ); // setup global post data.
+					setup_postdata( $post ); // setup global post data.
 
 					if ( empty( $post_id ) && ( $display_featured_posts && 0 == $index ) ) {
 
-                        if ( 'infinite' !== $req_type ) {
+						if ( 'infinite' !== $req_type ) {
 							$this->render_featured_posts( $post ); // render the first one by default for now.
 						}
 					} else {
 
-                        if ( $flag ) {
+						if ( $flag ) {
 							?>
 							<div class="premium-smart-listing__posts-wrapper">
 							<?php

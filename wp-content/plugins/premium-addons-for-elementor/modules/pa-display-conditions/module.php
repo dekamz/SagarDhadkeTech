@@ -151,20 +151,6 @@ class Module {
 			)
 		);
 
-		$sm_link = Helper_Functions::get_campaign_link( 'https://premiumaddons.com/docs/elementor-editor-not-loading-with-display-conditions/', 'editor-page', 'wp-editor', 'get-support' );
-
-		$element->add_control(
-			'pa_display_sm_notice',
-			array(
-				'type'            => Controls_Manager::RAW_HTML,
-				'raw'             => '<a href="' . esc_url( $sm_link ) . '" target="_blank">' . __( 'IMPORTANT: Check this article first!', 'premium-addons-for-elementor' ) . '</a>',
-				'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
-				'condition'       => array(
-					'pa_display_conditions_switcher' => 'yes',
-				),
-			)
-		);
-
 		$element->add_control(
 			'pa_display_action',
 			array(

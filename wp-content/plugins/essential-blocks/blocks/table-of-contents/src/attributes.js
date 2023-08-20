@@ -343,7 +343,7 @@ const attributes = {
         type: "boolean",
         default: false,
     },
-    hideOnMobile: {
+    stickyHideOnMobile: {
         type: "boolean",
         default: false,
     },

@@ -4,7 +4,7 @@ namespace EssentialBlocks\Dependencies\WPNotice\Utils;
 
 trait Helper {
 
-	public function is_installed( $plugin ){
+	public function is_installed( $plugin ) {
 		if ( ! function_exists( 'get_plugins' ) ) {
 			require_once ABSPATH . 'wp-admin/includes/plugin.php';
 		}
@@ -15,9 +15,10 @@ trait Helper {
 
 	/**
 	 * Get current timestamp
+	 *
 	 * @return int
 	 */
-	public function time(){
+	public function time() {
 		return intval( current_time( 'timestamp' ) );
 	}
 
@@ -27,11 +28,11 @@ trait Helper {
 	 * @param  string $time
 	 * @return bool|int
 	 */
-	public function strtotime( $time = '+7 day' ){
+	public function strtotime( $time = '+7 day' ) {
 		return intval( strtotime( date( 'r', $this->time() ) . " $time" ) );
 	}
 
-	public function date( $time ){
+	public function date( $time ) {
 		return date( 'd-m-Y h:i:s', $time );
 	}
 }

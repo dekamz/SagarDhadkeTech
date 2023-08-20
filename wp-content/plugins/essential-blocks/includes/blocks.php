@@ -484,5 +484,15 @@ return [
         'demo'       => ESSENTIAL_BLOCKS_SITE_URL . 'demo/woo-product-carousel/',
         'doc'        => ESSENTIAL_BLOCKS_SITE_URL . 'docs/eb-woo-product-carousel',
         'icon'       => ESSENTIAL_BLOCKS_ADMIN_URL . 'assets/blocks-icon/product-carousel.svg'
+    ],
+    'fancy_chart'          => [
+        'label'      => __( 'Fancy Chart', 'essential-blocks' ),
+        'value'      => 'fancy_chart',
+        'visibility' => 'true',
+        'status'     => 'new',
+        'is_pro'     => true,
+        'demo'       => ESSENTIAL_BLOCKS_SITE_URL . 'demo/fancy-chart',
+        'doc'        => ESSENTIAL_BLOCKS_SITE_URL . 'docs/eb-fancy-chart',
+        'icon'       => ESSENTIAL_BLOCKS_ADMIN_URL . 'assets/blocks-icon/fancy-chart.svg'
     ]
 ];

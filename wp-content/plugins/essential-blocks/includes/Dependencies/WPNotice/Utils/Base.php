@@ -12,7 +12,7 @@ abstract class Base {
 	 *
 	 * @var Base
 	 */
-	private static $instances = [];
+	private static $instances = array();
 
 	/**
 	 * Sets up a single instance of the plugin.
@@ -24,10 +24,10 @@ abstract class Base {
 	 * @return static An instance of the class.
 	 */
 	public static function get_instance( ...$args ) {
-		$module = get_called_class();
+		$module    = get_called_class();
 		$module_id = $module;
 
-		if( $module === 'EssentialBlocks\Dependencies\WPNotice\Notice' || $module === 'EssentialBlocks\Dependencies\WPNotice\Dismiss' ) {
+		if ( $module === 'EssentialBlocks\Dependencies\WPNotice\Notice' || $module === 'EssentialBlocks\Dependencies\WPNotice\Dismiss' ) {
 			$module_id = $module . '::' . $args[0];
 		}
 
@@ -38,7 +38,7 @@ abstract class Base {
 		return self::$instances[ $module_id ];
 	}
 
-	protected function database( $args = null ){
+	protected function database( $args = null ) {
 		return new Storage( $args );
 	}
 }

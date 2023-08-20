@@ -204,6 +204,8 @@ class Premium_Pinterest_Feed extends Widget_Base {
 			do_action( 'pa_pinterest_board_style', $this );
 		}
 
+		$this->add_cta_style();
+
 		$this->add_carousel_style();
 
 		if ( $papro_activated ) {
@@ -331,6 +333,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 				'default'   => 'default',
 				'condition' => array(
 					'endpoint' => 'pins/',
+                    'show_feed' => 'yes',
 				),
 			)
 		);
@@ -347,6 +350,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 				'default'   => 'default',
 				'condition' => array(
 					'endpoint' => 'boards/',
+                    'show_feed' => 'yes',
 				),
 			)
 		);
@@ -453,10 +457,13 @@ class Premium_Pinterest_Feed extends Widget_Base {
 			'no_of_posts',
 			array(
 				'label'       => __( 'Items Per Page', 'premium-addons-for-elementor' ),
-				'description' => __( 'Set the number of per page', 'premium-addons-for-elementor' ),
+				'description' => __( 'Set the number of items per page', 'premium-addons-for-elementor' ),
 				'type'        => Controls_Manager::NUMBER,
 				'min'         => 1,
 				'default'     => 4,
+                'condition'   => array(
+					'show_feed'      => 'yes',
+				),
 			)
 		);
 
@@ -827,7 +834,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 			array(
 				'label'        => __( 'Loading Animation', 'premium-addons-pro' ),
 				'type'         => Controls_Manager::SELECT,
-				'prefix_class' => 'premium-smart-listing__slide-',
+				'prefix_class' => 'premium-loading-animatin__slide-',
 				'options'      => array(
 					'none'  => __( 'None', 'premium-addons-pro' ),
 					'up'    => __( 'Slide Up', 'premium-addons-pro' ),
@@ -1943,6 +1950,21 @@ class Premium_Pinterest_Feed extends Widget_Base {
 			)
 		);
 
+        // $this->add_responsive_control(
+		// 	'pin_desc_padding',
+		// 	array(
+		// 		'label'      => __( 'Padding', 'premium-addons-for-elementor' ),
+		// 		'type'       => Controls_Manager::DIMENSIONS,
+		// 		'size_units' => array( 'px', 'em' ),
+		// 		'selectors'  => array(
+		// 			'{{WRAPPER}} .premium-pinterest-feed__pin-desc' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		// 		),
+		// 		'condition'  => array(
+		// 			'pin_desc' => 'yes',
+		// 		),
+		// 	)
+		// );
+
 		$this->add_responsive_control(
 			'pin_desc_margin',
 			array(
@@ -1962,21 +1984,6 @@ class Premium_Pinterest_Feed extends Widget_Base {
 				'condition'  => array(
 					'pin_desc'    => 'yes',
 					'pin_layout!' => 'layout-4',
-				),
-			)
-		);
-
-		$this->add_responsive_control(
-			'pin_desc_padding',
-			array(
-				'label'      => __( 'Padding', 'premium-addons-for-elementor' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', 'em' ),
-				'selectors'  => array(
-					'{{WRAPPER}} .premium-pinterest-feed__pin-desc' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				),
-				'condition'  => array(
-					'pin_desc' => 'yes',
 				),
 			)
 		);
@@ -2112,6 +2119,21 @@ class Premium_Pinterest_Feed extends Widget_Base {
 			)
 		);
 
+        $this->add_responsive_control(
+			'pinterest_icon_padding',
+			array(
+				'label'      => __( 'Padding', 'premium-addons-for-elementor' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', 'em' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .premium-pinterest-icon-pin' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+				'condition'  => array(
+					'pin_pinterest_icon' => 'yes',
+				),
+			)
+		);
+
 		$this->add_responsive_control(
 			'pinterest_icon_margin',
 			array(
@@ -2127,20 +2149,208 @@ class Premium_Pinterest_Feed extends Widget_Base {
 			)
 		);
 
-		$this->add_responsive_control(
-			'pinterest_icon_padding',
+		$this->end_controls_section();
+	}
+
+	private function add_cta_style() {
+
+		$this->start_controls_section(
+			'board_trigger_style',
 			array(
-				'label'      => __( 'Padding', 'premium-addons-for-elementor' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', 'em' ),
-				'selectors'  => array(
-					'{{WRAPPER}} .premium-pinterest-icon-pin' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				),
-				'condition'  => array(
-					'pin_pinterest_icon' => 'yes',
+				'label'      => __( 'CTA Button', 'premium-addons-for-elementor' ),
+				'tab'        => Controls_Manager::TAB_STYLE,
+				'conditions' => array(
+					'terms' => array(
+						array(
+							'name'  => 'show_feed',
+							'value' => 'yes',
+						),
+						array(
+							'relation' => 'or',
+							'terms'    => array(
+								array(
+									'terms' => array(
+										array(
+											'name'  => 'endpoint',
+											'value' => 'pins/',
+										),
+										array(
+											'name'  => 'load_more_btn',
+											'value' => 'yes',
+										),
+									),
+								),
+								array(
+									'terms' => array(
+										array(
+											'name'  => 'endpoint',
+											'value' => 'boards/',
+										),
+										array(
+											'name'  => 'boards_onclick',
+											'value' => 'pins',
+										),
+									),
+								),
+							),
+						),
+					),
 				),
 			)
 		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'name'     => 'cta_typography',
+				'selector' => '{{WRAPPER}} .premium-pinterest-feed__board-trigger, {{WRAPPER}} .premium-pinterest-feed__load-more-btn',
+				'global'   => array(
+					'default' => Global_Typography::TYPOGRAPHY_ACCENT,
+				),
+			)
+		);
+
+		$this->add_responsive_control(
+			'cta_padding',
+			array(
+				'label'      => __( 'Padding', 'premium-addons-for-elementor' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', 'em', '%' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .premium-pinterest-feed__board-trigger, {{WRAPPER}} .premium-pinterest-feed__load-more-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->add_responsive_control(
+			'cta_margin',
+			array(
+				'label'      => __( 'Margin', 'premium-addons-for-elementor' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', 'em', '%' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .premium-pinterest-feed__board-trigger, {{WRAPPER}} .premium-pinterest-feed__load-more-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->start_controls_tabs( 'cta_style_tabs' );
+
+		$this->start_controls_tab(
+			'cta_style_tab_normal',
+			array(
+				'label' => __( 'Normal', 'premium-addons-for-elementor' ),
+			)
+		);
+
+		$this->add_control(
+			'cta_color',
+			array(
+				'label'     => __( 'Color', 'premium-addons-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .premium-pinterest-feed__board-trigger, {{WRAPPER}} .premium-pinterest-feed__load-more-btn' => 'color: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			array(
+				'name'     => 'cta_background',
+				'types'    => array( 'classic', 'gradient' ),
+				'selector' => '{{WRAPPER}} .premium-pinterest-feed__board-trigger, {{WRAPPER}} .premium-pinterest-feed__load-more-btn',
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			array(
+				'name'     => 'cta_shadow',
+				'selector' => '{{WRAPPER}} .premium-pinterest-feed__board-trigger, {{WRAPPER}} .premium-pinterest-feed__load-more-btn',
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			array(
+				'name'     => 'cta_border',
+				'selector' => '{{WRAPPER}} .premium-pinterest-feed__board-trigger, {{WRAPPER}} .premium-pinterest-feed__load-more-btn',
+			)
+		);
+
+		$this->add_control(
+			'cta_radius',
+			array(
+				'label'      => __( 'Border Radius', 'premium-addons-for-elementor' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', 'em', '%' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .premium-pinterest-feed__board-trigger, {{WRAPPER}} .premium-pinterest-feed__load-more-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
+				),
+			)
+		);
+
+		$this->end_controls_tab();
+
+		$this->start_controls_tab(
+			'cta_style_tab_hover',
+			array(
+				'label' => __( 'Hover', 'premium-addons-for-elementor' ),
+			)
+		);
+
+		$this->add_control(
+			'cta_color_hover',
+			array(
+				'label'     => __( 'Color', 'premium-addons-for-elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .premium-pinterest-feed__board-trigger:hover, {{WRAPPER}} .premium-pinterest-feed__load-more-btn:hover' => 'color: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Background::get_type(),
+			array(
+				'name'     => 'cta_background_hover',
+				'types'    => array( 'classic', 'gradient' ),
+				'selector' => '{{WRAPPER}} .premium-pinterest-feed__board-trigger:hover, {{WRAPPER}} .premium-pinterest-feed__load-more-btn:hover',
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Box_Shadow::get_type(),
+			array(
+				'name'     => 'cta_shadow_hover',
+				'selector' => '{{WRAPPER}} .premium-pinterest-feed__board-trigger:hover, {{WRAPPER}} .premium-pinterest-feed__load-more-btn:hover',
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			array(
+				'name'     => 'cta_border_hover',
+				'selector' => '{{WRAPPER}} .premium-pinterest-feed__board-trigger:hover, {{WRAPPER}} .premium-pinterest-feed__load-more-btn:hover',
+			)
+		);
+
+		$this->add_control(
+			'cta_radius_hover',
+			array(
+				'label'      => __( 'Border Radius', 'premium-addons-for-elementor' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%', 'em' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .premium-pinterest-feed__board-trigger:hover, {{WRAPPER}} .premium-pinterest-feed__load-more-btn:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
+				),
+			)
+		);
+
+		$this->end_controls_tab();
+
+		$this->end_controls_tabs();
 
 		$this->end_controls_section();
 	}
@@ -2477,7 +2687,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 					$this->add_render_attribute(
 						'board_cover' . $feed['id'],
 						array(
-							'class' => array( 'premium-pinterest-feed__board-cover', 'premium-pinterest-feed__' . $settings['image_hover_effect'] ),
+							'class' => array( 'premium-pinterest-feed__board-cover', 'premium-hover-effects__' . $settings['image_hover_effect'] ),
 						)
 					);
 
@@ -2575,7 +2785,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 	 *
 	 * @param array $pinterest_feed  pins feed.
 	 * @param array $settings  widget_settings.
-	 * @param array $exclude_arr  IDs to exclude.
+	 * @param string $default  false when rendering board pins.
 	 */
 	private function render_pins( $pinterest_feed, $settings, $default = true ) {
 
@@ -2951,7 +3161,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$alt = empty( $alt ) ? $title : $alt;
 
 		?>
-		<img class="<?php echo esc_attr( 'premium-pinterest-feed__' . $hover ); ?>" src="<?php echo esc_url( $url ); ?>" alt="<?php echo esc_attr( $alt ); ?>">
+		<img class="<?php echo esc_attr( 'premium-hover-effects__' . $hover ); ?>" src="<?php echo esc_url( $url ); ?>" alt="<?php echo esc_attr( $alt ); ?>">
 		<?php
 	}
 

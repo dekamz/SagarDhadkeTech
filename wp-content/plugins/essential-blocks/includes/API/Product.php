@@ -7,6 +7,7 @@ use WP_Query;
 use EssentialBlocks\Utils\Helper;
 
 class Product extends Base {
+    private $sampleData = [];
     /**
      * Register REST Routes
      * @return void
@@ -33,9 +34,10 @@ class Product extends Base {
 
     /**
      * Get a list of WooCommerce products
+     *
      * @param mixed $request
      * @param mixed $local
-     * @return array<array>
+     * @return array|false|string|WP_Error
      *
      * @suppress PHP0417
      */
@@ -60,6 +62,26 @@ class Product extends Base {
 
         $attributes = $_is_frontend ? maybe_unserialize( $request->get_param( 'attributes' ) ) : [];
         $attributes = ! empty( $attributes ) ? $attributes : [];
+
+        $isCustomCartBtn  = $attributes['isCustomCartBtn'];
+        $simpleCartText   = $attributes['simpleCartText'];
+        $variableCartText = $attributes['variableCartText'];
+        $groupedCartText  = $attributes['groupedCartText'];
+        $externalCartText = $attributes['externalCartText'];
+        $defaultCartText  = $attributes['defaultCartText'];
+
+        $this->sampleData = [
+            $simpleCartText,
+            $variableCartText,
+            $groupedCartText,
+            $externalCartText,
+            $defaultCartText
+        ];
+        if ( $_is_frontend && $isCustomCartBtn ) {
+            // change the cart button text according to editor change
+            add_filter( 'woocommerce_product_add_to_cart_text', [$this, 'eb_change_cart_button_text'], 10, 1 );
+        }
+
         if ( $loop->have_posts() ) {
             if ( $_is_frontend ) {
                 ob_start();
@@ -107,7 +129,12 @@ class Product extends Base {
                 if ( ! empty( $tag ) ) {
                     $all_tag = [];
                     foreach ( $tag as $val ) {
-                        $all_tag[] = ['term_id' => $val->term_id, 'slug' => $val->slug, 'name' => $val->name, 'url' => get_term_link( $val->term_id )];
+                        $all_tag[] = [
+                            'term_id' => $val->term_id,
+                            'slug'    => $val->slug,
+                            'name'    => $val->name,
+                            'url'     => get_term_link( $val->term_id )
+                        ];
                     }
                     $products['tag'] = $all_tag;
                 }
@@ -117,7 +144,12 @@ class Product extends Base {
                 if ( ! empty( $cat ) ) {
                     $all_cats = [];
                     foreach ( $cat as $val ) {
-                        $all_cats[] = ['term_id' => $val->term_id, 'slug' => $val->slug, 'name' => $val->name, 'url' => get_term_link( $val->term_id )];
+                        $all_cats[] = [
+                            'term_id' => $val->term_id,
+                            'slug'    => $val->slug,
+                            'name'    => $val->name,
+                            'url'     => get_term_link( $val->term_id )
+                        ];
                     }
                     $products['category'] = $all_cats;
                 }
@@ -126,7 +158,7 @@ class Product extends Base {
                 if ( $_is_frontend ) {
                     $_params = array_merge(
                         $attributes,
-                        ['product' => wc_get_product( (int) $products['id'] )]
+                        [ 'product' => wc_get_product( (int) $products['id'] ) ]
                     );
 
                     Helper::views( 'woocommerce/single-product', $_params );
@@ -134,6 +166,11 @@ class Product extends Base {
             }
             // wp_reset_query();
             wp_reset_postdata();
+
+            if ( $_is_frontend && $isCustomCartBtn ) {
+                // remove our own callback from filter
+                remove_filter( 'woocommerce_product_add_to_cart_text', [$this, 'eb_change_cart_button_text'], 10 );
+            }
 
             return $_is_frontend ? ob_get_clean() : $data;
         }
@@ -157,27 +194,27 @@ class Product extends Base {
 
         if ( isset( $attr['orderby'] ) ) {
             switch ( $attr['orderby'] ) {
-            case 'price':
-                $query_args['meta_key'] = '_price';
-                $query_args['orderby']  = 'meta_value_num';
-                break;
-            case 'popular':
-                $query_args['meta_key'] = 'total_sales';
-                $query_args['orderby']  = 'meta_value_num';
-                $query_args['order']    = 'desc';
-                break;
-            case 'rating';
-                $query_args['meta_key'] = '_wc_average_rating';
-                $query_args['orderby']  = 'meta_value_num';
-                break;
-            default:
-                $query_args['orderby'] = $attr['orderby'];
-                break;
+                case 'price':
+                    $query_args['meta_key'] = '_price';
+                    $query_args['orderby']  = 'meta_value_num';
+                    break;
+                case 'popular':
+                    $query_args['meta_key'] = 'total_sales';
+                    $query_args['orderby']  = 'meta_value_num';
+                    $query_args['order']    = 'desc';
+                    break;
+                case 'rating';
+                    $query_args['meta_key'] = '_wc_average_rating';
+                    $query_args['orderby']  = 'meta_value_num';
+                    break;
+                default:
+                    $query_args['orderby'] = $attr['orderby'];
+                    break;
             }
         }
 
         if ( ! empty( $attr['tag'] ) ) {
-            $query_args['tax_query']   = ['relation' => 'OR'];
+            $query_args['tax_query']   = [ 'relation' => 'OR' ];
             $query_args['tax_query'][] = [
                 [
                     'taxonomy' => 'product_tag',
@@ -198,5 +235,34 @@ class Product extends Base {
         }
 
         return $query_args;
+    }
+
+    public function eb_change_cart_button_text( $text ) {
+        global $product;
+
+        list( $simpleCartText, $variableCartText, $groupedCartText, $externalCartText, $defaultCartText ) = $this->sampleData;
+
+        $product_type = $product->get_type();
+
+        switch ( $product_type ) {
+            case 'external':
+                return __( $externalCartText, 'essential-blocks' );
+
+                break;
+            case 'grouped':
+                return __( $groupedCartText, 'essential-blocks' );
+
+                break;
+            case 'simple':
+                return __( $simpleCartText, 'essential-blocks' );
+
+                break;
+            case 'variable':
+                return __( $variableCartText, 'essential-blocks' );
+
+                break;
+            default:
+                return __( $defaultCartText, 'essential-blocks' );
+        } // end switch
     }
 }

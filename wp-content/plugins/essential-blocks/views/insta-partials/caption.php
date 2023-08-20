@@ -1,8 +1,8 @@
 <?php
-    /**
-     * @var string $caption
-     */
+	/**
+	 * @var string $caption
+	 */
 ?>
 <div class="eb-instagram-caption">
-    <p><?php esc_html_e( $caption ); ?></p>
+	<p><?php esc_html_e( $caption ); ?></p>
 </div>

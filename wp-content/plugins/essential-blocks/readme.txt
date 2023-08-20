@@ -2,9 +2,9 @@
 Contributors: wpdevteam, re_enter_rupok, asif2bd, rahat89, priyomukul, jamilbd07, fencermonir, sumaiyasiddika
 Tags: block, gutenberg, blocks, gutenberg blocks, editor, button, post grid, TOC, countdown, progress bar, flipbox, advanced tab, slider, gutenberg editor, forms, woocommerce, template, page builder, block plugin, pattern, gutenberg templates, gutenberg patterns, block editor, block pattern, block template, Website Builder, starter templates, site editor, woocommerce, woocommerce block, google map, instagram feed, Nft, popup, social icon, testimonial, info box, team member
 Requires at least: 5.8
-Tested up to: 6.2
+Tested up to: 6.3
 Requires PHP: 5.6
-Stable tag: 4.1.5
+Stable tag: 4.2.0
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -126,6 +126,7 @@ Design without limits in WordPress block editor, using 30+ of the most useful Es
 - **[Data Table (PRO)](https://essential-blocks.com/demo/data-table/)** - Insert an advanced data table on your website without any code and display information in an eye-catching way
 - **[Woo Product Carousel (PRO)](https://essential-blocks.com/demo/woo-product-carousel/)** - Display your WooCommerce products with dynamic Product Carousels and designs using limitless styling options
 - **[News Ticker (PRO)](https://essential-blocks.com/demo/news-ticker)** - Show the latest news or highlights on your website with a dynamic ticker in an engaging way that instantly drives attention
+- **[Fancy Chart (PRO)](https://essential-blocks.com/demo/fancy-chart)** - Design visually stunning & interactive charts to bring life to dull datasets
 
 More blocks and demos coming soon (weekly update)
 
@@ -216,6 +217,17 @@ Yes, you can effortlessly display your WooCommerce products on your store websit
 If you found the recent version of Essential Blocks isn’t working or conflicting with other plugins, then you can use earlier versions of the plugin.
 
 == Changelog ==
+
+= 4.2.0 - 20/08/2023
+- Fixed: **Post Grid** Pagination conflict with Filter
+- Fixed: **Woo Product Grid** Add to Cart button issue fix
+- Fixed: **Table of Content** shows multiple after 4.1.6 update issue fix
+- Other bug fixes & improvements
+
+= 4.1.6 - 09/08/2023
+- Added: **Table of Content** block FSE support and more controls
+- Fixed: **Slider** block conflict with animation
+- Other bug fixes & improvements
 
 = 4.1.5 - 17/07/2023
 - Added: **Advanced Image** block image size option

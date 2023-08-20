@@ -593,6 +593,12 @@
   position: relative;
 }
 
+.premium-nav-menu-item .premium-menu-link,
+.premium-nav-menu-item .premium-dropdown-icon {
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+
 .premium-nav-menu-item .premium-menu-link {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -745,6 +751,11 @@
 
 .premium-hamburger-toggle {
   width: 100%;
+}
+
+.premium-hamburger-toggle * {
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
 }
 
 /*

@@ -580,6 +580,12 @@
             bindEvents: function () {
                 this.getGlobalSettings();
                 this.run();
+
+                var self = this;
+                $(document).on('elementor/popup/show', function () {
+                    self.run();
+                });
+
             },
 
             getGlobalSettings: function () {
@@ -2279,31 +2285,116 @@
         };
 
         /****** Premium Bullet List Handler ******/
-        var PremiumBulletListHandler = function ($scope, $) {
+        var PremiumBulletListHandler = ModuleHandler.extend({
 
-            var $listItems = $scope.find(".premium-bullet-list-box"),
-                items = $listItems.find(".premium-bullet-list-content");
+            getDefaultSettings: function () {
 
-            items.each(function (index, item) {
-
-                if ($listItems.data("list-animation") && " " != $listItems.data("list-animation")) {
-                    elementorFrontend.waypoint($(item), function () {
-
-                        var element = $(item),
-                            delay = element.data('delay');
-
-                        setTimeout(function () {
-                            element.next('.premium-bullet-list-divider , .premium-bullet-list-divider-inline').css("opacity", "1");
-                            element.next('.premium-bullet-list-divider-inline , .premium-bullet-list-divider').addClass("animated " + $listItems.data("list-animation"));
-
-                            element.css("opacity", "1").addClass("animated " + $listItems.data("list-animation"));
-                        }, delay);
-
-                    });
+                return {
+                    selectors: {
+                        listItems: '.premium-bullet-list-box',
+                        items: '.premium-bullet-list-content',
+                    }
                 }
 
-            });
-        };
+            },
+
+            getDefaultElements: function () {
+
+                var selectors = this.getSettings('selectors'),
+                    elements = {
+                        $listItems: this.$element.find(selectors.listItems),
+                        $items: this.$element.find(selectors.items)
+                    };
+
+                return elements;
+            },
+
+            bindEvents: function () {
+                this.run();
+
+                this.addRandomBadges();
+
+                var self = this;
+                if (!this.$element.is(':visible') && this.$element.closest('.premium-mega-nav-item').length > 0)
+                    this.$element.closest('.premium-mega-nav-item').find('.premium-menu-link').on('click', function () {
+                        self.addRandomBadges();
+                    });
+
+            },
+
+            run: function () {
+
+                var $listItems = this.elements.$listItems,
+                    $items = this.elements.$items;
+
+                $items.each(function (index, item) {
+
+                    if ($listItems.data("list-animation") && " " != $listItems.data("list-animation")) {
+                        elementorFrontend.waypoint($(item), function () {
+
+                            var element = $(item),
+                                delay = element.data('delay');
+
+                            setTimeout(function () {
+                                element.next('.premium-bullet-list-divider , .premium-bullet-list-divider-inline').css("opacity", "1");
+                                element.next('.premium-bullet-list-divider-inline , .premium-bullet-list-divider').addClass("animated " + $listItems.data("list-animation"));
+
+                                element.css("opacity", "1").addClass("animated " + $listItems.data("list-animation"));
+                            }, delay);
+
+                        });
+                    }
+
+                });
+
+            },
+
+            addRandomBadges: function () {
+                var settings = this.getElementSettings();
+
+                if (settings.rbadges_repeater.length < 1)
+                    return;
+
+                if (!this.$element.is(':visible') || this.$element.hasClass('randomb-applied'))
+                    return;
+
+                var randomBadges = settings.rbadges_repeater;
+
+                randomBadges.forEach(function (badge, index) {
+
+                    if ('' != badge.rbadge_selector) {
+
+                        var notBadgedItems = $(badge.rbadge_selector).find('.premium-bullet-list-text').filter(':not(:has(+ .premium-bullet-list-badge))');
+
+                        var badgeText = '<div class="premium-bullet-list-badge elementor-repeater-item-' + badge._id + '"><span>' + badge.badge_title + '</span></div>';
+
+                        var numOfApplies = Math.floor(Math.random() * (badge.rbadge_max - badge.rbadge_min + 1)) + badge.rbadge_min;
+
+                        // Get a random number of elements from the list.
+                        for (var i = 0; i < numOfApplies; i++) {
+
+                            // notBadgedItems = $(badge.rbadge_selector).find('.premium-bullet-list-text').filter(':not(:has(+ .premium-bullet-list-badge))');
+
+                            var randomIndex = Math.floor(Math.random() * notBadgedItems.length),
+                                wasBadgedBefore = $(notBadgedItems[randomIndex]).siblings('.premium-bullet-list-badge').length > 0;
+
+
+                            if (!wasBadgedBefore) {
+                                $(notBadgedItems[randomIndex]).after(badgeText);
+                            }
+
+
+                        }
+
+                    }
+                })
+
+                this.$element.addClass('randomb-applied');
+            }
+
+
+
+        });
 
         /****** Premium Grow Effect Handler ******/
         var PremiumButtonHandler = function ($scope, $) {
@@ -3388,9 +3479,9 @@
                 $pinsWrapper = $scope.find('.premium-pinterest-feed__pins-wrapper'),
                 $boardWrapper = $scope.find('.premium-pinterest-feed__board-wrapper');
 
-            if ( loadBoardPins ) {
+            if (loadBoardPins) {
 
-                $boardWrapper.on('click.paLoadPins', function() {
+                $boardWrapper.on('click.paLoadPins', function () {
 
                     var id = $(this).data('board-id');
                     $boardWrapper.hide();
@@ -3398,19 +3489,19 @@
                     $('#premium-board-content-' + id).show();
 
                     if ("masonry" === settings.layout) {
-                        setTimeout(function()  {
+                        setTimeout(function () {
                             $('#premium-board-content-' + id + ' .premium-pinterest-feed__pins-wrapper').isotope(getIsoTopeSettings());
                         }, 100);
                     }
                 });
 
-                $scope.find('.premium-pinterest-feed__board-trigger').on('click.paHidePins', function() {
+                $scope.find('.premium-pinterest-feed__board-trigger').on('click.paHidePins', function () {
                     $boardWrapper.show();
                     $scope.find('.premium-pinterest-feed__content-wrapper').hide();
                 });
             }
 
-            if ( ! isBoardQuery ) {
+            if (!isBoardQuery) {
 
                 if ("masonry" === settings.layout && !settings.carousel) {
 
@@ -3424,57 +3515,57 @@
                     window.paLoadMoreBookmark = $outerWrapper.data('pa-load-bookmark');
                     window.paHiddenPins = $scope.find('.premium-pinterest-feed__pin-outer-wrapper.premium-display-none').length;
 
-                    $scope.find('.premium-pinterest-feed__load-more-btn').on('click.paLoadMorePins', function(e) {
+                    $scope.find('.premium-pinterest-feed__load-more-btn').on('click.paLoadMorePins', function (e) {
 
                         var bookmark = window.paLoadMoreBookmark,
                             count = settings.loadMoreCount;
 
-                        for ( var i = 0; i < count; i ++ ) {
-                            $scope.find('.premium-pinterest-feed__pin-outer-wrapper').eq( bookmark + i ).show().addClass('premium-pin-shown');
+                        for (var i = 0; i < count; i++) {
+                            $scope.find('.premium-pinterest-feed__pin-outer-wrapper').eq(bookmark + i).show().addClass('premium-pin-shown');
                         }
 
                         window.paLoadMoreBookmark = bookmark + count;
                         window.paHiddenPins -= count;
 
-                        if ( 0 >= window.paHiddenPins ) {
+                        if (0 >= window.paHiddenPins) {
                             $scope.find('.premium-pinterest-feed__load-more-btn').remove();
                         }
                     });
                 }
 
-                if ( settings.carousel ) {
+                if (settings.carousel) {
 
                     var carouselSettings = $outerWrapper.data('pa-carousel');
-                    $pinsWrapper.addClass('premium-addons__v-hidden').slick( getSlickSettings(carouselSettings) );
+                    $pinsWrapper.addClass('premium-addons__v-hidden').slick(getSlickSettings(carouselSettings));
 
                     $pinsWrapper.removeClass('premium-addons__v-hidden');
                 }
             }
 
-            if ( 'layout-2' === settings.pinLayout ) {
-                $scope.find('.premium-pinterest-feed__pin-meta-wrapper').on('click.paPinTrigger', function(e){
+            if ('layout-2' === settings.pinLayout) {
+                $scope.find('.premium-pinterest-feed__pin-meta-wrapper').on('click.paPinTrigger', function (e) {
 
-                    if ( e.target === this) {
+                    if (e.target === this) {
                         $(this).siblings('.premium-pinterest-feed__overlay')[0].click();
                     }
                 });
             }
 
             // copy to clipbaord
-            $scope.find('.premium-copy-link').on('click.paCopyLink', function() {
+            $scope.find('.premium-copy-link').on('click.paCopyLink', function () {
                 $scope.find('.premium-pinterest-share-menu').css('visibility', 'hidden')
 
                 var txt = $(this).data('pa-link');
                 navigator.clipboard.writeText(txt);
             });
 
-            $scope.find('.premium-pinterest-share-item:not(.premium-copy-link)').on('click.paShare', function() {
+            $scope.find('.premium-pinterest-share-item:not(.premium-copy-link)').on('click.paShare', function () {
 
                 var link = $(this).data('pa-link');
-                window.open(link,'popup','width=600,height=600');
+                window.open(link, 'popup', 'width=600,height=600');
             });
 
-            function getSlickSettings( settings ) {
+            function getSlickSettings(settings) {
 
                 var prevArrow = settings.arrows ? '<a type="button" data-role="none" class="carousel-arrow carousel-prev" aria-label="Previous" role="button" style=""><i class="fas fa-angle-left" aria-hidden="true"></i></a>' : '',
                     nextArrow = settings.arrows ? '<a type="button" data-role="none" class="carousel-arrow carousel-next" aria-label="Next" role="button" style=""><i class="fas fa-angle-right" aria-hidden="true"></i></a>' : '';
@@ -3516,7 +3607,7 @@
                 };
             };
 
-            function getIsoTopeSettings(){
+            function getIsoTopeSettings() {
 
                 return {
                     itemSelector: ".premium-pinterest-feed__pin-outer-wrapper",
@@ -3541,7 +3632,6 @@
             'premium-addon-modal-box.default': PremiumModalBoxHandler,
             'premium-image-scroll.default': PremiumImageScrollHandler,
             'premium-contact-form.default': PremiumContactFormHandler,
-            'premium-icon-list.default': PremiumBulletListHandler,
             'premium-addon-button.default': PremiumButtonHandler,
             'premium-addon-image-button.default': PremiumButtonHandler,
             'premium-world-clock.default': PremiumWorldClockHandler,
@@ -3556,7 +3646,8 @@
             'premium-img-gallery': PremiumGridWidgetHandler,
             'premium-addon-banner': PremiumBannerHandler,
             'premium-svg-drawer': PremiumSVGDrawerHandler,
-            'premium-tcloud': PremiumTermsCloud
+            'premium-tcloud': PremiumTermsCloud,
+            'premium-icon-list': PremiumBulletListHandler,
         };
 
         $.each(functionalHandlers, function (elemName, func) {

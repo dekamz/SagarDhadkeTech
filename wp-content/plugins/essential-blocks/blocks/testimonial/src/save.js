@@ -15,8 +15,11 @@ const Save = ({ attributes }) => {
 		enableQuote,
 		classHook,
 	} = attributes;
-	
+
 	const replaceString = (str, find, replace) => {
+        if (!str) {
+            return '';
+        }
 		return str.replace(new RegExp(find, "g"), replace);
 	}
 

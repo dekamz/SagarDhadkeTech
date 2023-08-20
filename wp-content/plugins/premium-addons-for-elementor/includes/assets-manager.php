@@ -657,11 +657,12 @@ class Assets_Manager {
 		$pa_elems = Admin_Helper::get_free_widgets_names();
 
 		// add smart post listing
-		$pa_elements[] = 'premium-smart-post-listing';
+		$pa_elems[] = 'premium-smart-post-listing';
+		$pa_elems[] = 'premium-addon-instagram-feed';
 
 		$has_free = array_intersect( $post_elems, $pa_elems ) ? true : false;
 
-		return $has_free;
+        return $has_free;
 	}
 
 	/**

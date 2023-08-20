@@ -1,0 +1,15 @@
+.ptsErrorMsg {
+    color: #fa4e7f;
+}
+.ptsSuccessMsg {
+    color: #4ae8ea;
+}
+.ptsInputError {
+    border: 1px #fa4e7f solid !important;
+}
+.ptsDescTriangleTop, .ptsDescTriangle  {
+  width: 101% !important;
+}
+.ptsDescTriangleTop, div:not(.ptsColDesc) > .ptsDescTriangle {
+  background-color: transparent !important;
+}

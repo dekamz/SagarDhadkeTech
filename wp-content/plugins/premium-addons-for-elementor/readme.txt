@@ -3,9 +3,9 @@ Contributors: Leap13, Rimoun
 Tags: elementor, elementor addons, widgets, elementor elements, templates
 Donate Link: https://premiumaddons.com/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme
 Requires at least: 5.0
-Tested Up To: 6.2.2
+Tested Up To: 6.3.0
 Requires PHP: 7.0
-Stable Tag: 4.10.3
+Stable Tag: 4.10.4
 License: GPL v3.0
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -242,6 +242,12 @@ Premium Addonsis 100% Ads Free, Ads can only be detected from Youtube videos, th
 14. Premium Progress Bar Widget
 
 == Changelog ==
+
+= 4.10.4 =
+
+- Tweak: Added Noise Effect in Dual Heading and Heading widgets.
+- Fixed: Elementor Editor not loading in some cases.
+- Fixed: Media Grid widget not working in Elementor popups.
 
 = 4.10.3 =
 

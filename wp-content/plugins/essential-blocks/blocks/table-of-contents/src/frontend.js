@@ -30,6 +30,7 @@ window.addEventListener("DOMContentLoaded", function () {
             this._hide();
             this._show();
             this._hideOnMobileView();
+            this._hideOnDevice();
             this._tooltip();
         },
 
@@ -114,7 +115,8 @@ window.addEventListener("DOMContentLoaded", function () {
             if (hasScrollTop) {
                 // Create go to top element
                 const goTop = document.createElement("span");
-                goTop.setAttribute("class", "eb-toc-go-top ");
+                goTop.setAttribute("class", "eb-toc-go-top");
+                // goTop.setAttribute("class", " ");
                 goTop.innerHTML = ">";
                 document.body.insertBefore(goTop, document.body.lastChild);
 
@@ -169,7 +171,7 @@ window.addEventListener("DOMContentLoaded", function () {
                         // Add scroll event
                         window.addEventListener("scroll", onScrollPage);
 
-                        showScroll();
+                        hideScroll();
                     } else {
                         hideScroll();
                     }
@@ -223,6 +225,23 @@ window.addEventListener("DOMContentLoaded", function () {
                             }
                         });
                     });
+
+                    // add offset when go to url with hash id
+                    const urlHash = window.location.hash;
+                    // Remove the "#" symbol from the hash to get the ID
+                    const id = urlHash.slice(1);
+
+                    if (
+                        urlHash &&
+                        typeof wrapperOffset === "number" &&
+                        wrapperOffset
+                    ) {
+                        const yOffset = wrapperOffset
+                            ? Math.abs(wrapperOffset)
+                            : 0;
+                        const element = document.getElementById(id);
+                        element.style.scrollMarginTop = yOffset + "px";
+                    }
                 }
             }
         },
@@ -312,7 +331,7 @@ window.addEventListener("DOMContentLoaded", function () {
                             const element_text = parseTocSlug(element.text);
                             if (
                                 deleteHeaderLists &&
-                                !deleteHeaderLists[headerIndex].isDelete
+                                !deleteHeaderLists[headerIndex]?.isDelete
                             ) {
                                 all_header.forEach((item, index) => {
                                     const header_text = parseTocSlug(
@@ -367,11 +386,47 @@ window.addEventListener("DOMContentLoaded", function () {
             if (container) {
                 const isSticky =
                     container.getAttribute("data-sticky") === "true";
+                const stickyHideOnMobile =
+                    container.getAttribute("data-sticky-hide-mobile") == "true";
+
+                if (
+                    isSticky &&
+                    stickyHideOnMobile &&
+                    window.screen.width < 420
+                ) {
+                    container.style.display = "none";
+                }
+            }
+        },
+        /**
+         * Hide scroll to top
+         */
+        _hideOnDevice: function () {
+            const container = document.querySelector(".eb-toc-container");
+
+            if (container) {
+                const hideOnDesktop =
+                    container.getAttribute("data-hide-desktop") === "true";
+                const hideOnTab =
+                    container.getAttribute("data-hide-tab") === "true";
                 const hideOnMobile =
                     container.getAttribute("data-hide-mobile") == "true";
+                const goToTop = document.querySelector(".eb-toc-go-top");
 
-                if (isSticky && hideOnMobile && window.screen.width < 420) {
-                    container.style.display = "none";
+                if (hideOnDesktop && window.screen.width > 1024) {
+                    goToTop.style.display = "none";
+                }
+
+                if (
+                    hideOnTab &&
+                    window.screen.width < 1024 &&
+                    window.screen.width > 420
+                ) {
+                    goToTop.style.display = "none";
+                }
+
+                if (hideOnMobile && window.screen.width < 420) {
+                    goToTop.style.display = "none";
                 }
             }
         },

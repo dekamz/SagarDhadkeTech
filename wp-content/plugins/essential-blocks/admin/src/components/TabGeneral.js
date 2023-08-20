@@ -288,33 +288,33 @@ export default function TabGeneral() {
                         >
                             <div className="changelog-wrapper">
                                 <div className="changelog-title">
-                                    {__("Version: 4.1.5", "essential-blocks")}
+                                    {__("Version: 4.2.0", "essential-blocks")}
                                     <span className="changelog-date">
-                                        {__("17/07/2023", "essential-blocks")}
+                                        {__("20/08/2023", "essential-blocks")}
                                     </span>
                                 </div>
                                 <ul className="changelog-content">
                                     <li>
                                         {__(
-                                            "Added: Advanced Image block image size option",
+                                            "Fixed: Post Grid Pagination conflict with Filter",
                                             "essential-blocks"
                                         )}
                                     </li>
                                     <li>
                                         {__(
-                                            "Added: Social Share block Open in New Tab option",
+                                            "Fixed: Woo Product Grid Add to Cart button issue fix",
                                             "essential-blocks"
                                         )}
                                     </li>
                                     <li>
                                         {__(
-                                            "Fixed: Advanced Tab block active color not changing",
+                                            "Fixed: Table of Content shows multiple after 4.1.6 update issue fix",
                                             "essential-blocks"
                                         )}
                                     </li>
                                     <li>
                                         {__(
-                                            "Fixed: Post Grid block responsive issue conflict with Animation",
+                                            "Other bug fixes & improvements",
                                             "essential-blocks"
                                         )}
                                     </li>

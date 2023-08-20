@@ -17,19 +17,19 @@ class Dismiss extends Base {
 	private $app   = null;
 	private $hook  = null;
 
-	public function __construct( $id, $options, $app ){
-		$this->id = $id;
+	public function __construct( $id, $options, $app ) {
+		$this->id  = $id;
 		$this->app = $app;
 
-		if( ! empty( $options ) ) {
-			foreach( $options as $key => $_value ) {
+		if ( ! empty( $options ) ) {
+			foreach ( $options as $key => $_value ) {
 				$this->{$key} = $_value;
 			}
 		}
 
-		$this->hook = $this->app->app .'_wpnotice_dismiss_notice';
+		$this->hook = $this->app->app . '_wpnotice_dismiss_notice';
 
-		add_action( 'wp_ajax_'. $this->hook, [ $this, 'ajax_maybe_dismiss_notice' ] );
+		add_action( 'wp_ajax_' . $this->hook, array( $this, 'ajax_maybe_dismiss_notice' ) );
 	}
 
 	/**
@@ -41,12 +41,12 @@ class Dismiss extends Base {
 	 */
 	public function print_script() {
 		$nonce = wp_create_nonce( 'wpnotice_dismiss_notice_' . $this->id );
-		$_id = '#wpnotice-' . esc_attr( $this->app->app ) . '-' . esc_attr( $this->id );
+		$_id   = '#wpnotice-' . esc_attr( $this->app->app ) . '-' . esc_attr( $this->id );
 		?>
 		<script>
 			window.addEventListener( 'load', function() {
-				var dismissBtn  = document.querySelector( '<?php echo $_id ?> .notice-dismiss' );
-				var extraDismissBtn  = document.querySelectorAll( '<?php echo $_id ?> .dismiss-btn' );
+				var dismissBtn  = document.querySelector( '<?php echo esc_html($_id); ?> .notice-dismiss' );
+				var extraDismissBtn  = document.querySelectorAll( '<?php echo esc_html($_id); ?> .dismiss-btn' );
 
 				function wpNoticeDismissFunc( event ) {
 					event.preventDefault();
@@ -110,12 +110,12 @@ class Dismiss extends Base {
 		// Security check: Make sure nonce is OK.
 		check_ajax_referer( 'wpnotice_dismiss_notice_' . $this->id, 'nonce', true );
 
-		if( isset( $_POST['later'] ) ) {
+		if ( isset( $_POST['later'] ) ) {
 			$_recurrence = intval( $this->recurrence ) || 15;
 			$_queue      = $this->app->storage()->get();
 
 			$_queue[ $this->id ]['start']  = $this->strtotime( "+$_recurrence days" );
-			$_queue[ $this->id ]['expire'] = $this->strtotime( "+". ($_recurrence + 3) ." days" );
+			$_queue[ $this->id ]['expire'] = $this->strtotime( '+' . ( $_recurrence + 3 ) . ' days' );
 			$this->app->storage()->save( $_queue );
 			return;
 		}
@@ -142,9 +142,10 @@ class Dismiss extends Base {
 
 	/**
 	 * Check if is dismissed or not
+	 *
 	 * @return boolean
 	 */
-	public function is_dismissed(){
+	public function is_dismissed() {
 		if ( 'user' === $this->scope ) {
 			return $this->app->storage()->get_meta( $this->id );
 		}

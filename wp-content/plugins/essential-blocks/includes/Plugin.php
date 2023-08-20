@@ -9,15 +9,16 @@ use EssentialBlocks\Core\PostMeta;
 use EssentialBlocks\Utils\Enqueue;
 use EssentialBlocks\Utils\Settings;
 use EssentialBlocks\Core\FontLoader;
-use EssentialBlocks\Core\ModifyWPCore;
 use EssentialBlocks\Core\Maintenance;
 use EssentialBlocks\Integrations\NFT;
+use EssentialBlocks\Core\ModifyWPCore;
 use EssentialBlocks\Core\PageTemplates;
 use EssentialBlocks\Core\BlocksPatterns;
 use EssentialBlocks\Traits\HasSingletone;
 use EssentialBlocks\Integrations\GoogleMap;
 use EssentialBlocks\Integrations\Instagram;
 use EssentialBlocks\Integrations\OpenVerse;
+use EssentialBlocks\Integrations\Pagination;
 use EssentialBlocks\Integrations\GlobalStyles;
 use EssentialBlocks\Integrations\AssetGeneration;
 use EssentialBlocks\Integrations\PluginInstaller;
@@ -25,7 +26,8 @@ use EssentialBlocks\Integrations\PluginInstaller;
 final class Plugin {
     use HasSingletone;
 
-    public $version = '4.1.5';
+
+    public $version = '4.2.0';
 
     public $admin;
     /**
@@ -112,6 +114,9 @@ final class Plugin {
 
         //Global Style Ajax for Store
         GlobalStyles::get_instance();
+
+        // pagination
+        Pagination::get_instance();
 
         add_action( 'plugins_loaded', [$this, 'plugins_loaded'] );
 

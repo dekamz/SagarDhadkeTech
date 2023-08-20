@@ -86,7 +86,7 @@ const integrations = [
     {
         slug: "essential-addons-for-elementor-lite",
         basename:
-            "essential-addons-for-elementor-lite/essential-addons-for-elementor-lite.php",
+            "essential-addons-for-elementor-lite/essential_adons_elementor.php",
         logo: essentialAddons,
         title: "Essential Addons for Elementor",
         desc: __(

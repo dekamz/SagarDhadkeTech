@@ -31,7 +31,6 @@ const {
 import { parseTocSlug } from "./helper";
 
 import classnames from "classnames";
-
 import Inspector from "./inspector";
 import {
     typoPrefix_content,
@@ -170,6 +169,12 @@ function Edit({
         deleteHeaderList,
         hasUnderline,
         isMigrated,
+        contentGap = "20",
+        contentGapUnit = "px",
+        listSeperatorWidth = 3,
+        listSeperatorStyle = "solid",
+        listSeperatorColor = "#000",
+        showListSeparator,
         classHook,
     } = attributes;
     const [visible, setVisible] = useState(true);
@@ -460,6 +465,24 @@ function Edit({
                   : // Important N.B. : in the selector above we used ".eb-toc-go-top.show-scroll" this. It's very important to start the selector with ".eb-" if this css strings goes inside "softMinifyCssStrings" function. Always make sure to use a selector that starts with ".eb-" when using this string inside "softMinifyCssStrings" function
                     ""
           }
+
+        .${blockId}.eb-toc-container .eb-toc-wrapper li {
+            padding-top: ${contentGap / 2}${contentGapUnit};
+        }
+
+        .${blockId}.eb-toc-container .eb-toc-wrapper .eb-toc__list li:not(:last-child) {
+            padding-bottom: ${contentGap / 2}${contentGapUnit};
+        }
+
+        ${
+            showListSeparator
+                ? `
+                .${blockId}.eb-toc-container .eb-toc-wrapper .eb-toc__list li:first-child {
+                    border-bottom: ${listSeperatorWidth}px ${listSeperatorStyle} ${listSeperatorColor};
+                }
+        `
+                : ""
+        }
 
 	  `;
 

@@ -547,7 +547,8 @@ class Premium_Modalbox extends Widget_Base {
 				),
 				'default'   => 'icon',
 				'condition' => array(
-					'premium_modal_box_display_on' => 'button',
+					'premium_modal_box_icon_switcher' => 'yes',
+					'premium_modal_box_display_on'    => 'button',
 				),
 			)
 		);

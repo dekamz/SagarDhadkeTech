@@ -3103,7 +3103,7 @@ class Premium_Post_Ticker extends Widget_Base {
 					return;
 				}
 
-				$expire_time = HOUR_IN_SECONDS * apply_filters( 'pa_ticker_reload', $settings['reload'] );
+				$expire_time = HOUR_IN_SECONDS * apply_filters( 'pa_ticker_reload_' . $id, $settings['reload'] );
 
 				$api_handler::delete_existing_transient();
 
@@ -3173,7 +3173,7 @@ class Premium_Post_Ticker extends Widget_Base {
 					}
 				}
 
-				$expire_time = HOUR_IN_SECONDS * apply_filters( 'pa_ticker_reload', $settings['gold_reload'] );
+				$expire_time = HOUR_IN_SECONDS * apply_filters( 'pa_ticker_reload_' . $id, $settings['gold_reload'] );
 
 				$api_handler::delete_existing_transient();
 

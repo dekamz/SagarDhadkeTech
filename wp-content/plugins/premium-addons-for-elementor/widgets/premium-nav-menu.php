@@ -3217,7 +3217,7 @@ class Premium_Nav_Menu extends Widget_Base {
 			)
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'pa_nav_item_drop_icon_color',
 			array(
 				'label'     => __( 'Dropdown Icon Color', 'premium-addons-for-elementor' ),
@@ -3316,7 +3316,7 @@ class Premium_Nav_Menu extends Widget_Base {
 			)
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'pa_nav_item_drop_icon_hover',
 			array(
 				'label'     => __( 'Dropdown Icon Color', 'premium-addons-for-elementor' ),
@@ -3434,7 +3434,7 @@ class Premium_Nav_Menu extends Widget_Base {
 			)
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'pa_nav_item_drop_icon_active',
 			array(
 				'label'     => __( 'Dropdown Icon Color', 'premium-addons-for-elementor' ),
@@ -3828,7 +3828,7 @@ class Premium_Nav_Menu extends Widget_Base {
 			)
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'pa_sub_item_drop_icon_color',
 			array(
 				'label'     => __( 'Dropdown Icon Color', 'premium-addons-for-elementor' ),
@@ -3927,7 +3927,7 @@ class Premium_Nav_Menu extends Widget_Base {
 			)
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'pa_sub_item_drop_icon_hover',
 			array(
 				'label'     => __( 'Dropdown Icon Color', 'premium-addons-for-elementor' ),
@@ -4036,7 +4036,7 @@ class Premium_Nav_Menu extends Widget_Base {
 			)
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'pa_sub_item_drop_icon_active',
 			array(
 				'label'     => __( 'Dropdown Icon Color', 'premium-addons-for-elementor' ),
