@@ -1074,7 +1074,7 @@ class Premium_Title extends Widget_Base {
 		$this->add_control(
 			'noise',
 			array(
-				'label'        => __( 'Noise Effect', 'premium-addons-for-elementor' ),
+				'label'        => __( 'Glitch Effect', 'premium-addons-for-elementor' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'prefix_class' => 'premium-title-noise-',
 				'separator'    => 'before',
@@ -1509,7 +1509,7 @@ class Premium_Title extends Widget_Base {
 		$this->add_control(
 			'noise_heading',
 			array(
-				'label'     => __( 'Noise Effect', 'premium-addons-for-elementor' ),
+				'label'     => __( 'Glitch Effect', 'premium-addons-for-elementor' ),
 				'type'      => Controls_Manager::HEADING,
 				'condition' => array(
 					'noise' => 'yes',

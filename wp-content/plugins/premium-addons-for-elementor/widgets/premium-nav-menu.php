@@ -4474,7 +4474,8 @@ class Premium_Nav_Menu extends Widget_Base {
 		}
 
 		$is_edit_mode = \Elementor\Plugin::$instance->editor->is_edit_mode();
-		$hidden_style = $is_edit_mode ? '' : 'visibility:hidden; opacity:0;';
+		// $hidden_style = $is_edit_mode ? '' : 'visibility:hidden; opacity:0;';
+		$hidden_style = $is_edit_mode ? '' : 'visibility:hidden;';
 
 		$this->add_render_attribute(
 			'wrapper',

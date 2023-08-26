@@ -5,7 +5,7 @@
 
     var adminNotices = {
         'radius': 'radius_notice',
-        'pinterest': 'pinterest_notice',
+        'tiktok': 'tiktok_tooltip_notice',
     };
 
     if (undefined !== notice) {

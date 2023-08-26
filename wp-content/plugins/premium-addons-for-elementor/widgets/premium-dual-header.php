@@ -853,7 +853,7 @@ class Premium_Dual_Header extends Widget_Base {
 		$this->add_control(
 			'first_noise_heading',
 			array(
-				'label'     => __( 'Noise Effect', 'premium-addons-for-elementor' ),
+				'label'     => __( 'Glitch Effect', 'premium-addons-for-elementor' ),
 				'type'      => Controls_Manager::HEADING,
 				'condition' => array(
 					'noise_first' => 'yes',
@@ -1089,7 +1089,7 @@ class Premium_Dual_Header extends Widget_Base {
 		$this->add_control(
 			'second_noise_heading',
 			array(
-				'label'     => __( 'Noise Effect', 'premium-addons-for-elementor' ),
+				'label'     => __( 'Glitch Effect', 'premium-addons-for-elementor' ),
 				'type'      => Controls_Manager::HEADING,
 				'condition' => array(
 					'noise_second' => 'yes',

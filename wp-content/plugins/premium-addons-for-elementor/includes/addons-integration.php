@@ -11,6 +11,7 @@ use PremiumAddons\Modules\Premium_Equal_Height\Module as Equal_Height;
 use PremiumAddons\Modules\PA_Display_Conditions\Module as Display_Conditions;
 use PremiumAddons\Modules\PremiumSectionFloatingEffects\Module as Floating_Effects;
 use PremiumAddons\Modules\Woocommerce\Module as Woocommerce;
+use PremiumAddons\Modules\PremiumGlobalTooltips\Module as GlobalTooltips;
 use PremiumAddons\Includes\Assets_Manager;
 use PremiumAddons\Includes\Premium_Template_Tags;
 use ElementorPro\Plugin as PluginPro;
@@ -87,6 +88,8 @@ class Addons_Integration {
 
 		add_action( 'wp_ajax_get_pinterest_token', array( $this, 'get_pinterest_token' ) );
 		add_action( 'wp_ajax_get_pinterest_boards', array( $this, 'get_pinterest_boards' ) );
+
+		add_action( 'wp_ajax_get_tiktok_token', array( $this, 'get_tiktok_token' ) );
 
 		add_action( 'elementor/editor/before_enqueue_scripts', array( $this, 'enqueue_editor_scripts' ) );
 
@@ -354,8 +357,9 @@ class Addons_Integration {
 		);
 
 		$pinterest_enabled = isset( self::$modules['premium-pinterest-feed'] ) ? self::$modules['premium-pinterest-feed'] : 1;
+		$tiktok_enabled    = isset( self::$modules['premium-tiktok-feed'] ) ? self::$modules['premium-tiktok-feed'] : 1;
 
-		if ( $pinterest_enabled ) {
+		if ( $pinterest_enabled || $tiktok_enabled ) {
 
 			$data = array(
 				'ajaxurl' => esc_url( admin_url( 'admin-ajax.php' ) ),
@@ -466,7 +470,23 @@ class Addons_Integration {
 			PREMIUM_ADDONS_VERSION,
 			'all'
 		);
-        
+
+		wp_register_style(
+			'tooltipster',
+			PREMIUM_ADDONS_URL . 'assets/frontend/' . $dir . '/tooltipster.min.css',
+			array(),
+			PREMIUM_ADDONS_VERSION,
+			'all'
+		);
+
+		wp_register_style(
+			'pa-gTooltips',
+			PREMIUM_ADDONS_URL . 'assets/frontend/' . $dir . '/premium-global-tooltips.min.css',
+			array(),
+			PREMIUM_ADDONS_VERSION,
+			'all'
+		);
+
 		$assets_gen_enabled = self::$modules['premium-assets-generator'] ? true : false;
 
 		$type = get_post_type();
@@ -588,9 +608,19 @@ class Addons_Integration {
 			$this->register_old_scripts( $dir, $suffix );
 		}
 
+		wp_register_script( 'tiktok-embed', 'https://www.tiktok.com/embed.js', array(), false, true );
+
 		wp_register_script(
 			'prettyPhoto-js',
 			PREMIUM_ADDONS_URL . 'assets/frontend/' . $dir . '/prettyPhoto' . $suffix . '.js',
+			array( 'jquery' ),
+			PREMIUM_ADDONS_VERSION,
+			true
+		);
+
+        wp_register_script(
+			'tooltipster-bundle',
+			PREMIUM_ADDONS_URL . 'assets/frontend/' . $dir . '/tooltipster' . $suffix . '.js',
 			array( 'jquery' ),
 			PREMIUM_ADDONS_VERSION,
 			true
@@ -754,6 +784,23 @@ class Addons_Integration {
 			PREMIUM_ADDONS_VERSION,
 			true
 		);
+
+		wp_register_script(
+			'pa-gTooltips',
+			PREMIUM_ADDONS_URL . 'assets/frontend/' . $dir . '/premium-global-tooltips' . $suffix . '.js',
+			array( 'jquery' ),
+			PREMIUM_ADDONS_VERSION,
+			true
+		);
+
+        wp_localize_script(
+            'pa-gTooltips',
+            'PremiumSettings',
+            array(
+                'ajaxurl' => esc_url( admin_url( 'admin-ajax.php' ) ),
+                'nonce'   => wp_create_nonce( 'pa-blog-widget-nonce' ),
+            )
+        );
 
 		wp_localize_script(
 			'premium-addons',
@@ -1127,6 +1174,41 @@ class Addons_Integration {
 	}
 
 	/**
+	 * Get Pinterest account token for Pinterest Feed widget
+	 *
+	 * @since 4.10.2
+	 * @access public
+	 *
+	 * @return void
+	 */
+	public function get_tiktok_token() {
+
+		check_ajax_referer( 'pa-social', 'security' );
+
+		$api_url = 'https://appfb.premiumaddons.com/wp-json/fbapp/v2/tiktok';
+
+		$response = wp_remote_get(
+			$api_url,
+			array(
+				'timeout'   => 60,
+				'sslverify' => false,
+			)
+		);
+
+		$body = wp_remote_retrieve_body( $response );
+		$body = json_decode( $body, true );
+
+		// $transient_name = 'pa_tiktok_token_' . $body;
+
+		// $expire_time = 29 * DAY_IN_SECONDS;
+
+		// set_transient( $transient_name, true, $expire_time );
+
+		wp_send_json_success( $body );
+
+	}
+
+	/**
 	 * Load Cross Domain Copy Paste JS Files.
 	 *
 	 * @since 3.21.1
@@ -1180,13 +1262,13 @@ class Addons_Integration {
 		$template = isset( $_GET['templateID'] ) ? sanitize_text_field( wp_unslash( $_GET['templateID'] ) ) : '';
 
 		if ( empty( $template ) ) {
-			wp_send_json_error( '' );
+			wp_send_json_error( 'Empty Template ID' );
 		}
 
 		$template_content = $this->template_instance->get_template_content( $template );
 
 		if ( empty( $template_content ) || ! isset( $template_content ) ) {
-			wp_send_json_error( '' );
+			wp_send_json_error( 'Empty Content' );
 		}
 
 		$data = array(
@@ -1231,9 +1313,16 @@ class Addons_Integration {
 			require_once PREMIUM_ADDONS_PATH . 'widgets/dep/pa-weather-handler.php';
 		}
 
-		if ( 'PremiumAddons\Widgets\Premium_Pinterest_Feed' == $class ) {
-			require_once PREMIUM_ADDONS_PATH . 'includes/pa-display-conditions/mobile-detector.php';
-			require_once PREMIUM_ADDONS_PATH . 'widgets/dep/pa-pins-handler.php';
+		if ( in_array( $class, array('PremiumAddons\Widgets\Premium_Pinterest_Feed', 'PremiumAddons\Widgets\Premium_Tiktok_Feed'), true ) ) {
+            require_once PREMIUM_ADDONS_PATH . 'includes/pa-display-conditions/mobile-detector.php';
+
+            if ( 'PremiumAddons\Widgets\Premium_Pinterest_Feed' == $class ) {
+                require_once PREMIUM_ADDONS_PATH . 'widgets/dep/pa-pins-handler.php';
+            }
+
+            if ( 'PremiumAddons\Widgets\Premium_Tiktok_Feed' == $class ) {
+                require_once PREMIUM_ADDONS_PATH . 'widgets/dep/pa-tiktok-handler.php';
+            }
 		}
 
 		if ( class_exists( $class, false ) ) {
@@ -1347,6 +1436,9 @@ class Addons_Integration {
 			Woocommerce::get_instance();
 		}
 
+		if ( self::$modules['premium-global-tooltips'] ) {
+			GlobalTooltips::get_instance();
+		}
 	}
 
 	/**

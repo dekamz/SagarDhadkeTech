@@ -223,7 +223,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->start_controls_section(
 			'access_credentials_section',
 			array(
-				'label' => __( 'Access Credentials', 'premium-addons-pro' ),
+				'label' => __( 'Access Credentials', 'premium-addons-for-elementor' ),
 			)
 		);
 
@@ -239,7 +239,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->add_control(
 			'access_token',
 			array(
-				'label'   => __( 'Access Token', 'premium-addons-pro' ),
+				'label'   => __( 'Access Token', 'premium-addons-for-elementor' ),
 				'type'    => Controls_Manager::TEXTAREA,
 				'dynamic' => array( 'active' => true ),
 			)
@@ -248,14 +248,14 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->add_control(
 			'reload',
 			array(
-				'label'   => __( 'Refresh Cached Data Once Every', 'premium-addons-pro' ),
+				'label'   => __( 'Refresh Cached Data Once Every', 'premium-addons-for-elementor' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => array(
-					'hour'  => __( 'Hour', 'premium-addons-pro' ),
-					'day'   => __( 'Day', 'premium-addons-pro' ),
-					'week'  => __( 'Week', 'premium-addons-pro' ),
-					'month' => __( 'Month', 'premium-addons-pro' ),
-					'year'  => __( 'Year', 'premium-addons-pro' ),
+					'hour'  => __( 'Hour', 'premium-addons-for-elementor' ),
+					'day'   => __( 'Day', 'premium-addons-for-elementor' ),
+					'week'  => __( 'Week', 'premium-addons-for-elementor' ),
+					'month' => __( 'Month', 'premium-addons-for-elementor' ),
+					'year'  => __( 'Year', 'premium-addons-for-elementor' ),
 				),
 				'default' => 'week',
 			)
@@ -324,16 +324,16 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->add_control(
 			'pins_onclick',
 			array(
-				'label'     => __( 'On Click', 'premium-addons-pro' ),
+				'label'     => __( 'On Click', 'premium-addons-for-elementor' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => array(
-					'lightbox' => __( 'LightBox', 'premium-addons-pro' ),
-					'default'  => __( 'Redirect To Pinterest', 'premium-addons-pro' ),
+					'lightbox' => __( 'Lightbox', 'premium-addons-for-elementor' ),
+					'default'  => __( 'Redirect To Pinterest', 'premium-addons-for-elementor' ),
 				),
 				'default'   => 'default',
 				'condition' => array(
-					'endpoint' => 'pins/',
-                    'show_feed' => 'yes',
+					'endpoint'  => 'pins/',
+					'show_feed' => 'yes',
 				),
 			)
 		);
@@ -341,16 +341,16 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->add_control(
 			'boards_onclick',
 			array(
-				'label'     => __( 'On Click', 'premium-addons-pro' ),
+				'label'     => __( 'On Click', 'premium-addons-for-elementor' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => array(
-					'pins'    => __( 'Load Pins', 'premium-addons-pro' ),
-					'default' => __( 'Redirect To Pinterest', 'premium-addons-pro' ),
+					'pins'    => __( 'Load Pins', 'premium-addons-for-elementor' ),
+					'default' => __( 'Redirect To Pinterest', 'premium-addons-for-elementor' ),
 				),
 				'default'   => 'default',
 				'condition' => array(
-					'endpoint' => 'boards/',
-                    'show_feed' => 'yes',
+					'endpoint'  => 'boards/',
+					'show_feed' => 'yes',
 				),
 			)
 		);
@@ -461,8 +461,8 @@ class Premium_Pinterest_Feed extends Widget_Base {
 				'type'        => Controls_Manager::NUMBER,
 				'min'         => 1,
 				'default'     => 4,
-                'condition'   => array(
-					'show_feed'      => 'yes',
+				'condition'   => array(
+					'show_feed' => 'yes',
 				),
 			)
 		);
@@ -754,13 +754,13 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->add_responsive_control(
 			'object_fit',
 			array(
-				'label'     => __( 'Object Fit', 'premium-addons-pro' ),
+				'label'     => __( 'Object Fit', 'premium-addons-for-elementor' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => array(
-					''        => __( 'Default', 'premium-addons-pro' ),
-					'fill'    => __( 'Fill', 'premium-addons-pro' ),
-					'cover'   => __( 'Cover', 'premium-addons-pro' ),
-					'contain' => __( 'Contain', 'premium-addons-pro' ),
+					''        => __( 'Default', 'premium-addons-for-elementor' ),
+					'fill'    => __( 'Fill', 'premium-addons-for-elementor' ),
+					'cover'   => __( 'Cover', 'premium-addons-for-elementor' ),
+					'contain' => __( 'Contain', 'premium-addons-for-elementor' ),
 				),
 				'default'   => 'cover',
 				'selectors' => array(
@@ -832,15 +832,15 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->add_control(
 			'loading_animation',
 			array(
-				'label'        => __( 'Loading Animation', 'premium-addons-pro' ),
+				'label'        => __( 'Loading Animation', 'premium-addons-for-elementor' ),
 				'type'         => Controls_Manager::SELECT,
 				'prefix_class' => 'premium-loading-animatin__slide-',
 				'options'      => array(
-					'none'  => __( 'None', 'premium-addons-pro' ),
-					'up'    => __( 'Slide Up', 'premium-addons-pro' ),
-					'down'  => __( 'Slide Down', 'premium-addons-pro' ),
-					'left'  => __( 'Slide Left', 'premium-addons-pro' ),
-					'right' => __( 'Slide Right', 'premium-addons-pro' ),
+					'none'  => __( 'None', 'premium-addons-for-elementor' ),
+					'up'    => __( 'Slide Up', 'premium-addons-for-elementor' ),
+					'down'  => __( 'Slide Down', 'premium-addons-for-elementor' ),
+					'left'  => __( 'Slide Left', 'premium-addons-for-elementor' ),
+					'right' => __( 'Slide Right', 'premium-addons-for-elementor' ),
 				),
 				'default'      => 'up',
 				'conditions'   => array(
@@ -1239,7 +1239,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->start_controls_section(
 			'pa_pinterest_Sb_style',
 			array(
-				'label'     => __( 'Share Button', 'premium-addons-pro' ),
+				'label'     => __( 'Share Button', 'premium-addons-for-elementor' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'share_pin' => 'yes',
@@ -1250,7 +1250,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->add_responsive_control(
 			'pa_share_btn_icon_size',
 			array(
-				'label'      => __( 'Icon Size', 'premium-addons-pro' ),
+				'label'      => __( 'Icon Size', 'premium-addons-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', 'em', '%' ),
 				'range'      => array(
@@ -1287,7 +1287,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->add_control(
 			'pa_share_btn_bg',
 			array(
-				'label'     => __( 'Background Color', 'premium-addons-pro' ),
+				'label'     => __( 'Background Color', 'premium-addons-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .premium-pinterest-share-container' => 'background-color: {{VALUE}};',
@@ -1298,7 +1298,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->add_responsive_control(
 			'pa_share_btn_spacing',
 			array(
-				'label'      => __( 'Icon Spacing', 'premium-addons-pro' ),
+				'label'      => __( 'Icon Spacing', 'premium-addons-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', 'em', '%' ),
 				'range'      => array(
@@ -1326,14 +1326,14 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->start_controls_tab(
 			'pa_sb_normal',
 			array(
-				'label' => __( 'Normal', 'premium-addons-pro' ),
+				'label' => __( 'Normal', 'premium-addons-for-elementor' ),
 			)
 		);
 
 		$this->add_control(
 			'pa_share_btn_icon_color',
 			array(
-				'label'     => __( 'Icon Color', 'premium-addons-pro' ),
+				'label'     => __( 'Icon Color', 'premium-addons-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .fa.custom-fa' => '-webkit-text-stroke-color: {{VALUE}};',
@@ -1344,7 +1344,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->add_control(
 			'pa_share_btn_color',
 			array(
-				'label'     => __( 'Text Color', 'premium-addons-pro' ),
+				'label'     => __( 'Text Color', 'premium-addons-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .premium-pinterest-sharer' => 'color: {{VALUE}};',
@@ -1357,14 +1357,14 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->start_controls_tab(
 			'pa_sb_hover',
 			array(
-				'label' => __( 'Hover', 'premium-addons-pro' ),
+				'label' => __( 'Hover', 'premium-addons-for-elementor' ),
 			)
 		);
 
 		$this->add_control(
 			'pa_share_btn_Icolor_hov',
 			array(
-				'label'     => __( 'Icon Color', 'premium-addons-pro' ),
+				'label'     => __( 'Icon Color', 'premium-addons-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .premium-pinterest-share-button:hover .fa.custom-fa' => '-webkit-text-stroke-color: {{VALUE}};',
@@ -1375,7 +1375,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->add_control(
 			'pa_share_btn_color_hov',
 			array(
-				'label'     => __( 'Text Color', 'premium-addons-pro' ),
+				'label'     => __( 'Text Color', 'premium-addons-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .premium-pinterest-share-button:hover .premium-pinterest-sharer' => 'color: {{VALUE}};',
@@ -1399,7 +1399,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->add_control(
 			'pa_share_btn_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'premium-addons-pro' ),
+				'label'      => __( 'Border Radius', 'premium-addons-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1411,7 +1411,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->add_responsive_control(
 			'pa_share_btn_margin',
 			array(
-				'label'      => __( 'Margin', 'premium-addons-pro' ),
+				'label'      => __( 'Margin', 'premium-addons-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', 'em', '%' ),
 				'selectors'  => array(
@@ -1423,7 +1423,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->add_responsive_control(
 			'pa_share_btn_padding',
 			array(
-				'label'      => __( 'Padding', 'premium-addons-pro' ),
+				'label'      => __( 'Padding', 'premium-addons-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', 'em', '%' ),
 				'selectors'  => array(
@@ -1442,7 +1442,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->start_controls_section(
 			'pa_pinterest_Sl_style',
 			array(
-				'label'     => __( 'Share Links', 'premium-addons-pro' ),
+				'label'     => __( 'Share Links', 'premium-addons-for-elementor' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'share_pin' => 'yes',
@@ -1453,7 +1453,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->add_control(
 			'pa_sl_menu_bg',
 			array(
-				'label'     => __( 'Menu Background Color', 'premium-addons-pro' ),
+				'label'     => __( 'Menu Background Color', 'premium-addons-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .premium-pinterest-share-menu' => 'background-color: {{VALUE}};',
@@ -1475,7 +1475,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->add_responsive_control(
 			'pa_sl_icon_size',
 			array(
-				'label'      => __( 'Icon Size', 'premium-addons-pro' ),
+				'label'      => __( 'Icon Size', 'premium-addons-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', 'em', '%' ),
 				'range'      => array(
@@ -1501,7 +1501,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->add_control(
 			'pa_sl_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'premium-addons-pro' ),
+				'label'      => __( 'Border Radius', 'premium-addons-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -1513,7 +1513,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->add_responsive_control(
 			'pa_sl_spacing',
 			array(
-				'label'      => __( 'Icon Spacing', 'premium-addons-pro' ),
+				'label'      => __( 'Icon Spacing', 'premium-addons-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', 'em', '%' ),
 				'range'      => array(
@@ -1539,7 +1539,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->add_responsive_control(
 			'pa_sl_spacing_ver',
 			array(
-				'label'      => __( 'Vertical Spacing', 'premium-addons-pro' ),
+				'label'      => __( 'Vertical Spacing', 'premium-addons-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', 'em', '%' ),
 				'range'      => array(
@@ -1564,14 +1564,14 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->start_controls_tab(
 			'pa_sl_normal',
 			array(
-				'label' => __( 'Normal', 'premium-addons-pro' ),
+				'label' => __( 'Normal', 'premium-addons-for-elementor' ),
 			)
 		);
 
 		$this->add_control(
 			'pa_sl_color',
 			array(
-				'label'     => __( 'Text Color', 'premium-addons-pro' ),
+				'label'     => __( 'Text Color', 'premium-addons-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .premium-pinterest-share-text' => 'color: {{VALUE}};',
@@ -1584,14 +1584,14 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		$this->start_controls_tab(
 			'pa_sl_hover',
 			array(
-				'label' => __( 'Hover', 'premium-addons-pro' ),
+				'label' => __( 'Hover', 'premium-addons-for-elementor' ),
 			)
 		);
 
 		$this->add_control(
 			'pa_sl_color_hov',
 			array(
-				'label'     => __( 'Text Color', 'premium-addons-pro' ),
+				'label'     => __( 'Text Color', 'premium-addons-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .premium-pinterest-share-item:hover .premium-pinterest-share-text' => 'color: {{VALUE}};',
@@ -1950,19 +1950,19 @@ class Premium_Pinterest_Feed extends Widget_Base {
 			)
 		);
 
-        // $this->add_responsive_control(
-		// 	'pin_desc_padding',
-		// 	array(
-		// 		'label'      => __( 'Padding', 'premium-addons-for-elementor' ),
-		// 		'type'       => Controls_Manager::DIMENSIONS,
-		// 		'size_units' => array( 'px', 'em' ),
-		// 		'selectors'  => array(
-		// 			'{{WRAPPER}} .premium-pinterest-feed__pin-desc' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-		// 		),
-		// 		'condition'  => array(
-		// 			'pin_desc' => 'yes',
-		// 		),
-		// 	)
+		// $this->add_responsive_control(
+		// 'pin_desc_padding',
+		// array(
+		// 'label'      => __( 'Padding', 'premium-addons-for-elementor' ),
+		// 'type'       => Controls_Manager::DIMENSIONS,
+		// 'size_units' => array( 'px', 'em' ),
+		// 'selectors'  => array(
+		// '{{WRAPPER}} .premium-pinterest-feed__pin-desc' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+		// ),
+		// 'condition'  => array(
+		// 'pin_desc' => 'yes',
+		// ),
+		// )
 		// );
 
 		$this->add_responsive_control(
@@ -2119,7 +2119,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 			)
 		);
 
-        $this->add_responsive_control(
+		$this->add_responsive_control(
 			'pinterest_icon_padding',
 			array(
 				'label'      => __( 'Padding', 'premium-addons-for-elementor' ),
@@ -2534,7 +2534,7 @@ class Premium_Pinterest_Feed extends Widget_Base {
 		if ( empty( $access_token ) ) {
 			?>
 			<div class="premium-error-notice">
-				<?php echo esc_html( __( 'Please fill the required fields: Access Token', 'premium-addons-pro' ) ); ?>
+				<?php echo esc_html( __( 'Please fill the required fields: Access Token', 'premium-addons-for-elementor' ) ); ?>
 			</div>
 			<?php
 			return;
@@ -2783,8 +2783,8 @@ class Premium_Pinterest_Feed extends Widget_Base {
 	/**
 	 * Renders Pins.
 	 *
-	 * @param array $pinterest_feed  pins feed.
-	 * @param array $settings  widget_settings.
+	 * @param array  $pinterest_feed  pins feed.
+	 * @param array  $settings  widget_settings.
 	 * @param string $default  false when rendering board pins.
 	 */
 	private function render_pins( $pinterest_feed, $settings, $default = true ) {

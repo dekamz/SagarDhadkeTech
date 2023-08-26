@@ -149,11 +149,14 @@ class Premium_Template_Tags {
 		$post_id = '';
 
 		if ( $query->have_posts() ) {
-			while ( $query->have_posts() ) {
-				$query->the_post();
-				$post_id = get_the_ID();
+			$post_id = $query->post->ID;
 
-			}
+			// while ( $query->have_posts() ) {
+
+				// $query->the_post();
+				// $post_id = get_the_ID();
+			// }
+
 			wp_reset_postdata();
 		}
 
@@ -220,7 +223,7 @@ class Premium_Template_Tags {
 			$id = $title;
 		}
 
-		$template_content = $frontend->get_builder_content( $id );
+		$template_content = $frontend->get_builder_content_for_display( $id );
 
 		return $template_content;
 

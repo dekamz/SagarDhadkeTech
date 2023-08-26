@@ -795,9 +795,15 @@ class Premium_Lottie extends Widget_Base {
 
 		<#
 
-		var anim_url = 'url' === settings.source ? settings.lottie_url : settings.lottie_file.url;
+		var anim_url = null;
 
-		if( '' === anim_url )
+		if( 'url' === settings.source ) {
+			anim_url = settings.lottie_url
+		} else if( settings.lottie_file ) {
+			anim_url = settings.lottie_file.url;
+		}
+
+		if( ! anim_url )
 			return;
 
 		if( '' !== settings.trigger ) {

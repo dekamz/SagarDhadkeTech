@@ -67,9 +67,55 @@ function connectPinterest(obj) {
     return false;
 }
 
+function connectTiktok(obj) {
+
+    var url = "https://appfb.premiumaddons.com/auth/tiktok";
+
+    openFbPopup(
+        url, 670, 520,
+        function () {
+            jQuery.ajax({
+                type: "GET",
+                url: socialSettings.ajaxurl,
+                dataType: "JSON",
+                data: {
+                    action: "get_tiktok_token",
+                    security: socialSettings.nonce
+                },
+                success: function (res) {
+
+                    if (res.success) {
+
+                        var accessToken = res.data;
+
+                        jQuery(obj)
+                            .parents(".elementor-control-tiktok_login")
+                            .nextAll(".elementor-control-access_token")
+                            .find("textarea")
+                            .val(accessToken)
+                            .trigger("input");
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        }
+    );
+
+    return false;
+}
+
 function connectPinterestInit(obj) {
 
     if (!obj) return;
 
     connectPinterest(obj);
+}
+
+function connectTiktokInit(obj) {
+
+    if (!obj) return;
+
+    connectTiktok(obj);
 }

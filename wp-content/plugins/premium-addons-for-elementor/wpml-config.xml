@@ -278,5 +278,10 @@
                 <field name="Pinterest Feed: Load More Text" editor_type="LINE">more_btn_txt</field>
             </fields>
         </widget>
+        <widget name="premium-tiktok-feed">
+            <fields>
+                <field name="TikTok Feed: Description Postfix:" editor_type="LINE">vid_desc_postfix_txt</field>
+            </fields>
+        </widget>
     </elementor-widgets>
 </wpml-config>

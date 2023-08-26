@@ -3,9 +3,9 @@ Contributors: Leap13, Rimoun
 Tags: elementor, elementor addons, widgets, elementor elements, templates
 Donate Link: https://premiumaddons.com/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme
 Requires at least: 5.0
-Tested Up To: 6.3.0
+Tested Up To: 6.3
 Requires PHP: 7.0
-Stable Tag: 4.10.4
+Stable Tag: 4.10.6
 License: GPL v3.0
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -20,26 +20,26 @@ Supercharge your [Elementor Page Builder](https://wordpress.org/plugins/elemento
 ### Useful Links
 [Support](https://my.leap13.com/contact-support/) | [Docs](https://premiumaddons.com/docs/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) | [Video Tutorials](https://www.youtube.com/channel/UCXcJ9BeO2sKKHor7Q9VglTQ) | [Facebook Group](https://facebook.com/groups/premiumAddons) | [Upgrade to Pro](https://premiumaddons.com/pro/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme)
 
+### New: TikTok Feed Widget
+We recently released the UNIQUE TikTok Feed widget that helps you to get feed from your TikTok accounts and show them as a grid, masonry or carousel. Select between 3 neat skins. [Check it out now!](https://premiumaddons.com/elementor-tiktok-feed-widget/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
+
+### New: Global Tooltips Addon
+Add icon, image gallery, Lottie animation or Elementor template as a tooltip for any element. You can also use the tooltips addon to create a tour steps. [Check it out now!](https://premiumaddons.com/elementor-tooltip-global-addon/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
+
 ### New: Pinterest Feed Widget
-Now, you can use the brand new Pinterest Feed widget to showcase your Pinterest pins and boards as a grid, masonry or carousel and select between 3 neat skins. [Check it out now!](https://premiumaddons.com/elementor-pinterest-feed-widget/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
+Now, you can use the brand new Pinterest Feed widget to showcase your Pinterest pins and boards as a grid, masonry or carousel and select between 4 neat skins. [Check it out now!](https://premiumaddons.com/elementor-pinterest-feed-widget/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
 
 ### New: Magazine Bundle
 Smart Post Listing, Weather, World Clock, News Ticker, Tags Cloud and Recent Posts Notification widgets newly added to create the magazine website you ever dreamed. [Check it out now!](https://premiumaddons.com/elementor-news-magazine-widgets-bundle/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
 
-### New: Premium Templates Portal
+### Premium Templates Portal
 You can browse a wide range of Elementor page and section templates LIVE on PremiumTemplates.io [Check it out now!](https://premiumtemplates.io/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
 
 ### SVG Draw Widget
 You can now draw any Font Awesome icon or SVG path using Premium SVG Draw widget. Not just that, we have added Draw Icon option in all premium widgets that has icon option in them. [Check it out now!](https://premiumaddons.com/elementor-svg-draw-widget/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
 
-### Three transition effects added to Vertical Scroll one page navigation widget
-Now, you can select between three scroll transition effects in Premium Vertical Scroll widget in Premium Addons. Make your Vertical Scroll widget glow using the newly transitions Cube, Parallax, and Zoomed Parallax. Those three new transitions will let you get the ability to build eye-catchy single page WordPress websites with no effort. [Check it out now!](https://premiumaddons.com/vertical-scroll-widget-for-elementor-page-builder/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
-
 ### Elementor Navigation/Mega Menu Widget
 Now, you build outstanding navigation menus and mega menus using Premium Navigation/Mega Menu Widget which allows you to select between four different layouts with dozens of options to create a responsive menu. [Check it out now!](https://premiumaddons.com/elementor-mega-menu-widget/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
-
-### Section Templates Live Builder Tool
-Now, you create build Elementor section templates and insert them inside the templates based widgets in Premium Addons within the same page using [Templates Live Editor tool](https://premiumaddons.com/elementor-templates-live-editor/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme).
 
 ### Display Conditions
 Premium Addons is proudly offering you a professional way to manage your website content with specific conditions which is perfect for marketers and eCommerce websites. You can show/hide content dynamically based on location, browser, operating system, user role, URL parameters, device type, Woocommerce display conditions such as WooCommerce product and WooCommerce shopping cart data, ACF fields, etc. [Check the demo page](https://premiumaddons.com/elementor-display-conditions/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme)
@@ -126,6 +126,7 @@ Each widget and addon has been tested on different screen sizes, mobile devices,
 * [**Multi-Scroll Widget**](https://premiumaddons.com/multi-scroll-widget-for-elementor-page-builder/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: The only Elementor widget available that allows you to create attractive multi-scroll effect. It can be used to create full landing pages or use it inside any page.
 * [**Custom Mouse Cursor Global Addon**](https://premiumaddons.com/elementor-custom-mouse-cursor-global-feature/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: Add a custom mouse cursor to any section, column, or widget. You can select between Font Awesome icon, custom SVGs, image or Lottie animation.
 * [**Magic Scroll Global Addon**](https://premiumaddons.com/elementor-magic-scroll-global-addon/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: Create outstanding scroll animations to any column/widget with just few clicks and control every single detail in the animation scene.
+* [**Tooltips Global Addon**](https://premiumaddons.com/elementor-tooltip-global-addon/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(FREE)*: Add icon, image, Lottie animation or Elementor template as a tooltip for any Elementor container, section, column or widget element.
 * [**Badge Global Addon**](https://premiumaddons.com/elementor-badge-global-addon/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: Add an icon, image, Lottie animation, or SVG blob shape badge to any section, column, or widget.
 * [**Animated Blob Generator**](https://premiumaddons.com/elementor-animated-blob-generator/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: Add multiple animated blob layers to your sections with a wide range of smart customization options.
 * [**Lottie Animations Section Addon**](https://premiumaddons.com/elementor-lottie-animations-section-addon/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: Add multiple Lottie Animations easily to any section with allot of customization and interactivity options.
@@ -158,7 +159,8 @@ Each widget and addon has been tested on different screen sizes, mobile devices,
 * [**Unfold Widget**](https://premiumaddons.com/unfold-widget-for-elementor-page-builder/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: Advanced way to fit long text in small area. Unfold Widget is a great trick as it will make your layout design look better.
 
 ### Social Feed Widgets
-* [**Pinterest Feed Widget**](https://premiumaddons.com/elementor-pinterest-feed-widget/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(FREE)*: Get pins and boards from your Pinterest account and show them on your website. Select between three layouts and three skins.
+* [**Pinterest Feed Widget**](https://premiumaddons.com/elementor-pinterest-feed-widget/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(FREE)*: Get pins and boards from your Pinterest account and show them on your website. Select between three layouts and four skins.
+* [**TikTok Feed Widget**](https://premiumaddons.com/elementor-tiktok-feed-widget/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(FREE)*: Get feed from your TikTok account and show them on your website. Advanced filtering options, three layouts and three skins.
 * [**Facebook Feed Widget**](https://premiumaddons.com/elementor-facebook-feed-widget/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: Show your Facebook Feed directly inside your website.
 * [**Twitter Feed Widget**](https://premiumaddons.com/twitter-feed-widget-for-elementor-page-builder/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: Display your Twitter Feed on your website pages.
 * [**Instagram Feed Widget**](https://premiumaddons.com/instagram-feed-widget-for-elementor-page-builder/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme) *(PRO)*: Show your Instagram photos right on your webpage using Instagram Feed Widget. Premium Instagram Feed widget has a built-in Instagram Access Token Generator.
@@ -242,6 +244,16 @@ Premium Addonsis 100% Ads Free, Ads can only be detected from Youtube videos, th
 14. Premium Progress Bar Widget
 
 == Changelog ==
+
+= 4.10.6 =
+
+- Tweak: Position option changed to Text control instead of Select in Global Tooltips addon.
+- Fixed: Elementor templates option not working on editor in Global Tooltips addon.
+
+= 4.10.5 =
+
+- New: Added TikTok Feed widget - [here](https://premiumaddons.com/elementor-tiktok-feed-widget).
+- New: Added Tooltip Global addon - [here](https://premiumaddons.com/elementor-global-tooltip-addon).
 
 = 4.10.4 =
 

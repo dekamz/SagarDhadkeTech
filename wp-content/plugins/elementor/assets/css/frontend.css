@@ -1,4 +1,4 @@
-/*! elementor - v3.15.0 - 09-08-2023 */
+/*! elementor - v3.15.0 - 20-08-2023 */
 @charset "UTF-8";
 .dialog-widget-content {
   background-color: var(--e-a-bg-default);
@@ -3560,6 +3560,9 @@ ul.elementor-icon-list-items.elementor-inline-items .elementor-inline-item {
   --n-accordion-icon-active-color: var(--n-accordion-title-active-color);
   --n-accordion-icon-gap: 0 10px;
   width: 100%;
+}
+.elementor-widget-n-accordion .e-n-accordion details > summary::-webkit-details-marker {
+  display: none;
 }
 .elementor-widget-n-accordion .e-n-accordion-item {
   display: flex;

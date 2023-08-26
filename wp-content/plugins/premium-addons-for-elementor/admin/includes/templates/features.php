@@ -89,7 +89,7 @@ $features = $elements['cat-11']['elements'];
 					<div class="pa-section-info-wrap">
 						<div class="pa-section-info">
 						<h4><?php echo esc_html( __( 'Custom Mouse Cursor', 'premium-addons-for-elementor' ) ); ?></h4>
-							<p><?php echo esc_html( __( 'Change the default mouse cursor with icon, image, or Lottie animation for any Elementor section, column, or widget.', 'premium-addons-for-elementor' ) ); ?></p>
+							<p><?php echo esc_html( __( 'Change the default mouse cursor with icon, image, or Lottie animation for any Elementor section, container, column, or widget.', 'premium-addons-for-elementor' ) ); ?></p>
 						</div>
 						<?php
 
@@ -113,7 +113,7 @@ $features = $elements['cat-11']['elements'];
 					<div class="pa-section-info-wrap">
 						<div class="pa-section-info">
 							<h4><?php echo esc_html( __( 'Global Badge', 'premium-addons-for-elementor' ) ); ?></h4>
-							<p><?php echo esc_html( __( 'Add icon, image, Lottie, or SVG blob shape badge to any Elementor section, column, or widget.', 'premium-addons-for-elementor' ) ); ?></p>
+							<p><?php echo esc_html( __( 'Add icon, image, Lottie, or SVG blob shape badge to any Elementor section, container, column, or widget.', 'premium-addons-for-elementor' ) ); ?></p>
 						</div>
 						<?php
 
@@ -131,6 +131,30 @@ $features = $elements['cat-11']['elements'];
 						</div>
 					</div>
 					<a href="<?php echo esc_url( $features[4]['demo'] ); ?>" target="_blank"></a>
+				</div>
+
+				<div class="pa-section-outer-wrap">
+					<div class="pa-section-info-wrap">
+						<div class="pa-section-info">
+							<h4><?php echo esc_html( __( 'Global Tooltips', 'premium-addons-for-elementor' ) ); ?></h4>
+							<p><?php echo esc_html( __( 'Add icon, text, Lottie or Elementor template tooltip to any Elementor section, container, column, or widget.', 'premium-addons-for-elementor' ) ); ?></p>
+						</div>
+						<?php
+
+						$status         = ( isset( $features[10]['is_pro'] ) && ! Helper_Functions::check_papro_version() ) ? 'disabled' : checked( 1, $enabled_elements['premium-global-tooltips'], false );
+						$class          = ( isset( $features[10]['is_pro'] ) && ! Helper_Functions::check_papro_version() ) ? 'pro-' : '';
+						$switcher_class = $class . 'slider round pa-control';
+
+						?>
+						<div class="pa-section-info-cta">
+							<label class="switch">
+								<input type="checkbox" id="premium-global-tooltips" name="premium-global-tooltips" <?php echo esc_attr( $status ); ?>>
+									<span class="<?php echo esc_attr( $switcher_class ); ?>"></span>
+								</label>
+							</p>
+						</div>
+					</div>
+					<a href="<?php echo esc_url( $features[10]['demo'] ); ?>" target="_blank"></a>
 				</div>
 
 				<div class="pa-section-outer-wrap">

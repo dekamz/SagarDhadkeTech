@@ -61,10 +61,10 @@ class Admin_Notices {
 
 		self::$notices = array(
 			'pa-review',
-			'pinterest_notice',
+			'tiktok_tooltip_notice',
 		);
 
-		delete_option( 'magazine_notice' );
+		delete_option( 'pinterest_notice' );
 
 	}
 
@@ -106,7 +106,7 @@ class Admin_Notices {
 			return;
 		}
 
-		$this->get_pinterest_notice();
+		$this->get_tiktok_tooltip_notice();
 
 	}
 
@@ -255,22 +255,24 @@ class Admin_Notices {
 
 	/**
 	 *
-	 * Shows admin notice for Pinterest Feed.
+	 * Shows admin notice for TikTok Feed and Tooltips.
 	 *
 	 * @since 4.8.8
 	 * @access public
 	 *
 	 * @return void
 	 */
-	public function get_pinterest_notice() {
+	public function get_tiktok_tooltip_notice() {
 
-		$pinterest_notice = get_option( 'pinterest_notice' );
+		$tiktok_notice = get_option( 'tiktok_tooltip_notice' );
 
-		if ( '1' === $pinterest_notice ) {
+		if ( '1' === $tiktok_notice ) {
 			return;
 		}
 
-		$notice_url = Helper_Functions::get_campaign_link( 'https://premiumaddons.com/elementor-pinterest-feed-widget/', 'pinterest-notification', 'wp-dash', 'pinterest' );
+		$tiktok_url = Helper_Functions::get_campaign_link( 'https://premiumaddons.com/elementor-tiktok-feed-widget/', 'tiktok-tooltip-notification', 'wp-dash', 'tiktok-tooltip' );
+
+		$tooltips_url = Helper_Functions::get_campaign_link( 'https://premiumaddons.com/elementor-tooltip-global-addon/', 'tiktok-tooltip-notification', 'wp-dash', 'tiktok-tooltip' );
 
 		?>
 
@@ -280,11 +282,10 @@ class Admin_Notices {
 			</div>
 			<div class="pa-text-wrap">
 				<p>
-					<strong><?php echo __( 'Premium Pinterest Feed widget', 'premium-addons-for-elemetor' ); ?></strong>
-					<?php echo sprintf( __( 'is now available in Premium Addons for Elementor. <a href="%s" target="_blank">Check it out now!</a>', 'premium-addons-for-elementor' ), $notice_url ); ?>
+					<?php echo sprintf( __( '<a href="%1$s" target="_blank"><strong>TikTok Feed widget</strong></a> and <a href="%2$s" target="_blank"><strong>Global Tooltips addon</strong></a> are now available in Premium Addons for Elementor!', 'premium-addons-for-elementor' ), $tiktok_url, $tooltips_url ); ?>
 				</p>
 			</div>
-			<div class="pa-notice-close" data-notice="pinterest">
+			<div class="pa-notice-close" data-notice="tiktok">
 				<span class="dashicons dashicons-dismiss"></span>
 			</div>
 		</div>
