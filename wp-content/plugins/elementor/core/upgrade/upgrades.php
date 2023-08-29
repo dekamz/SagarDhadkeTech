@@ -24,6 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 class Upgrades {
+	const ELEMENTOR_CONTAINER_GAP_UPDATES_REVERSED = 'elementor_container_gap_updates_reversed';
 
 	public static function _on_each_version( $updater ) {
 		self::recalc_usage_data( $updater );
