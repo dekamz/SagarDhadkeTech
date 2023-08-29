@@ -13,7 +13,7 @@
 	<div
 		class="eb-post-carousel-wrapper                                        <?php esc_attr_e( implode( ' ', $_wrapper_classes ) ); ?>"
 		data-id="<?php esc_attr_e( $blockId ); ?>"
-		data-querydata="<?php esc_attr_e( serialize( $queryData ) ); ?>"
+		data-querydata="<?php esc_attr_e( json_encode( $queryData ) ); ?>"
 		data-slidersettings="<?php esc_attr_e( json_encode( $sliderSettings ) ); ?>"
 		data-attributes="<?php esc_attr_e( json_encode( $essentialAttr ) ); ?>">
 

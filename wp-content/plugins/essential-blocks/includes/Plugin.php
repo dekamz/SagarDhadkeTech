@@ -1,6 +1,7 @@
 <?php
 
 namespace EssentialBlocks;
+
 use EssentialBlocks\API\Server;
 use EssentialBlocks\Admin\Admin;
 use EssentialBlocks\Core\Blocks;
@@ -26,8 +27,7 @@ use EssentialBlocks\Integrations\PluginInstaller;
 final class Plugin {
     use HasSingletone;
 
-
-    public $version = '4.2.0';
+    public $version = '4.2.1';
 
     public $admin;
     /**
@@ -58,6 +58,7 @@ final class Plugin {
         $this->set_locale();
 
         $this->load_admin_dependencies();
+
         Maintenance::get_instance();
 
         $this->assets = Enqueue::get_instance( ESSENTIAL_BLOCKS_URL, ESSENTIAL_BLOCKS_DIR_PATH, $this->version );
@@ -67,21 +68,6 @@ final class Plugin {
         $this->admin = Admin::get_instance();
 
         Scripts::get_instance();
-
-        // Fetch Enabled Blocks if not than Default Block List
-        self::$blocks = Blocks::get_instance( self::$settings );
-
-        add_action( 'init', function () {
-            /**
-             * Register a meta `_eb_attr`
-             */
-            PostMeta::get_instance()->register_meta();
-
-            /**
-             * Register all blocks dynamically
-             */
-            self::$blocks->register_blocks( $this->assets );
-        } );
 
         FontLoader::get_instance( 'essential-blocks' );
 
@@ -117,6 +103,21 @@ final class Plugin {
 
         // pagination
         Pagination::get_instance();
+
+        // Fetch Enabled Blocks if not than Default Block List
+        self::$blocks = Blocks::get_instance( self::$settings );
+
+        add_action( 'init', function () {
+            /**
+             * Register a meta `_eb_attr`
+             */
+            PostMeta::get_instance()->register_meta();
+
+            /**
+             * Register all blocks dynamically
+             */
+            self::$blocks->register_blocks( $this->assets );
+        } );
 
         add_action( 'plugins_loaded', [$this, 'plugins_loaded'] );
 
@@ -221,9 +222,11 @@ final class Plugin {
     }
 
     private function load_admin_dependencies() {
-        require_once ESSENTIAL_BLOCKS_DIR_PATH . '/includes/class-helpers.php';
-
-        //Include NFT AJAX Class
-        // require_once ESSENTIAL_BLOCKS_DIR_PATH . '/includes/class-nft-ajax.php';
+        if ( ! function_exists( 'wp_get_current_user' ) ) {
+            include ABSPATH . "wp-includes/pluggable.php";
+        }
+        if ( ! current_user_can( 'administrator' ) ) {
+            return;
+        }
     }
 }

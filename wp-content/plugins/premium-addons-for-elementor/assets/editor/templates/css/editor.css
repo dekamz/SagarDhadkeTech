@@ -576,6 +576,10 @@ div.premium-template-has-url:hover .premium-clone-template {
     right: 0;
 }
 
+.premium-templates-search #elementor-template-library-filter-text {
+    background-color: transparent;
+}
+
 .premium-templates-notice {
     border-left: 3px solid #2563ec;
     background-color: #f0f7ff;

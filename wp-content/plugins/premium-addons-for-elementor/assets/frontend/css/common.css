@@ -485,8 +485,8 @@ because it's rendered as div with custom SVG code.
 .premium-pinterest-share-item i,
 .premium-tiktok-share-item i {
   text-align: center;
-  -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
+  -webkit-flex-shrink: 0;
   flex-shrink: 0;
   width: 1.25em;
 }

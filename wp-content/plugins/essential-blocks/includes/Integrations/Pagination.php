@@ -22,12 +22,15 @@ class Pagination extends ThirdPartyIntegration {
 
         $html = '';
 
-        $query           = unserialize( wp_unslash( $_POST['querydata'] ) );
-        $attributes      = unserialize( wp_unslash( $_POST['attributes'] ) );
-        $loadMoreOptions = $attributes['loadMoreOptions'];
+        $query           = isset( $_POST['querydata'] ) ? json_decode( wp_unslash( $_POST['querydata'] ) ) : [];
+        $attributes      = isset( $_POST['attributes'] ) ? json_decode( wp_unslash( $_POST['attributes'] ) ) : [];
+        $query           = ( is_object( $query ) || is_array( $query ) ) ? (array) $query : [];
+        $attributes      = ( is_object( $attributes ) || is_array( $attributes ) ) ? (array) $attributes : [];
+        $loadMoreOptions = isset( $attributes['loadMoreOptions'] ) ? (array) $attributes['loadMoreOptions'] : [];
 
-        $totalPosts        = $_POST['totalPosts'];
-        $per_page          = $query['per_page'];
+        $totalPosts = isset( $_POST['totalPosts'] ) ? $_POST['totalPosts'] : 0;
+        $per_page   = isset( $query['per_page'] ) ? $query['per_page'] : 0;
+
         $enableMorePosts   = $loadMoreOptions['enableMorePosts'];
         $loadMoreType      = $loadMoreOptions['loadMoreType'];
         $loadMoreButtonTxt = $loadMoreOptions['loadMoreButtonTxt'];

@@ -16,8 +16,8 @@
     <div
         class="<?php esc_attr_e( implode( ' ', $_wrapper_classes ) );?> eb-post-grid-wrapper"
         data-id="<?php esc_attr_e( $blockId );?>"
-        data-querydata="<?php esc_attr_e( serialize( $queryData ) );?>"
-        data-attributes="<?php esc_attr_e( serialize( $essentialAttr ) );?>">
+        data-querydata="<?php esc_attr_e( json_encode( $queryData ) );?>"
+        data-attributes="<?php esc_attr_e( json_encode( $essentialAttr ) );?>">
 
 		<?php
 			/**

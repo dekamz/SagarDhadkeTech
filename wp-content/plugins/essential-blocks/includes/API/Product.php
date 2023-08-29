@@ -43,9 +43,9 @@ class Product extends Base {
      */
     public function get_products( $request, $local = false ) {
         $data       = [];
-        $query_data = maybe_unserialize( $request->get_param( 'query_data' ) );
-        $query_data = is_array( $query_data ) ? $query_data : [];
-        $pageNumber = (int) $request['pageNumber'] - 1;
+        $query_data = json_decode( $request->get_param( 'query_data' ) );
+        $query_data = ( is_object( $query_data ) || is_array( $query_data ) ) ? (array) $query_data : [];
+        $pageNumber = (int) sanitize_text_field( $request['pageNumber'] ) - 1;
 
         $_is_frontend = true;
 
@@ -60,8 +60,8 @@ class Product extends Base {
 
         $loop = new WP_Query( $this->query_builder( $query_data ) );
 
-        $attributes = $_is_frontend ? maybe_unserialize( $request->get_param( 'attributes' ) ) : [];
-        $attributes = ! empty( $attributes ) ? $attributes : [];
+        $attributes = $_is_frontend ? json_decode( $request->get_param( 'attributes' ) ) : [];
+        $attributes = ( is_object( $attributes ) || is_array( $attributes ) ) ? (array) $attributes : [];
 
         $isCustomCartBtn  = $attributes['isCustomCartBtn'];
         $simpleCartText   = $attributes['simpleCartText'];
@@ -158,7 +158,7 @@ class Product extends Base {
                 if ( $_is_frontend ) {
                     $_params = array_merge(
                         $attributes,
-                        [ 'product' => wc_get_product( (int) $products['id'] ) ]
+                        ['product' => wc_get_product( (int) $products['id'] )]
                     );
 
                     Helper::views( 'woocommerce/single-product', $_params );
@@ -214,7 +214,7 @@ class Product extends Base {
         }
 
         if ( ! empty( $attr['tag'] ) ) {
-            $query_args['tax_query']   = [ 'relation' => 'OR' ];
+            $query_args['tax_query']   = ['relation' => 'OR'];
             $query_args['tax_query'][] = [
                 [
                     'taxonomy' => 'product_tag',

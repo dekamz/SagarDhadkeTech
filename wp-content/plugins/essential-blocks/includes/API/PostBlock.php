@@ -18,12 +18,13 @@ class PostBlock extends Base {
     }
 
     public function get_posts( $request ) {
-
         $block_type = $request->has_param( 'block_type' ) ? $request->get_param( 'block_type' ) : 'post-grid';
 
-        $query      = unserialize( $request['query_data'] );
-        $attributes = unserialize( $request['attributes'] );
-        $pageNumber = isset( $request['pageNumber'] ) ? (int) $request['pageNumber'] - 1 : 0;
+        $query      = json_decode( ( $request['query_data'] ) );
+        $attributes = json_decode( ( $request['attributes'] ) );
+        $query = (is_object($query) || is_array($query)) ? (array) $query : [];
+        $attributes = (is_object($attributes) || is_array($attributes)) ? (array) $attributes : [];
+        $pageNumber = isset( $request['pageNumber'] ) ? (int) sanitize_text_field( $request['pageNumber'] ) - 1 : 0;
 
         //Check if param is empty
         if ( ! is_array( $query ) || ! is_array( $attributes ) ) {
@@ -38,15 +39,15 @@ class PostBlock extends Base {
         $block_object   = PostCarouselBlock::get_instance();
         if ( $block_type === 'post-grid' ) {
             if ( isset( $request["taxonomy"] ) && isset( $request["category"] ) ) {
-                $category  = get_term_by( 'slug', $request["category"], $request["taxonomy"] );
+                $category  = get_term_by( 'slug', sanitize_text_field( $request["category"] ), sanitize_text_field( $request["taxonomy"] ) );
                 $catString = json_encode( [[
                     "label" => $category->name,
                     "value" => $category->term_id
                 ]] );
                 $filterQuery = [
                     $request["taxonomy"] => [
-                        "name"  => $request["category"],
-                        "slug"  => $request["category"],
+                        "name"  => sanitize_text_field( $request["category"] ),
+                        "slug"  => sanitize_text_field( $request["category"] ),
                         "value" => $catString
                     ]
                 ];

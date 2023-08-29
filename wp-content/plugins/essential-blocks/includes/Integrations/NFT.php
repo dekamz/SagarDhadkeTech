@@ -105,6 +105,9 @@ class NFT extends ThirdPartyIntegration {
 		if ( ! wp_verify_nonce( $_POST['admin_nonce'], 'admin-nonce' ) ) {
 			die( __( 'Nonce did not match', 'essential-blocks' ) );
 		}
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			wp_send_json_error( __( 'You are not authorized!', 'essential-blocks' ) );
+		}
 
 		$settings = get_option( 'eb_settings' );
 
@@ -119,7 +122,7 @@ class NFT extends ThirdPartyIntegration {
 		if ( ! wp_verify_nonce( $_POST['admin_nonce'], 'admin-nonce' ) ) {
 			die( __( 'Nonce did not match', 'essential-blocks' ) );
 		}
-		if ( ! current_user_can( 'edit_posts' ) ) {
+		if ( ! current_user_can( 'activate_plugins' ) ) {
 			wp_send_json_error( __( 'You are not authorized!', 'essential-blocks' ) );
 		}
 

@@ -21,6 +21,9 @@ class Instagram extends ThirdPartyIntegration {
 		if ( ! wp_verify_nonce( sanitize_key( $_POST['admin_nonce'] ), 'admin-nonce' ) ) {
 			die( __( 'Nonce did not match', 'essential-blocks' ) );
 		}
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			wp_send_json_error( __( 'You are not authorized!', 'essential-blocks' ) );
+		}
 
 		$settings = get_option( 'eb_settings' );
 

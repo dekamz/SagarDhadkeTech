@@ -315,6 +315,7 @@ class Premium_Nav_Menu extends Widget_Base {
 				'options'   => array(
 					'link'           => __( 'Link', 'premium-addons-for-elementor' ),
 					'custom_content' => __( 'Elementor Template', 'premium-addons-for-elementor' ),
+                    'element' => __( 'Element On Page', 'premium-addons-for-elementor' ),
 				),
 				'default'   => 'link',
 				'condition' => array(
@@ -376,6 +377,18 @@ class Premium_Nav_Menu extends Widget_Base {
 							'value'    => 'link',
 						),
 					),
+				),
+			)
+		);
+
+        $repeater->add_control(
+			'element_selector',
+			array(
+				'label'      => __( 'Element CSS Selector', 'premium-addons-for-elementor' ),
+				'type'       => Controls_Manager::TEXT,
+				'condition'   => array(
+					'item_type'         => 'submenu',
+					'menu_content_type' => 'element',
 				),
 			)
 		);
@@ -465,7 +478,7 @@ class Premium_Nav_Menu extends Widget_Base {
 				'description' => __( 'This option centers the mega content to the center of the widget container. <b> Only works when Full Width Dropdown option is disabled </b>', 'premium-addons-for-elementor' ),
 				'condition'   => array(
 					'item_type'         => 'submenu',
-					'menu_content_type' => 'custom_content',
+					'menu_content_type' => ['custom_content', 'element'],
 				),
 			)
 		);
@@ -4783,10 +4796,19 @@ class Premium_Nav_Menu extends Widget_Base {
 						$this->add_render_attribute( 'menu-content-item-' . $item['_id'], 'class', 'premium-mega-content-centered' );
 					}
 
+                    if ( 'element' === $item['menu_content_type'] ) {
+                        $this->add_render_attribute( 'menu-content-item-' . $item['_id'], 'data-mega-content', $item['element_selector'] );
+                    }
+
 					$html_output .= '<div ' . $this->get_render_attribute_string( 'menu-content-item-' . $item['_id'] ) . '>';
 
-					$temp_id      = empty( $item['submenu_item'] ) ? $item['live_temp_content'] : $item['submenu_item'];
-					$html_output .= $this->getTemplateInstance()->get_template_content( $temp_id ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                    if ( 'custom_content' === $item['menu_content_type'] ) {
+
+                        $temp_id      = empty( $item['submenu_item'] ) ? $item['live_temp_content'] : $item['submenu_item'];
+					    $html_output .= $this->getTemplateInstance()->get_template_content( $temp_id ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+
+                    }
+
 					$html_output .= '</div>';
 
 				}
@@ -4812,7 +4834,7 @@ class Premium_Nav_Menu extends Widget_Base {
 				}
 
 				if ( $next_item_exists ) {
-					if ( 'submenu' === $menu_items[ $index + 1 ]['item_type'] && 'custom_content' === $menu_items[ $index + 1 ]['menu_content_type'] ) {
+					if ( 'submenu' === $menu_items[ $index + 1 ]['item_type'] && 'link' !== $menu_items[ $index + 1 ]['menu_content_type'] ) {
 						$this->add_render_attribute( 'menu-item-' . $index, 'class', 'premium-mega-nav-item' );
 					}
 				}

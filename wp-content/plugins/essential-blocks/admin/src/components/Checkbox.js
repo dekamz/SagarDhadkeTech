@@ -261,7 +261,7 @@ export default function Checkbox() {
                 {Object.keys(blocks).map((block, index) => (
                     <div
                         key={index}
-                        className={`eb-col-4 eb-admin-checkbox eb-block-box ${all_blocks_default[block].hasOwnProperty("status")
+                        className={`eb-col-4 eb-admin-checkbox eb-block-box ${all_blocks_default[block]?.hasOwnProperty("status")
                             ? "eb-block-label " +
                             all_blocks_default[block].status
                             : ""

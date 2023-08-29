@@ -2,6 +2,7 @@
 
 namespace EssentialBlocks\Core;
 
+use EssentialBlocks\Utils\Helper;
 use EssentialBlocks\blocks\WPForms;
 use EssentialBlocks\blocks\FluentForms;
 use EssentialBlocks\Traits\HasSingletone;
@@ -178,7 +179,7 @@ class Scripts {
                 'wpforms_lists'      => json_encode( WPForms::form_list() ),
                 'all_blocks'         => $plugin::$blocks->all(),
                 'all_blocks_default' => $plugin::$blocks->defaults( true, false ),
-                'get_plugins'        => \EBHelpers::get_plugins(),
+                'get_plugins'        => Helper::get_plugin_list_for_localize(),
                 'googleFont'         => $googleFont,
                 'fontAwesome'        => $fontAwesome
             ];

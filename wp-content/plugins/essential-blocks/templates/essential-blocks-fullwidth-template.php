@@ -2,6 +2,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+use EssentialBlocks\Utils\TemplateHelpers;
 /**
  * Template Name: Essential Blocks Fullwidth Template
  * Description: Fullwidth template for Essential Blocks template
@@ -12,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @package    Essential Blocks
  */
 
-EBHelpers::eb_template_header();
+ TemplateHelpers::eb_template_header();
 
 global $post;
 ?>
@@ -48,5 +50,5 @@ global $post;
 	</main>
 
 	<?php
-	EBHelpers::eb_template_footer();
+	TemplateHelpers::eb_template_footer();
 	?>

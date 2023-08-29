@@ -73,7 +73,9 @@
                 if (settings.rbadges_repeater.length < 1)
                     return;
 
-                if (!this.$element.is(':visible') || this.$element.hasClass('randomb-applied'))
+                var $currentList = $('.elementor-element-' + this.$element.data('id'));
+
+                if (!$currentList.is(':visible') || this.$element.hasClass('randomb-applied'))
                     return;
 
                 var randomBadges = settings.rbadges_repeater;

@@ -24,6 +24,9 @@ class PluginInstaller extends ThirdPartyIntegration {
 			wp_send_json_error( __( 'Could not install the plugin.' ) );
 			die( esc_html__( 'Nonce did not match', 'essential-blocks' ) );
 		}
+		if ( ! current_user_can( 'activate_plugins' ) ) {
+			wp_send_json_error( __( 'You are not authorized!', 'essential-blocks' ) );
+		}
 
 		if ( isset( $_POST['slug'] ) && isset( $_POST['plugin_file'] ) ) {
 			$plugin                = array();

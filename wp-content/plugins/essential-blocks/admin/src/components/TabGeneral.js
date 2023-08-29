@@ -288,33 +288,21 @@ export default function TabGeneral() {
                         >
                             <div className="changelog-wrapper">
                                 <div className="changelog-title">
-                                    {__("Version: 4.2.0", "essential-blocks")}
+                                    {__("Version: 4.2.1", "essential-blocks")}
                                     <span className="changelog-date">
-                                        {__("20/08/2023", "essential-blocks")}
+                                        {__("29/08/2023", "essential-blocks")}
                                     </span>
                                 </div>
                                 <ul className="changelog-content">
                                     <li>
                                         {__(
-                                            "Fixed: Post Grid Pagination conflict with Filter",
+                                            "Improved: Security Enhancement",
                                             "essential-blocks"
                                         )}
                                     </li>
                                     <li>
                                         {__(
-                                            "Fixed: Woo Product Grid Add to Cart button issue fix",
-                                            "essential-blocks"
-                                        )}
-                                    </li>
-                                    <li>
-                                        {__(
-                                            "Fixed: Table of Content shows multiple after 4.1.6 update issue fix",
-                                            "essential-blocks"
-                                        )}
-                                    </li>
-                                    <li>
-                                        {__(
-                                            "Other bug fixes & improvements",
+                                            "Minor bug fixes & improvements",
                                             "essential-blocks"
                                         )}
                                     </li>

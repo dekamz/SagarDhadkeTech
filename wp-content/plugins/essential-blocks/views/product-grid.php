@@ -10,8 +10,8 @@ $presetClass = ( 'grid' === $layout ) ? $gridPreset : $listPreset;
 	<div
 		class="eb-woo-products-wrapper <?php esc_attr_e( $blockId ); ?>"
 		data-id="<?php esc_attr_e( $blockId ); ?>"
-		data-querydata='<?php esc_attr_e( serialize( $queryData ) ); ?>'
-		data-attributes='<?php esc_attr_e( serialize( $essentialAttr ) ); ?>'>
+		data-querydata='<?php esc_attr_e( json_encode( $queryData ) ); ?>'
+		data-attributes='<?php esc_attr_e( json_encode( $essentialAttr ) ); ?>'>
 		<div class="eb-woo-products-gallery <?php esc_attr_e( $presetClass ); ?>">
 			<?php
 
