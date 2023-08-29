@@ -1,0 +1,209 @@
+.wtl_wrapper {
+    display: block;
+    width: 100% !important;
+    clear: left;
+}
+
+.wtl-schedule-wrap {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    overflow: hidden;
+}
+
+.wtl_al_slider .wtl-schedule-post-content {
+    overflow: hidden;
+}
+
+.wtl-post-date a.leftmdate {
+    border: 1px solid #f7f7f7;
+    padding: 5px 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 24px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.leafty_layout .wtl_al_nav .wtl-post-date.slick-current.slick-active a span {
+    color: #fff !important;
+    position: relative;
+}
+
+.wtl_al_nav .wtl-post-date.slick-current.slick-active a:before {
+    content: "";
+    position: absolute;
+    left: -40px;
+    width: 30px;
+    top: 0;
+    height: 4px;
+    z-index: -1;
+    bottom: 0;
+    margin: auto;
+}
+
+.wtl_al_nav .slick-track {
+    text-align: center;
+}
+
+.post-category a {
+    text-transform: capitalize;
+}
+
+.wtl-post-content {
+    line-height: 24px;
+}
+
+.wtl-post-social-links i {
+    font-size: 20px;
+}
+
+span.wtl-author.author,
+.wtl-comment,
+.wtl-wrapper-like {
+    margin-right: 15px;
+}
+
+.wtl_blog_template .wp-timeline-post-image {
+    text-align: left;
+}
+
+.wtl-meta-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+h2.wtl-post-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.wtl-schedule-post-content {
+    padding: 30px 15px;
+    transform: none !important;
+    transition: none;
+}
+
+.wtl_al_nav .wtl-ss-right,
+.wtl_al_nav .wtl-ss-left {
+    position: absolute;
+    z-index: 3;
+    cursor: pointer;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+}
+
+.wtl_al_nav .wtl-ss-left {
+    bottom: -20px;
+    width: 24px !important;
+    height: 24px !important;
+    line-height: 24px;
+    text-align: center;
+    color: #fff;
+    min-width: 24px !important;
+}
+
+.wtl_al_nav .wtl-ss-right {
+    bottom: -50px;
+    width: 24px !important;
+    height: 24px !important;
+    line-height: 24px;
+    text-align: center;
+    color: #fff;
+    min-width: 24px !important;
+}
+
+.leafty_layout .wtl_blog_template .social-component .social-share a {
+    margin-right: 5px;
+}
+
+.leafty_layout .wtl_blog_template .social-component .social-share {
+    margin: 10px 0 0 0;
+}
+
+.leafty_layout .schedule-image-wrapper img {
+    object-fit: cover;
+    width: auto;
+    max-height: 300px;
+}
+
+.leafty_layout .wtl-read-more-div {
+    margin-top: 20px;
+}
+
+.leafty_layout span.wtl-post-date .mdate {
+    padding-left: 7px;
+    display: inline-block;
+}
+
+@media only screen and (max-width: 767px) {
+    .wtl_al_nav .wtl-ss-left {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+        margin: 0 auto 0 0;
+    }
+    .wtl_al_nav .wtl-ss-right {
+        top: 0;
+        bottom: 0;
+        right: 0;
+        text-align: center;
+        margin: 0 0 0 auto;
+    }
+    .wtl_al_nav .fa-angle-down:before {
+        content: "\f105";
+    }
+    .wtl_al_nav .fa-angle-up:before {
+        content: "\f104";
+    }
+    .wtl-post-date {
+        padding-bottom: 20px;
+    }
+    .wtl_al_nav .wtl-post-date.slick-current.slick-active a:before {
+        left: 0;
+        right: 0;
+        width: 4px;
+        bottom: -70px;
+        height: 200px;
+        margin: auto;
+    }
+    .wtl_al_nav.slick-slider {
+        margin-bottom: 0;
+    }
+    .wtl_title_cat .wtl-post-category {
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .wtl_al_nav {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+    .wtl_al_slider {
+        flex: 0 0 80%;
+        max-width: 80%;
+    }
+    .wtl-schedule-wrap {
+        display: flex;
+        align-items: center;
+    }
+    .wtl_title_cat {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    h2.wtl-post-title {
+        width: 70%;
+    }
+}

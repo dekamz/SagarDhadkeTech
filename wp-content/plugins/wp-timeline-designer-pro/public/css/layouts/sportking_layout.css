@@ -1,0 +1,235 @@
+.wtl_wrapper {
+    display: block;
+    width: 100% !important;
+    clear: left;
+}
+.sportking_layout .wtl-meta-content {
+	margin-bottom: 0;
+}
+/*-------------*/
+.wtl-schedule-wrap {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.wtl_al_slider .wtl-schedule-post-content {
+    overflow: hidden;
+}
+.sportking_layout .wtl_al_slider .wtl-schedule-post-content{
+    background: #666;
+    position: relative;
+    overflow: visible;
+    width: 130px;
+    max-width: 100%;
+}
+body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+	max-width: 1200px !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+.sportking_layout .wtl_al_slider .wtl_date_cat {
+	/* display: block; */
+	text-align: center;
+	overflow: hidden;
+}
+.sportking_layout .wtl_al_slider .wtl-schedule-post-content.wtl-grid-sl-2 {
+	bottom: 10px;
+}
+.sportking_layout .wtl_al_slider .wtl-schedule-post-content.wtl-grid-sl {
+	bottom: 15px;
+}
+.sportking_layout .wtl_al_slider .wtl-schedule-post-content.post_even.wtl-boxOne-sl {
+	bottom: 20px;
+}
+.sportking_layout .wtl_al_slider .wtl-schedule-post-content.post_odd.wtl-grid-sl-2 {
+	bottom: 25px;
+}
+.sportking_layout .wtl_blog_template img.wp-post-image {
+	width: 110px;
+	height: 100px;
+	max-height: 100%;
+}
+.wtl-schedule-post-content::before {
+	content: "";
+	background-image: url("../../../images/imagespin.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 40px;
+    display: block;
+    z-index: 999;
+    position: absolute;
+    background-size: 40px;
+    top: -20px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+}
+.sportking_layout .slick-slider .slick-track {
+    padding-block: 30px;
+}
+.wtl-post-date a.leftmdate {
+    border: 1px solid #f7f7f7;
+    padding: 5px 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 24px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.wtl_al_nav .wtl-post-date.slick-current.slick-active a {
+    color: #fff !important;
+    position: relative;
+}
+
+.wtl_al_nav .wtl-post-date.slick-current.slick-active a:before {
+    content: "";
+    position: absolute;
+    left: -40px;
+    width: 30px;
+    top: 0;
+    height: 4px;
+    z-index: -1;
+    bottom: 0;
+    margin: auto;
+}
+
+.wtl_al_nav .slick-track {
+    text-align: center;
+}
+
+.post-category a {
+    text-transform: capitalize;
+}
+
+.wtl-post-content {
+    line-height: 24px;
+    word-break: break-all;
+}
+
+.wtl-post-social-links i {
+    font-size: 20px;
+}
+
+span.wtl-author.author,
+.wtl-comment,
+.wtl-wrapper-like {
+    margin-right: 15px;
+}
+
+.wtl_blog_template .wp-timeline-post-image {
+    text-align: left;
+}
+
+.wtl-meta-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+.sportking_layout h2.wtl-post-title {
+	margin-top: 0;
+    margin-bottom: 5px;
+}
+h2.wtl-post-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.sportking_layout .wtl-schedule-post-content .wtl-schedule-post-content-inner {
+	padding: 10px;
+}
+.wtl-schedule-post-content {
+    margin: 12px 10px;
+    transform: none !important;
+    transition: none;
+}
+.wtl-ss-left,
+.wtl-ss-right {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+    z-index: 1;
+}
+
+.wtl-ss-left>i {
+    margin-left: 8px;
+    margin-top: 3px;
+}
+.wtl-ss-right>i {
+    margin-left: 10px;
+    margin-top: 3px;
+}
+
+.wtl-ss-left {
+    left: 0px;
+}
+.wtl-ss-right {
+    right: 0px;
+}
+
+.sportking_layout .schedule-image-wrapper.wtl-post-thumbnail {
+    padding: 15px 15px 5px;
+    background: #000;
+}
+.sportking_layout .schedule-image-wrapper.wtl-post-thumbnail .wtl_date_cat {
+    margin-block-start: 7px;
+}
+@media only screen and (max-width: 767px) {
+    .wtl_al_nav .wtl-ss-left {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+        margin: 0 auto 0 0;
+    }
+    .wtl_al_nav .wtl-ss-right {
+        top: 0;
+        bottom: 0;
+        right: 0;
+        text-align: center;
+        margin: 0 0 0 auto;
+    }
+    .wtl_al_nav .fa-angle-down:before {
+        content: "\f105";
+    }
+    .wtl_al_nav .fa-angle-up:before {
+        content: "\f104";
+    }
+    .wtl-post-date {
+        padding-bottom: 20px;
+    }
+    .wtl_al_nav .wtl-post-date.slick-current.slick-active a:before {
+        left: 0;
+        right: 0;
+        width: 4px;
+        bottom: -70px;
+        height: 200px;
+        margin: auto;
+    }
+    .wtl_al_nav.slick-slider {
+        margin-bottom: 0;
+    }
+    .wtl_title_cat .wtl-post-category {
+        margin-bottom: 10px;
+    }
+}

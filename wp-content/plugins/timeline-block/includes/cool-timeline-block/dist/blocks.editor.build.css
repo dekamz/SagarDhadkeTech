@@ -1,0 +1,10 @@
+.timeline-block-typography-advanced,
+.timeline-block-box-shadow-advanced {
+  box-shadow: 0 3px 30px rgba(25, 30, 35, 0.1);
+  border: 1px solid #e2e4e7;
+  background: #fff;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}

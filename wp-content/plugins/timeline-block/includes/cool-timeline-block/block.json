@@ -1,0 +1,11 @@
+{
+	"name": "cp-timeline/content-timeline-block",
+	"title": "Timeline Block",
+	"category": "widgets",
+	"description": "Timeline Block is a responsive WordPress block plugin for Gutenberg block editor that allows you to create beautiful vertical history timeline with one click.",
+	"keywords": [ "timeline", "story", "history", "event" ],
+	"textdomain": "timeline-block",
+	"editorScript": "file:./build/blocks.build.js",
+	"editorStyle": "file:./build/blocks.editor.build.css",
+	"style": "file:./build/blocks.style.build.css"
+}
