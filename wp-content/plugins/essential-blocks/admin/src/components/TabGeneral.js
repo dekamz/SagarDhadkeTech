@@ -288,12 +288,18 @@ export default function TabGeneral() {
                         >
                             <div className="changelog-wrapper">
                                 <div className="changelog-title">
-                                    {__("Version: 4.2.1", "essential-blocks")}
+                                    {__("Version: 4.2.2", "essential-blocks")}
                                     <span className="changelog-date">
-                                        {__("29/08/2023", "essential-blocks")}
+                                        {__("30/08/2023", "essential-blocks")}
                                     </span>
                                 </div>
                                 <ul className="changelog-content">
+                                    <li>
+                                        {__(
+                                            "Fixed: Advanced Navigation error in Widget Area",
+                                            "essential-blocks"
+                                        )}
+                                    </li>
                                     <li>
                                         {__(
                                             "Improved: Security Enhancement",

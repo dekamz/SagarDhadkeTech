@@ -2,7 +2,7 @@
  * External Dependencies
  */
 import { __ } from "@wordpress/i18n";
-import { useEffect, useRef } from "@wordpress/element";
+import { useEffect, useState, useRef } from "@wordpress/element";
 import { useBlockProps } from "@wordpress/block-editor";
 import { select } from "@wordpress/data";
 import classnames from "classnames";
@@ -31,6 +31,9 @@ import {
     typoPrefix_desc,
 } from "./constants/typographyConstants";
 
+import { GoogleMapIcon } from "./icon"
+import { Dashicon } from "@wordpress/components";
+
 const edit = (props) => {
     const {
         attributes,
@@ -58,6 +61,8 @@ const edit = (props) => {
         descColor,
         imageSize,
     } = attributes;
+
+    const [isMapInit, setIsMapInit] = useState(true);
 
     useEffect(() => {
         // this useEffect is for creating an unique id for each block's unique className by a random unique number
@@ -311,17 +316,20 @@ const edit = (props) => {
     // initialize map
     const initMap = () => {
         const editor = getEditorIframe()?.contentWindow?.document ?? document;
-        mapRef.current = new window.google.maps.Map(
-            editor.getElementById(blockId),
-            {
-                center: {
-                    lat: Number(marker[0]?.latitude) || Number(latitude),
-                    lng: Number(marker[0]?.longitude) || Number(longitude),
-                },
-                gestureHandling: "cooperative",
-                zoom: marker.length === 1 ? parseInt(mapZoom) || "13" : 0,
-                mapTypeId: mapType,
-            }
+        if (!window.google) {
+            setIsMapInit(false);
+            return;
+        }
+
+        mapRef.current = new window.google.maps.Map(editor.getElementById(blockId), {
+            center: {
+                lat: Number(marker[0]?.latitude) || Number(latitude),
+                lng: Number(marker[0]?.longitude) || Number(longitude),
+            },
+            gestureHandling: "cooperative",
+            zoom: marker.length === 1 ? parseInt(mapZoom) || "13" : 0,
+            mapTypeId: mapType,
+        }
         );
         if (marker.length > 0) {
             multipleMarkers(marker);
@@ -359,11 +367,9 @@ const edit = (props) => {
                     map: mapRef.current,
                 });
 
-                const contentString = `<div class="eb-google-map-overview"><h6 class="eb-google-map-overview-title">${
-                    locations[i].title
-                }</h6><div class="eb-google-map-overview-content">${
-                    locations[i].content ? `<p>${locations[i].content}</p>` : ""
-                }</div></div>`;
+                const contentString = `<div class="eb-google-map-overview"><h6 class="eb-google-map-overview-title">${locations[i].title
+                    }</h6><div class="eb-google-map-overview-content">${locations[i].content ? `<p>${locations[i].content}</p>` : ""
+                    }</div></div>`;
                 bounds.extend(marker.getPosition());
                 if (i == 0) {
                     infowindow.setContent(contentString);
@@ -428,11 +434,57 @@ const edit = (props) => {
                 <div
                     className={`eb-parent-wrapper eb-parent-${blockId} ${classHook}`}
                 >
-                    <div
-                        id={blockId}
-                        className={`${blockId} eb-google-map-wrapper`}
-                        style={{ height: `${mapHeight || 400}px` }}
-                    ></div>
+                    {!isMapInit && (
+                        <div className="eb-map-no-api">
+                            <style>
+                                {`
+                                    .eb-map-no-api {
+                                        box-shadow: inset 0 0 0 1px #1e1e1e;
+                                        padding: 1em;
+                                        border-radius: 2px;
+                                    }
+                                    .eb-map-no-api h4 {
+                                        font-size: 18pt;
+                                        font-weight: 400;
+                                        margin: 0 0 20px;
+                                        line-height: 1;
+                                        display: flex;
+                                        gap: 15px;
+                                        align-items: center;
+                                        text-transform: uppercase;
+                                    }
+                                    .eb-map-no-api svg {
+                                        height: 24px;
+                                        width: auto;
+                                    }
+                                    .eb-map-no-api p {
+                                        font-size: 13px;
+                                        font-weight: 400;
+                                        margin: 0 0 5px;
+                                    }
+                                    .eb-map-no-api .eb_doc {
+                                        font-size: 13px;
+                                    }
+                                `}
+                            </style>
+                            <h4><GoogleMapIcon /> Google Maps</h4>
+                            <p>Please add your Google Map API&nbsp;
+                                <a target="_blank" href={`${EssentialBlocksLocalize?.eb_admin_url}admin.php?page=essential-blocks&tab=options`}>
+                                    Here</a>
+                                &nbsp;to display Google Maps Block
+                            </p>
+                            <a class="eb_doc" target="_blank" href={"https://essential-blocks.com/docs/retrieve-google-maps-api"}>
+                                Learn more about Google Map API <Dashicon icon="external" />
+                            </a>
+                        </div>
+                    )}
+                    {isMapInit && (
+                        <div
+                            id={blockId}
+                            className={`${blockId} eb-google-map-wrapper`}
+                            style={{ height: `${mapHeight || 400}px` }}
+                        ></div>
+                    )}
                 </div>
             </div>
         </>

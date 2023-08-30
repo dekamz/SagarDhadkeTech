@@ -185,7 +185,7 @@ class OpenVerse extends ThirdPartyIntegration {
         }
 
         if ( isset( $_POST['image_url'] ) ) {
-            $file = esc_url_raw( $_POST['image_url'] );
+            $file = sanitize_url( $_POST['image_url'] );
         }
 
         $filename = basename( $file );

@@ -4,7 +4,7 @@ Tags: block, gutenberg, blocks, gutenberg blocks, editor, button, post grid, TOC
 Requires at least: 5.8
 Tested up to: 6.3
 Requires PHP: 5.6
-Stable tag: 4.2.1
+Stable tag: 4.2.2
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -38,7 +38,7 @@ EEnable and disable individual blocks to make your page load faster and smoother
 ###🚀 ASSET REGENERATION
 Keep your website's loading speed fast and secure against heavy scripts and CSS files with the Asset Regeneration feature.
 
-###🖊️ OMPATIBILITY WITH GOOGLE FONTS
+###🖊️ COMPATIBILITY WITH GOOGLE FONTS
 Choose any Google Font you prefer from a collection of 1,000+ font families available using Essential Blocks. Now, you can give your websites a customized look with stunning typographies.
 
 ###💻 RESPONSIVE ON ALL DEVICES
@@ -217,6 +217,11 @@ Yes, you can effortlessly display your WooCommerce products on your store websit
 If you found the recent version of Essential Blocks isn’t working or conflicting with other plugins, then you can use earlier versions of the plugin.
 
 == Changelog ==
+
+= 4.2.2 - 30/08/2023
+- Fixed: Advanced Navigation error in Widget Area
+- Improved: Security Enhancement
+- Minor Bug fixes & improvements
 
 = 4.2.1 - 29/08/2023
 - Improved: Security Enhancement

@@ -27,7 +27,7 @@ use EssentialBlocks\Integrations\PluginInstaller;
 final class Plugin {
     use HasSingletone;
 
-    public $version = '4.2.1';
+    public $version = '4.2.2';
 
     public $admin;
     /**
@@ -222,11 +222,6 @@ final class Plugin {
     }
 
     private function load_admin_dependencies() {
-        if ( ! function_exists( 'wp_get_current_user' ) ) {
-            include ABSPATH . "wp-includes/pluggable.php";
-        }
-        if ( ! current_user_can( 'administrator' ) ) {
-            return;
-        }
+        //Admin dependency codes here
     }
 }
