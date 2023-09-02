@@ -1,4 +1,4 @@
-/*! elementor - v3.15.0 - 20-08-2023 */
+/*! elementor - v3.15.0 - 09-08-2023 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -9302,18 +9302,10 @@ var Component = /*#__PURE__*/function (_ComponentBase) {
     key: "renderTab",
     value: function renderTab(tab, args) {
       var activeControl = args.activeControl;
-      if (this.shouldRenderPage(tab)) {
+      if (!activeControl || '' === activeControl) {
         elementor.getPanelView().setPage('page_settings').activateTab(tab);
       }
       this.activateControl(activeControl);
-    }
-  }, {
-    key: "shouldRenderPage",
-    value: function shouldRenderPage(tab) {
-      var currentPanelView = elementor.getPanelView();
-      var isSamePage = 'page_settings' === currentPanelView.getCurrentPageName();
-      var isSameTab = tab === currentPanelView.getCurrentPageView().activeTab;
-      return !isSamePage || !isSameTab;
     }
   }, {
     key: "getTabsWrapperSelector",
@@ -36140,7 +36132,7 @@ var Component = /*#__PURE__*/function (_ComponentBase) {
         view = args.view,
         activeControl = args.activeControl,
         title = sprintf(__('Edit %s', 'elementor'), elementor.getElementData(model).title);
-      if (this.shouldRenderPage(tab, args.model.id)) {
+      if (this.wasOutOfFocus() || this.activeModelId !== args.model.id || tab !== this.activeTabs[args.model.id]) {
         this.activeModelId = args.model.id;
         this.activeTabs[args.model.id] = tab;
         elementor.getPanelView().setPage('editor', title, {
@@ -36153,13 +36145,12 @@ var Component = /*#__PURE__*/function (_ComponentBase) {
       this.activateControl(activeControl);
     }
   }, {
-    key: "shouldRenderPage",
-    value: function shouldRenderPage(tab, modelId) {
-      var currentPanelView = elementor.getPanelView();
-      var isSamePage = 'editor' === currentPanelView.getCurrentPageName();
-      var isSameTab = tab === currentPanelView.getCurrentPageView().activeTab;
-      var isEditingSameModel = modelId === this.activeModelId;
-      return !isSamePage || !isSameTab || !isEditingSameModel;
+    key: "wasOutOfFocus",
+    value: function wasOutOfFocus() {
+      var history = $e.routes.getHistory('panel');
+      var lastRoute = history[history.length - 1].route;
+      var lastRouteParts = lastRoute.split('/');
+      return 'categories' === lastRouteParts[lastRouteParts.length - 1];
     }
   }, {
     key: "setDefaultTab",
