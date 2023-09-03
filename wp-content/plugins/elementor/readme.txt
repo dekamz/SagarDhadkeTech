@@ -4,7 +4,7 @@ Tags: page builder, editor, landing page, drag-and-drop, elementor, visual edito
 Requires at least: 5.9
 Tested up to: 6.3
 Requires PHP: 7.0
-Stable tag: 3.15.2
+Stable tag: 3.15.3
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -239,6 +239,14 @@ You can also add a new language via [translate.wordpress.org](https://go.element
 == Changelog ==
 
 See Elementor Developer Edition versions changelog [here](https://go.elementor.com/dev-changelog/)
+
+= 3.15.3 - 2023-08-20 =
+
+* Fix: Elements can't be edited after accessing the page settings panel ([#23365](https://github.com/elementor/elementor/issues/23365))
+* Fix: Reverted Responsive settings for Section Templates won't entirely save when Additional Breakpoints feature is active
+* Fix: Redundant accordion icon appears when using Safari browser in Accordion widget
+* Fix: Elementor Admin Top Bar affects styling on non-elementor screens in WordPress
+* Fix: Changed CSS class for Apps page for better i18n support
 
 = 3.15.2 - 2023-08-09 =
 

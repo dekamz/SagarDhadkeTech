@@ -3561,6 +3561,9 @@ ul.elementor-icon-list-items.elementor-inline-items .elementor-inline-item {
   --n-accordion-icon-gap: 0 10px;
   width: 100%;
 }
+.elementor-widget-n-accordion .e-n-accordion details > summary::-webkit-details-marker {
+  display: none;
+}
 .elementor-widget-n-accordion .e-n-accordion-item {
   display: flex;
   flex-direction: column;
