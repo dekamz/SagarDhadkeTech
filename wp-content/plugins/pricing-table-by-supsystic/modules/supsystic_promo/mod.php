@@ -290,7 +290,44 @@ class supsystic_promoPts extends modulePts {
       }
       return $mainLink;
    }
+   public function _checkLoveLink() {
+      $apiUrl = 'https://supsystic.com/wp-admin/admin-ajax.php';
+      $reqUrl = $apiUrl . '?action=show_love_link';
+      $data = array(
+         'body' => array(
+            'key' => 'kJ#f3(FjkF9fasd124t5t589u9d4389r3r3R#2asdas3(#R03r#(r#t-4t5t589u9d4389r3r3R#$%lfdj',
+            'site_url' => get_bloginfo('wpurl'),
+         ),
+      );
+      $response = wp_remote_post($reqUrl, $data);
+      $responseData = json_decode(wp_remote_retrieve_body( $response ), TRUE );
+      if (!empty($responseData['data']['show'])) {
+         update_option('pts_show_love_link', true);
+      } else {
+         update_option('pts_show_love_link', false);
+      }
+   }
+   public function checkLoveLink() {
+      if (!empty(get_option('pts_last_check_love_link'))) {
+         $time = time();
+         $prevSendTime = (int)get_option('pts_last_check_love_link');
+         if ($prevSendTime && ($time - $prevSendTime) > 24 * 60 * 60) {
+            update_option('pts_last_check_love_link', time());
+            $this->_checkLoveLink();
+         }
+      } else {
+         $this->_checkLoveLink();
+         update_option('pts_last_check_love_link', time());
+      }
+      if (!empty(get_option('pts_show_love_link'))) {
+         return true;
+      }
+      return false;
+   }
    public function getLoveLink($show = 'hide') {
+      if (!$this->checkLoveLink()) {
+         return false;
+      }
       $title = 'WordPress Pricing Table Plugin';
       if ($show == 'show') {
          return '<a title="' . $title . '" style="border: none; color: #26bfc1 !important; font-size: 9px; display: block; float: right; padding-right: 10px;" href="' . $this->generateMainLink('utm_medium=love_link') . '" target="_blank">' . $title . '</a>' . '<div style="clear: both;"></div>';

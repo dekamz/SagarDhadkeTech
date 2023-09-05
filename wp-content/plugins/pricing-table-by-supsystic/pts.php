@@ -3,7 +3,7 @@
  * Plugin Name: Pricing Table by Supsystic
  * Plugin URI: https://supsystic.com/plugins/pricing-table/
  * Description: Pricing Table generator by Supsystic allow you to create responsive pricing tables or comparison table without any programming skills
- * Version: 1.9.10
+ * Version: 1.9.11
  * Author: supsystic.com
  * Author URI: http://supsystic.com/
  * Text Domain: pricing-table-by-supsystic
