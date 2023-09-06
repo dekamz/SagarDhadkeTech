@@ -1,7 +1,0 @@
-#toplevel_page_essential-blocks .wp-menu-image img {
-	width: 16px;
-	margin-top: -2px;
-}
-#toplevel_page_essential-blocks.current .wp-menu-image img {
-	opacity: 1;
-}
